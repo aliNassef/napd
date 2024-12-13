@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../core/utils/app_colors.dart';
 import '../widgets/boarding_view_body.dart';
 
 class BoardingView extends StatelessWidget {
@@ -7,6 +8,7 @@ class BoardingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.primaryColor,
       body: BoardingViewBody(),
     );
   }

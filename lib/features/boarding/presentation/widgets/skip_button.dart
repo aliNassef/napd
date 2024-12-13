@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/core/utils/app_colors.dart';
@@ -20,7 +19,7 @@ class SkipButton extends StatelessWidget {
           child: Text(
             'Skip',
             style: AppStyles.textStyle24R.copyWith(
-              color: AppColors.mainPinkColor,
+              color: AppColors.secondaryColor,
             ),
           ),
         ),

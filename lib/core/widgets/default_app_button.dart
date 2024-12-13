@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import '../../utils/app_styles.dart';
 
+import '../utils/app_styles.dart';
+ 
 class DefaultAppButton extends StatelessWidget {
   const DefaultAppButton({
     super.key,
@@ -37,24 +38,12 @@ class DefaultAppButton extends StatelessWidget {
         onPressed: onPressed,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-
-          ///             text,
-          ///             style: AppStyles.textStyle14SB.copyWith(
-          ///               color: textColor,
-          ///             ),
-          ///           ),
-          ///           icon
-          ///         ],
-          ///       ),
-          ///     ),
-          ///   );
-          /// }
           children: [
             Text(
               text,
-              //   style: AppStyles.textStyle16M.copyWith(
-              //     color: textColor,
-              //   ),
+              style: AppStyles.textStyle24SB.copyWith(
+                color: textColor,
+              ),
             ),
             icon
           ],

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import '../../utils/app_color.dart';
-// import '../../utils/app_styles.dart';
+
+import '../utils/app_colors.dart';
+import '../utils/app_styles.dart';
 
 class CustomTextFormField extends StatefulWidget {
   const CustomTextFormField({
@@ -27,7 +28,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   Widget build(BuildContext context) {
     return TextFormField(
       keyboardType: widget.keyboardType,
-      // cursorColor: AppColors.lightsecondaryColor,
+      cursorColor: AppColors.primaryColor,
       obscureText: isSecure,
       validator: (value) {
         if (value == null || value.isEmpty) {
@@ -44,36 +45,38 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           vertical: 16.h,
         ),
         hintText: widget.hintText,
-        // hintStyle: AppStyles.textStyle12R.copyWith(
-        //   color: AppColors.gray100Color,
-        // ),
-        // border: buildBorderStyle(
-        //   AppColors.gray50Color,
-        // ),
-        // enabledBorder: buildBorderStyle(
-        //   AppColors.gray100Color,
-        // ),
-        // focusedBorder: buildBorderStyle(
-        //   AppColors.lightsecondaryColor,
-        // ),
-        // suffixIcon: widget.isPassword
-        //     ? IconButton(
-        //         onPressed: () {
-        //           setState(() {
-        //             isSecure = !isSecure;
-        //           });
-        //         },
-        //         icon: isSecure
-        //             ? const Icon(
-        //                 Icons.visibility_off,
-        //                 color: AppColors.gray100Color,
-        //               )
-        //             : const Icon(
-        //                 Icons.visibility_sharp,
-        //                 color: AppColors.gray100Color,
-        //               ),
-        //       )
-        //     : const SizedBox(),
+        hintStyle: AppStyles.textStyle20R.copyWith(
+          color: AppColors.greyColor.withValues(
+            alpha: 0.6,
+          ),
+        ),
+        border: buildBorderStyle(
+          AppColors.greyColor,
+        ),
+        enabledBorder: buildBorderStyle(
+          AppColors.greyColor,
+        ),
+        focusedBorder: buildBorderStyle(
+          AppColors.greyColor,
+        ),
+        suffixIcon: widget.isPassword
+            ? IconButton(
+                onPressed: () {
+                  setState(() {
+                    isSecure = !isSecure;
+                  });
+                },
+                icon: isSecure
+                    ? const Icon(
+                        Icons.visibility_off,
+                        color: AppColors.greyColor,
+                      )
+                    : const Icon(
+                        Icons.visibility_sharp,
+                        color: AppColors.greyColor,
+                      ),
+              )
+            : const SizedBox(),
       ),
     );
   }
@@ -81,10 +84,11 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   OutlineInputBorder buildBorderStyle(Color color) {
     return OutlineInputBorder(
       borderRadius: const BorderRadius.all(
-        Radius.circular(12),
+        Radius.circular(20),
       ),
       borderSide: BorderSide(
         color: color,
+        width: 1,
       ),
     );
   }
