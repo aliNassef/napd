@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:napd/core/extensions/mediaquery_size.dart';
 import 'package:napd/core/utils/app_colors.dart';
 import 'package:napd/core/utils/app_images.dart';
