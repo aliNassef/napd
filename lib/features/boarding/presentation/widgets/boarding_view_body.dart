@@ -54,7 +54,6 @@ class _BoardingViewBodyState extends State<BoardingViewBody> {
 
   @override
   void dispose() {
-    print('dispose');
     pageController.dispose();
     super.dispose();
   }

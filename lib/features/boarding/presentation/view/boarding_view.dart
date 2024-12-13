@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/widgets/background_widget.dart';
+import '../../../../core/widgets/background_widget.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../widgets/boarding_view_body.dart';
 
