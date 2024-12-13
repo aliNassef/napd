@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
+import '../view/start_view.dart';
 
 class BoardingControllersButton extends StatelessWidget {
   const BoardingControllersButton({
@@ -36,10 +37,14 @@ class BoardingControllersButton extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            pageController.nextPage(
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.ease,
-            );
+            if (currentPage == 2) {
+              Navigator.pushNamed(context, StartView.routeName);
+            } else {
+              pageController.nextPage(
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.ease,
+              );
+            }
           },
           child: Text(
             'Next',
