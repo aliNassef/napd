@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:napd/features/boarding/presentation/view/boarding_view.dart';
@@ -19,12 +20,18 @@ class Napd extends StatelessWidget {
       enableScaleText: () => false,
       splitScreenMode: true,
       builder: (context, child) => MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Napd',
         theme: ThemeData(
           fontFamily: GoogleFonts.roboto().fontFamily,
           scaffoldBackgroundColor: Colors.white,
           colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
           useMaterial3: true,
+          appBarTheme: AppBarTheme(
+            systemOverlayStyle: SystemUiOverlayStyle(
+              statusBarColor: Colors.transparent,
+            ),
+          ),
         ),
         onGenerateRoute: onGenerateRoute,
         initialRoute: BoardingView.routeName,
