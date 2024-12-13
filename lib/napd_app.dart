@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:napd/features/boarding/presentation/view/boarding_view.dart';
+import 'features/boarding/presentation/view/boarding_view.dart';
 
 import 'core/utils/app_colors.dart';
 import 'core/utils/app_router.dart';
