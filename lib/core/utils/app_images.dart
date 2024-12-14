@@ -5,4 +5,8 @@ abstract class AppImages {
   static const String start = 'assets/images/start.png';
 }
 
-abstract class AppSvgs {}
+abstract class AppSvgs {
+  static const String faceIcon = 'assets/images/facebook_icon.svg';
+  static const String googleIcon = 'assets/images/google_icon.svg';
+  static const String appleIcon = 'assets/images/apple_icon.svg';
+}

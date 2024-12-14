@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../../core/widgets/background_widget.dart';
+
 import '../../../../core/utils/app_colors.dart';
+import '../../../../core/widgets/background_widget.dart';
 import '../widgets/boarding_view_body.dart';
 
 class BoardingView extends StatelessWidget {

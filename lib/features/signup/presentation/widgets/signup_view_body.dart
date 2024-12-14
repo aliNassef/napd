@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/extensions/mediaquery_size.dart';
-import 'package:napd/core/utils/app_colors.dart';
-import 'package:napd/core/widgets/custom_text_form_field.dart';
-import 'package:napd/core/widgets/default_app_button.dart';
-import 'package:napd/core/widgets/spacers.dart';
-
+import '../../../../core/extensions/mediaquery_size.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/widgets/custom_text_form_field.dart';
+import '../../../../core/widgets/default_app_button.dart';
+import '../../../../core/widgets/spacers.dart';
 import '../../../../core/utils/app_styles.dart';
+import '../../../../core/widgets/another_way_sign.dart';
 import '../../../../core/widgets/custom_check_box.dart';
+import '../../../../core/widgets/social_media_list_items.dart';
+import 'already_have_account.dart';
 
 class SignupViewBody extends StatelessWidget {
   const SignupViewBody({super.key});
@@ -70,7 +72,7 @@ class SignupViewBody extends StatelessWidget {
               ),
             ],
           ),
-          VerticalSpace(35),
+          VerticalSpace(22),
           DefaultAppButton(
             onPressed: () {},
             padding: context.width * 0.2,
@@ -79,6 +81,20 @@ class SignupViewBody extends StatelessWidget {
             textColor: AppColors.darkBlueColor,
           ),
           VerticalSpace(25),
+          AnotherWaySign(
+            title: 'Or Register with',
+          ),
+          VerticalSpace(22),
+          SocialMediaListItems(),
+          VerticalSpace(22),
+          Divider(
+            color: AppColors.greyColor.withValues(alpha: 0.8),
+            height: 1,
+            thickness: 1,
+          ),
+          VerticalSpace(22),
+          AlreadyHaveAccount(),
+          VerticalSpace(22),
         ],
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../extensions/mediaquery_size.dart';
 
+import '../extensions/mediaquery_size.dart';
 import '../utils/app_colors.dart';
 
 class BackgroundWidget extends StatelessWidget {
