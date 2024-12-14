@@ -11,6 +11,7 @@ class LoginView extends StatelessWidget {
     return const Scaffold(
       body: BackgroundWidget(
         child: SafeArea(
+          bottom: false,
           child: LoginViewBody(),
         ),
       ),
