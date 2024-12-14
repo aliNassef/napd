@@ -21,11 +21,11 @@ class StartViewBody extends StatelessWidget {
             color: AppColors.greyColor,
           ),
         ),
-        VerticalSpace(21),
+        VerticalSpace(20),
         Image.asset(
           AppImages.start,
           width: context.width,
-          height: context.height * .55,
+          height: context.height * .45,
         ),
         DefaultAppButton(
           padding: context.width * 0.2,
