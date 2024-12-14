@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:napd/features/login/presentation/view/login_view.dart';
+import 'package:napd/features/signup/presentation/view/signup_view.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
@@ -22,12 +24,20 @@ class StartViewBody extends StatelessWidget {
           ),
         ),
         VerticalSpace(20),
-        Image.asset(
-          AppImages.start,
-          width: context.width,
-          height: context.height * .45,
+        RepaintBoundary(
+          child: Image.asset(
+            AppImages.start,
+            width: context.width,
+            height: context.height * .45,
+          ),
         ),
         DefaultAppButton(
+          onPressed: () {
+            Navigator.pushReplacementNamed(
+              context,
+              SignupView.routeName,
+            );
+          },
           padding: context.width * 0.2,
           text: 'Sign up',
           backgroundColor: AppColors.secondaryColor,
@@ -35,6 +45,12 @@ class StartViewBody extends StatelessWidget {
         ),
         VerticalSpace(30),
         DefaultAppButton(
+          onPressed: () {
+            Navigator.pushReplacementNamed(
+              context,
+              LoginView.routeName,
+            );
+          },
           padding: context.width * 0.2,
           text: 'Login',
           backgroundColor: AppColors.greyColor,

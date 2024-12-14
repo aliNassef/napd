@@ -1,0 +1,86 @@
+import 'package:flutter/material.dart';
+import 'package:napd/core/extensions/mediaquery_size.dart';
+import 'package:napd/core/utils/app_colors.dart';
+import 'package:napd/core/widgets/custom_text_form_field.dart';
+import 'package:napd/core/widgets/default_app_button.dart';
+import 'package:napd/core/widgets/spacers.dart';
+
+import '../../../../core/utils/app_styles.dart';
+import '../../../../core/widgets/custom_check_box.dart';
+
+class SignupViewBody extends StatelessWidget {
+  const SignupViewBody({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Text(
+            'Create account ',
+            style: AppStyles.textStyle48B.copyWith(
+              color: AppColors.greyColor,
+            ),
+          ),
+          VerticalSpace(35),
+          Text(
+            'Sign up to get started',
+            style: AppStyles.textStyle20R.copyWith(
+              color: AppColors.greyColor.withValues(alpha: 0.6),
+            ),
+          ),
+          VerticalSpace(50),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: CustomTextFormField(
+                  hintText: 'first name',
+                  controller: TextEditingController(),
+                ),
+              ),
+              HorizantalSpace(50),
+              Expanded(
+                child: CustomTextFormField(
+                  hintText: 'last name',
+                  controller: TextEditingController(),
+                ),
+              ),
+            ],
+          ),
+          VerticalSpace(28),
+          CustomTextFormField(
+            hintText: 'Email',
+            controller: TextEditingController(),
+          ),
+          VerticalSpace(28),
+          CustomTextFormField(
+            hintText: 'Password',
+            controller: TextEditingController(),
+          ),
+          VerticalSpace(25),
+          Row(
+            children: [
+              CustomCheckBox(),
+              Text(
+                'Remember me',
+                style: AppStyles.textStyle20R.copyWith(
+                  color: AppColors.secondaryColor,
+                ),
+              ),
+            ],
+          ),
+          VerticalSpace(35),
+          DefaultAppButton(
+            onPressed: () {},
+            padding: context.width * 0.2,
+            text: 'Sign up',
+            backgroundColor: Colors.white,
+            textColor: AppColors.darkBlueColor,
+          ),
+          VerticalSpace(25),
+        ],
+      ),
+    );
+  }
+}
