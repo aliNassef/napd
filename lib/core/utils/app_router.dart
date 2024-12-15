@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../features/boarding/presentation/view/boarding_view.dart';
 import '../../features/boarding/presentation/view/start_view.dart';
 import '../../features/login/presentation/view/login_view.dart';
+import '../../features/login/presentation/view/select_baby_account_view.dart';
 import '../../features/signup/presentation/view/signup_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -22,6 +23,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case SignupView.routeName:
       return MaterialPageRoute(
         builder: (context) => const SignupView(),
+      );
+    case SelectBabyAccountView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const SelectBabyAccountView(),
       );
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());

@@ -28,7 +28,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   Widget build(BuildContext context) {
     return TextFormField(
       keyboardType: widget.keyboardType,
-      cursorColor: AppColors.primaryColor,
+      cursorColor: AppColors.greyColor,
       obscureText: isSecure,
       validator: (value) {
         if (value == null || value.isEmpty) {

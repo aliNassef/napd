@@ -8,6 +8,7 @@ import 'package:napd/core/widgets/social_media_list_items.dart';
 import 'package:napd/core/widgets/spacers.dart';
 
 import '../../../../core/utils/app_styles.dart';
+import '../view/select_baby_account_view.dart';
 import 'donot_have_account.dart';
 
 class LoginViewBody extends StatelessWidget {
@@ -45,6 +46,12 @@ class LoginViewBody extends StatelessWidget {
           ),
           VerticalSpace(60),
           DefaultAppButton(
+            onPressed: () {
+              Navigator.pushReplacementNamed(
+                context,
+                SelectBabyAccountView.routeName,
+              );
+            },
             backgroundColor: Colors.white,
             text: 'Log in',
             padding: context.width * 0.2,

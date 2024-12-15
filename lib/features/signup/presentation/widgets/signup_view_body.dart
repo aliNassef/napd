@@ -57,6 +57,7 @@ class SignupViewBody extends StatelessWidget {
           ),
           VerticalSpace(28),
           CustomTextFormField(
+            isPassword: true,
             hintText: 'Password',
             controller: TextEditingController(),
           ),
