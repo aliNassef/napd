@@ -43,6 +43,10 @@ abstract class AppStyles {
     fontSize: 20.sp,
     fontWeight: FontWeight.w400,
   );
+  static final textStyle20B = GoogleFonts.roboto(
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w700,
+  );
   // 16
   static final textStyle16R = GoogleFonts.roboto(
     fontSize: 16.sp,

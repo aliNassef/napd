@@ -5,6 +5,7 @@ abstract class AppImages {
   static const String start = 'assets/images/start.png';
   static const String boyAccount = 'assets/images/boy_account.jpg';
   static const String girlAccount = 'assets/images/girl_account.png';
+  static const String dummyGirl = 'assets/images/dummy_girl.png';
 }
 
 abstract class AppSvgs {
@@ -16,4 +17,11 @@ abstract class AppSvgs {
   static const String reminderIcon = 'assets/images/reminder_icon.svg';
   static const String groupIcon = 'assets/images/group_icon.svg';
   static const String profileIcon = 'assets/images/profile_icon.svg';
+  static const String settingIcon = 'assets/images/setting_icon.svg';
+  static const String cryIcon = 'assets/images/cry_icon.svg';
+  static const String shopIcon = 'assets/images/shop_icon.svg';
+  static const String tipsTricsIcon = 'assets/images/tips_trics_icon.svg';
+  static const String recipesIcon = 'assets/images/recipes_icon.svg';
+  static const String activitesIcon = 'assets/images/activites_icon.svg';
+  static const String profile2Icon = 'assets/images/profile2_icon.svg';
 }

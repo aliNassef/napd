@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import '../../../../core/widgets/custom_drawer.dart';
 import '../widgets/layout_view_body.dart';
 
 class LayoutView extends StatelessWidget {
@@ -8,6 +8,8 @@ class LayoutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text('Layout')),
+      drawer: CustomDrawer(),
       body: LayoutViewBody(),
     );
   }
