@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'features/boarding/presentation/view/boarding_view.dart';
-
 import 'core/utils/app_colors.dart';
 import 'core/utils/app_router.dart';
+import 'features/layout/presentation/view/layout_view.dart';
 
 class Napd extends StatelessWidget {
   const Napd({super.key});
@@ -37,7 +36,7 @@ class Napd extends StatelessWidget {
           ),
         ),
         onGenerateRoute: onGenerateRoute,
-        initialRoute: BoardingView.routeName,
+        initialRoute: LayoutView.routeName,
       ),
     );
   }
