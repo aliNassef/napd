@@ -1,9 +1,10 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../core/extensions/mediaquery_size.dart';
-import '../../../../core/widgets/spacers.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
+import '../../../../core/widgets/spacers.dart';
 import '../../domain/entity/boarding_entity.dart';
 
 class PageViewItem extends StatelessWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:napd/core/utils/app_colors.dart';
-import 'package:napd/core/utils/app_images.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_images.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 class LayoutViewBody extends StatefulWidget {
@@ -117,7 +117,6 @@ class _LayoutViewBodyState extends State<LayoutViewBody> {
       context,
       controller: _controller,
       screens: _buildScreens(),
-
       items: _navBarsItems(),
       handleAndroidBackButtonPress: true,
       resizeToAvoidBottomInset: true,

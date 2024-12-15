@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/utils/app_colors.dart';
-import 'package:napd/core/widgets/spacers.dart';
-import 'package:napd/features/login/presentation/widgets/baby_account_item.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/widgets/spacers.dart';
+import 'baby_account_item.dart';
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/app_styles.dart';
 
