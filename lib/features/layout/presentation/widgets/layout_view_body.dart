@@ -115,7 +115,7 @@ class _LayoutViewBodyState extends State<LayoutViewBody> {
     return PersistentTabView(
       context,
       controller: _controller,
-      screens: _buildScreens(),
+      screens: _buildScreens(), 
       items: _navBarsItems(),
       handleAndroidBackButtonPress: true,
       resizeToAvoidBottomInset: true,

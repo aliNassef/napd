@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/widgets/custom_app_bar.dart';
+import '../../../../core/widgets/custom_app_bar.dart';
 
 import '../../../../core/widgets/custom_drawer.dart';
 import '../widgets/nursery_view_body.dart';

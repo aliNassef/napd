@@ -3,9 +3,8 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:napd/core/extensions/mediaquery_size.dart';
-import 'package:napd/core/utils/app_images.dart';
-
+import '../../../../core/extensions/mediaquery_size.dart';
+import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 

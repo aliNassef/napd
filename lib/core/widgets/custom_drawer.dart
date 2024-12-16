@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:napd/core/extensions/mediaquery_size.dart';
-import 'package:napd/core/widgets/drawer_list_items.dart';
-import 'package:napd/core/widgets/drawer_top_bar.dart';
+import '../extensions/mediaquery_size.dart';
+import 'drawer_list_items.dart';
+import 'drawer_top_bar.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({

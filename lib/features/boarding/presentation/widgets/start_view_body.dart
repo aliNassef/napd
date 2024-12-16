@@ -35,7 +35,7 @@ class StartViewBody extends StatelessWidget {
           onPressed: () {
             Navigator.pushReplacementNamed(
               context,
-              SignupView.routeName,
+              SignupView.routeName
             );
           },
           padding: context.width * 0.2,
