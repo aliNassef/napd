@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:napd/features/nursery/presentation/view/nursery_view.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
@@ -26,9 +27,7 @@ class _LayoutViewBodyState extends State<LayoutViewBody> {
       Container(
         color: Colors.white,
       ),
-      Container(
-        color: Colors.blue,
-      ),
+      NurseryView(),
       Container(
         color: Colors.yellow,
       ),
@@ -121,7 +120,7 @@ class _LayoutViewBodyState extends State<LayoutViewBody> {
       handleAndroidBackButtonPress: true,
       resizeToAvoidBottomInset: true,
       stateManagement: true, // Default is true.
-      bottomScreenMargin: 10.h,
+      bottomScreenMargin: kBottomNavigationBarHeight,
       hideNavigationBarWhenKeyboardAppears: true,
       popBehaviorOnSelectedNavBarItemPress: PopBehavior.once,
       padding: EdgeInsets.only(top: 16.h),

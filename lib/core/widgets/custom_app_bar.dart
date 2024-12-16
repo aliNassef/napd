@@ -10,7 +10,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool hasLeading;
   @override
   Widget build(BuildContext context) {
-    return AppBar();
+    return AppBar(
+      
+    );
   }
 
   @override

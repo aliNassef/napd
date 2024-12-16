@@ -5,6 +5,7 @@ import '../../features/boarding/presentation/view/start_view.dart';
 import '../../features/layout/presentation/view/layout_view.dart';
 import '../../features/login/presentation/view/login_view.dart';
 import '../../features/login/presentation/view/select_baby_account_view.dart';
+import '../../features/nursery/presentation/view/nursery_view.dart';
 import '../../features/signup/presentation/view/signup_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -32,6 +33,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case LayoutView.routeName:
       return MaterialPageRoute(
         builder: (context) => const LayoutView(),
+      );
+    case NurseryView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const NurseryView(),
       );
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
