@@ -27,4 +27,5 @@ abstract class AppSvgs {
   static const String profile2Icon = 'assets/images/profile2_icon.svg';
   static const String unFavIcon = 'assets/images/unfav_icon.svg';
   static const String favIcon = 'assets/images/fav_icon.svg';
+  static const String dateIcon = 'assets/images/date.svg';
 }

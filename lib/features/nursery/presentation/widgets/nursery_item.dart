@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:napd/core/utils/app_styles.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -53,9 +53,7 @@ class NurseryItem extends StatelessWidget {
                     children: [
                       Text(
                         'El zahraa Hospital',
-                        style: GoogleFonts.rubik(
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w500,
+                        style: AppStyles.textStyleR18M.copyWith(
                           color: AppColors.darkBlueColor,
                         ),
                       ),
@@ -69,9 +67,7 @@ class NurseryItem extends StatelessWidget {
                   ),
                   Text(
                     'Intensive care unit',
-                    style: GoogleFonts.rubik(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w300,
+                    style: AppStyles.textStyleR14L.copyWith(
                       color: Color(0xff808080),
                     ),
                   ),
@@ -92,11 +88,8 @@ class NurseryItem extends StatelessWidget {
                       ),
                       Text(
                         'open',
-                        style: GoogleFonts.rubik(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.greenLightColor,
-                        ),
+                        style: AppStyles.textStyleR16M
+                            .copyWith(color: AppColors.greenLightColor),
                       ),
                       const Spacer(),
                     ],
@@ -109,4 +102,4 @@ class NurseryItem extends StatelessWidget {
       ),
     );
   }
-} 
+}

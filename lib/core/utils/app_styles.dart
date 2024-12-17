@@ -66,4 +66,22 @@ abstract class AppStyles {
     fontSize: 26.sp,
     fontWeight: FontWeight.w700,
   );
+
+  // rubic font
+  static final textStyleR16M = GoogleFonts.rubik(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+  );
+  static final textStyleR14L = GoogleFonts.rubik(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w300,
+  );
+  static final textStyleR18M = GoogleFonts.rubik(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w500,
+  );
+  static final textStyleR20M = GoogleFonts.rubik(
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w500,
+  );
 }

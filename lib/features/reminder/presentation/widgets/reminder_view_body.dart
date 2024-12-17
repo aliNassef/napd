@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/core/widgets/spacers.dart';
-import 'nursery_item.dart';
 
-class NurseryViewBody extends StatelessWidget {
-  const NurseryViewBody({super.key});
+import 'reminder_item.dart';
+
+class ReminderViewBody extends StatelessWidget {
+  const ReminderViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
       padding: EdgeInsets.symmetric(vertical: 20.h),
-      itemBuilder: (_, int index) {
-        return NurseryItem();
-      },
-      separatorBuilder: (_, __) => VerticalSpace(16),
+      itemBuilder: (_, __) => ReminderItem(),
       itemCount: 10,
+      separatorBuilder: (_, __) => VerticalSpace(16),
     );
   }
 }
