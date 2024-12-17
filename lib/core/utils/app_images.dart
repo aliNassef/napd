@@ -6,6 +6,7 @@ abstract class AppImages {
   static const String boyAccount = 'assets/images/boy_account.jpg';
   static const String girlAccount = 'assets/images/girl_account.png';
   static const String dummyGirl = 'assets/images/dummy_girl.png';
+  static const String drawer = 'assets/images/drawer.png';
 }
 
 abstract class AppSvgs {

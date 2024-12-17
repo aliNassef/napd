@@ -7,8 +7,7 @@ class LayoutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      bottomNavigationBar: LayoutViewBody(),
+      body: LayoutViewBody(),
     );
   }
 }
