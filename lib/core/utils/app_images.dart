@@ -7,6 +7,7 @@ abstract class AppImages {
   static const String girlAccount = 'assets/images/girl_account.png';
   static const String dummyGirl = 'assets/images/dummy_girl.png';
   static const String drawer = 'assets/images/drawer.png';
+  static const String camera = 'assets/images/Camera.png';
 }
 
 abstract class AppSvgs {
@@ -30,5 +31,4 @@ abstract class AppSvgs {
   static const String dateIcon = 'assets/images/date.svg';
   static const String growthIcon = 'assets/images/growth.svg';
   static const String vaccineIcon = 'assets/images/vaccine_icon.svg';
-  static const String cameraIcon = 'assets/images/camera_icon.svg';
 }

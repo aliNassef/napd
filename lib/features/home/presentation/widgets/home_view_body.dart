@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:napd/core/extensions/mediaquery_size.dart';
 import 'package:napd/core/utils/app_colors.dart';
 import 'package:napd/core/utils/app_images.dart';
@@ -69,8 +68,8 @@ class HomeViewBody extends StatelessWidget {
                   ),
                 ),
                 HorizantalSpace(23),
-                SvgPicture.asset(
-                  AppSvgs.cameraIcon,
+                Image.asset(
+                  AppImages.camera,
                 ),
               ],
             ),
