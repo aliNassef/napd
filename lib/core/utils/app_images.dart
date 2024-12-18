@@ -28,4 +28,7 @@ abstract class AppSvgs {
   static const String unFavIcon = 'assets/images/unfav_icon.svg';
   static const String favIcon = 'assets/images/fav_icon.svg';
   static const String dateIcon = 'assets/images/date.svg';
+  static const String growthIcon = 'assets/images/growth.svg';
+  static const String vaccineIcon = 'assets/images/vaccine_icon.svg';
+  static const String cameraIcon = 'assets/images/camera_icon.svg';
 }

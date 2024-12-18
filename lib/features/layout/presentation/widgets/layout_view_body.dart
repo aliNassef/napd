@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:napd/features/home/presentation/view/home_view.dart';
 import 'package:napd/features/nursery/presentation/view/nursery_view.dart';
 import 'package:napd/features/reminder/presentation/view/reminder_view.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -25,9 +26,7 @@ class _LayoutViewBodyState extends State<LayoutViewBody> {
 
   List<Widget> _buildScreens() {
     return [
-      Container(
-        color: Colors.white,
-      ),
+      HomeView(),
       NurseryView(),
       ReminderView(),
       Container(
@@ -119,7 +118,7 @@ class _LayoutViewBodyState extends State<LayoutViewBody> {
       handleAndroidBackButtonPress: true,
       resizeToAvoidBottomInset: true,
       stateManagement: true, // Default is true.
-      bottomScreenMargin: kBottomNavigationBarHeight ,
+      bottomScreenMargin: kBottomNavigationBarHeight,
       hideNavigationBarWhenKeyboardAppears: true,
       popBehaviorOnSelectedNavBarItemPress: PopBehavior.once,
       padding: EdgeInsets.only(top: 16.h),
