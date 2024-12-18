@@ -8,6 +8,8 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
+import '../../../groups/presentation/view/group_view.dart';
+
 class LayoutViewBody extends StatefulWidget {
   const LayoutViewBody({super.key});
 
@@ -29,9 +31,7 @@ class _LayoutViewBodyState extends State<LayoutViewBody> {
       HomeView(),
       NurseryView(),
       ReminderView(),
-      Container(
-        color: Colors.lightBlue,
-      ),
+      GroupView(),
       Container(
         color: Colors.blueGrey,
       ),

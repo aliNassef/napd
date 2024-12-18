@@ -4,7 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 
 abstract class AppStyles {
   // textStyle + Size + Weight
-
+  // 18
+  static final textStyle18SB = GoogleFonts.roboto(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w600,
+  );
   // 10
   static final textStyle10SB = GoogleFonts.roboto(
     fontSize: 10.sp,
