@@ -9,20 +9,22 @@ import 'core/widgets/custom_bloc_observer.dart';
 import 'napd_app.dart';
 
 void main() async {
+  await ScreenUtil.ensureScreenSize();
   WidgetsFlutterBinding.ensureInitialized();
   await setupServiceLocator();
   await CacheHelper.init();
   await ScreenUtil.ensureScreenSize();
   Bloc.observer = CustomBlocObserver();
   bool useDevicePreview = true;
-  if (useDevicePreview) {
-    runApp(
-      DevicePreview(
-        enabled: !kReleaseMode,
-        builder: (context) => const Napd(),
-      ),
-    );
-  } else {
-    runApp(const Napd());
-  }
+  // if (useDevicePreview) {
+  //   runApp(
+  //     DevicePreview(
+  //       enabled: !kReleaseMode,
+  //       builder: (context) => const Napd(),
+  //     ),
+  //   );
+  // } else {
+  //   runApp(const Napd());
+  // }
+  runApp(const Napd());
 }

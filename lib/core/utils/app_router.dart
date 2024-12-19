@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:napd/features/splash/presentation/view/splash_page.dart';
 
 import '../../features/boarding/presentation/view/boarding_view.dart';
 import '../../features/boarding/presentation/view/start_view.dart';
@@ -12,6 +13,10 @@ import '../../features/tips&tricks/presentation/view/tips_and_tricks_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
+    case SplashPage.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const SplashPage(),
+      );
     case BoardingView.routeName:
       return MaterialPageRoute(
         builder: (context) => const BoardingView(),
