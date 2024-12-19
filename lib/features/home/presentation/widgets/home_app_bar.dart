@@ -1,16 +1,15 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'custom_search_bar.dart';
-import '../utils/app_images.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({
+import '../../../../core/utils/app_images.dart';
+import '../../../../core/widgets/custom_search_bar.dart';
+
+class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const HomeAppBar({
     super.key,
-    required this.title,
-    this.hasLeading = false,
   });
-  final String title;
-  final bool hasLeading;
+
   @override
   Widget build(BuildContext context) {
     return AppBar(

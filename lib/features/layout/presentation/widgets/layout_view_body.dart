@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:napd/features/nursery/presentation/view/nursery_view.dart';
-import 'package:napd/features/reminder/presentation/view/reminder_view.dart';
+import '../../../home/presentation/view/home_view.dart';
+import '../../../nursery/presentation/view/nursery_view.dart';
+import '../../../reminder/presentation/view/reminder_view.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
+
+import '../../../groups/presentation/view/group_view.dart';
 
 class LayoutViewBody extends StatefulWidget {
   const LayoutViewBody({super.key});
@@ -25,14 +28,10 @@ class _LayoutViewBodyState extends State<LayoutViewBody> {
 
   List<Widget> _buildScreens() {
     return [
-      Container(
-        color: Colors.white,
-      ),
+      HomeView(),
       NurseryView(),
       ReminderView(),
-      Container(
-        color: Colors.lightBlue,
-      ),
+      GroupView(),
       Container(
         color: Colors.blueGrey,
       ),
@@ -119,7 +118,7 @@ class _LayoutViewBodyState extends State<LayoutViewBody> {
       handleAndroidBackButtonPress: true,
       resizeToAvoidBottomInset: true,
       stateManagement: true, // Default is true.
-      bottomScreenMargin: kBottomNavigationBarHeight ,
+      bottomScreenMargin: kBottomNavigationBarHeight,
       hideNavigationBarWhenKeyboardAppears: true,
       popBehaviorOnSelectedNavBarItemPress: PopBehavior.once,
       padding: EdgeInsets.only(top: 16.h),

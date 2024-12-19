@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../core/widgets/background_widget.dart';
 
+import '../../../../core/widgets/background_widget.dart';
 import '../widgets/login_view_body.dart';
 
 class LoginView extends StatelessWidget {
