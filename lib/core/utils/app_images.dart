@@ -31,4 +31,5 @@ abstract class AppSvgs {
   static const String dateIcon = 'assets/images/date.svg';
   static const String growthIcon = 'assets/images/growth.svg';
   static const String vaccineIcon = 'assets/images/vaccine_icon.svg';
+  static const String videoPlayerIcon = 'assets/images/video_player_icon.svg';
 }

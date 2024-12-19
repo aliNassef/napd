@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/for_you_view_body.dart';
 import '../widgets/group_app_bar.dart';
 import '../widgets/group_view_body.dart';
 
@@ -21,7 +22,7 @@ class _GroupViewState extends State<GroupView> {
         body: TabBarView(
           children: [
             GroupViewBody(),
-            Text('ccc'),
+            ForyouViewBody(),
             Text('bbb'),
           ],
         ),
