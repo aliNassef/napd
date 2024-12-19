@@ -11,26 +11,31 @@ class DrawerItem extends StatelessWidget {
     super.key,
     required this.img,
     required this.text,
+    this.onTap,
   });
   final String img;
   final String text;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SvgPicture.asset(
-          img,
-          width: 30.w,
-          height: 30.h,
-        ),
-        HorizantalSpace(16),
-        Text(
-          text,
-          style: AppStyles.textStyle24R.copyWith(
-            color: AppColors.primaryColor,
+    return GestureDetector(
+      onTap: onTap,
+      child: Row(
+        children: [
+          SvgPicture.asset(
+            img,
+            width: 30.w,
+            height: 30.h,
           ),
-        ),
-      ],
+          HorizantalSpace(16),
+          Text(
+            text,
+            style: AppStyles.textStyle24R.copyWith(
+              color: AppColors.primaryColor,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

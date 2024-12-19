@@ -9,6 +9,9 @@ class CustomSearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onTapOutside: (event) {
+        FocusScope.of(context).unfocus();
+      },
       cursorHeight: 15.h,
       autocorrect: true,
       decoration: InputDecoration(

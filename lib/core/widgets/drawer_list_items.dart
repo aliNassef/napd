@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/features/tips&tricks/presentation/view/tips_and_tricks_view.dart';
 import '../utils/app_images.dart';
 import 'drawer_item.dart';
 
@@ -21,6 +21,14 @@ class DrawerListItems extends StatelessWidget {
             img: AppSvgs.profile2Icon,
           ),
           DrawerItem(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => TipsAndTricksView(),
+                ),
+              );
+            },
             text: 'Tips & Tricks',
             img: AppSvgs.tipsTricsIcon,
           ),

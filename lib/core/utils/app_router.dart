@@ -8,6 +8,7 @@ import '../../features/login/presentation/view/select_baby_account_view.dart';
 import '../../features/nursery/presentation/view/nursery_view.dart';
 import '../../features/reminder/presentation/view/reminder_view.dart';
 import '../../features/signup/presentation/view/signup_view.dart';
+import '../../features/tips&tricks/presentation/view/tips_and_tricks_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
@@ -42,6 +43,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case ReminderView.routeName:
       return MaterialPageRoute(
         builder: (context) => const ReminderView(),
+      );
+    case TipsAndTricksView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const TipsAndTricksView(),
       );
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
