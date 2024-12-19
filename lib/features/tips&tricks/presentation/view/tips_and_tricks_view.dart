@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:napd/features/tips&tricks/presentation/widgets/tips_and_tricks_app_bar.dart';
+import '../widgets/tips_and_tricks_app_bar.dart';
 
 class TipsAndTricksView extends StatelessWidget {
   const TipsAndTricksView({super.key});

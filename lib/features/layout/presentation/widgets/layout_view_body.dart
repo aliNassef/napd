@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:napd/features/home/presentation/view/home_view.dart';
-import 'package:napd/features/nursery/presentation/view/nursery_view.dart';
-import 'package:napd/features/reminder/presentation/view/reminder_view.dart';
+import '../../../home/presentation/view/home_view.dart';
+import '../../../nursery/presentation/view/nursery_view.dart';
+import '../../../reminder/presentation/view/reminder_view.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';

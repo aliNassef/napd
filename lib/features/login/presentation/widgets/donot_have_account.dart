@@ -1,8 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import '../../../signup/presentation/view/signup_view.dart';
+
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
+import '../../../signup/presentation/view/signup_view.dart';
 
 class DonotHaveAccount extends StatelessWidget {
   const DonotHaveAccount({

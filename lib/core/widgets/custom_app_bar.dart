@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:napd/core/widgets/custom_search_bar.dart';
+import 'custom_search_bar.dart';
 import '../utils/app_images.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
