@@ -1,10 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:napd/features/reminder/presentation/widgets/reminder_date.dart';
 import '../../../../core/utils/app_colors.dart';
-import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/spacers.dart';
 
@@ -30,12 +27,7 @@ class ReminderItem extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 24.h),
-            child: SvgPicture.asset(
-              AppSvgs.dateIcon,
-            ),
-          ),
+          ReminderDate(),
           Expanded(
             child: Padding(
               padding: EdgeInsets.only(right: 10.w),

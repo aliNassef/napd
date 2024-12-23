@@ -13,8 +13,13 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupServiceLocator();
   await CacheHelper.init();
+  await ScreenUtil.ensureScreenSize();
   Bloc.observer = CustomBlocObserver();
+<<<<<<< HEAD
   bool useDevicePreview = false;
+=======
+  bool useDevicePreview = true;
+>>>>>>> f86411b2e59fd07321348b248a7ea4e53fcbb5c6
   if (useDevicePreview) {
     runApp(
       DevicePreview(
@@ -25,5 +30,8 @@ void main() async {
   } else {
     runApp(const Napd());
   }
+<<<<<<< HEAD
  // runApp(const Napd());
+=======
+>>>>>>> f86411b2e59fd07321348b248a7ea4e53fcbb5c6
 }

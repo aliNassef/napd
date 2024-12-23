@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:napd/features/add_baby/presentation/view/add_baby_page.dart';
 import 'package:napd/features/splash/presentation/view/splash_page.dart';
+=======
+import '../../features/splash/presentation/view/splash_page.dart';
+>>>>>>> f86411b2e59fd07321348b248a7ea4e53fcbb5c6
 
 import '../../features/boarding/presentation/view/boarding_view.dart';
 import '../../features/boarding/presentation/view/start_view.dart';
