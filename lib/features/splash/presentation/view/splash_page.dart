@@ -1,16 +1,11 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'package:napd/core/widgets/background_widget.dart';
-import 'package:napd/features/add_baby/presentation/view/add_baby_page.dart';
-import 'package:napd/features/layout/presentation/view/layout_view.dart';
-import 'package:napd/features/splash/presentation/widgets/splash_animation_widget.dart';
-=======
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/features/add_baby/presentation/view/add_baby_page.dart';
 import '../../../../core/widgets/background_widget.dart';
 import '../../../layout/presentation/view/layout_view.dart';
 import '../widgets/splash_animation_widget.dart';
->>>>>>> f86411b2e59fd07321348b248a7ea4e53fcbb5c6
 
 import '../../../../core/utils/app_images.dart';
 
@@ -24,6 +19,7 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   Timer? _timer;
+
   @override
   void initState() {
     super.initState();
@@ -36,13 +32,6 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-    Timer(const Duration(seconds: 4), () {
-      Navigator.pushReplacementNamed(context, AddBabyPage.routeName);
-    });
-
-=======
->>>>>>> f86411b2e59fd07321348b248a7ea4e53fcbb5c6
     return Scaffold(
       body: BackgroundWidget(
         child: Center(
@@ -61,7 +50,7 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   @override
-  dispose() {
+  void dispose() {
     _timer?.cancel();
     super.dispose();
   }
