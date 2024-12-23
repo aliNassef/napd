@@ -1,4 +1,3 @@
-// lib/features/add_baby/presentation/widgets/baby_image.dart
 import 'package:flutter/material.dart';
 
 class BabyImage extends StatelessWidget {
