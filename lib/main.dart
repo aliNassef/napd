@@ -16,15 +16,14 @@ void main() async {
   await ScreenUtil.ensureScreenSize();
   Bloc.observer = CustomBlocObserver();
   bool useDevicePreview = true;
-  // if (useDevicePreview) {
-  //   runApp(
-  //     DevicePreview(
-  //       enabled: !kReleaseMode,
-  //       builder: (context) => const Napd(),
-  //     ),
-  //   );
-  // } else {
-  //   runApp(const Napd());
-  // }
-  runApp(const Napd());
+  if (useDevicePreview) {
+    runApp(
+      DevicePreview(
+        enabled: !kReleaseMode,
+        builder: (context) => const Napd(),
+      ),
+    );
+  } else {
+    runApp(const Napd());
+  }
 }

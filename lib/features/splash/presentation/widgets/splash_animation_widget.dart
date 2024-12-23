@@ -5,10 +5,10 @@ class SplashAnimationWidget extends StatefulWidget {
   final Duration duration;
 
   const SplashAnimationWidget({
-    Key? key,
+    super.key,
     required this.child,
     this.duration = const Duration(seconds: 2),
-  }) : super(key: key);
+  });
 
   @override
   _SplashAnimationWidgetState createState() => _SplashAnimationWidgetState();
@@ -36,16 +36,16 @@ class _SplashAnimationWidgetState extends State<SplashAnimationWidget>
   }
 
   @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return FadeTransition(
       opacity: _animation,
       child: widget.child,
     );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }
