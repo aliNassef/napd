@@ -14,16 +14,16 @@ void main() async {
   await setupServiceLocator();
   await CacheHelper.init();
   Bloc.observer = CustomBlocObserver();
-  bool useDevicePreview = true;
-  // if (useDevicePreview) {
-  //   runApp(
-  //     DevicePreview(
-  //       enabled: !kReleaseMode,
-  //       builder: (context) => const Napd(),
-  //     ),
-  //   );
-  // } else {
-  //   runApp(const Napd());
-  // }
-  runApp(const Napd());
+  bool useDevicePreview = false;
+  if (useDevicePreview) {
+    runApp(
+      DevicePreview(
+        enabled: !kReleaseMode,
+        builder: (context) => const Napd(),
+      ),
+    );
+  } else {
+    runApp(const Napd());
+  }
+ // runApp(const Napd());
 }

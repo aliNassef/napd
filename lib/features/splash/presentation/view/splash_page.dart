@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:napd/core/widgets/background_widget.dart';
+import 'package:napd/features/add_baby/presentation/view/add_baby_page.dart';
 import 'package:napd/features/layout/presentation/view/layout_view.dart';
 import 'package:napd/features/splash/presentation/widgets/splash_animation_widget.dart';
 
@@ -12,7 +13,7 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Timer(const Duration(seconds: 4), () {
-      Navigator.pushReplacementNamed(context, LayoutView.routeName);
+      Navigator.pushReplacementNamed(context, AddBabyPage.routeName);
     });
 
     return Scaffold(
