@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:napd/core/widgets/background_widget.dart';
-import 'package:napd/features/layout/presentation/view/layout_view.dart';
-import 'package:napd/features/splash/presentation/widgets/splash_animation_widget.dart';
+import '../../../../core/widgets/background_widget.dart';
+import '../../../layout/presentation/view/layout_view.dart';
+import '../widgets/splash_animation_widget.dart';
 
 import '../../../../core/utils/app_images.dart';
 
