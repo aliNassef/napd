@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:napd/features/add_baby/presentation/view/add_baby_page.dart';
 import '../../../../core/widgets/background_widget.dart';
 import '../../../layout/presentation/view/layout_view.dart';
 import '../widgets/splash_animation_widget.dart';
