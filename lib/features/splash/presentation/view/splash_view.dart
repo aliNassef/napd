@@ -8,15 +8,15 @@ import '../widgets/splash_animation_widget.dart';
 
 import '../../../../core/utils/app_images.dart';
 
-class SplashPage extends StatefulWidget {
+class SplashView extends StatefulWidget {
   static const String routeName = '/splash';
-  const SplashPage({super.key});
+  const SplashView({super.key});
 
   @override
-  State<SplashPage> createState() => _SplashPageState();
+  State<SplashView> createState() => _SplashViewState();
 }
 
-class _SplashPageState extends State<SplashPage> {
+class _SplashViewState extends State<SplashView> {
   Timer? _timer;
 
   @override

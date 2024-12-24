@@ -2,7 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'core/utils/app_themes.dart';
-import 'features/splash/presentation/view/splash_page.dart';
+import 'features/splash/presentation/view/splash_view.dart';
 import 'core/utils/app_router.dart';
 
 class Napd extends StatelessWidget {
@@ -24,7 +24,7 @@ class Napd extends StatelessWidget {
         builder: DevicePreview.appBuilder,
         theme: getLightTheme(),
         onGenerateRoute: onGenerateRoute,
-        initialRoute: SplashPage.routeName,
+        initialRoute: SplashView.routeName,
       ),
     );
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:napd/features/add_baby/presentation/view/add_baby_page.dart';
-import '../../features/splash/presentation/view/splash_page.dart';
+import '../../features/splash/presentation/view/splash_view.dart';
 
 import '../../features/boarding/presentation/view/boarding_view.dart';
 import '../../features/boarding/presentation/view/start_view.dart';
@@ -14,9 +14,9 @@ import '../../features/tips&tricks/presentation/view/tips_and_tricks_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
-    case SplashPage.routeName:
+    case SplashView.routeName:
       return MaterialPageRoute(
-        builder: (context) => const SplashPage(),
+        builder: (context) => const SplashView(),
       );
     case AddBabyPage.routeName:
       return MaterialPageRoute(
