@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/features/add_baby/presentation/view/add_baby_page.dart';
+import 'package:napd/features/baby_account/presentation/view/baby_account_view.dart';
 import '../../../../core/widgets/background_widget.dart';
 import '../../../layout/presentation/view/layout_view.dart';
 import '../widgets/splash_animation_widget.dart';
@@ -27,7 +28,7 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   void _execuateNav() {
-    Navigator.pushReplacementNamed(context, LayoutView.routeName);
+    Navigator.pushReplacementNamed(context, BabyAccountView.routeName);
   }
 
   @override

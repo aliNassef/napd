@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:napd/features/add_baby/presentation/view/add_baby_page.dart';
+import 'package:napd/features/baby_account/presentation/view/baby_account_view.dart';
 import '../../features/splash/presentation/view/splash_page.dart';
 
 import '../../features/boarding/presentation/view/boarding_view.dart';
@@ -21,6 +22,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case AddBabyPage.routeName:
       return MaterialPageRoute(
         builder: (context) => const AddBabyPage(),
+      );
+    case BabyAccountView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const BabyAccountView(),
       );
     case BoardingView.routeName:
       return MaterialPageRoute(

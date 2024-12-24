@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:napd/core/utils/app_colors.dart';
+import 'package:napd/core/utils/app_styles.dart';
 import 'package:napd/core/widgets/background_widget.dart';
 import 'package:napd/core/widgets/default_app_button.dart';
+import 'package:napd/core/widgets/spacers.dart';
 import 'package:napd/features/add_baby/presentation/widget/baby_image.dart';
 
 class AddBabyPage extends StatelessWidget {
@@ -19,17 +21,15 @@ class AddBabyPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const Text(
+                  Text(
                     "Add your baby",
-                    style: TextStyle(
-                      fontSize: 34,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                    style: AppStyles.textStyle48B.copyWith(
+                      color: AppColors.greyColor,
                     ),
                   ),
-                  const SizedBox(height: 30),
+                  const VerticalSpace(30),
                   const BabyImage(),
-                  const SizedBox(height: 55),
+                  const VerticalSpace(55),
                   DefaultAppButton(
                     text: "Add",
                     onPressed: () {},
