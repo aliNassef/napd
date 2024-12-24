@@ -1,10 +1,8 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'core/utils/app_themes.dart';
 import 'features/splash/presentation/view/splash_page.dart';
-import 'core/utils/app_colors.dart';
 import 'core/utils/app_router.dart';
 
 class Napd extends StatelessWidget {
@@ -24,17 +22,7 @@ class Napd extends StatelessWidget {
         title: 'Napd',
         locale: DevicePreview.locale(context),
         builder: DevicePreview.appBuilder,
-        theme: ThemeData(
-          fontFamily: GoogleFonts.roboto().fontFamily,
-          scaffoldBackgroundColor: Colors.white,
-          colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
-          useMaterial3: true,
-          appBarTheme: AppBarTheme(
-            systemOverlayStyle: SystemUiOverlayStyle(
-              statusBarColor: Colors.transparent,
-            ),
-          ),
-        ),
+        theme: getLightTheme(),
         onGenerateRoute: onGenerateRoute,
         initialRoute: SplashPage.routeName,
       ),
