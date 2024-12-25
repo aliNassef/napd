@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:napd/features/add_baby/presentation/view/add_baby_page.dart';
+import '../../features/add_baby/presentation/view/add_baby_page.dart';
 import '../../features/splash/presentation/view/splash_view.dart';
 
 import '../../features/boarding/presentation/view/boarding_view.dart';

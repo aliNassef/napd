@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
- import 'package:napd/core/widgets/spacers.dart';
+import '../../../../core/widgets/spacers.dart';
 import 'tip_item_content.dart';
 
 class TipsAndTricksViewBody extends StatelessWidget {
