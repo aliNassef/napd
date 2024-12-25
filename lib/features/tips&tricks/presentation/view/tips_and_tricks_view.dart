@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/tips_and_trick_view_body.dart';
 import '../widgets/tips_and_tricks_app_bar.dart';
 
 class TipsAndTricksView extends StatelessWidget {
@@ -8,8 +9,8 @@ class TipsAndTricksView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: TipsAndTricksAppBar(),
-      body: Center(
-        child: Text('Tips and Tricks'),
+      body: SafeArea(
+        child: TipsAndTricksViewBody(),
       ),
     );
   }

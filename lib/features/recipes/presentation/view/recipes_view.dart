@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:napd/features/recipes/presentation/widgets/recipes_view_body.dart';
 import '../widgets/recipes_app_bar.dart';
 
 class RecipesView extends StatelessWidget {
@@ -8,7 +9,9 @@ class RecipesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: RecipeTipsAppBar(),
-      body: Container(),
+      body: SafeArea(
+        child: RecipesViewBody(),
+      ),
     );
   }
 }
