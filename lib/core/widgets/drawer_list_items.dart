@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../features/parenting_resources/presentation/views/recipes_view.dart';
+import '../../features/settings/presentation/view/settings_view.dart';
 import '../extensions/padding_extension.dart';
-
-import '../../features/recipes/presentation/view/recipes_view.dart';
 import '../../features/shop/presentation/view/shop_view.dart';
-import '../../features/tips&tricks/presentation/view/tips_and_tricks_view.dart';
+import '../../features/parenting_resources/presentation/views/tips_and_tricks_view.dart';
 import '../utils/app_images.dart';
 import 'drawer_item.dart';
 
@@ -67,6 +67,14 @@ class DrawerListItems extends StatelessWidget {
           img: AppSvgs.recipesIcon,
         ),
         DrawerItem(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SettingsView(),
+              ),
+            );
+          },
           text: 'Settings',
           img: AppSvgs.settingIcon,
         ),

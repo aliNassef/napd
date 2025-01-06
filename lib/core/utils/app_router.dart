@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../features/add_baby/presentation/view/add_baby_page.dart';
+import '../../features/settings/presentation/view/settings_view.dart';
 import '../../features/splash/presentation/view/splash_view.dart';
 
 import '../../features/boarding/presentation/view/boarding_view.dart';
@@ -10,7 +11,7 @@ import '../../features/login/presentation/view/select_baby_account_view.dart';
 import '../../features/nursery/presentation/view/nursery_view.dart';
 import '../../features/reminder/presentation/view/reminder_view.dart';
 import '../../features/signup/presentation/view/signup_view.dart';
-import '../../features/tips&tricks/presentation/view/tips_and_tricks_view.dart';
+import '../../features/parenting_resources/presentation/views/tips_and_tricks_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
@@ -49,6 +50,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case NurseryView.routeName:
       return MaterialPageRoute(
         builder: (context) => const NurseryView(),
+      );
+    case SettingsView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const SettingsView(),
       );
     case ReminderView.routeName:
       return MaterialPageRoute(

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
- import 'tip_item_content.dart';
-class TipItem extends StatelessWidget {
+
+import 'tip_item_content.dart';
+ class TipItem extends StatelessWidget {
   const TipItem({
     super.key,
   });
