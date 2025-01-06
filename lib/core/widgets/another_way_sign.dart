@@ -41,6 +41,6 @@ class AnotherWaySign extends StatelessWidget {
           ),
         ),
       ],
-    ).withHorizantalPadding(16.w);
+    ).withHorizontalPadding(16.w);
   }
 }

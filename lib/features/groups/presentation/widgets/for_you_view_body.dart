@@ -29,7 +29,7 @@ class ForyouViewBody extends StatelessWidget {
                 ),
                 VerticalSpace(30),
               ],
-            ).withHorizantalPadding(16),
+            ).withHorizontalPadding(16),
           ),
           SliverGrid.builder(
             itemCount: 4,
@@ -55,7 +55,7 @@ class ForyouViewBody extends StatelessWidget {
                 ),
                 VerticalSpace(30),
               ],
-            ).withHorizantalPadding(16),
+            ).withHorizontalPadding(16),
           ),
           SliverGrid.builder(
             itemCount: 4,
@@ -81,7 +81,7 @@ class ForyouViewBody extends StatelessWidget {
                 ),
                 VerticalSpace(30),
               ],
-            ).withHorizantalPadding(16),
+            ).withHorizontalPadding(16),
           ),
           SliverToBoxAdapter(
             child: SizedBox(

@@ -18,6 +18,6 @@ class SocialMediaListItems extends StatelessWidget {
         SocialMediaItem(img: AppSvgs.googleIcon),
         SocialMediaItem(img: AppSvgs.appleIcon),
       ],
-    ).withHorizantalPadding(16);
+    ).withHorizontalPadding(16);
   }
 }

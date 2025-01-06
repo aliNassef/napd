@@ -46,6 +46,6 @@ class DefaultAppButton extends StatelessWidget {
           icon
         ],
       ),
-    ).withHorizantalPadding(padding);
+    ).withHorizontalPadding(padding);
   }
 }

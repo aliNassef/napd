@@ -71,6 +71,6 @@ class DrawerListItems extends StatelessWidget {
           img: AppSvgs.settingIcon,
         ),
       ],
-    ).withHorizantalPadding(16);
+    ).withHorizontalPadding(16);
   }
 }

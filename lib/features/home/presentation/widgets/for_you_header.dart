@@ -29,6 +29,6 @@ class ForyouHeader extends StatelessWidget {
           ),
         )
       ],
-    ).withHorizantalPadding(16);
+    ).withHorizontalPadding(16);
   }
 }
