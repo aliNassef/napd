@@ -9,7 +9,6 @@ import 'core/widgets/custom_bloc_observer.dart';
 import 'napd_app.dart';
 
 void main() async {
-  await ScreenUtil.ensureScreenSize();
   WidgetsFlutterBinding.ensureInitialized();
   await setupServiceLocator();
   await CacheHelper.init();

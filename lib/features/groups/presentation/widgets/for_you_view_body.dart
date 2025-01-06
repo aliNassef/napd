@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/spacers.dart';
@@ -16,22 +17,19 @@ class ForyouViewBody extends StatelessWidget {
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  VerticalSpace(30),
-                  Text(
-                    'Articles',
-                    style: AppStyles.textStyle24B.copyWith(
-                      color: AppColors.darkBlueColor,
-                    ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                VerticalSpace(30),
+                Text(
+                  'Articles',
+                  style: AppStyles.textStyle24B.copyWith(
+                    color: AppColors.darkBlueColor,
                   ),
-                  VerticalSpace(30),
-                ],
-              ),
-            ),
+                ),
+                VerticalSpace(30),
+              ],
+            ).withHorizantalPadding(16),
           ),
           SliverGrid.builder(
             itemCount: 4,
@@ -45,22 +43,19 @@ class ForyouViewBody extends StatelessWidget {
             itemBuilder: (_, index) => ArticleItem(),
           ),
           SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  VerticalSpace(30),
-                  Text(
-                    'Videos',
-                    style: AppStyles.textStyle24B.copyWith(
-                      color: AppColors.darkBlueColor,
-                    ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                VerticalSpace(30),
+                Text(
+                  'Videos',
+                  style: AppStyles.textStyle24B.copyWith(
+                    color: AppColors.darkBlueColor,
                   ),
-                  VerticalSpace(30),
-                ],
-              ),
-            ),
+                ),
+                VerticalSpace(30),
+              ],
+            ).withHorizantalPadding(16),
           ),
           SliverGrid.builder(
             itemCount: 4,
@@ -74,22 +69,19 @@ class ForyouViewBody extends StatelessWidget {
             itemBuilder: (_, index) => VideoItem(),
           ),
           SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  VerticalSpace(30),
-                  Text(
-                    'Podcasts',
-                    style: AppStyles.textStyle24B.copyWith(
-                      color: AppColors.darkBlueColor,
-                    ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                VerticalSpace(30),
+                Text(
+                  'Podcasts',
+                  style: AppStyles.textStyle24B.copyWith(
+                    color: AppColors.darkBlueColor,
                   ),
-                  VerticalSpace(30),
-                ],
-              ),
-            ),
+                ),
+                VerticalSpace(30),
+              ],
+            ).withHorizantalPadding(16),
           ),
           SliverToBoxAdapter(
             child: SizedBox(
