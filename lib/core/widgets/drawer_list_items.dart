@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:napd/core/extensions/padding_extension.dart';
+import '../extensions/padding_extension.dart';
 
 import '../../features/recipes/presentation/view/recipes_view.dart';
 import '../../features/shop/presentation/view/shop_view.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/extensions/padding_extension.dart';
+import '../extensions/padding_extension.dart';
 
 import '../utils/app_styles.dart';
 
