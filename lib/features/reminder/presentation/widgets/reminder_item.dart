@@ -36,14 +36,14 @@ class ReminderItem extends StatelessWidget {
                 children: [
                   Text(
                     'Sleeping time',
-                    style: AppStyles.textStyleR20M.copyWith(
+                    style: AppStyles.rubik20Medium.copyWith(
                       color: AppColors.primaryColor,
                     ),
                   ),
                   VerticalSpace(6),
                   Text(
                     'Know more about your toddler milestones milestones',
-                    style: AppStyles.textStyleR14L.copyWith(
+                    style: AppStyles.rubik14Light.copyWith(
                       color: Color(0xff808080),
                     ),
                     maxLines: 2,
@@ -52,7 +52,7 @@ class ReminderItem extends StatelessWidget {
                   VerticalSpace(8),
                   Text(
                     '10 pm : 11 pm',
-                    style: AppStyles.textStyleR14L.copyWith(
+                    style: AppStyles.rubik14Light.copyWith(
                       color: Color(0xff808080),
                     ),
                   ),

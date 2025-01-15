@@ -24,7 +24,7 @@ class TipItemContent extends StatelessWidget {
           children: [
             Text(
               'Tips for comfy Sleeping',
-              style: AppStyles.textStyle24SB.copyWith(
+              style: AppStyles.roboto24SemiBold.copyWith(
                 color: AppColors.darkBlueColor,
               ),
             ),
@@ -35,13 +35,13 @@ class TipItemContent extends StatelessWidget {
           children: [
             Text(
               '1.',
-              style: AppStyles.textStyle14R.copyWith(
+              style: AppStyles.roboto14Regular.copyWith(
                 color: AppColors.secondaryColor,
               ),
             ),
             Text(
               'Establish a Bedtime Routine:',
-              style: AppStyles.textStyle14R.copyWith(
+              style: AppStyles.roboto14Regular.copyWith(
                 color: AppColors.secondaryColor,
               ),
             ),
@@ -53,14 +53,14 @@ class TipItemContent extends StatelessWidget {
             children: [
               Text(
                 '  •  ',
-                style: AppStyles.textStyle14R.copyWith(
+                style: AppStyles.roboto14Regular.copyWith(
                   color: AppColors.darkBlueColor,
                 ),
               ),
               Expanded(
                 child: Text(
                   point,
-                  style: AppStyles.textStyle14R.copyWith(
+                  style: AppStyles.roboto14Regular.copyWith(
                     color: AppColors.darkBlueColor,
                   ),
                 ),

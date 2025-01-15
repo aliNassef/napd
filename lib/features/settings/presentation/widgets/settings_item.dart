@@ -37,7 +37,7 @@ class SettingsItem extends StatelessWidget {
         ),
         title: Text(
           title,
-          style: AppStyles.textStyle20B.copyWith(
+          style: AppStyles.roboto20Bold.copyWith(
             color: AppColors.darkBlueColor,
           ),
         ),

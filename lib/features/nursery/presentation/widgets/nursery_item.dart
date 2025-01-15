@@ -53,7 +53,7 @@ class NurseryItem extends StatelessWidget {
                     children: [
                       Text(
                         'El zahraa Hospital',
-                        style: AppStyles.textStyleR18M.copyWith(
+                        style: AppStyles.rubik18Medium.copyWith(
                           color: AppColors.darkBlueColor,
                         ),
                       ),
@@ -67,7 +67,7 @@ class NurseryItem extends StatelessWidget {
                   ),
                   Text(
                     'Intensive care unit',
-                    style: AppStyles.textStyleR14L.copyWith(
+                    style: AppStyles.rubik14Light.copyWith(
                       color: Color(0xff808080),
                     ),
                   ),
@@ -88,7 +88,7 @@ class NurseryItem extends StatelessWidget {
                       ),
                       Text(
                         'open',
-                        style: AppStyles.textStyleR16M
+                        style: AppStyles.rubik16Medium
                             .copyWith(color: AppColors.greenLightColor),
                       ),
                       const Spacer(),

@@ -38,7 +38,7 @@ class VideoItem extends StatelessWidget {
             ),
             child: Text(
               'What matters to a woman while raising children',
-              style: AppStyles.textStyle14R.copyWith(
+              style: AppStyles.roboto14Regular.copyWith(
                 color: Color(0xfff5f5f5),
               ),
               maxLines: 2,

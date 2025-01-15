@@ -45,7 +45,7 @@ class ReminderAppBar extends StatelessWidget implements PreferredSizeWidget {
             Expanded(
               child: Text(
                 'Remainder',
-                style: AppStyles.textStyle26B.copyWith(
+                style: AppStyles.roboto26Bold.copyWith(
                   color: AppColors.secondaryColor,
                 ),
                 textAlign: TextAlign.center,
@@ -57,7 +57,6 @@ class ReminderAppBar extends StatelessWidget implements PreferredSizeWidget {
           ],
         ),
       ),
-      
     );
   }
 

@@ -22,7 +22,7 @@ class CustomSearchBar extends StatelessWidget {
         enabledBorder: buildBorderStyle(),
         focusedBorder: buildBorderStyle(),
         hintText: 'Search here..',
-        hintStyle: AppStyles.textStyle14R.copyWith(
+        hintStyle: AppStyles.roboto14Regular.copyWith(
           color: AppColors.darkBlueColor,
         ),
         suffixIcon: Icon(

@@ -18,7 +18,7 @@ class SkipButton extends StatelessWidget {
         },
         child: Text(
           'Skip',
-          style: AppStyles.textStyle24R.copyWith(
+          style: AppStyles.roboto24Regular.copyWith(
             color: AppColors.secondaryColor,
           ),
         ),

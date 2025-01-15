@@ -24,7 +24,7 @@ class HomeViewBody extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: Text(
               'Laila',
-              style: AppStyles.textStyle24SB.copyWith(
+              style: AppStyles.roboto24SemiBold.copyWith(
                 color: AppColors.darkBlueColor,
               ),
             ),
@@ -34,7 +34,7 @@ class HomeViewBody extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: Text(
               'is 1 year and 3 months',
-              style: AppStyles.textStyle16R.copyWith(
+              style: AppStyles.roboto16Regular.copyWith(
                 color: AppColors.greenLightColor,
               ),
             ),
@@ -63,7 +63,7 @@ class HomeViewBody extends StatelessWidget {
               children: [
                 Text(
                   'Capture your moments ',
-                  style: AppStyles.textStyle24SB.copyWith(
+                  style: AppStyles.roboto24SemiBold.copyWith(
                     color: AppColors.darkBlueColor,
                   ),
                 ),

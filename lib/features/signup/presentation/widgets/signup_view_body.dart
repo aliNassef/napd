@@ -20,14 +20,14 @@ class SignupViewBody extends StatelessWidget {
         children: [
           Text(
             'Create account ',
-            style: AppStyles.textStyle48B.copyWith(
+            style: AppStyles.roboto48Bold.copyWith(
               color: AppColors.greyColor,
             ),
           ),
           VerticalSpace(35),
           Text(
             'Sign up to get started',
-            style: AppStyles.textStyle20R.copyWith(
+            style: AppStyles.roboto20Regular.copyWith(
               color: AppColors.greyColor.withValues(alpha: 0.6),
             ),
           ),
@@ -67,7 +67,7 @@ class SignupViewBody extends StatelessWidget {
               CustomCheckBox(),
               Text(
                 'Remember me',
-                style: AppStyles.textStyle20R.copyWith(
+                style: AppStyles.roboto20Regular.copyWith(
                   color: AppColors.secondaryColor,
                 ),
               ),

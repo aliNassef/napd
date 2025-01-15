@@ -30,7 +30,7 @@ class DrawerItem extends StatelessWidget {
           HorizantalSpace(16),
           Text(
             text,
-            style: AppStyles.textStyle24R.copyWith(
+            style: AppStyles.roboto24Regular.copyWith(
               color: AppColors.primaryColor,
             ),
           ),

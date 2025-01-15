@@ -29,7 +29,7 @@ class RecipeTipsAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       title: Text(
         'Recipes',
-        style: AppStyles.textStyle26B.copyWith(
+        style: AppStyles.roboto26Bold.copyWith(
           color: AppColors.secondaryColor,
         ),
       ),

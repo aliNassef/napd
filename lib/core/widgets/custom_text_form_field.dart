@@ -45,7 +45,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           vertical: 16.h,
         ),
         hintText: widget.hintText,
-        hintStyle: AppStyles.textStyle20R.copyWith(
+        hintStyle: AppStyles.roboto20Regular.copyWith(
           color: AppColors.greyColor.withValues(
             alpha: 0.6,
           ),

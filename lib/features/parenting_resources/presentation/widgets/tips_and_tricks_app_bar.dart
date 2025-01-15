@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -31,7 +30,7 @@ class TipsAndTricksAppBar extends StatelessWidget
       ),
       title: Text(
         'Tips and Tricks',
-        style: AppStyles.textStyle26B.copyWith(
+        style: AppStyles.roboto26Bold.copyWith(
           color: AppColors.secondaryColor,
         ),
       ),

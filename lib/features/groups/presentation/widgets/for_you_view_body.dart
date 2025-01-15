@@ -23,7 +23,7 @@ class ForyouViewBody extends StatelessWidget {
                 VerticalSpace(30),
                 Text(
                   'Articles',
-                  style: AppStyles.textStyle24B.copyWith(
+                  style: AppStyles.roboto24Bold.copyWith(
                     color: AppColors.darkBlueColor,
                   ),
                 ),
@@ -49,7 +49,7 @@ class ForyouViewBody extends StatelessWidget {
                 VerticalSpace(30),
                 Text(
                   'Videos',
-                  style: AppStyles.textStyle24B.copyWith(
+                  style: AppStyles.roboto24Bold.copyWith(
                     color: AppColors.darkBlueColor,
                   ),
                 ),
@@ -75,7 +75,7 @@ class ForyouViewBody extends StatelessWidget {
                 VerticalSpace(30),
                 Text(
                   'Podcasts',
-                  style: AppStyles.textStyle24B.copyWith(
+                  style: AppStyles.roboto24Bold.copyWith(
                     color: AppColors.darkBlueColor,
                   ),
                 ),

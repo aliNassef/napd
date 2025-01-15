@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -41,7 +40,7 @@ class ForyouItem extends StatelessWidget {
           ),
           Text(
             'Taking care of your mental health is an act of self-love ',
-            style: AppStyles.textStyle12R.copyWith(
+            style: AppStyles.roboto12Regular.copyWith(
               color: Color(0xff0D1814),
             ),
             overflow: TextOverflow.ellipsis,

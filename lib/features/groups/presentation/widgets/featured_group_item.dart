@@ -30,13 +30,13 @@ class FeaturedGroupItem extends StatelessWidget {
           children: [
             Text(
               'Parenting',
-              style: AppStyles.textStyle24SB.copyWith(
+              style: AppStyles.roboto24SemiBold.copyWith(
                 color: AppColors.darkBlueColor,
               ),
             ),
             Text(
               '3 M+ members',
-              style: AppStyles.textStyle20R.copyWith(
+              style: AppStyles.roboto20Regular.copyWith(
                 color: AppColors.secondaryColor,
               ),
             ),
@@ -59,7 +59,7 @@ class FeaturedGroupItem extends StatelessWidget {
           onPressed: () {},
           label: Text(
             'Join',
-            style: AppStyles.textStyle20R.copyWith(color: Colors.white),
+            style: AppStyles.roboto20Regular.copyWith(color: Colors.white),
           ),
           icon: Icon(
             Icons.add,

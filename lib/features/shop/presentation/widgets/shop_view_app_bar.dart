@@ -4,8 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 
-class ShopAppBar extends StatelessWidget
-    implements PreferredSizeWidget {
+class ShopAppBar extends StatelessWidget implements PreferredSizeWidget {
   const ShopAppBar({super.key});
 
   @override
@@ -30,7 +29,7 @@ class ShopAppBar extends StatelessWidget
       ),
       title: Text(
         'Shop',
-        style: AppStyles.textStyle26B.copyWith(
+        style: AppStyles.roboto26Bold.copyWith(
           color: AppColors.secondaryColor,
         ),
       ),

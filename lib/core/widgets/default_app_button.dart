@@ -39,7 +39,7 @@ class DefaultAppButton extends StatelessWidget {
         children: [
           Text(
             text,
-            style: AppStyles.textStyle24SB.copyWith(
+            style: AppStyles.roboto24SemiBold.copyWith(
               color: textColor,
             ),
           ),

@@ -28,19 +28,19 @@ class GroupAppBar extends StatelessWidget implements PreferredSizeWidget {
           Tab(
             child: Text(
               'Groups',
-              style: AppStyles.textStyle18SB,
+              style: AppStyles.roboto18SemiBold,
             ),
           ),
           Tab(
             child: Text(
               'For you',
-              style: AppStyles.textStyle18SB,
+              style: AppStyles.roboto18SemiBold,
             ),
           ),
           Tab(
             child: Text(
               'Chat Bot',
-              style: AppStyles.textStyle18SB,
+              style: AppStyles.roboto18SemiBold,
             ),
           ),
         ],

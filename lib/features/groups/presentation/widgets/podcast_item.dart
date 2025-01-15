@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -37,7 +36,7 @@ class PodcastItem extends StatelessWidget {
             ),
             child: Text(
               'Understanding mental health',
-              style: AppStyles.textStyle14R.copyWith(
+              style: AppStyles.roboto14Regular.copyWith(
                 color: Color(0xfff5f5f5),
               ),
             ),

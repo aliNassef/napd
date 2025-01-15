@@ -36,7 +36,7 @@ class FeatureItem extends StatelessWidget {
         VerticalSpace(7),
         Text(
           text,
-          style: AppStyles.textStyle10SB.copyWith(
+          style: AppStyles.roboto10SemiBold.copyWith(
             color: color,
           ),
         )

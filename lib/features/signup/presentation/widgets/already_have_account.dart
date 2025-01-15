@@ -17,7 +17,7 @@ class AlreadyHaveAccount extends StatelessWidget {
         children: [
           TextSpan(
             text: 'Already have account!',
-            style: AppStyles.textStyle24R.copyWith(
+            style: AppStyles.roboto24Regular.copyWith(
               color: AppColors.greyColor,
             ),
           ),
@@ -28,7 +28,7 @@ class AlreadyHaveAccount extends StatelessWidget {
                 Navigator.pushNamed(context, LoginView.routeName);
               },
             text: 'Login',
-            style: AppStyles.textStyle24R.copyWith(
+            style: AppStyles.roboto24Regular.copyWith(
               color: AppColors.secondaryColor,
             ),
           ),

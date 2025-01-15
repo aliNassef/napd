@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -31,7 +30,7 @@ class DrawerTopBar extends StatelessWidget {
             children: [
               Text(
                 'Mai Ali',
-                style: AppStyles.textStyle20B,
+                style: AppStyles.roboto20Bold,
               ),
               TextButton.icon(
                 style: ButtonStyle(
@@ -50,7 +49,7 @@ class DrawerTopBar extends StatelessWidget {
                 onPressed: () {},
                 label: Text(
                   'Baby',
-                  style: AppStyles.textStyle14R.copyWith(
+                  style: AppStyles.roboto14Regular.copyWith(
                     color: Colors.white,
                   ),
                 ),
