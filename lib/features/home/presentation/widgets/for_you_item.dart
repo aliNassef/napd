@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/utils/app_shadows.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 
@@ -19,11 +20,7 @@ class ForyouItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         color: Colors.white,
         boxShadow: [
-          BoxShadow(
-            blurRadius: 4,
-            offset: Offset(4, 4),
-            color: Colors.black.withValues(alpha: 0.2),
-          )
+          AppShadows.shadow1,
         ],
       ),
       child: Column(

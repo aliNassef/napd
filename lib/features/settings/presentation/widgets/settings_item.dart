@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:napd/core/utils/app_shadows.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
@@ -17,11 +18,7 @@ class SettingsItem extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [
-          BoxShadow(
-            color: Color(0xFF000000).withValues(alpha: 0.14),
-            blurRadius: 14,
-            offset: Offset(0, 0),
-          )
+          AppShadows.shadow6,
         ],
         //#00000014
         borderRadius: BorderRadius.circular(8),
