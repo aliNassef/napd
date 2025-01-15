@@ -5,6 +5,8 @@ import 'package:napd/core/utils/app_styles.dart';
 import 'package:napd/core/widgets/spacers.dart';
 
 class GenderSelector extends StatefulWidget {
+  const GenderSelector({super.key});
+
   @override
   _GenderSelectorState createState() => _GenderSelectorState();
 }

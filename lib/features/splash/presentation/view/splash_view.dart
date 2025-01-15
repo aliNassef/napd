@@ -4,19 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/features/baby_account/presentation/view/baby_account_view.dart';
 import '../../../../core/widgets/background_widget.dart';
+import '../../../layout/presentation/view/layout_view.dart';
 import '../widgets/splash_animation_widget.dart';
 
 import '../../../../core/utils/app_images.dart';
 
-class SplashPage extends StatefulWidget {
+class SplashView extends StatefulWidget {
   static const String routeName = '/splash';
-  const SplashPage({super.key});
+  const SplashView({super.key});
 
   @override
-  State<SplashPage> createState() => _SplashPageState();
+  State<SplashView> createState() => _SplashViewState();
 }
 
-class _SplashPageState extends State<SplashPage> {
+class _SplashViewState extends State<SplashView> {
   Timer? _timer;
 
   @override

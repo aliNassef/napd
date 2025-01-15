@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BabyImage extends StatelessWidget {
-  const BabyImage({Key? key}) : super(key: key);
+  const BabyImage({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -14,6 +14,8 @@ class BabyForm extends StatelessWidget {
   final TextEditingController weightController = TextEditingController();
   final TextEditingController heightController = TextEditingController();
 
+  BabyForm({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(

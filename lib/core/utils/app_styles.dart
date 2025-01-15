@@ -9,6 +9,10 @@ abstract class AppStyles {
     fontSize: 18.sp,
     fontWeight: FontWeight.w600,
   );
+  static final textStyle18R = GoogleFonts.roboto(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w400,
+  );
   // 10
   static final textStyle10SB = GoogleFonts.roboto(
     fontSize: 10.sp,

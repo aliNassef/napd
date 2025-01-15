@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../extensions/padding_extension.dart';
 
 import '../utils/app_styles.dart';
- 
+
 class DefaultAppButton extends StatelessWidget {
   const DefaultAppButton({
     super.key,
@@ -21,34 +21,31 @@ class DefaultAppButton extends StatelessWidget {
   final double padding;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: padding.w),
-      child: ElevatedButton(
-        style: ButtonStyle(
-          padding:
-              const WidgetStatePropertyAll(EdgeInsets.symmetric(vertical: 16)),
-          shape: WidgetStatePropertyAll(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
+    return ElevatedButton(
+      style: ButtonStyle(
+        padding:
+            const WidgetStatePropertyAll(EdgeInsets.symmetric(vertical: 16)),
+        shape: WidgetStatePropertyAll(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+        ),
+        alignment: Alignment.center,
+        backgroundColor: WidgetStatePropertyAll(backgroundColor),
+      ),
+      onPressed: onPressed,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            text,
+            style: AppStyles.textStyle24SB.copyWith(
+              color: textColor,
             ),
           ),
-          alignment: Alignment.center,
-          backgroundColor: WidgetStatePropertyAll(backgroundColor),
-        ),
-        onPressed: onPressed,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              text,
-              style: AppStyles.textStyle24SB.copyWith(
-                color: textColor,
-              ),
-            ),
-            icon
-          ],
-        ),
+          icon
+        ],
       ),
-    );
+    ).withHorizontalPadding(padding);
   }
 }
