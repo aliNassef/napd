@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:napd/core/entities/drawer_item_entity.dart';
 
 import '../utils/app_colors.dart';
 import '../utils/app_styles.dart';
@@ -9,27 +10,25 @@ import 'spacers.dart';
 class DrawerItem extends StatelessWidget {
   const DrawerItem({
     super.key,
-    required this.img,
-    required this.text,
-    this.onTap,
+    required this.drawerItemEntity,
   });
-  final String img;
-  final String text;
-  final void Function()? onTap;
+  final DrawerItemEntity drawerItemEntity;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        drawerItemEntity.onTap!(context);
+      },
       child: Row(
         children: [
           SvgPicture.asset(
-            img,
+            drawerItemEntity.image,
             width: 30.w,
             height: 30.h,
           ),
           HorizantalSpace(16),
           Text(
-            text,
+            drawerItemEntity.text,
             style: AppStyles.roboto24Regular.copyWith(
               color: AppColors.primaryColor,
             ),

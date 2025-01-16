@@ -20,7 +20,7 @@ class CustomDrawer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             DrawerTopBar(),
-            DrawerListItems(),
+            Expanded(child: DrawerListItems()),
           ],
         ),
       ),
