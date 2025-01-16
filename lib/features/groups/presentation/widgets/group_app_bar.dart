@@ -10,6 +10,7 @@ class GroupAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      centerTitle: true,
       backgroundColor: Colors.white,
       elevation: 0,
       toolbarHeight: 47.h,
@@ -17,8 +18,9 @@ class GroupAppBar extends StatelessWidget implements PreferredSizeWidget {
         dividerColor: AppColors.darkBlueColor.withValues(alpha: 0.6),
         dividerHeight: 1,
         automaticIndicatorColorAdjustment: false,
-        labelPadding: EdgeInsets.symmetric(horizontal: 30.w),
+        labelPadding: EdgeInsets.symmetric(horizontal: 20.w),
         indicatorPadding: EdgeInsets.all(0),
+        indicatorSize: TabBarIndicatorSize.tab,
         tabAlignment: TabAlignment.center,
         padding: EdgeInsets.all(0),
         unselectedLabelColor: AppColors.darkBlueColor,
