@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:napd/core/utils/app_shadows.dart';
 
 import '../../../../core/utils/app_colors.dart';
@@ -9,9 +11,11 @@ class SettingsItem extends StatelessWidget {
     super.key,
     required this.title,
     this.onTap,
+    required this.image,
   });
   final String title;
   final void Function()? onTap;
+  final String image;
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
@@ -27,10 +31,10 @@ class SettingsItem extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
-        leading: Icon(
-          Icons.person,
-          color: AppColors.darkBlueColor,
-          size: 30,
+        leading: SvgPicture.asset(
+          image,
+          width: 30.w,
+          height: 30.h,
         ),
         title: Text(
           title,
