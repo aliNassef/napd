@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -48,7 +49,7 @@ class DrawerTopBar extends StatelessWidget {
                 ),
                 onPressed: () {},
                 label: Text(
-                  'Baby',
+                  'baby'.tr(),
                   style: AppStyles.roboto14Regular.copyWith(
                     color: Colors.white,
                   ),
