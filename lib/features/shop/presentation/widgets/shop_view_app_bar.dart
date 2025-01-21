@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -28,7 +29,7 @@ class ShopAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       title: Text(
-        'Shop',
+        'shop'.tr(),
         style: AppStyles.roboto26Bold.copyWith(
           color: AppColors.secondaryColor,
         ),

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/core/widgets/spacers.dart';
@@ -62,7 +63,7 @@ class FeaturedGroupItem extends StatelessWidget {
           ),
           onPressed: () {},
           label: Text(
-            'Join',
+            'join'.tr(),
             style: AppStyles.roboto20Regular.copyWith(color: Colors.white),
           ),
           icon: Icon(

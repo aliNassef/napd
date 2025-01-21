@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/extensions/padding_extension.dart';
@@ -22,7 +23,7 @@ class ForyouViewBody extends StatelessWidget {
               children: [
                 VerticalSpace(30),
                 Text(
-                  'Articles',
+                  'articles'.tr(),
                   style: AppStyles.roboto24Bold.copyWith(
                     color: AppColors.darkBlueColor,
                   ),
@@ -48,7 +49,7 @@ class ForyouViewBody extends StatelessWidget {
               children: [
                 VerticalSpace(30),
                 Text(
-                  'Videos',
+                  'videos'.tr(),
                   style: AppStyles.roboto24Bold.copyWith(
                     color: AppColors.darkBlueColor,
                   ),
@@ -74,7 +75,7 @@ class ForyouViewBody extends StatelessWidget {
               children: [
                 VerticalSpace(30),
                 Text(
-                  'Podcasts',
+                  'podcasts'.tr(),
                   style: AppStyles.roboto24Bold.copyWith(
                     color: AppColors.darkBlueColor,
                   ),

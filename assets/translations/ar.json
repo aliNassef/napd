@@ -33,7 +33,7 @@
     "privacyandsecurity": "الخصوصية والأمان",
     "reports": "التقارير",
     "about": "حول",
-    "[arentingishard,don’tdoitalone": "الأبوة والأمومة صعبة، لا تفعلها وحدك",
+    "parentingishard,don’tdoitalone": "الأبوة والأمومة صعبة، لا تفعلها وحدك",
     "joinourcommunities": "انضم إلى مجتمعاتنا",
     "readandshare": "اقرأ وشارك",
     "readotherspostsandsharewiththemyourexperiencewillbehelpful": "اقرأ منشورات الآخرين وشاركهم تجربتك، ستكون مفيدة",
@@ -65,5 +65,8 @@
     "boy": "ولد",
     "finish": "إنهاء",
     "addbaby": "إضافة طفل",
-    "createbabyaccount": "إنشاء حساب للطفل"
+    "createbabyaccount": "إنشاء حساب للطفل",
+    "videos" : "الفيديوهات",
+    "podcasts" : "البودكاستات"
+
   }

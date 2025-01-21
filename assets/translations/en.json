@@ -33,7 +33,7 @@
     "privacyandsecurity" : "Privacy & Security",
     "reports" : "Reports",
     "about" : "About",
-    "[arentingishard,don’tdoitalone" : "Parenting is hard, don’t do it alone",
+    "parentingishard,don’tdoitalone" : "Parenting is hard, don’t do it alone",
     "joinourcommunities" : "Join our communities ",
     "readandshare" : "Read  and share ",
     "readotherspostsandsharewiththemyourexperiencewillbehelpful" : "Read others posts and share with them your experience will be helpful ",
@@ -65,6 +65,7 @@
     "boy" : "Boy",
     "finish" : "Finish",
     "addbaby" : "Add baby",
-    "createbabyaccount" : "Create baby account"
-    
+    "createbabyaccount" : "Create baby account",
+    "videos" : "Videos",
+    "podcasts" : "Podcasts"
  }

@@ -45,6 +45,6 @@ class AppLocalizationsImpl extends AppLocalizations {
 
   @override
   String getLocaleName(Locale locale) {
-    return locale.languageCode == 'ar' ? 'Arabic' : 'English';
+    return locale.languageCode == 'ar' ? 'ar' : 'en';
   }
 }
