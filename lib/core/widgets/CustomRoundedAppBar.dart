@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:napd/core/utils/app_colors.dart';
 import 'package:napd/core/utils/app_styles.dart';
-import 'package:napd/core/widgets/spacers.dart';
 
 class CustomRoundedAppBar extends StatelessWidget {
   final String title;
   final VoidCallback? onBackPressed;
 
   const CustomRoundedAppBar({
+    super.key,
     required this.title,
     this.onBackPressed,
   });

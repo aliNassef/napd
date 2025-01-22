@@ -8,7 +8,7 @@ import '../widget/baby_image.dart';
 
 class AddBabyPage extends StatelessWidget {
   static const String routeName = '/addBaby';
-  const AddBabyPage({Key? key}) : super(key: key);
+  const AddBabyPage({super.key});
 
   @override
   Widget build(BuildContext context) {
