@@ -4,8 +4,8 @@ import '../utils/app_colors.dart';
 import '../utils/app_styles.dart';
 
 class CustomSearchBar extends StatelessWidget {
-  const CustomSearchBar({super.key});
-
+  const CustomSearchBar({super.key, this.vertivalPadding = 5});
+  final double vertivalPadding;
   @override
   Widget build(BuildContext context) {
     return TextField(
@@ -15,7 +15,10 @@ class CustomSearchBar extends StatelessWidget {
       cursorHeight: 15.h,
       autocorrect: true,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 5.h),
+        contentPadding: EdgeInsets.symmetric(
+          horizontal: 25.w,
+          vertical: vertivalPadding.h,
+        ),
         border: buildBorderStyle(),
         fillColor: Colors.white,
         filled: true,

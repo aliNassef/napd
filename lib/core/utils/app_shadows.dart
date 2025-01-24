@@ -42,4 +42,17 @@ abstract class AppShadows {
     blurRadius: 14,
     offset: const Offset(0, 0),
   );
+  static BoxShadow shadow7 = BoxShadow(
+    color: Color(0xFF101828).withValues(alpha: .06), // 6% opacity
+    offset: Offset(0, 2), // X: 0, Y: 2
+    blurRadius: 4, // Blur: 4
+    spreadRadius: -2, // Spread: -2
+  );
+
+  static BoxShadow shadow8 = BoxShadow(
+    color: Color(0xFF101828).withValues(alpha: 0.1), // 10% opacity
+    offset: Offset(0, 4), // X: 0, Y: 4
+    blurRadius: 8, // Blur: 8
+    spreadRadius: -2, // Spread: -2
+  );
 }

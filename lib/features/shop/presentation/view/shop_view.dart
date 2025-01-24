@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/shop_view_app_bar.dart';
+import '../widgets/shop_view_body.dart';
 
 class ShopView extends StatelessWidget {
   const ShopView({super.key});
@@ -9,6 +10,9 @@ class ShopView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: ShopAppBar(),
+      body: SafeArea(
+        child: ShopViewBody(),
+      ),
     );
   }
 }

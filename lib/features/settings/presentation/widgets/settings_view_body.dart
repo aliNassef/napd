@@ -14,7 +14,7 @@ class SettingsViewBody extends StatelessWidget {
       child: Column(
         spacing: 24.h,
         children: [
-          VerticalSpace(77 - 24),
+          VerticalSpace(60),
           SettingsItem(
             image: AppSvgs.languageIcon,
             title: 'App’s language',
