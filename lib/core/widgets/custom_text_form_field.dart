@@ -12,12 +12,14 @@ class CustomTextFormField extends StatefulWidget {
     this.isPassword = false,
     this.maxLines = 1,
     this.keyboardType = TextInputType.text,
+    this.hintColor,
   });
   final String hintText;
   final TextEditingController controller;
   final bool isPassword;
   final int maxLines;
   final TextInputType keyboardType;
+  final Color? hintColor;
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
 }
@@ -46,9 +48,10 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         ),
         hintText: widget.hintText,
         hintStyle: AppStyles.roboto20Regular.copyWith(
-          color: AppColors.greyColor.withValues(
-            alpha: 0.6,
-          ),
+          color: widget.hintColor ??
+              AppColors.greyColor.withValues(
+                alpha: 0.6,
+              ),
         ),
         border: buildBorderStyle(
           AppColors.greyColor,

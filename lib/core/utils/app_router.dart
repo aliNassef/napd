@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../features/add_baby/presentation/view/add_baby_page.dart';
+import '../../features/reminder/presentation/view/set_reminder_view.dart';
 import '../../features/settings/presentation/view/settings_view.dart';
 import '../../features/splash/presentation/view/splash_view.dart';
 
@@ -63,7 +64,12 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const TipsAndTricksView(),
       );
+    case SetReminderView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const SetReminderView(),
+      );
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
   }
+  
 }

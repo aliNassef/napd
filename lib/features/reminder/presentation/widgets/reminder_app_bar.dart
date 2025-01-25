@@ -7,11 +7,13 @@ import '../../../../core/utils/app_styles.dart';
 class ReminderAppBar extends StatelessWidget implements PreferredSizeWidget {
   const ReminderAppBar({
     super.key,
+    required this.title,
   });
-
+  final String title;
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       elevation: 0,
       backgroundColor: Colors.white,
       title: Container(
@@ -32,7 +34,9 @@ class ReminderAppBar extends StatelessWidget implements PreferredSizeWidget {
           children: [
             InkWell(
               borderRadius: BorderRadius.circular(16),
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+              },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Icon(
@@ -44,7 +48,7 @@ class ReminderAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
             Expanded(
               child: Text(
-                'Remainder',
+                title,
                 style: AppStyles.roboto26Bold.copyWith(
                   color: AppColors.secondaryColor,
                 ),

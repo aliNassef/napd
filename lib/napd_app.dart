@@ -12,12 +12,12 @@ class Napd extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(426, 926),
+      designSize: const Size(375, 812),
       minTextAdapt: true,
       enableScaleWH: () => false,
       enableScaleText: () => false,
       splitScreenMode: true,
-      builder: (context, child) => MaterialApp(
+      builder: (_, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Napd',
         locale: DevicePreview.locale(context),
