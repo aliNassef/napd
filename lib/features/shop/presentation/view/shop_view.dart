@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../widgets/shop_view_app_bar.dart';
+import 'package:napd/core/widgets/custom_app_bar.dart';
 import '../widgets/shop_view_body.dart';
 
 class ShopView extends StatelessWidget {
@@ -9,7 +8,9 @@ class ShopView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ShopAppBar(),
+      appBar: CustomAppBar(
+        title: 'Shop',
+      ),
       body: SafeArea(
         child: ShopViewBody(),
       ),

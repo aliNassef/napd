@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../widgets/recipes_app_bar.dart';
-import '../widgets/recipes_view_body.dart';
+import 'package:napd/core/widgets/custom_app_bar.dart';
+ import '../widgets/recipes_view_body.dart';
 
 class RecipesView extends StatelessWidget {
   const RecipesView({super.key});
@@ -8,7 +8,9 @@ class RecipesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: RecipeTipsAppBar(),
+      appBar: CustomAppBar(
+        title: 'Recipes',
+      ),
       body: SafeArea(
         child: RecipesViewBody(),
       ),

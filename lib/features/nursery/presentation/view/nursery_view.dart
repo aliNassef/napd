@@ -10,7 +10,7 @@ class NurseryView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: ''),
+      appBar: CustomSearchAppBar(title: ''),
       drawer: CustomDrawer(),
       body: SafeArea(
         child: NurseryViewBody(),

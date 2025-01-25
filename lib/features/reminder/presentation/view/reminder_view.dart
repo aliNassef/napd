@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:napd/core/widgets/custom_app_bar.dart';
 import '../../../../core/utils/app_colors.dart';
-import '../widgets/reminder_app_bar.dart';
 import '../widgets/reminder_view_body.dart';
 import 'set_reminder_view.dart';
 
@@ -10,7 +10,7 @@ class ReminderView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ReminderAppBar(
+      appBar: CustomAppBar(
         title: 'Reminder',
       ),
       body: ReminderViewBody(),
