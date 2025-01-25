@@ -1,14 +1,14 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:napd/core/extensions/mediaquery_size.dart';
-import 'package:napd/core/extensions/padding_extension.dart';
-import 'package:napd/core/utils/app_colors.dart';
-import 'package:napd/core/utils/app_styles.dart';
-import 'package:napd/core/widgets/custom_text_form_field.dart';
-import 'package:napd/core/widgets/default_app_button.dart';
-import 'package:napd/core/widgets/spacers.dart';
-import 'package:napd/features/reminder/presentation/widgets/select_time_button.dart';
+import '../../../../core/extensions/mediaquery_size.dart';
+import '../../../../core/extensions/padding_extension.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_styles.dart';
+import '../../../../core/widgets/custom_text_form_field.dart';
+import '../../../../core/widgets/default_app_button.dart';
+import '../../../../core/widgets/spacers.dart';
+import '../widgets/select_time_button.dart';
 
 import '../widgets/reminder_app_bar.dart';
 

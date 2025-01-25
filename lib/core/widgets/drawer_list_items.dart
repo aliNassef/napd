@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:napd/core/entities/drawer_item_entity.dart';
-import 'package:napd/core/widgets/spacers.dart';
+import '../entities/drawer_item_entity.dart';
+import 'spacers.dart';
 import '../../features/parenting_resources/presentation/views/recipes_view.dart';
 import '../../features/settings/presentation/view/settings_view.dart';
 import '../../features/shop/presentation/view/shop_view.dart';

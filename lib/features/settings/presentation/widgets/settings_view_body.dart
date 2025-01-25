@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:napd/core/extensions/padding_extension.dart';
-import 'package:napd/core/utils/app_images.dart';
-import 'package:napd/core/widgets/spacers.dart';
+import '../../../../core/extensions/padding_extension.dart';
+import '../../../../core/utils/app_images.dart';
+import '../../../../core/widgets/spacers.dart';
 import 'settings_item.dart';
 
 class SettingsViewBody extends StatelessWidget {

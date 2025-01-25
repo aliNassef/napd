@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:napd/core/utils/app_shadows.dart';
+import '../../../../core/utils/app_shadows.dart';
 
 import 'tip_item_content.dart';
  class TipItem extends StatelessWidget {

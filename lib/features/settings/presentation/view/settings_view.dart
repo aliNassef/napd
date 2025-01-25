@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:napd/features/settings/presentation/widgets/settings_top_bar.dart';
+import '../widgets/settings_top_bar.dart';
 
 import '../widgets/settings_view_body.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/utils/app_colors.dart';
+import '../../../../core/utils/app_colors.dart';
 import '../widgets/reminder_app_bar.dart';
 import '../widgets/reminder_view_body.dart';
 import 'set_reminder_view.dart';
