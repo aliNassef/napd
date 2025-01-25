@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/extensions/padding_extension.dart';
 
- import '../../../../core/widgets/spacers.dart';
+import '../../../../core/widgets/spacers.dart';
+import '../view/pocasts_view.dart';
 import 'article_item.dart';
 import 'header_with_see_all.dart';
 import 'podcast_item.dart';
@@ -69,6 +70,10 @@ class ForyouViewBody extends StatelessWidget {
                 VerticalSpace(30),
                 HeaderWithSeeAll(
                   title: 'Podcasts',
+                  onTap: () {
+                    Navigator.of(context, rootNavigator: true)
+                        .pushNamed(PodcastsView.routeName);
+                  },
                 ),
                 VerticalSpace(30),
               ],

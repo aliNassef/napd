@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/widgets/custom_app_bar.dart';
+import '../../../../core/widgets/custom_app_bar.dart';
 import '../widgets/tips_and_trick_view_body.dart';
 
 class TipsAndTricksView extends StatelessWidget {

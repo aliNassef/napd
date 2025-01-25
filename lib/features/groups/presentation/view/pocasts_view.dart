@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/widgets/custom_app_bar.dart';
+import '../../../../core/widgets/custom_app_bar.dart';
+import '../widgets/podcast_view_body.dart';
 
-class PocastsView extends StatelessWidget {
-  const PocastsView({super.key});
-  static const String routeName = 'pocasts';
+class PodcastsView extends StatelessWidget {
+  const PodcastsView({super.key});
+  static const String routeName = 'podcasts';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,14 +13,5 @@ class PocastsView extends StatelessWidget {
         child: PodcastsViewBody(),
       ),
     );
-  }
-}
-
-class PodcastsViewBody extends StatelessWidget {
-  const PodcastsViewBody({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }

@@ -39,4 +39,6 @@ abstract class AppSvgs {
   static const String helpIcon = 'assets/images/help_icon.svg';
   static const String notificationIcon = 'assets/images/notification_icon.svg';
   static const String locationIcon = 'assets/images/location.svg';
+  static const String clockIcon = 'assets/images/clock_icon.svg';
+  static const String playIcon = 'assets/images/play_icon.svg';
 }

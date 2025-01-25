@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:napd/features/reminder/presentation/widgets/set_reminder_view_body.dart';
+import '../widgets/set_reminder_view_body.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 
 class SetReminderView extends StatefulWidget {
@@ -21,6 +21,9 @@ class _SetReminderViewState extends State<SetReminderView> {
       body: SafeArea(
         child: SetReminderViewBody(),
       ),
+
+
+      
     );
   }
 }
