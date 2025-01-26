@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../features/parenting_resources/presentation/views/activites_view.dart';
 import '../entities/drawer_item_entity.dart';
 import 'spacers.dart';
 import '../../features/parenting_resources/presentation/views/recipes_view.dart';
@@ -63,7 +64,14 @@ class _DrawerListItemsState extends State<DrawerListItems> {
     DrawerItemEntity(
       text: 'Activities',
       image: AppSvgs.activitesIcon,
-      onTap: (context) {},
+      onTap: (context) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ActivitesView(),
+          ),
+        );
+      },
     ),
     DrawerItemEntity(
       text: 'Shop',

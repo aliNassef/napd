@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/widgets/custom_app_bar.dart';
-import 'package:napd/core/widgets/spacers.dart';
+import '../../../../core/widgets/custom_app_bar.dart';
+import '../../../../core/widgets/spacers.dart';
 import '../widgets/all_videos_view_body.dart';
 
 class AllVideosView extends StatelessWidget {

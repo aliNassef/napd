@@ -3,6 +3,7 @@ import '../../features/add_baby/presentation/view/add_baby_page.dart';
 import '../../features/groups/presentation/view/all_articles_view.dart';
 import '../../features/groups/presentation/view/all_videos_view.dart';
 import '../../features/groups/presentation/view/pocasts_view.dart';
+import '../../features/parenting_resources/presentation/views/activites_view.dart';
 import '../../features/reminder/presentation/view/set_reminder_view.dart';
 import '../../features/settings/presentation/view/settings_view.dart';
 import '../../features/splash/presentation/view/splash_view.dart';
@@ -82,6 +83,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case AllVideosView.routeName:
       return MaterialPageRoute(
         builder: (context) => const AllVideosView(),
+      );
+    case ActivitesView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const ActivitesView(),
       );
 
     default:
