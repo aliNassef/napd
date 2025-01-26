@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/features/groups/presentation/view/all_videos_view.dart';
 import '../../../../core/extensions/padding_extension.dart';
 
 import '../../../../core/widgets/spacers.dart';
+import '../view/all_articles_view.dart';
 import '../view/pocasts_view.dart';
 import 'article_item.dart';
 import 'header_with_see_all.dart';
@@ -24,6 +26,10 @@ class ForyouViewBody extends StatelessWidget {
                 VerticalSpace(30),
                 HeaderWithSeeAll(
                   title: 'Articles',
+                  onTap: () {
+                    Navigator.of(context, rootNavigator: true)
+                        .pushNamed(AllArticlesView.routeName);
+                  },
                 ),
                 VerticalSpace(30),
               ],
@@ -47,6 +53,10 @@ class ForyouViewBody extends StatelessWidget {
                 VerticalSpace(30),
                 HeaderWithSeeAll(
                   title: 'Videos',
+                  onTap: () {
+                    Navigator.of(context, rootNavigator: true)
+                        .pushNamed(AllVideosView.routeName);
+                  },
                 ),
                 VerticalSpace(30),
               ],

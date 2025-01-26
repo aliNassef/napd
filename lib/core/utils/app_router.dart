@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../features/add_baby/presentation/view/add_baby_page.dart';
+import '../../features/groups/presentation/view/all_articles_view.dart';
+import '../../features/groups/presentation/view/all_videos_view.dart';
 import '../../features/groups/presentation/view/pocasts_view.dart';
 import '../../features/reminder/presentation/view/set_reminder_view.dart';
 import '../../features/settings/presentation/view/settings_view.dart';
@@ -69,12 +71,20 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const SetReminderView(),
       );
-         case PodcastsView.routeName:
+    case PodcastsView.routeName:
       return MaterialPageRoute(
         builder: (context) => const PodcastsView(),
       );
+    case AllArticlesView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const AllArticlesView(),
+      );
+    case AllVideosView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const AllVideosView(),
+      );
+
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
   }
-  
 }

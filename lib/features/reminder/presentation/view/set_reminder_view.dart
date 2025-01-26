@@ -22,8 +22,6 @@ class _SetReminderViewState extends State<SetReminderView> {
         child: SetReminderViewBody(),
       ),
 
-
-      
     );
   }
 }
