@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
@@ -62,7 +63,7 @@ class HomeViewBody extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  'Capture your moments ',
+                  'captureyourmoments'.tr(),
                   style: AppStyles.roboto24SemiBold.copyWith(
                     color: AppColors.darkBlueColor,
                   ),

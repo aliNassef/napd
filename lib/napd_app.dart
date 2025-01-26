@@ -1,4 +1,5 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,14 +19,22 @@ class Napd extends StatelessWidget {
       enableScaleWH: () => false,
       enableScaleText: () => false,
       splitScreenMode: true,
-      builder: (_, child) => MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Napd',
-        locale: DevicePreview.locale(context),
-        builder: DevicePreview.appBuilder,
-        theme: getLightTheme(),
-        onGenerateRoute: onGenerateRoute,
-        initialRoute: SplashView.routeName,
+      builder: (context, child) => Builder(
+        builder: (context) {
+          return MaterialApp(
+            localizationsDelegates: context.localizationDelegates,
+            supportedLocales: context.supportedLocales,
+            locale: context.locale,
+
+            debugShowCheckedModeBanner: false,
+            title: 'Napd',
+            // locale: DevicePreview.locale(context),
+            builder: DevicePreview.appBuilder,
+            theme: getLightTheme(),
+            onGenerateRoute: onGenerateRoute,
+            initialRoute: SplashView.routeName,
+          );
+        },
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -14,7 +15,7 @@ class ForyouHeader extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'For you',
+          'foryou'.tr(),
           style: AppStyles.roboto24Bold.copyWith(
             color: AppColors.darkBlueColor,
           ),
@@ -22,7 +23,7 @@ class ForyouHeader extends StatelessWidget {
         TextButton(
           onPressed: () {},
           child: Text(
-            'See All',
+            'seeall'.tr(),
             style: AppStyles.roboto14Regular.copyWith(
               color: AppColors.greenLightColor,
             ),
