@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/widgets/background_widget.dart';
-import 'package:napd/core/widgets/spacers.dart';
-import 'package:napd/features/recording/presentation/widget/action_buttons.dart';
-import 'package:napd/features/recording/presentation/widget/record_timer.dart';
-import 'package:napd/features/recording/presentation/widget/record_title.dart';
+import '../../../../core/widgets/background_widget.dart';
+import '../../../../core/widgets/spacers.dart';
+import '../widget/action_buttons.dart';
+import '../widget/record_timer.dart';
+import '../widget/record_title.dart';
 
 class RecordScreen extends StatelessWidget {
   static const String routeName = '/recording';

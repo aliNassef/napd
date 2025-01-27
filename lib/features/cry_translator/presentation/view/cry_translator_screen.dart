@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/widgets/background_widget.dart';
-import 'package:napd/features/cry_translator/presentation/widget/cry_translator_content.dart';
+import '../../../../core/widgets/background_widget.dart';
+import '../widget/cry_translator_content.dart';
 
-class CryTranslatorScreen extends StatelessWidget {
+class CryTranslatorView extends StatelessWidget {
   static const String routeName = '/babyCry';
 
-  const CryTranslatorScreen({super.key});
+  const CryTranslatorView({super.key});
 
   @override
   Widget build(BuildContext context) {

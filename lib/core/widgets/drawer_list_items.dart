@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../features/cry_translator/presentation/view/cry_translator_screen.dart';
 import '../../features/parenting_resources/presentation/views/activites_view.dart';
 import '../entities/drawer_item_entity.dart';
 import 'spacers.dart';
@@ -49,28 +50,26 @@ class _DrawerListItemsState extends State<DrawerListItems> {
       text: 'tipsandtricks'.tr(),
       image: AppSvgs.tipsTricsIcon,
       onTap: (context) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => TipsAndTricksView(),
-          ),
+        Navigator.of(context, rootNavigator: true).pushNamed(
+          TipsAndTricksView.routeName,
         );
       },
     ),
     DrawerItemEntity(
       text: 'crytranslation'.tr(),
       image: AppSvgs.cryIcon,
-      onTap: (context) {},
+      onTap: (context) {
+        Navigator.of(context, rootNavigator: true).pushNamed(
+          CryTranslatorView.routeName,
+        );
+      },
     ),
     DrawerItemEntity(
       text: 'activities'.tr(),
       image: AppSvgs.activitesIcon,
       onTap: (context) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ActivitesView(),
-          ),
+        Navigator.of(context, rootNavigator: true).pushNamed(
+          ActivitesView.routeName,
         );
       },
     ),
@@ -78,11 +77,8 @@ class _DrawerListItemsState extends State<DrawerListItems> {
       text: 'shop'.tr(),
       image: AppSvgs.shopIcon,
       onTap: (context) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ShopView(),
-          ),
+        Navigator.of(context, rootNavigator: true).pushNamed(
+          ShopView.routeName,
         );
       },
     ),
@@ -90,11 +86,8 @@ class _DrawerListItemsState extends State<DrawerListItems> {
       text: 'recipes'.tr(),
       image: AppSvgs.recipesIcon,
       onTap: (context) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => RecipesView(),
-          ),
+        Navigator.of(context, rootNavigator: true).pushNamed(
+          RecipesView.routeName,
         );
       },
     ),
@@ -102,11 +95,8 @@ class _DrawerListItemsState extends State<DrawerListItems> {
       text: 'settings'.tr(),
       image: AppSvgs.settingIcon,
       onTap: (context) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => SettingsView(),
-          ),
+        Navigator.of(context, rootNavigator: true).pushNamed(
+          SettingsView.routeName,
         );
       },
     ),

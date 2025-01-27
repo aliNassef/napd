@@ -5,7 +5,7 @@ import '../widgets/shop_view_body.dart';
 
 class ShopView extends StatelessWidget {
   const ShopView({super.key});
-
+  static const routeName = 'shop';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

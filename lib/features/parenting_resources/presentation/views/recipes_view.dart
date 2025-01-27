@@ -5,7 +5,7 @@ import '../widgets/recipes_view_body.dart';
 
 class RecipesView extends StatelessWidget {
   const RecipesView({super.key});
-
+  static const routeName = 'recipes';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

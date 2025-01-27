@@ -9,8 +9,10 @@ import '../../features/groups/presentation/view/all_videos_view.dart';
 import '../../features/groups/presentation/view/article_details_view.dart';
 import '../../features/groups/presentation/view/podcasts_view.dart';
 import '../../features/parenting_resources/presentation/views/activites_view.dart';
+import '../../features/parenting_resources/presentation/views/recipes_view.dart';
 import '../../features/reminder/presentation/view/set_reminder_view.dart';
 import '../../features/settings/presentation/view/settings_view.dart';
+import '../../features/shop/presentation/view/shop_view.dart';
 import '../../features/splash/presentation/view/splash_view.dart';
 
 import '../../features/boarding/presentation/view/boarding_view.dart';
@@ -37,9 +39,9 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const BabyAccountView(),
       );
-    case CryTranslatorScreen.routeName:
+    case CryTranslatorView.routeName:
       return MaterialPageRoute(
-        builder: (context) => const CryTranslatorScreen(),
+        builder: (context) => const CryTranslatorView(),
       );
     case RecordScreen.routeName:
       return MaterialPageRoute(
@@ -112,6 +114,14 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case ArticleDetailsView.routeName:
       return MaterialPageRoute(
         builder: (context) => const ArticleDetailsView(),
+      );
+    case ShopView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const ShopView(),
+      );
+    case RecipesView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const ShopView(),
       );
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
