@@ -1,4 +1,17 @@
 {
+    "add your baby": "Add your baby",
+    "add": "Add",
+    "create baby account": "Create Baby Account",
+    "add baby": "Add Baby",
+    "result title": "Result",
+    "hungry status": "I'm hungry!",
+    "hungry": "Hungry",
+    "sleepy": "Sleepy",
+    "cry translator title": "Cry Translator",
+    "start button": "Start",
+    "translate your baby's cry":"Translate your baby's cry",
+    "record": "Record",
+
     "skip" : "Skip",
     "next" : "Next",
     "previous" : "Previous",
@@ -49,7 +62,7 @@
     "createaccount" : "Create account",
     "alreadyhaveaccount" : "Already have an account!",
     "selectbabyaccount" : "Select baby account",
-    "add" : "Add",
+
     "firstname" : "first name",
     "lastname" : "last name",
     "signuptogetstarted" : "Sign up to get started",
@@ -67,17 +80,5 @@
     "addbaby" : "Add baby",
     "createbabyaccount" : "Create baby account",
     "videos" : "Videos",
-    "podcasts" : "Podcasts",
-    "activites" : "Activites",
-    "newproducts" : "New products",
-    "clothes" : "Clothes",
-    "addnewreminder" : "Add new reminder",
-    "title" : "Title",
-    "description" : "Description",
-    "date" : "Date",
-    "cancel" : "Cancel",
-    "filloutthefieldsandhitthesavebuttontoaddit" : "Fill out the fields and hit the Save Button to add it!",
-    "reminders" : "Reminders",
-    "selecttime" : "Select time",
-    "selectedtime" : "Selected time: "
-}
+    "podcasts" : "Podcasts"
+ }
