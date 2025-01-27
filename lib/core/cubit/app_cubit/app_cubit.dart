@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:napd/core/cubit/app_cubit/app_state.dart';
+import 'app_state.dart';
 import '../../utils/app_localizations.dart';
 
 class AppCubit extends Cubit<AppState> {

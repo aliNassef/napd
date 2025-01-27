@@ -25,7 +25,6 @@ class Napd extends StatelessWidget {
             localizationsDelegates: context.localizationDelegates,
             supportedLocales: context.supportedLocales,
             locale: context.locale,
-
             debugShowCheckedModeBanner: false,
             title: 'Napd',
             // locale: DevicePreview.locale(context),

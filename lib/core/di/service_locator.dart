@@ -1,5 +1,5 @@
 import 'package:get_it/get_it.dart';
-import 'package:napd/core/utils/app_localizations.dart';
+import '../utils/app_localizations.dart';
 
 final injector = GetIt.instance;
 
