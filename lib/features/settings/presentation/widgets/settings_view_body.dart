@@ -1,7 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/di/service_locator.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_images.dart';
+import '../../../../core/utils/app_localizations.dart';
 import '../../../../core/widgets/spacers.dart';
 import 'settings_item.dart';
 
@@ -17,36 +20,47 @@ class SettingsViewBody extends StatelessWidget {
           VerticalSpace(60),
           SettingsItem(
             image: AppSvgs.languageIcon,
-            title: 'App’s language',
-            onTap: () {},
+            title: 'applanguage'.tr(),
+            onTap: () {
+              changeAppLanguage(context);
+            },
           ),
           SettingsItem(
             image: AppSvgs.notificationIcon,
-            title: 'Sound and notification',
+            title: 'soundandnotification'.tr(),
             onTap: () {},
           ),
           SettingsItem(
             image: AppSvgs.helpIcon,
-            title: 'Help & Support',
+            title: 'helpandsupport'.tr(),
             onTap: () {},
           ),
           SettingsItem(
             image: AppSvgs.privacyIcon,
-            title: 'Privacy & Security',
+            title: 'privacyandsecurity'.tr(),
             onTap: () {},
           ),
           SettingsItem(
             image: AppSvgs.languageIcon,
-            title: 'Reports',
+            title: 'reports'.tr(),
             onTap: () {},
           ),
           SettingsItem(
             image: AppSvgs.aboutIcon,
-            title: 'About',
+            title: 'about'.tr(),
             onTap: () {},
           ),
         ],
       ).withHorizontalPadding(16),
     );
+  }
+
+  void changeAppLanguage(BuildContext context) {
+    var localeName =
+        injector.get<AppLocalizations>().getLocaleName(context.locale);
+    injector.get<AppLocalizations>().changeLocale(
+          context,
+          Locale(localeName == 'ar' ? 'en' : 'ar'),
+        );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -23,7 +24,7 @@ class GroupViewBody extends StatelessWidget {
                 children: [
                   VerticalSpace(30),
                   Text(
-                    'My groups',
+                    'mygroups'.tr(),
                     style: AppStyles.roboto24Bold.copyWith(
                       color: AppColors.darkBlueColor,
                     ),
@@ -43,7 +44,7 @@ class GroupViewBody extends StatelessWidget {
                 children: [
                   VerticalSpace(30),
                   Text(
-                    'Featured groups',
+                    'featuredgroups'.tr(),
                     style: AppStyles.roboto24Bold.copyWith(
                       color: AppColors.darkBlueColor,
                     ),

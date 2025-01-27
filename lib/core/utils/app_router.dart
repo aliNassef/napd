@@ -4,7 +4,11 @@ import 'package:napd/features/baby_result/presentation/view/baby_result_screen.d
 import 'package:napd/features/cry_translator/presentation/view/cry_translator_screen.dart';
 import 'package:napd/features/recording/presentation/view/record_screen.dart';
 import '../../features/add_baby/presentation/view/add_baby_page.dart';
+import '../../features/groups/presentation/view/all_articles_view.dart';
+import '../../features/groups/presentation/view/all_videos_view.dart';
+import '../../features/groups/presentation/view/article_details_view.dart';
 import '../../features/groups/presentation/view/pocasts_view.dart';
+import '../../features/parenting_resources/presentation/views/activites_view.dart';
 import '../../features/reminder/presentation/view/set_reminder_view.dart';
 import '../../features/settings/presentation/view/settings_view.dart';
 import '../../features/splash/presentation/view/splash_view.dart';
@@ -89,12 +93,27 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const SetReminderView(),
       );
-         case PodcastsView.routeName:
+    case PodcastsView.routeName:
       return MaterialPageRoute(
         builder: (context) => const PodcastsView(),
+      );
+    case AllArticlesView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const AllArticlesView(),
+      );
+    case AllVideosView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const AllVideosView(),
+      );
+    case ActivitesView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const ActivitesView(),
+      );
+    case ArticleDetailsView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const ArticleDetailsView(),
       );
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
   }
-  
 }

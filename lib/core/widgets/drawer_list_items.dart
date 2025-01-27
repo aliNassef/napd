@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../features/parenting_resources/presentation/views/activites_view.dart';
 import '../entities/drawer_item_entity.dart';
 import 'spacers.dart';
 import '../../features/parenting_resources/presentation/views/recipes_view.dart';
@@ -22,7 +24,7 @@ class _DrawerListItemsState extends State<DrawerListItems> {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      padding: EdgeInsets.only(left: 16.w),
+      padding: EdgeInsetsDirectional.only(start: 16.w),
       itemBuilder: (_, index) =>
           DrawerItem(drawerItemEntity: drawerItems[index]),
       separatorBuilder: (_, __) => VerticalSpace(50.h),
@@ -32,7 +34,7 @@ class _DrawerListItemsState extends State<DrawerListItems> {
 
   List<DrawerItemEntity> drawerItems = [
     DrawerItemEntity(
-      text: 'Profile',
+      text: 'profile'.tr(),
       image: AppSvgs.profile2Icon,
       onTap: (context) {
         Navigator.push(
@@ -44,7 +46,7 @@ class _DrawerListItemsState extends State<DrawerListItems> {
       },
     ),
     DrawerItemEntity(
-      text: 'Tips & Tricks',
+      text: 'tipsandtricks'.tr(),
       image: AppSvgs.tipsTricsIcon,
       onTap: (context) {
         Navigator.push(
@@ -56,17 +58,24 @@ class _DrawerListItemsState extends State<DrawerListItems> {
       },
     ),
     DrawerItemEntity(
-      text: 'Cry translation',
+      text: 'crytranslation'.tr(),
       image: AppSvgs.cryIcon,
       onTap: (context) {},
     ),
     DrawerItemEntity(
-      text: 'Activities',
+      text: 'activities'.tr(),
       image: AppSvgs.activitesIcon,
-      onTap: (context) {},
+      onTap: (context) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ActivitesView(),
+          ),
+        );
+      },
     ),
     DrawerItemEntity(
-      text: 'Shop',
+      text: 'shop'.tr(),
       image: AppSvgs.shopIcon,
       onTap: (context) {
         Navigator.push(
@@ -78,7 +87,7 @@ class _DrawerListItemsState extends State<DrawerListItems> {
       },
     ),
     DrawerItemEntity(
-      text: 'Recipes',
+      text: 'recipes'.tr(),
       image: AppSvgs.recipesIcon,
       onTap: (context) {
         Navigator.push(
@@ -90,6 +99,8 @@ class _DrawerListItemsState extends State<DrawerListItems> {
       },
     ),
     DrawerItemEntity(
+      text: 'settings'.tr(),
+      image: AppSvgs.settingIcon,
       onTap: (context) {
         Navigator.push(
           context,
@@ -98,8 +109,6 @@ class _DrawerListItemsState extends State<DrawerListItems> {
           ),
         );
       },
-      text: 'Settings',
-      image: AppSvgs.settingIcon,
     ),
   ];
 }

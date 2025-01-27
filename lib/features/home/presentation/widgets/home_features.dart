@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/app_images.dart';
@@ -26,22 +27,22 @@ class HomeFeatures extends StatelessWidget {
           FeatureItem(
             color: AppColors.secondaryColor,
             img: AppSvgs.cryIcon,
-            text: 'Cry translation',
+            text: 'crytranslation'.tr(),
           ),
           FeatureItem(
             color: AppColors.darkBlueColor,
             img: AppSvgs.vaccineIcon,
-            text: 'Vaccination',
+            text: 'vaccination'.tr(),
           ),
           FeatureItem(
             color: AppColors.greenLightColor,
             img: AppSvgs.activitesIcon,
-            text: 'Activities',
+            text: 'activities'.tr(),
           ),
           FeatureItem(
             color: Color(0xffCCBC41),
             img: AppSvgs.growthIcon,
-            text: 'Growth',
+            text: 'growth'.tr(),
           ),
         ],
       ),
