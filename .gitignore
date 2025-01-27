@@ -44,5 +44,5 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 #Add generated files to .gitignore
-lib/generated/intl/*
+lib/generated/*
 lib/l10n/*
