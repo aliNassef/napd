@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:napd/features/settings/presentation/widgets/settings_top_bar.dart';
-
+import '../../../../core/widgets/custom_app_bar.dart';
 import '../widgets/settings_view_body.dart';
 
 class SettingsView extends StatelessWidget {
@@ -9,7 +8,9 @@ class SettingsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SettingsAppBar(),
+      appBar: CustomAppBar(
+        title: 'Settings',
+      ),
       body: SettingsViewBody(),
     );
   }

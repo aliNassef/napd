@@ -24,7 +24,7 @@ class GroupViewBody extends StatelessWidget {
                   VerticalSpace(30),
                   Text(
                     'My groups',
-                    style: AppStyles.textStyle24B.copyWith(
+                    style: AppStyles.roboto24Bold.copyWith(
                       color: AppColors.darkBlueColor,
                     ),
                   ),
@@ -44,7 +44,7 @@ class GroupViewBody extends StatelessWidget {
                   VerticalSpace(30),
                   Text(
                     'Featured groups',
-                    style: AppStyles.textStyle24B.copyWith(
+                    style: AppStyles.roboto24Bold.copyWith(
                       color: AppColors.darkBlueColor,
                     ),
                   ),

@@ -19,7 +19,7 @@ class StartViewBody extends StatelessWidget {
         VerticalSpace(34),
         Text(
           'Let’s get started!',
-          style: AppStyles.textStyle48B.copyWith(
+          style: AppStyles.roboto48Bold.copyWith(
             color: AppColors.greyColor,
           ),
         ),
@@ -33,10 +33,7 @@ class StartViewBody extends StatelessWidget {
         ),
         DefaultAppButton(
           onPressed: () {
-            Navigator.pushReplacementNamed(
-              context,
-              SignupView.routeName
-            );
+            Navigator.pushReplacementNamed(context, SignupView.routeName);
           },
           padding: context.width * 0.2,
           text: 'Sign up',

@@ -40,7 +40,7 @@ class PageViewItem extends StatelessWidget {
         VerticalSpace(35),
         Text(
           getBoardingList()[currentPage].title,
-          style: AppStyles.textStyle32B.copyWith(
+          style: AppStyles.roboto32Bold.copyWith(
             color: Colors.white,
           ),
           textAlign: TextAlign.center,
@@ -48,7 +48,7 @@ class PageViewItem extends StatelessWidget {
         VerticalSpace(35),
         Text(
           getBoardingList()[currentPage].subtitle,
-          style: AppStyles.textStyle24R.copyWith(
+          style: AppStyles.roboto24Regular.copyWith(
             color: Colors.white,
           ),
           textAlign: TextAlign.center,

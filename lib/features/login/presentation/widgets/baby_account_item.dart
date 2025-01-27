@@ -31,7 +31,7 @@ class BabyAccountItem extends StatelessWidget {
         ),
         Text(
           name,
-          style: AppStyles.textStyle32B.copyWith(
+          style: AppStyles.roboto32Bold.copyWith(
             color: AppColors.secondaryColor,
           ),
         ),

@@ -15,7 +15,7 @@ class ForyouHeader extends StatelessWidget {
       children: [
         Text(
           'For you',
-          style: AppStyles.textStyle24B.copyWith(
+          style: AppStyles.roboto24Bold.copyWith(
             color: AppColors.darkBlueColor,
           ),
         ),
@@ -23,7 +23,7 @@ class ForyouHeader extends StatelessWidget {
           onPressed: () {},
           child: Text(
             'See All',
-            style: AppStyles.textStyle14R.copyWith(
+            style: AppStyles.roboto14Regular.copyWith(
               color: AppColors.greenLightColor,
             ),
           ),

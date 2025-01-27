@@ -17,7 +17,7 @@ class DonotHaveAccount extends StatelessWidget {
         children: [
           TextSpan(
             text: 'I don’t have account!',
-            style: AppStyles.textStyle24R.copyWith(
+            style: AppStyles.roboto24Regular.copyWith(
               color: AppColors.greyColor,
             ),
           ),
@@ -28,7 +28,7 @@ class DonotHaveAccount extends StatelessWidget {
                 Navigator.pushNamed(context, SignupView.routeName);
               },
             text: 'Sign up',
-            style: AppStyles.textStyle24R.copyWith(
+            style: AppStyles.roboto24Regular.copyWith(
               color: AppColors.secondaryColor,
             ),
           ),

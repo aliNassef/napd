@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/widgets/spacers.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 
@@ -24,23 +25,26 @@ class FeaturedGroupItem extends StatelessWidget {
             width: 85.w,
           ),
         ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 5.h,
-          children: [
-            Text(
-              'Parenting',
-              style: AppStyles.textStyle24SB.copyWith(
-                color: AppColors.darkBlueColor,
+        HorizantalSpace(16),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: 5.h,
+            children: [
+              Text(
+                'Parenting',
+                style: AppStyles.roboto24SemiBold.copyWith(
+                  color: AppColors.darkBlueColor,
+                ),
               ),
-            ),
-            Text(
-              '3 M+ members',
-              style: AppStyles.textStyle20R.copyWith(
-                color: AppColors.secondaryColor,
+              Text(
+                '3 M+ members',
+                style: AppStyles.roboto20Regular.copyWith(
+                  color: AppColors.secondaryColor,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
         TextButton.icon(
           style: ButtonStyle(
@@ -59,7 +63,7 @@ class FeaturedGroupItem extends StatelessWidget {
           onPressed: () {},
           label: Text(
             'Join',
-            style: AppStyles.textStyle20R.copyWith(color: Colors.white),
+            style: AppStyles.roboto20Regular.copyWith(color: Colors.white),
           ),
           icon: Icon(
             Icons.add,

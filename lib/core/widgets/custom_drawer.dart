@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../extensions/mediaquery_size.dart';
 import 'drawer_list_items.dart';
 import 'drawer_top_bar.dart';
@@ -20,7 +21,7 @@ class CustomDrawer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             DrawerTopBar(),
-            DrawerListItems(),
+            Expanded(child: DrawerListItems()),
           ],
         ),
       ),

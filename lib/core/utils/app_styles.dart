@@ -3,104 +3,145 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 abstract class AppStyles {
-  // textStyle + Size + Weight
-  // 18
-  static final textStyle18SB = GoogleFonts.roboto(
-    fontSize: 18.sp,
-    fontWeight: FontWeight.w600,
-  );
-  static final textStyle18R = GoogleFonts.roboto(
-    fontSize: 18.sp,
-    fontWeight: FontWeight.w400,
-  );
-  // 10
-  static final textStyle10SB = GoogleFonts.roboto(
-    fontSize: 10.sp,
-    fontWeight: FontWeight.w600,
-  );
-  // 12
-  static final textStyle12R = GoogleFonts.roboto(
-    fontSize: 12.sp,
-    fontWeight: FontWeight.w400,
-  );
-  // 32
-  static final textStyle32B = GoogleFonts.roboto(
-    fontSize: 32.sp,
-    fontWeight: FontWeight.w700,
-  );
-  // 36
-  static final textStyle36SB = GoogleFonts.roboto(
-    fontSize: 36.sp,
-    fontWeight: FontWeight.w600,
-  );
-  // 48
-  static final textStyle48B = GoogleFonts.roboto(
-    fontSize: 48.sp,
-    fontWeight: FontWeight.w700,
-  );
-  // 40
-  static final textStyle40B = GoogleFonts.roboto(
-    fontSize: 40.sp,
-    fontWeight: FontWeight.w700,
-  );
-  // 24
-  static final textStyle24R = GoogleFonts.roboto(
-    fontSize: 24.sp,
-    fontWeight: FontWeight.w400,
-  );
-  static final textStyle24SB = GoogleFonts.roboto(
-    fontSize: 24.sp,
-    fontWeight: FontWeight.w600,
-  );
-  static final textStyle24B = GoogleFonts.roboto(
-    fontSize: 24.sp,
-    fontWeight: FontWeight.w700,
-  );
+  // Utility method to create styles
+  static TextStyle _createStyle({
+    required String fontFamily,
+    required double fontSize,
+    required FontWeight fontWeight,
+  }) {
+    return GoogleFonts.getFont(
+      fontFamily,
+      fontSize: fontSize.sp,
+      fontWeight: fontWeight,
+    );
+  }
 
-  // 20
-  static final textStyle20R = GoogleFonts.roboto(
-    fontSize: 20.sp,
-    fontWeight: FontWeight.w400,
-  );
-  static final textStyle20B = GoogleFonts.roboto(
-    fontSize: 20.sp,
-    fontWeight: FontWeight.w700,
-  );
-  // 16
-  static final textStyle16R = GoogleFonts.roboto(
-    fontSize: 16.sp,
-    fontWeight: FontWeight.w400,
-  );
-  // 14
-  static final textStyle14R = GoogleFonts.roboto(
-    fontSize: 14.sp,
-    fontWeight: FontWeight.w400,
-  );
-  static final textStyle14SB = GoogleFonts.roboto(
-    fontSize: 14.sp,
+  // Roboto Font
+  static final roboto10SemiBold = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 10,
     fontWeight: FontWeight.w600,
   );
-  // 26
-  static final textStyle26B = GoogleFonts.roboto(
-    fontSize: 26.sp,
-    fontWeight: FontWeight.w700,
+  static final roboto10Regular = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 10,
+    fontWeight: FontWeight.w400,
   );
-
-  // rubic font
-  static final textStyleR16M = GoogleFonts.rubik(
-    fontSize: 16.sp,
+  static final roboto12Regular = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+  );
+  static final roboto14Regular = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+  );
+  static final roboto14Medium = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 14,
     fontWeight: FontWeight.w500,
   );
-  static final textStyleR14L = GoogleFonts.rubik(
-    fontSize: 14.sp,
+  static final roboto14SemiBold = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+  );
+  static final roboto16Regular = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+  );
+  static final roboto18SemiBold = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+  );
+  static final roboto18Regular = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 18,
+    fontWeight: FontWeight.w400,
+  );
+  static final roboto18Medium = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+  );
+  static final roboto20Regular = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 20,
+    fontWeight: FontWeight.w400,
+  );
+  static final roboto20SemiBold = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 20,
+    fontWeight: FontWeight.w600,
+  );
+  static final roboto20Bold = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 20,
+    fontWeight: FontWeight.w700,
+  );
+  static final roboto24Regular = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 24,
+    fontWeight: FontWeight.w400,
+  );
+  static final roboto24SemiBold = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 24,
+    fontWeight: FontWeight.w600,
+  );
+  static final roboto24Bold = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 24,
+    fontWeight: FontWeight.w700,
+  );
+  static final roboto26Bold = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 26,
+    fontWeight: FontWeight.w700,
+  );
+  static final roboto32Bold = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 32,
+    fontWeight: FontWeight.w700,
+  );
+  static final roboto36SemiBold = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 36,
+    fontWeight: FontWeight.w600,
+  );
+  static final roboto40Bold = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 40,
+    fontWeight: FontWeight.w700,
+  );
+  static final roboto48Bold = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 48,
+    fontWeight: FontWeight.w700,
+  );
+
+  // Rubik Font
+  static final rubik14Light = _createStyle(
+    fontFamily: 'Rubik',
+    fontSize: 14,
     fontWeight: FontWeight.w300,
   );
-  static final textStyleR18M = GoogleFonts.rubik(
-    fontSize: 18.sp,
+  static final rubik16Medium = _createStyle(
+    fontFamily: 'Rubik',
+    fontSize: 16,
     fontWeight: FontWeight.w500,
   );
-  static final textStyleR20M = GoogleFonts.rubik(
-    fontSize: 20.sp,
+  static final rubik18Medium = _createStyle(
+    fontFamily: 'Rubik',
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+  );
+  static final rubik20Medium = _createStyle(
+    fontFamily: 'Rubik',
+    fontSize: 20,
     fontWeight: FontWeight.w500,
   );
 }

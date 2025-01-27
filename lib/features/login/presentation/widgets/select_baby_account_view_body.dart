@@ -18,7 +18,7 @@ class SelectBabyAccountViewBody extends StatelessWidget {
               VerticalSpace(40),
               Text(
                 'Select baby account',
-                style: AppStyles.textStyle40B.copyWith(
+                style: AppStyles.roboto40Bold.copyWith(
                   color: AppColors.greyColor,
                 ),
               ),

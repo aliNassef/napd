@@ -18,7 +18,7 @@ class RecipeItemContent extends StatelessWidget {
           children: [
             Text(
               'Apple and Blueberry Puree',
-              style: AppStyles.textStyle24SB.copyWith(
+              style: AppStyles.roboto24SemiBold.copyWith(
                 color: AppColors.darkBlueColor,
               ),
             ),
@@ -26,30 +26,30 @@ class RecipeItemContent extends StatelessWidget {
         ),
         VerticalSpace(5),
         Row(
-         mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
               'Ingredients:',
-              style: AppStyles.textStyle18R.copyWith(
+              style: AppStyles.roboto18Regular.copyWith(
                 color: AppColors.secondaryColor,
               ),
             ),
           ],
         ),
         ...points.map(
-              (point) => Row(
+          (point) => Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 '  •  ',
-                style: AppStyles.textStyle14R.copyWith(
+                style: AppStyles.roboto14Regular.copyWith(
                   color: AppColors.darkBlueColor,
                 ),
               ),
               Expanded(
                 child: Text(
                   point,
-                  style: AppStyles.textStyle14R.copyWith(
+                  style: AppStyles.roboto14Regular.copyWith(
                     color: AppColors.darkBlueColor,
                   ),
                 ),
@@ -62,7 +62,7 @@ class RecipeItemContent extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
           child: CustomNetworkImage(
             img:
-            'https://images.nightcafe.studio/jobs/3Ri6GfFBAhUUHUVG251W/3Ri6GfFBAhUUHUVG251W--1--h7lk0.jpg?tr=w-1600,c-at_max',
+                'https://images.nightcafe.studio/jobs/3Ri6GfFBAhUUHUVG251W/3Ri6GfFBAhUUHUVG251W--1--h7lk0.jpg?tr=w-1600,c-at_max',
             width: 270.w,
             height: 188.h,
           ),

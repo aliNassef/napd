@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/extensions/padding_extension.dart';
-import '../../../../core/utils/app_colors.dart';
-import '../../../../core/utils/app_styles.dart';
+
 import '../../../../core/widgets/spacers.dart';
+import '../view/pocasts_view.dart';
 import 'article_item.dart';
+import 'header_with_see_all.dart';
 import 'podcast_item.dart';
 import 'video_item.dart';
 
@@ -21,11 +22,8 @@ class ForyouViewBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 VerticalSpace(30),
-                Text(
-                  'Articles',
-                  style: AppStyles.textStyle24B.copyWith(
-                    color: AppColors.darkBlueColor,
-                  ),
+                HeaderWithSeeAll(
+                  title: 'Articles',
                 ),
                 VerticalSpace(30),
               ],
@@ -47,11 +45,8 @@ class ForyouViewBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 VerticalSpace(30),
-                Text(
-                  'Videos',
-                  style: AppStyles.textStyle24B.copyWith(
-                    color: AppColors.darkBlueColor,
-                  ),
+                HeaderWithSeeAll(
+                  title: 'Videos',
                 ),
                 VerticalSpace(30),
               ],
@@ -73,11 +68,12 @@ class ForyouViewBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 VerticalSpace(30),
-                Text(
-                  'Podcasts',
-                  style: AppStyles.textStyle24B.copyWith(
-                    color: AppColors.darkBlueColor,
-                  ),
+                HeaderWithSeeAll(
+                  title: 'Podcasts',
+                  onTap: () {
+                    Navigator.of(context, rootNavigator: true)
+                        .pushNamed(PodcastsView.routeName);
+                  },
                 ),
                 VerticalSpace(30),
               ],

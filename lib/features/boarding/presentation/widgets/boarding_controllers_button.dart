@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../view/start_view.dart';
@@ -29,7 +30,7 @@ class BoardingControllersButton extends StatelessWidget {
             },
             child: Text(
               'Previous',
-              style: AppStyles.textStyle24R.copyWith(
+              style: AppStyles.roboto24Regular.copyWith(
                 color: Color(0xffeae8e8).withValues(alpha: 0.6),
               ),
             ),
@@ -48,7 +49,7 @@ class BoardingControllersButton extends StatelessWidget {
           },
           child: Text(
             'Next',
-            style: AppStyles.textStyle24R.copyWith(
+            style: AppStyles.roboto24Regular.copyWith(
               color: AppColors.secondaryColor,
             ),
           ),

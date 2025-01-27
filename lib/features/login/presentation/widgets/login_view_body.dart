@@ -21,7 +21,7 @@ class LoginViewBody extends StatelessWidget {
         children: [
           Text(
             'Welcome again to MamaCare',
-            style: AppStyles.textStyle48B.copyWith(
+            style: AppStyles.roboto48Bold.copyWith(
               color: Colors.white,
             ),
             textAlign: TextAlign.center,
@@ -29,7 +29,7 @@ class LoginViewBody extends StatelessWidget {
           VerticalSpace(32),
           Text(
             'Log in',
-            style: AppStyles.textStyle32B.copyWith(
+            style: AppStyles.roboto32Bold.copyWith(
               color: Colors.white,
             ),
           ),
@@ -74,7 +74,7 @@ class LoginViewBody extends StatelessWidget {
             onPressed: () {},
             child: Text(
               'Forgot Password?',
-              style: AppStyles.textStyle24R.copyWith(
+              style: AppStyles.roboto24Regular.copyWith(
                 color: AppColors.secondaryColor,
               ),
             ),

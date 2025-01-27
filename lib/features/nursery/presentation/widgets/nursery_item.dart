@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../../../../core/utils/app_shadows.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/utils/app_images.dart';
@@ -20,11 +21,7 @@ class NurseryItem extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
         boxShadow: [
-          BoxShadow(
-            color: Colors.transparent.withValues(alpha: 0.08),
-            blurRadius: 10,
-            offset: const Offset(0, 0),
-          )
+          AppShadows.shadow3,
         ],
       ),
       child: Padding(
@@ -53,7 +50,7 @@ class NurseryItem extends StatelessWidget {
                     children: [
                       Text(
                         'El zahraa Hospital',
-                        style: AppStyles.textStyleR18M.copyWith(
+                        style: AppStyles.rubik18Medium.copyWith(
                           color: AppColors.darkBlueColor,
                         ),
                       ),
@@ -67,7 +64,7 @@ class NurseryItem extends StatelessWidget {
                   ),
                   Text(
                     'Intensive care unit',
-                    style: AppStyles.textStyleR14L.copyWith(
+                    style: AppStyles.rubik14Light.copyWith(
                       color: Color(0xff808080),
                     ),
                   ),
@@ -88,7 +85,7 @@ class NurseryItem extends StatelessWidget {
                       ),
                       Text(
                         'open',
-                        style: AppStyles.textStyleR16M
+                        style: AppStyles.rubik16Medium
                             .copyWith(color: AppColors.greenLightColor),
                       ),
                       const Spacer(),
