@@ -3,6 +3,8 @@ import 'package:napd/core/utils/app_colors.dart';
 import 'package:napd/core/utils/app_styles.dart';
 
 class SuggestionBox extends StatelessWidget {
+  const SuggestionBox({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,7 +19,7 @@ class SuggestionBox extends StatelessWidget {
           'If they’re breastfeeding, ensure they’re getting enough milk. '
           'If bottle-feeding, check the amount and flow of milk. '
           'If feeding doesn’t soothe them, consider other possibilities like discomfort or needing a diaper change.',
-          style: AppStyles.textStyle14SB.copyWith(
+          style: AppStyles.roboto14SemiBold.copyWith(
             color: AppColors.primaryColor,
           ),
         ),

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:napd/core/utils/app_colors.dart';
 import 'package:napd/core/utils/app_styles.dart';
@@ -16,20 +17,20 @@ class PredictionCard extends StatelessWidget {
       color: Colors.white,
       child: ListTile(
         leading: Icon(
-          status == 'Hungry' ? Icons.local_drink : Icons.nights_stay,
-          color: status == 'Hungry'
+          status == 'hungry'.tr() ? Icons.local_drink : Icons.nights_stay,
+          color: status == 'hungry'.tr()
               ? AppColors.secondaryColor
               : AppColors.greenLightColor,
         ),
         title: Text(
           status,
-          style: AppStyles.textStyle20R.copyWith(
+          style: AppStyles.roboto20Regular.copyWith(
             color: AppColors.primaryColor,
           ),
         ),
         trailing: Text(
           '$percentage%',
-          style: AppStyles.textStyle20R.copyWith(
+          style: AppStyles.roboto20Regular.copyWith(
             color: AppColors.primaryColor,
           ),
         ),

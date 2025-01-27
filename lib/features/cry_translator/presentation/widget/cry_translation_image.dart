@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CryTranslatorImage extends StatelessWidget {
+  const CryTranslatorImage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Image.asset(

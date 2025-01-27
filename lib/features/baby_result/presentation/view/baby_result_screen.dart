@@ -1,5 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:napd/core/utils/app_colors.dart';
 
 import 'package:napd/core/widgets/spacers.dart';
 
@@ -16,12 +16,12 @@ class BabyResultScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // Sample data for predictions
     final predictions = [
-      {'status': 'Hungry', 'percentage': 82},
-      {'status': 'Sleepy', 'percentage': 18},
+      {'status': 'hungry'.tr(), 'percentage': 82},
+      {'status': 'sleepy'.tr(), 'percentage': 18},
     ];
 
     return Scaffold(
-      appBar: const ResultAppbar(title: 'Result'),
+      appBar: ResultAppbar(title: "result title".tr()),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -31,7 +31,8 @@ class BabyResultScreen extends StatelessWidget {
               children: [
                 ResultBabyImage(),
                 VerticalSpace(8),
-                PredictionCardWidget(status: "I'm hungry!", percentage: 82),
+                PredictionCardWidget(
+                    status: "hungry status".tr(), percentage: 82),
                 VerticalSpace(8),
                 PredictionList(predictions: predictions),
                 VerticalSpace(16),

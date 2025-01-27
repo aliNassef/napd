@@ -20,7 +20,7 @@ class PredictionCardWidget extends StatelessWidget {
         child: Center(
           child: Text(
             status,
-            style: AppStyles.textStyle18SB.copyWith(
+            style: AppStyles.roboto18SemiBold.copyWith(
               color: AppColors.primaryColor,
             ),
           ),

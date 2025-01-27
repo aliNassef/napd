@@ -8,10 +8,14 @@
     "height": "Height",
     "finish": "Finish",
     "add baby": "Add Baby",
-     "girl": "Girl",
-  "boy": "Boy",
-  "result title": "Result",
-  "hungry status": "I'm hungry!",
-  "hungry": "Hungry",
-  "sleepy": "Sleepy"
+    "girl": "Girl",
+    "boy": "Boy",
+    "result title": "Result",
+    "hungry status": "I'm hungry!",
+    "hungry": "Hungry",
+    "sleepy": "Sleepy",
+    "cry translator title": "Cry Translator",
+    "start button": "Start",
+    "translate your baby's cry":"Translate your baby's cry",
+    "record": "Record"
 }

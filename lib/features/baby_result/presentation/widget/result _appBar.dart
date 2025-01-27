@@ -4,7 +4,7 @@ import 'package:napd/core/utils/app_colors.dart';
 class ResultAppbar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
 
-  const ResultAppbar({required this.title});
+  const ResultAppbar({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {

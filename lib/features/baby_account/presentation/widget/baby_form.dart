@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:napd/core/utils/app_colors.dart';
 import 'package:napd/core/utils/app_styles.dart';
@@ -21,19 +22,19 @@ class BabyForm extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Create Baby Account",
-          style: AppStyles.textStyle32B.copyWith(
+          "create Baby Account".tr(),
+          style: AppStyles.roboto32Bold.copyWith(
             color: AppColors.greyColor,
           ),
         ),
         VerticalSpace(40),
         CustomTextFormField(
-          hintText: "Name",
+          hintText: "name".tr(),
           controller: nameController,
         ),
         VerticalSpace(30),
         CustomTextFormField(
-          hintText: "Age",
+          hintText: "age".tr(),
           controller: ageController,
           keyboardType: TextInputType.number,
         ),
@@ -42,7 +43,7 @@ class BabyForm extends StatelessWidget {
           children: [
             Expanded(
               child: CustomTextFormField(
-                hintText: "Weight",
+                hintText: "weight".tr(),
                 controller: weightController,
                 keyboardType: TextInputType.number,
               ),
@@ -50,7 +51,7 @@ class BabyForm extends StatelessWidget {
             HorizantalSpace(50),
             Expanded(
               child: CustomTextFormField(
-                hintText: "Height",
+                hintText: "height".tr(),
                 controller: heightController,
                 keyboardType: TextInputType.number,
               ),
@@ -61,7 +62,7 @@ class BabyForm extends StatelessWidget {
         GenderSelector(),
         VerticalSpace(30),
         DefaultAppButton(
-          text: "Finish",
+          text: "finish".tr(),
           onPressed: () {},
           backgroundColor: AppColors.secondaryColor,
           textColor: AppColors.primaryColor,
@@ -69,7 +70,7 @@ class BabyForm extends StatelessWidget {
         ),
         VerticalSpace(20),
         DefaultAppButton(
-          text: "Add Baby",
+          text: "add Baby".tr(),
           onPressed: () {},
           backgroundColor: AppColors.greyColor,
           textColor: AppColors.primaryColor,

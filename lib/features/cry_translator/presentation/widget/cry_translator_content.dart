@@ -6,6 +6,8 @@ import 'package:napd/features/cry_translator/presentation/widget/cry_translator_
 import 'package:napd/features/cry_translator/presentation/widget/cry_translator_subtitle.dart';
 
 class CryTranslatorContent extends StatelessWidget {
+  const CryTranslatorContent({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(

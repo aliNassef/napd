@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/core/utils/app_colors.dart';
@@ -20,13 +21,13 @@ class _GenderSelectorState extends State<GenderSelector> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        _buildGenderOption(context, "Girl", isGirlSelected, (value) {
+        _buildGenderOption(context, "girl".tr(), isGirlSelected, (value) {
           setState(() {
             isGirlSelected = value!;
             isBoySelected = false;
           });
         }),
-        _buildGenderOption(context, "Boy", isBoySelected, (value) {
+        _buildGenderOption(context, "boy".tr(), isBoySelected, (value) {
           setState(() {
             isBoySelected = value!;
             isGirlSelected = false;
@@ -48,7 +49,7 @@ class _GenderSelectorState extends State<GenderSelector> {
             borderRadius: BorderRadius.circular(20.r),
             image: DecorationImage(
               image: AssetImage(
-                gender == "Girl"
+                gender == "girl".tr()
                     ? "assets/images/girl_account.png"
                     : "assets/images/boy_account.jpg",
               ),
@@ -61,7 +62,7 @@ class _GenderSelectorState extends State<GenderSelector> {
           children: [
             Text(
               gender,
-              style: AppStyles.textStyle18SB.copyWith(
+              style: AppStyles.roboto18SemiBold.copyWith(
                 color: AppColors.secondaryColor,
               ),
             ),

@@ -37,7 +37,7 @@ class CustomRoundedAppBar extends StatelessWidget {
           ),
           Text(
             title,
-            style: AppStyles.textStyle24B.copyWith(
+            style: AppStyles.roboto24Bold.copyWith(
               color: AppColors.secondaryColor,
             ),
           ),
