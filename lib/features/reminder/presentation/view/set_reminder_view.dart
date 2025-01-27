@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../widgets/set_reminder_view_body.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
@@ -16,7 +17,7 @@ class _SetReminderViewState extends State<SetReminderView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: 'Add new reminder',
+        title: 'addnewreminder'.tr(),
       ),
       body: SafeArea(
         child: SetReminderViewBody(),

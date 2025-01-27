@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/extensions/padding_extension.dart';
@@ -33,8 +34,8 @@ class ShopViewBody extends StatelessWidget {
             children: [
               VerticalSpace(30),
               ShopHeader(
-                title: 'New Products',
-                subTitle: 'See all',
+                title: 'newproducts'.tr(),
+                subTitle: 'seeall'.tr(),
               ),
               VerticalSpace(12),
             ],
@@ -59,8 +60,8 @@ class ShopViewBody extends StatelessWidget {
             children: [
               VerticalSpace(30),
               ShopHeader(
-                title: 'Clothes',
-                subTitle: 'See all',
+                title: 'clothes'.tr(),
+                subTitle: 'seeall'.tr(),
               ),
               VerticalSpace(12),
             ],

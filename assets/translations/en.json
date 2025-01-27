@@ -4,7 +4,7 @@
     "previous" : "Previous",
     "foryou" : "For you",
     "seeall" : "see all",
-    "articles" : "articles",
+    "articles" : "Articles",
     "captureyourmoments" : "capture your moments",
     "searchhere": "Search here..",
     "crytranslation": "cry translation",
@@ -67,5 +67,17 @@
     "addbaby" : "Add baby",
     "createbabyaccount" : "Create baby account",
     "videos" : "Videos",
-    "podcasts" : "Podcasts"
- }
+    "podcasts" : "Podcasts",
+    "activites" : "Activites",
+    "newproducts" : "New products",
+    "clothes" : "Clothes",
+    "addnewreminder" : "Add new reminder",
+    "title" : "Title",
+    "description" : "Description",
+    "date" : "Date",
+    "cancel" : "Cancel",
+    "filloutthefieldsandhitthesavebuttontoaddit" : "Fill out the fields and hit the Save Button to add it!",
+    "reminders" : "Reminders",
+    "selecttime" : "Select time",
+    "selectedtime" : "Selected time: "
+}

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -11,20 +12,24 @@ class ReminderView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: 'Reminder',
+        title: 'reminder'.tr(),
       ),
       body: ReminderViewBody(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context, rootNavigator: true).pushNamed(
-            SetReminderView.routeName,
-          );
-        },
-        backgroundColor: AppColors.darkBlueColor,
-        child: const Icon(
-          Icons.add,
-          color: Colors.white,
-        ),
+      floatingActionButton: _reminderFloatingButton(context),
+    );
+  }
+
+  FloatingActionButton _reminderFloatingButton(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: () {
+        Navigator.of(context, rootNavigator: true).pushNamed(
+          SetReminderView.routeName,
+        );
+      },
+      backgroundColor: AppColors.darkBlueColor,
+      child: const Icon(
+        Icons.add,
+        color: Colors.white,
       ),
     );
   }
