@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:napd/core/di/service_locator.dart';
 import 'package:napd/core/extensions/mediaquery_size.dart';
+import 'package:napd/core/utils/app_localizations.dart';
 import 'package:napd/core/utils/app_styles.dart';
 import 'package:napd/core/widgets/custom_network_image.dart';
 import 'package:napd/core/widgets/spacers.dart';
@@ -32,20 +33,7 @@ class ArticleDetailsViewBody extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          Positioned(
-            top: 40.h,
-            left: 16.w,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              padding: EdgeInsets.all(8),
-              child: Icon(
-                Icons.arrow_back_ios_rounded,
-              ),
-            ),
-          ),
+          backIconButton(context),
           Positioned(
             top: context.height * 2 / 5 - 40.h,
             child: Container(
@@ -98,6 +86,32 @@ class ArticleDetailsViewBody extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Positioned backIconButton(BuildContext context) {
+    return Positioned.directional(
+      textDirection: injector<AppLocalizations>().isArabic(context)
+          ? TextDirection.rtl
+          : TextDirection.ltr,
+      top: 40.h,
+      start: 16.w,
+      child: GestureDetector(
+        onTap: () {
+          Navigator.pop(context);
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(8),
+          ),
+          padding: EdgeInsets.all(8),
+          child: Icon(
+            Icons.arrow_back_ios_rounded,
+            color: AppColors.darkBlueColor,
+          ),
+        ),
       ),
     );
   }
