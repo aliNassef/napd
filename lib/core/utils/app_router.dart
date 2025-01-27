@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:napd/features/baby_account/presentation/view/baby_account_view.dart';
+import 'package:napd/features/baby_result/presentation/view/baby_result_screen.dart';
+import 'package:napd/features/cry_translator/presentation/view/cry_translator_screen.dart';
+import 'package:napd/features/recording/presentation/view/record_screen.dart';
 import '../../features/add_baby/presentation/view/add_baby_page.dart';
 import '../../features/groups/presentation/view/all_articles_view.dart';
 import '../../features/groups/presentation/view/all_videos_view.dart';
@@ -28,6 +32,22 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case AddBabyPage.routeName:
       return MaterialPageRoute(
         builder: (context) => const AddBabyPage(),
+      );
+    case BabyAccountView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const BabyAccountView(),
+      );
+    case CryTranslatorScreen.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const CryTranslatorScreen(),
+      );
+    case RecordScreen.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const RecordScreen(),
+      );
+    case BabyResultScreen.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const BabyResultScreen(),
       );
     case BoardingView.routeName:
       return MaterialPageRoute(
