@@ -80,5 +80,14 @@
     "addbaby" : "Add baby",
     "createbabyaccount" : "Create baby account",
     "videos" : "Videos",
-    "podcasts" : "Podcasts"
+    "podcasts" : "Podcasts",
+    "toys":"Toys",
+    "seller": "Seller",
+  "description": "Description",
+  "price": "Price",
+  "checkout": "Checkout",
+  "addtocart": "Add to cart",
+   "continueshopping": "Continue Shopping",
+  "gotocart": "Go To Cart",
+  "itemaddedsuccessfully": "Item added Successfully"
  }
