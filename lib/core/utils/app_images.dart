@@ -41,4 +41,12 @@ abstract class AppSvgs {
   static const String locationIcon = 'assets/icons/location.svg';
   static const String clockIcon = 'assets/icons/clock_icon.svg';
   static const String playIcon = 'assets/icons/play_icon.svg';
+  static const String reportIcon = 'assets/icons/report_icon.svg';
+  static const String editIcon = 'assets/icons/edit_icon.svg';
+  static const String babyIcon = 'assets/icons/baby_icon.svg';
+  static const String edit2Icon = 'assets/icons/edit2_icon.svg';
+  static const String editProfileIcon = 'assets/icons/edit_profile_icon.svg';
+  static const String shareIcon = 'assets/icons/share_icon.svg';
+  static const String addBabyIcon = 'assets/icons/add_baby_icon.svg';
+  static const String deleteIcon = 'assets/icons/delete_icon.svg';
 }

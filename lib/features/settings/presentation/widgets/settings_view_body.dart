@@ -41,7 +41,7 @@ class SettingsViewBody extends StatelessWidget {
             onTap: () {},
           ),
           SettingsItem(
-            image: AppSvgs.languageIcon,
+            image: AppSvgs.reportIcon,
             title: 'reports'.tr(),
             onTap: () {},
           ),

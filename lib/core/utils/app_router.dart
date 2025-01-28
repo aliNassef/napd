@@ -4,6 +4,7 @@ import 'package:napd/features/baby_result/presentation/view/baby_result_screen.d
 import 'package:napd/features/cry_translator/presentation/view/cry_translator_screen.dart';
 import 'package:napd/features/recording/presentation/view/record_screen.dart';
 import '../../features/add_baby/presentation/view/add_baby_page.dart';
+import '../../features/baby/presentation/view/baby_profile_view.dart';
 import '../../features/groups/presentation/view/all_articles_view.dart';
 import '../../features/groups/presentation/view/all_videos_view.dart';
 import '../../features/groups/presentation/view/article_details_view.dart';
@@ -122,6 +123,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case RecipesView.routeName:
       return MaterialPageRoute(
         builder: (context) => const ShopView(),
+      );
+    case BabyProfileView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const BabyProfileView(),
       );
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());

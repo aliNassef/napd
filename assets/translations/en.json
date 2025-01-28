@@ -89,5 +89,9 @@
     "cry translator title": "Cry Translator",
     "start button": "Start",
     "translate your baby's cry": "Translate your baby's cry",
-    "record": "Record"
+    "record": "Record",
+    "fullname" : "Full name",
+    "phonenumber" : "Phone number",
+    "updateprofile" : "Update profile",
+    "babyprofile" : "Baby profile" 
 }

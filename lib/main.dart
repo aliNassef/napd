@@ -1,4 +1,4 @@
-import 'dart:developer';
+
 import 'package:device_preview/device_preview.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
@@ -19,7 +19,6 @@ void main() async {
   await ScreenUtil.ensureScreenSize();
   Bloc.observer = CustomBlocObserver();
   final startLocale = await injector<AppLocalizations>().findSystemLocale();
-  log(startLocale.toString());
   bool useDevicePreview = true;
   if (useDevicePreview) {
     runApp(
@@ -40,6 +39,7 @@ void main() async {
   }
   //  else {
   //   runApp(EasyLocalization(
+  //     startLocale: startLocale,
   //     path: 'assets/translations',
   //     supportedLocales: [Locale('en'), Locale('ar')],
   //     fallbackLocale: Locale('en'), // Fallback locale

@@ -89,5 +89,9 @@
   "cry translator title": "مترجم البكاء",
   "start button": "ابدأ",
   "translate your baby's cry": "ترجمة بكاء طفلك",
-  "record": "تسجيل"
+  "record": "تسجيل",
+  "fullname" : "الاسم الكامل",
+  "phonenumber" : "رقم الهاتف",
+  "babyprofile" : "حساب الطفل" 
+  
 }

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../home/presentation/view/home_view.dart';
 import '../../../nursery/presentation/view/nursery_view.dart';
+import '../../../profile/presentation/view/profile_view.dart';
 import '../../../reminder/presentation/view/reminder_view.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
@@ -32,9 +33,7 @@ class _LayoutViewBodyState extends State<LayoutViewBody> {
       NurseryView(),
       ReminderView(),
       GroupView(),
-      Container(
-        color: Colors.blueGrey,
-      ),
+      ProfileView(),
     ];
   }
 
