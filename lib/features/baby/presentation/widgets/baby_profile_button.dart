@@ -9,10 +9,12 @@ class BabyProfileButton extends StatelessWidget {
     required this.icon,
     required this.text,
     required this.backgroundColor,
+    this.onPressed,
   });
   final String icon;
   final String text;
   final Color backgroundColor;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return TextButton.icon(
@@ -24,7 +26,7 @@ class BabyProfileButton extends StatelessWidget {
       icon: SvgPicture.asset(
         icon,
       ),
-      onPressed: () {},
+      onPressed: onPressed,
       label: Padding(
         padding: const EdgeInsets.only(
           left: 13,

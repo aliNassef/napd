@@ -9,6 +9,7 @@ abstract class AppImages {
   static const String drawer = 'assets/images/drawer.png';
   static const String camera = 'assets/images/Camera.png';
   static const String splash = 'assets/images/splash.png';
+  static const String background = 'assets/images/background_image.png';
 }
 
 abstract class AppSvgs {
