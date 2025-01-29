@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:napd/features/baby_account/presentation/view/baby_account_view.dart';
 import 'package:napd/features/baby_result/presentation/view/baby_result_screen.dart';
-import 'package:napd/features/cry_translator/presentation/view/cry_translator_screen.dart';
+import 'package:napd/features/baby/presentation/view/cry_translator_view.dart';
 import 'package:napd/features/recording/presentation/view/record_screen.dart';
-import '../../features/add_baby/presentation/view/add_baby_page.dart';
+import '../../features/baby/presentation/view/add_baby_view.dart';
 import '../../features/baby/presentation/view/baby_profile_details_view.dart';
 import '../../features/baby/presentation/view/baby_profile_view.dart';
 import '../../features/groups/presentation/view/all_articles_view.dart';
@@ -33,9 +33,9 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const SplashView(),
       );
-    case AddBabyPage.routeName:
+    case AddBabyView.routeName:
       return MaterialPageRoute(
-        builder: (context) => const AddBabyPage(),
+        builder: (context) => const AddBabyView(),
       );
     case BabyAccountView.routeName:
       return MaterialPageRoute(

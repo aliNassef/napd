@@ -1,31 +1,8 @@
-import 'package:easy_localization/easy_localization.dart';
+
 import 'package:flutter/material.dart';
+
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
-import '../../../../core/widgets/spacers.dart';
-import 'cry_translation_image.dart';
-import 'cry_translator_button.dart';
-import 'cry_translator_subtitle.dart';
-
-class CryTranslatorContent extends StatelessWidget {
-  const CryTranslatorContent({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        CustomRoundedAppBar(
-          title: "cry translator title".tr(),
-        ),
-        VerticalSpace(50),
-        CryTranslatorSubtitle(),
-        CryTranslatorImage(),
-        CryTranslatorStartButton(),
-      ],
-    );
-  }
-}
 
 class CustomRoundedAppBar extends StatelessWidget {
   final String title;

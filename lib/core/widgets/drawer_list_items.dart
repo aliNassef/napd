@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../features/baby/presentation/view/baby_profile_view.dart';
-import '../../features/cry_translator/presentation/view/cry_translator_screen.dart';
+import '../../features/baby/presentation/view/cry_translator_view.dart';
 import '../../features/parenting_resources/presentation/views/activites_view.dart';
 import '../entities/drawer_item_entity.dart';
 import 'spacers.dart';
