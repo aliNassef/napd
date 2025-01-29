@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/utils/app_colors.dart';
-import 'package:napd/core/utils/app_styles.dart';
-import 'package:napd/core/widgets/custom_text_form_field.dart';
-import 'package:napd/core/widgets/spacers.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_styles.dart';
+import '../../../../core/widgets/custom_text_form_field.dart';
+import '../../../../core/widgets/spacers.dart';
 
 class ProfileFormStyle extends StatelessWidget {
   const ProfileFormStyle(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:napd/core/extensions/mediaquery_size.dart';
-import 'package:napd/core/widgets/custom_network_image.dart';
+import '../../../../core/extensions/mediaquery_size.dart';
+import '../../../../core/widgets/custom_network_image.dart';
 import '../../../../core/di/service_locator.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_localizations.dart';

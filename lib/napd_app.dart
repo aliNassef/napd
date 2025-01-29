@@ -3,10 +3,9 @@ import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'features/splash/presentation/view/splash_view.dart';
-
 import 'core/utils/app_router.dart';
 import 'core/utils/app_themes.dart';
+import 'features/splash/presentation/view/splash_view.dart';
 
 class Napd extends StatelessWidget {
   const Napd({super.key});

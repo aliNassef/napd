@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:napd/core/utils/app_colors.dart';
-import 'package:napd/core/utils/app_styles.dart';
-import 'package:napd/core/widgets/custom_text_form_field.dart';
-import 'package:napd/core/widgets/default_app_button.dart';
-import 'package:napd/core/widgets/spacers.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_styles.dart';
+import '../../../../core/widgets/custom_text_form_field.dart';
+import '../../../../core/widgets/default_app_button.dart';
+import '../../../../core/widgets/spacers.dart';
 
 import 'baby_gender_selector.dart';
 

@@ -53,4 +53,5 @@ abstract class AppSvgs {
   static const String shareIcon = 'assets/icons/share_icon.svg';
   static const String addBabyIcon = 'assets/icons/add_baby_icon.svg';
   static const String deleteIcon = 'assets/icons/delete_icon.svg';
+  static const String filterIcon = 'assets/icons/filter_icon.svg';
 }

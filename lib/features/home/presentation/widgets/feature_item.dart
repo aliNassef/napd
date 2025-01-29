@@ -20,10 +20,10 @@ class FeatureItem extends StatelessWidget {
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 8.h),
+          padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 16.h),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(23.5),
-            color: Colors.white.withValues(alpha: 0.8),
+            color: Color(0xfffefbfe),
             boxShadow: [
               AppShadows.shadow2,
             ],
@@ -33,7 +33,7 @@ class FeatureItem extends StatelessWidget {
         VerticalSpace(7),
         Text(
           text,
-          style: AppStyles.roboto10SemiBold.copyWith(
+          style: AppStyles.roboto15SemiBold.copyWith(
             color: color,
           ),
         )

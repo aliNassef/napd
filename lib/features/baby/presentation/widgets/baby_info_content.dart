@@ -1,8 +1,8 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:napd/core/extensions/mediaquery_size.dart';
-import 'package:napd/core/extensions/padding_extension.dart';
+import '../../../../core/extensions/mediaquery_size.dart';
+import '../../../../core/extensions/padding_extension.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';

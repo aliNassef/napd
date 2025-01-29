@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:napd/features/baby/presentation/view/baby_account_view.dart';
-import 'package:napd/features/baby/presentation/view/baby_result_view.dart';
-import 'package:napd/features/baby/presentation/view/cry_translator_view.dart';
-import 'package:napd/features/recording/presentation/view/record_screen.dart';
+import '../../features/baby/presentation/view/baby_account_view.dart';
+import '../../features/baby/presentation/view/baby_result_view.dart';
+import '../../features/baby/presentation/view/cry_translator_view.dart';
+import '../../features/recording/presentation/view/record_screen.dart';
 import '../../features/baby/presentation/view/add_baby_view.dart';
 import '../../features/baby/presentation/view/baby_profile_details_view.dart';
 import '../../features/baby/presentation/view/baby_profile_view.dart';
@@ -123,7 +123,7 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       );
     case RecipesView.routeName:
       return MaterialPageRoute(
-        builder: (context) => const ShopView(),
+        builder: (context) => const RecipesView(),
       );
     case BabyProfileView.routeName:
       return MaterialPageRoute(

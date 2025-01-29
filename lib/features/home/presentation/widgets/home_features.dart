@@ -21,28 +21,22 @@ class HomeFeatures extends StatelessWidget {
         borderRadius: BorderRadius.circular(30),
       ),
       child: Row(
-        // spacing: 20.w,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           FeatureItem(
-            color: AppColors.secondaryColor,
+            color: AppColors.darkBlueColor,
             img: AppSvgs.cryIcon,
             text: 'crytranslation'.tr(),
           ),
           FeatureItem(
             color: AppColors.darkBlueColor,
-            img: AppSvgs.vaccineIcon,
-            text: 'vaccination'.tr(),
+            img: AppSvgs.recipesIcon,
+            text: 'recipes'.tr(),
           ),
           FeatureItem(
-            color: AppColors.greenLightColor,
+            color: AppColors.darkBlueColor,
             img: AppSvgs.activitesIcon,
             text: 'activities'.tr(),
-          ),
-          FeatureItem(
-            color: Color(0xffCCBC41),
-            img: AppSvgs.growthIcon,
-            text: 'growth'.tr(),
           ),
         ],
       ),
