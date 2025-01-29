@@ -36,18 +36,6 @@ class _DrawerListItemsState extends State<DrawerListItems> {
 
   List<DrawerItemEntity> drawerItems = [
     DrawerItemEntity(
-      text: 'profile'.tr(),
-      image: AppSvgs.profile2Icon,
-      onTap: (context) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => SettingsView(),
-          ),
-        );
-      },
-    ),
-    DrawerItemEntity(
       text: 'tipsandtricks'.tr(),
       image: AppSvgs.tipsTricsIcon,
       onTap: (context) {

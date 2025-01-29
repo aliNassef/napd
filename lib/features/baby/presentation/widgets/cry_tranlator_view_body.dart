@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:napd/core/extensions/mediaquery_size.dart';
 import 'package:napd/core/extensions/padding_extension.dart';
 import 'package:napd/core/utils/app_images.dart';
+import 'package:napd/features/baby/presentation/view/baby_result_view.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/default_app_button.dart';
@@ -36,9 +37,9 @@ class CryTranslatorViewBody extends StatelessWidget {
           ),
           VerticalSpace(16),
           DefaultAppButton(
-            text: "start button".tr(),
+            text: "startbutton".tr(),
             onPressed: () {
-              // Add your action here
+              Navigator.of(context).pushNamed(BabyResultView.routeName);
             },
             backgroundColor: AppColors.secondaryColor,
             textColor: AppColors.primaryColor,

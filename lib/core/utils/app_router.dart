@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:napd/features/baby_account/presentation/view/baby_account_view.dart';
-import 'package:napd/features/baby_result/presentation/view/baby_result_screen.dart';
+import 'package:napd/features/baby/presentation/view/baby_account_view.dart';
+import 'package:napd/features/baby/presentation/view/baby_result_view.dart';
 import 'package:napd/features/baby/presentation/view/cry_translator_view.dart';
 import 'package:napd/features/recording/presentation/view/record_screen.dart';
 import '../../features/baby/presentation/view/add_baby_view.dart';
@@ -49,9 +49,9 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const RecordScreen(),
       );
-    case BabyResultScreen.routeName:
+    case BabyResultView.routeName:
       return MaterialPageRoute(
-        builder: (context) => const BabyResultScreen(),
+        builder: (context) => const BabyResultView(),
       );
     case BoardingView.routeName:
       return MaterialPageRoute(

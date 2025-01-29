@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:napd/features/baby_result/presentation/widget/prediction_card.dart';
+import 'package:napd/features/baby/presentation/widgets/prediction_card.dart';
 
 class PredictionList extends StatelessWidget {
   final List<Map<String, dynamic>> predictions;

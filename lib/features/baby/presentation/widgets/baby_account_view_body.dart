@@ -6,45 +6,41 @@ import 'package:napd/core/widgets/custom_text_form_field.dart';
 import 'package:napd/core/widgets/default_app_button.dart';
 import 'package:napd/core/widgets/spacers.dart';
 
-import 'gender_selector.dart';
+import 'baby_gender_selector.dart';
 
-class BabyForm extends StatelessWidget {
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController ageController = TextEditingController();
-  final TextEditingController weightController = TextEditingController();
-  final TextEditingController heightController = TextEditingController();
-
-  BabyForm({super.key});
+class BabyAccountViewBody extends StatelessWidget {
+  const BabyAccountViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        VerticalSpace(30),
         Text(
-          "create Baby Account".tr(),
-          style: AppStyles.roboto32Bold.copyWith(
+          "createbabyaccount".tr(),
+          style: AppStyles.roboto40Bold.copyWith(
             color: AppColors.greyColor,
           ),
         ),
         VerticalSpace(40),
         CustomTextFormField(
           hintText: "name".tr(),
-          controller: nameController,
+          controller: TextEditingController(),
         ),
-        VerticalSpace(30),
+        VerticalSpace(28),
         CustomTextFormField(
           hintText: "age".tr(),
-          controller: ageController,
+          controller: TextEditingController(),
           keyboardType: TextInputType.number,
         ),
-        VerticalSpace(30),
+        VerticalSpace(28),
         Row(
           children: [
             Expanded(
               child: CustomTextFormField(
                 hintText: "weight".tr(),
-                controller: weightController,
+                controller: TextEditingController(),
                 keyboardType: TextInputType.number,
               ),
             ),
@@ -52,15 +48,15 @@ class BabyForm extends StatelessWidget {
             Expanded(
               child: CustomTextFormField(
                 hintText: "height".tr(),
-                controller: heightController,
+                controller: TextEditingController(),
                 keyboardType: TextInputType.number,
               ),
             ),
           ],
         ),
         VerticalSpace(40),
-        GenderSelector(),
-        VerticalSpace(30),
+        BabyGenderSelector(),
+        VerticalSpace(50),
         DefaultAppButton(
           text: "finish".tr(),
           onPressed: () {},
@@ -68,9 +64,9 @@ class BabyForm extends StatelessWidget {
           textColor: AppColors.primaryColor,
           padding: 40,
         ),
-        VerticalSpace(20),
+        VerticalSpace(10),
         DefaultAppButton(
-          text: "add Baby".tr(),
+          text: "addbaby".tr(),
           onPressed: () {},
           backgroundColor: AppColors.greyColor,
           textColor: AppColors.primaryColor,

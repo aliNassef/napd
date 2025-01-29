@@ -82,16 +82,17 @@
   "selectedtime": "الوقت المحدد: ",
   "add your baby": "أضف طفلك",
   "create baby account": "إنشاء حساب للطفل",
-  "result title": "النتيجة",
+  "result": "النتيجة",
   "hungry status": "أنا جائع!",
   "hungry": "جائع",
   "sleepy": "نعسان",
   "cry translator title": "مترجم البكاء",
-  "start button": "ابدأ",
+  "startbutton": "ابدأ",
   "translate your baby's cry": "ترجمة بكاء طفلك",
   "record": "تسجيل",
   "fullname" : "الاسم الكامل",
   "phonenumber" : "رقم الهاتف",
   "babyprofile" : "حساب الطفل" 
+
   
 }

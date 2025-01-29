@@ -1,18 +1,23 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/core/extensions/padding_extension.dart';
 import 'package:napd/core/utils/app_colors.dart';
+import 'package:napd/core/utils/app_images.dart';
 import 'package:napd/core/utils/app_styles.dart';
 import 'package:napd/core/widgets/spacers.dart';
 
-class GenderSelector extends StatefulWidget {
-  const GenderSelector({super.key});
+import '../../../../core/widgets/custom_check_box.dart';
+
+class BabyGenderSelector extends StatefulWidget {
+  const BabyGenderSelector({super.key});
 
   @override
-  _GenderSelectorState createState() => _GenderSelectorState();
+  // ignore: library_private_types_in_public_api
+  _BabyGenderSelectorState createState() => _BabyGenderSelectorState();
 }
 
-class _GenderSelectorState extends State<GenderSelector> {
+class _BabyGenderSelectorState extends State<BabyGenderSelector> {
   bool isGirlSelected = false;
   bool isBoySelected = false;
 
@@ -50,8 +55,8 @@ class _GenderSelectorState extends State<GenderSelector> {
             image: DecorationImage(
               image: AssetImage(
                 gender == "girl".tr()
-                    ? "assets/images/girl_account.png"
-                    : "assets/images/boy_account.jpg",
+                    ? AppImages.girlAccount
+                    : AppImages.boyAccount,
               ),
               fit: BoxFit.cover,
             ),
@@ -67,22 +72,10 @@ class _GenderSelectorState extends State<GenderSelector> {
               ),
             ),
             VerticalSpace(5),
-            Transform.scale(
-              scale: 1.6,
-              child: Checkbox(
-                value: isSelected,
-                onChanged: onChanged,
-                side: BorderSide(
-                  color: AppColors.secondaryColor,
-                  width: 1.2,
-                ),
-                fillColor: WidgetStateProperty.all(Colors.transparent),
-                checkColor: AppColors.secondaryColor,
-              ),
-            ),
+            CustomCheckBox(),
           ],
         ),
       ],
-    );
+    ).withHorizontalPadding(25);
   }
 }

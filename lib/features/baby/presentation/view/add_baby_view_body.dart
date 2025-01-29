@@ -5,6 +5,7 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/widgets/default_app_button.dart';
 import '../../../../core/widgets/spacers.dart';
+import 'baby_account_view.dart';
 
 class AddBabyViewBody extends StatelessWidget {
   const AddBabyViewBody({
@@ -23,6 +24,7 @@ class AddBabyViewBody extends StatelessWidget {
             style: AppStyles.roboto48Bold.copyWith(
               color: AppColors.greyColor,
             ),
+            textAlign: TextAlign.center,
           ),
           const VerticalSpace(30),
           ClipOval(
@@ -34,7 +36,9 @@ class AddBabyViewBody extends StatelessWidget {
           const VerticalSpace(100),
           DefaultAppButton(
             text: "add".tr(),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed(BabyAccountView.routeName);
+            },
             backgroundColor: AppColors.secondaryColor,
             textColor: AppColors.primaryColor,
             padding: 48,
