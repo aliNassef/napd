@@ -4,6 +4,7 @@ import 'package:napd/features/baby_result/presentation/view/baby_result_screen.d
 import 'package:napd/features/cry_translator/presentation/view/cry_translator_screen.dart';
 import 'package:napd/features/home/presentation/view/home_view.dart';
 import 'package:napd/features/recording/presentation/view/record_screen.dart';
+import 'package:napd/features/shop/presentation/view/cart_view.dart';
 import 'package:napd/features/shop/presentation/view/product_details_view.dart';
 import '../../features/add_baby/presentation/view/add_baby_page.dart';
 import '../../features/groups/presentation/view/all_articles_view.dart';
@@ -119,6 +120,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case ProductDetailsView.routeName:
       return MaterialPageRoute(
         builder: (context) => const ProductDetailsView(),
+      );
+    case CartView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => CartView(),
       );
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
