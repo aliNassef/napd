@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/extensions/padding_extension.dart';
-
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_shadows.dart';
 import '../../../../core/utils/app_styles.dart';
@@ -34,6 +34,8 @@ class ShopItem extends StatelessWidget {
               fit: BoxFit.cover,
               img:
                   'https://r2.starryai.com/results/1042152870/6eb099de-74c0-460b-900e-551a3e7c540f.webp',
+              height: 200.h,
+              width: 150.w,
             ),
           ),
           Positioned(
