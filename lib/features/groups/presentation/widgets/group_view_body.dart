@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:napd/features/groups/presentation/view/all_groups_view.dart';
-import 'package:napd/features/groups/presentation/widgets/header_with_see_all.dart';
+import '../view/all_groups_view.dart';
+import 'header_with_see_all.dart';
 import '../../../../core/widgets/spacers.dart';
 import 'group_item.dart';
 

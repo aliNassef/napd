@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:napd/features/parenting_resources/presentation/views/activites_view.dart';
-import 'package:napd/features/parenting_resources/presentation/views/recipes_view.dart';
+import '../../../parenting_resources/presentation/views/activites_view.dart';
+import '../../../parenting_resources/presentation/views/recipes_view.dart';
 import '../../../../core/utils/app_images.dart';
 
 import '../../../../core/utils/app_colors.dart';
