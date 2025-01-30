@@ -92,5 +92,7 @@
     "fullname" : "Full name",
     "phonenumber" : "Phone number",
     "updateprofile" : "Update profile",
-    "babyprofile" : "Baby profile" 
+    "babyprofile" : "Baby profile",
+    "ingredients:" : "Ingredients:",
+    "nutritionalvalue:" : "Nutritional value:"
 }

@@ -92,7 +92,9 @@
   "record": "تسجيل",
   "fullname" : "الاسم الكامل",
   "phonenumber" : "رقم الهاتف",
-  "babyprofile" : "حساب الطفل" 
+  "babyprofile" : "حساب الطفل" ,
+  "ingredients:" : ":المكونات",
+  "nutritionalvalue:" : ":قيمة غذائية"
 
   
 }

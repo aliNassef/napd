@@ -1,13 +1,20 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../../../core/widgets/spacers.dart';
+import 'recipe_point_item.dart';
 
 class RecipeItemContent extends StatelessWidget {
-  const RecipeItemContent({super.key, required this.points});
-  final List<String> points;
+  const RecipeItemContent({
+    super.key,
+    required this.nutritionalPoints,
+    required this.ingredientsPoints,
+  });
+  final List<String> nutritionalPoints;
+  final List<String> ingredientsPoints;
 
   @override
   Widget build(BuildContext context) {
@@ -29,32 +36,31 @@ class RecipeItemContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
-              'Ingredients:',
+              'ingredients:'.tr(),
               style: AppStyles.roboto18Regular.copyWith(
                 color: AppColors.secondaryColor,
               ),
             ),
           ],
         ),
-        ...points.map(
-          (point) => Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                '  •  ',
-                style: AppStyles.roboto14Regular.copyWith(
-                  color: AppColors.darkBlueColor,
-                ),
+        ...nutritionalPoints.map(
+          (point) => RecipePointItem(point: point),
+        ),
+        VerticalSpace(11),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(
+              'nutritionalvalue:'.tr(),
+              style: AppStyles.roboto18Regular.copyWith(
+                color: AppColors.secondaryColor,
               ),
-              Expanded(
-                child: Text(
-                  point,
-                  style: AppStyles.roboto14Regular.copyWith(
-                    color: AppColors.darkBlueColor,
-                  ),
-                ),
-              ),
-            ],
+            ),
+          ],
+        ),
+        ...nutritionalPoints.map(
+          (point) => RecipePointItem(
+            point: point,
           ),
         ),
         VerticalSpace(21),

@@ -1,9 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/features/parenting_resources/presentation/views/activites_view.dart';
+import 'package:napd/features/parenting_resources/presentation/views/recipes_view.dart';
 import '../../../../core/utils/app_images.dart';
 
 import '../../../../core/utils/app_colors.dart';
+import '../../../baby/presentation/view/cry_translator_view.dart';
 import 'feature_item.dart';
 
 class HomeFeatures extends StatelessWidget {
@@ -27,16 +30,31 @@ class HomeFeatures extends StatelessWidget {
             color: AppColors.darkBlueColor,
             img: AppSvgs.cryIcon,
             text: 'crytranslation'.tr(),
+            onTap: () {
+              Navigator.of(context, rootNavigator: true).pushNamed(
+                CryTranslatorView.routeName,
+              );
+            },
           ),
           FeatureItem(
             color: AppColors.darkBlueColor,
             img: AppSvgs.recipesIcon,
             text: 'recipes'.tr(),
+            onTap: () {
+              Navigator.of(context, rootNavigator: true).pushNamed(
+                RecipesView.routeName,
+              );
+            },
           ),
           FeatureItem(
             color: AppColors.darkBlueColor,
             img: AppSvgs.activitesIcon,
             text: 'activities'.tr(),
+            onTap: () {
+              Navigator.of(context, rootNavigator: true).pushNamed(
+                ActivitesView.routeName,
+              );
+            },
           ),
         ],
       ),
