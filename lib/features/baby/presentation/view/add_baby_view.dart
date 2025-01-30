@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../core/widgets/background_widget.dart';
-import 'add_baby_view_body.dart';
+import '../widgets/add_baby_view_body.dart';
 
 class AddBabyView extends StatelessWidget {
   static const String routeName = 'addBaby';

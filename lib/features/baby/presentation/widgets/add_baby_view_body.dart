@@ -5,7 +5,7 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/widgets/default_app_button.dart';
 import '../../../../core/widgets/spacers.dart';
-import 'baby_account_view.dart';
+import '../view/baby_account_view.dart';
 
 class AddBabyViewBody extends StatelessWidget {
   const AddBabyViewBody({
