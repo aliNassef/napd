@@ -23,9 +23,9 @@ class CustomSearchAppBar extends StatelessWidget
       automaticallyImplyLeading: false,
       leading: leading != null
           ? Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [leading!],
-          )
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [leading!],
+            )
           : GestureDetector(
               onTap: () {
                 Scaffold.of(context).openDrawer();
@@ -67,8 +67,9 @@ class CustomSearchAppBar extends StatelessWidget
 }
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key, required this.title});
+  const CustomAppBar({super.key, required this.title, this.onLeadingTap});
   final String title;
+  final void Function()? onLeadingTap;
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -77,9 +78,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       leading: InkWell(
         borderRadius: BorderRadius.circular(16),
-        onTap: () {
-          Navigator.pop(context);
-        },
+        onTap: onLeadingTap ??
+            () {
+              Navigator.pop(context);
+            },
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 30.w),
           child: Icon(

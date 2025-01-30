@@ -19,21 +19,25 @@ class LayoutViewBody extends StatefulWidget {
 }
 
 class _LayoutViewBodyState extends State<LayoutViewBody> {
-  late PersistentTabController _controller;
+  late PersistentTabController controller;
 
   @override
   void initState() {
     super.initState();
-    _controller = PersistentTabController(initialIndex: 0);
+    controller = PersistentTabController(initialIndex: 0);
   }
 
   List<Widget> _buildScreens() {
     return [
       HomeView(),
       NurseryView(),
-      ReminderView(),
+      ReminderView(
+        controller: controller,
+      ),
       GroupView(),
-      ProfileView(),
+      ProfileView(
+        controller: controller,
+      ),
     ];
   }
 
@@ -111,7 +115,7 @@ class _LayoutViewBodyState extends State<LayoutViewBody> {
   Widget build(BuildContext context) {
     return PersistentTabView(
       context,
-      controller: _controller,
+      controller: controller,
       screens: _buildScreens(),
       items: _navBarsItems(),
       handleAndroidBackButtonPress: true,

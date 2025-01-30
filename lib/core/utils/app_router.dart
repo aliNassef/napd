@@ -24,7 +24,6 @@ import '../../features/layout/presentation/view/layout_view.dart';
 import '../../features/login/presentation/view/login_view.dart';
 import '../../features/login/presentation/view/select_baby_account_view.dart';
 import '../../features/nursery/presentation/view/nursery_view.dart';
-import '../../features/reminder/presentation/view/reminder_view.dart';
 import '../../features/signup/presentation/view/signup_view.dart';
 import '../../features/parenting_resources/presentation/views/tips_and_tricks_view.dart';
 
@@ -86,10 +85,7 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const SettingsView(),
       );
-    case ReminderView.routeName:
-      return MaterialPageRoute(
-        builder: (context) => const ReminderView(),
-      );
+
     case TipsAndTricksView.routeName:
       return MaterialPageRoute(
         builder: (context) => const TipsAndTricksView(),
