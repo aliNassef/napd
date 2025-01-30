@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:napd/core/widgets/spacers.dart';
+import 'package:napd/features/shop/presentation/view/checkout_view.dart';
 import 'package:napd/features/shop/presentation/widgets/style_actionButton.dart';
 
 import 'success_dialog.dart';
@@ -23,7 +24,12 @@ class ProductActionButtons extends StatelessWidget {
           child: StyledActionButton(
             label: "checkout".tr(),
             isElevated: true,
-            onPressed: () => _showSuccessDialog(context),
+            onPressed: () {
+              Navigator.pushNamed(
+                context,
+                CheckoutView.routeName,
+              );
+            },
           ),
         ),
         HorizantalSpace(30),

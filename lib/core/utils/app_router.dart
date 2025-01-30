@@ -5,6 +5,7 @@ import 'package:napd/features/cry_translator/presentation/view/cry_translator_sc
 import 'package:napd/features/home/presentation/view/home_view.dart';
 import 'package:napd/features/recording/presentation/view/record_screen.dart';
 import 'package:napd/features/shop/presentation/view/cart_view.dart';
+import 'package:napd/features/shop/presentation/view/checkout_view.dart';
 import 'package:napd/features/shop/presentation/view/product_details_view.dart';
 import '../../features/add_baby/presentation/view/add_baby_page.dart';
 import '../../features/groups/presentation/view/all_articles_view.dart';
@@ -23,7 +24,7 @@ import '../../features/login/presentation/view/login_view.dart';
 import '../../features/login/presentation/view/select_baby_account_view.dart';
 import '../../features/nursery/presentation/view/nursery_view.dart';
 import '../../features/reminder/presentation/view/reminder_view.dart';
-import '../../features/signup/presentation/view/signup_view.dart';
+import '../../features/shop/presentation/widgets/signup/presentation/view/signup_view.dart';
 import '../../features/parenting_resources/presentation/views/tips_and_tricks_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -124,6 +125,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case CartView.routeName:
       return MaterialPageRoute(
         builder: (context) => CartView(),
+      );
+    case CheckoutView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => CheckoutView(),
       );
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());

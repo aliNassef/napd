@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:napd/core/utils/app_colors.dart';
 import 'package:napd/core/utils/app_styles.dart';
+import 'package:napd/features/shop/presentation/view/cart_view.dart';
 import 'package:napd/features/shop/presentation/widgets/dialog_actionButton.dart';
 
 class SuccessDialog extends StatelessWidget {
@@ -41,9 +42,12 @@ class SuccessDialog extends StatelessWidget {
             DialogActionButtons(
               //Continue Shopping action
               onContinueShopping: () {},
-              //cart action
+
               onGoToCart: () {
-                // Navigate to the cart page
+                Navigator.pushNamed(
+                  context,
+                  CartView.routeName,
+                );
               },
             )
           ],

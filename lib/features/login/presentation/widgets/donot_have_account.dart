@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
-import '../../../signup/presentation/view/signup_view.dart';
+import '../../../shop/presentation/widgets/signup/presentation/view/signup_view.dart';
 
 class DonotHaveAccount extends StatelessWidget {
   const DonotHaveAccount({

@@ -1,9 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:napd/features/login/presentation/view/login_view.dart';
 
-import '../../../../core/utils/app_colors.dart';
-import '../../../../core/utils/app_styles.dart';
-import '../../../login/presentation/view/login_view.dart';
+import '../../../../../../../core/utils/app_colors.dart';
+import '../../../../../../../core/utils/app_styles.dart';
 
 class AlreadyHaveAccount extends StatelessWidget {
   const AlreadyHaveAccount({

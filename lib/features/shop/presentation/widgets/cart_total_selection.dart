@@ -3,6 +3,11 @@ import 'package:napd/core/utils/app_colors.dart';
 import 'package:napd/core/utils/app_styles.dart';
 
 class CartTotalSection extends StatelessWidget {
+  final String label;
+  final String amount;
+
+  const CartTotalSection(
+      {super.key, required this.label, required this.amount});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -11,13 +16,13 @@ class CartTotalSection extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            "Order total:",
+            label,
             style: AppStyles.roboto24SemiBold.copyWith(
               color: AppColors.darkBlueColor,
             ),
           ),
           Text(
-            "\$26.99",
+            amount,
             style: AppStyles.roboto24SemiBold.copyWith(
               color: AppColors.darkBlueColor,
             ),
