@@ -1,16 +1,16 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../features/baby/presentation/view/baby_profile_view.dart';
-import '../../features/baby/presentation/view/cry_translator_view.dart';
-import '../../features/parenting_resources/presentation/views/activites_view.dart';
-import '../entities/drawer_item_entity.dart';
-import 'spacers.dart';
-import '../../features/parenting_resources/presentation/views/recipes_view.dart';
-import '../../features/settings/presentation/view/settings_view.dart';
-import '../../features/shop/presentation/view/shop_view.dart';
-import '../../features/parenting_resources/presentation/views/tips_and_tricks_view.dart';
-import '../utils/app_images.dart';
+import '../../../baby/presentation/view/baby_profile_view.dart';
+import '../../../baby/presentation/view/cry_translator_view.dart';
+import '../../../parenting_resources/presentation/views/activites_view.dart';
+import '../../../../core/entities/drawer_item_entity.dart';
+import '../../../../core/widgets/spacers.dart';
+import '../../../parenting_resources/presentation/views/recipes_view.dart';
+import '../../../settings/presentation/view/settings_view.dart';
+import '../../../shop/presentation/view/shop_view.dart';
+import '../../../parenting_resources/presentation/views/tips_and_tricks_view.dart';
+import '../../../../core/utils/app_images.dart';
 import 'drawer_item.dart';
 
 class DrawerListItems extends StatefulWidget {
