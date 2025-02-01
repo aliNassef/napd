@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
-import '../../../../core/widgets/custom_app_bar.dart';
+import '../../../../core/widgets/appbars/custom_app_bar.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../widgets/reminder_view_body.dart';
 import 'set_reminder_view.dart';
