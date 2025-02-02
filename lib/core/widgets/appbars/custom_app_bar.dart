@@ -14,6 +14,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.white,
       centerTitle: true,
       leading: InkWell(
+        highlightColor: Colors.transparent,
         borderRadius: BorderRadius.circular(16),
         onTap: onLeadingTap ??
             () {
