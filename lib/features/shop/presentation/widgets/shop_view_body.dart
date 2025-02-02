@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/widgets/custom_search_bar.dart';
 import '../../../../core/widgets/spacers.dart';
-import 'custom_carousel_slider.dart';
+import 'shop_offers_items.dart';
 import 'shop_header.dart';
 import 'shop_item.dart';
 
@@ -27,7 +27,7 @@ class ShopViewBody extends StatelessWidget {
           ).withHorizontalPadding(16),
         ),
         SliverToBoxAdapter(
-          child: CustomCarouselSlider(),
+          child: ShopOffersItems(),
         ),
         SliverToBoxAdapter(
           child: Column(
