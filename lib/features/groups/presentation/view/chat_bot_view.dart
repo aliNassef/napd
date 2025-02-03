@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/extensions/mediaquery_size.dart';
 import 'package:napd/core/extensions/padding_extension.dart';
 import 'package:napd/core/widgets/spacers.dart';
-
 import '../widgets/input_message_field.dart';
+import '../widgets/suggestion_column.dart';
 
 class ChatBotViewBody extends StatelessWidget {
   const ChatBotViewBody({super.key});
@@ -14,13 +13,16 @@ class ChatBotViewBody extends StatelessWidget {
       child: Column(
         children: [
           Expanded(
-            child: SingleChildScrollView(
-              reverse: true,
-              child: Container(
-                height: context.height,
-                color: Colors.cyanAccent,
-              ),
-            ),
+            child: SuggestionColumn(),
+            //  ListView.builder(
+            //   reverse: true,
+            //   itemCount: 5,
+            //   itemBuilder: (_, index) {
+            //     return MessageBubble(
+            //       text: 'Ali Nassef',
+            //     );
+            //   },
+            // ),
           ),
           VerticalSpace(16),
           InputMessageField(),
