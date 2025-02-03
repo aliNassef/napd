@@ -1,5 +1,6 @@
 import 'package:bubble/bubble.dart';
 import 'package:flutter/material.dart';
+import 'package:napd/core/extensions/mediaquery_size.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
@@ -23,9 +24,12 @@ class MessageBubble extends StatelessWidget {
       alignment: Alignment.centerLeft,
       padding: const BubbleEdges.all(14),
       margin: BubbleEdges.all(10),
-      child: Text(
-        text,
-        style: AppStyles.roboto12Medium.copyWith(color: Colors.white),
+      child: Container(
+        constraints: BoxConstraints(maxWidth: context.width * 0.6),
+        child: Text(
+          text,
+          style: AppStyles.roboto12Medium.copyWith(color: Colors.white),
+        ),
       ),
     );
   }
