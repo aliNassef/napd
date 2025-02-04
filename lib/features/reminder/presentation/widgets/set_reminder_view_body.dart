@@ -1,6 +1,6 @@
-import 'dart:developer';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:napd/core/helpers/notification_service.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -63,13 +63,14 @@ class SetReminderViewBody extends StatelessWidget {
             firstDate: DateTime.now(),
             initialDate: DateTime.now(),
             lastDate: DateTime.now().add(Duration(days: 365)),
-            onDateChanged: (DateTime date) {
-              log(date.toString());
-            },
+            onDateChanged: (DateTime date) {},
           ),
           SelectTimeButton(),
           VerticalSpace(20),
           DefaultAppButton(
+            onPressed: () {
+              _testNotification();
+            },
             padding: context.width * 1 / 6,
             text: 'save'.tr(),
             backgroundColor: AppColors.secondaryColor,
@@ -77,6 +78,9 @@ class SetReminderViewBody extends StatelessWidget {
           ),
           VerticalSpace(10),
           DefaultAppButton(
+            onPressed: (){
+              Navigator.pop(context);
+            },
             padding: context.width * 1 / 6,
             text: 'cancel'.tr(),
             backgroundColor: Color(0xffF9E9FC),
@@ -85,6 +89,16 @@ class SetReminderViewBody extends StatelessWidget {
           VerticalSpace(30),
         ],
       ).withHorizontalPadding(16),
+    );
+  }
+
+  void _testNotification() {
+    NotificationService.scheduleNotification(
+      scheduledTime: DateTime.now().add(
+        Duration(seconds: 30),
+      ),
+      title: 'title',
+      body: 'body',
     );
   }
 }
