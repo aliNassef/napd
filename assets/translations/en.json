@@ -94,5 +94,7 @@
     "updateprofile" : "Update profile",
     "babyprofile" : "Baby profile",
     "ingredients:" : "Ingredients:",
-    "nutritionalvalue:" : "Nutritional value:"
+    "nutritionalvalue:" : "Nutritional value:",
+    "english" : "English",
+    "arabic" : "Arabic"
 }

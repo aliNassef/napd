@@ -94,7 +94,8 @@
   "phonenumber" : "رقم الهاتف",
   "babyprofile" : "حساب الطفل" ,
   "ingredients:" : ":المكونات",
-  "nutritionalvalue:" : ":قيمة غذائية"
-
+  "nutritionalvalue:" : ":قيمة غذائية",
+  "english" : "اللغة الانجليزية",
+  "arabic" : "اللغة العربية"
   
 }

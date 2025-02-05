@@ -56,4 +56,6 @@ abstract class AppSvgs {
   static const String filterIcon = 'assets/icons/filter_icon.svg';
   static const String microphoneIcon = 'assets/icons/microphone_icon.svg';
   static const String sendIcon = 'assets/icons/send_icon.svg';
+  static const String currentChoiceIcon =
+      'assets/icons/current_choice_icon.svg';
 }

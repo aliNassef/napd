@@ -15,6 +15,7 @@ import '../../features/groups/presentation/view/podcasts_view.dart';
 import '../../features/parenting_resources/presentation/views/activites_view.dart';
 import '../../features/parenting_resources/presentation/views/recipes_view.dart';
 import '../../features/reminder/presentation/view/set_reminder_view.dart';
+import '../../features/settings/presentation/view/app_language_view.dart';
 import '../../features/settings/presentation/view/settings_view.dart';
 import '../../features/shop/presentation/view/shop_view.dart';
 import '../../features/splash/presentation/view/splash_view.dart';
@@ -138,6 +139,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case GroupChatView.routeName:
       return MaterialPageRoute(
         builder: (context) => const GroupChatView(),
+      );
+    case AppLanguageView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const AppLanguageView(),
       );
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
