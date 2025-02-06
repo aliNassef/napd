@@ -2,6 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/features/settings/presentation/view/app_language_view.dart';
+import 'package:napd/features/settings/presentation/view/privacy_and_security_view.dart';
+import 'package:napd/features/settings/presentation/view/sounds_notification_view.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/widgets/spacers.dart';
@@ -27,7 +29,9 @@ class SettingsViewBody extends StatelessWidget {
           SettingsItem(
             image: AppSvgs.notificationIcon,
             title: 'soundandnotification'.tr(),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushNamed(SoundsNotificationView.routeName);
+            },
           ),
           SettingsItem(
             image: AppSvgs.helpIcon,
@@ -37,7 +41,9 @@ class SettingsViewBody extends StatelessWidget {
           SettingsItem(
             image: AppSvgs.privacyIcon,
             title: 'privacyandsecurity'.tr(),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushNamed(PrivacyAndSecurityView.routeName);
+            },
           ),
           SettingsItem(
             image: AppSvgs.reportIcon,

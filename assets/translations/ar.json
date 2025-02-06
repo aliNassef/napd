@@ -96,6 +96,11 @@
   "ingredients:" : ":المكونات",
   "nutritionalvalue:" : ":قيمة غذائية",
   "english" : "اللغة الانجليزية",
-  "arabic" : "اللغة العربية"
+  "arabic" : "اللغة العربية",
+  "notifications" : "الاشعارات",
+  "groupnotifications" : "الاشعارات المجموعة",
+  "soundnotifications" : "الاشعارات الصوتية",
+  "reactionnotifications" : "الاشعارات الاستجابة",
+  "showpreview" : "عرض المعاينة"
   
 }

@@ -96,5 +96,10 @@
     "ingredients:" : "Ingredients:",
     "nutritionalvalue:" : "Nutritional value:",
     "english" : "English",
-    "arabic" : "Arabic"
+    "arabic" : "Arabic",
+    "notifications" : "Notifications",
+    "groupnotifications" : "Group notifications",
+    "soundnotifications" : "Sound notifications",
+    "reactionnotifications" : "Reaction notifications",
+    "showpreview" : "Show preview"
 }
