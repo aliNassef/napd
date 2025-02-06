@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/features/settings/presentation/view/about_view.dart';
 import 'package:napd/features/settings/presentation/view/app_language_view.dart';
 import 'package:napd/features/settings/presentation/view/privacy_and_security_view.dart';
 import 'package:napd/features/settings/presentation/view/sounds_notification_view.dart';
@@ -46,14 +47,11 @@ class SettingsViewBody extends StatelessWidget {
             },
           ),
           SettingsItem(
-            image: AppSvgs.reportIcon,
-            title: 'reports'.tr(),
-            onTap: () {},
-          ),
-          SettingsItem(
             image: AppSvgs.aboutIcon,
             title: 'about'.tr(),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushNamed(AboutView.routeName);
+            },
           ),
         ],
       ).withHorizontalPadding(16),

@@ -15,6 +15,7 @@ import '../../features/groups/presentation/view/podcasts_view.dart';
 import '../../features/parenting_resources/presentation/views/activites_view.dart';
 import '../../features/parenting_resources/presentation/views/recipes_view.dart';
 import '../../features/reminder/presentation/view/set_reminder_view.dart';
+import '../../features/settings/presentation/view/about_view.dart';
 import '../../features/settings/presentation/view/app_language_view.dart';
 import '../../features/settings/presentation/view/privacy_and_security_view.dart';
 import '../../features/settings/presentation/view/settings_view.dart';
@@ -153,6 +154,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case PrivacyAndSecurityView.routeName:
       return MaterialPageRoute(
         builder: (context) => const PrivacyAndSecurityView(),
+      );
+    case AboutView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const AboutView(),
       );
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());

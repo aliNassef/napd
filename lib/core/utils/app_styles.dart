@@ -147,6 +147,11 @@ abstract class AppStyles {
     fontSize: 32,
     fontWeight: FontWeight.w700,
   );
+  static final roboto32SeminBold = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 32,
+    fontWeight: FontWeight.w600,
+  );
   static final roboto36SemiBold = _createStyle(
     fontFamily: 'Roboto',
     fontSize: 36,
