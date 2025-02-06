@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/features/settings/presentation/view/about_view.dart';
 import 'package:napd/features/settings/presentation/view/app_language_view.dart';
+import 'package:napd/features/settings/presentation/view/help_and_support_view.dart';
 import 'package:napd/features/settings/presentation/view/privacy_and_security_view.dart';
 import 'package:napd/features/settings/presentation/view/sounds_notification_view.dart';
 import '../../../../core/extensions/padding_extension.dart';
@@ -37,7 +38,9 @@ class SettingsViewBody extends StatelessWidget {
           SettingsItem(
             image: AppSvgs.helpIcon,
             title: 'helpandsupport'.tr(),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushNamed(HelpAndSupportView.routeName);
+            },
           ),
           SettingsItem(
             image: AppSvgs.privacyIcon,

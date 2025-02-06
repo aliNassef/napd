@@ -17,6 +17,7 @@ import '../../features/parenting_resources/presentation/views/recipes_view.dart'
 import '../../features/reminder/presentation/view/set_reminder_view.dart';
 import '../../features/settings/presentation/view/about_view.dart';
 import '../../features/settings/presentation/view/app_language_view.dart';
+import '../../features/settings/presentation/view/help_and_support_view.dart';
 import '../../features/settings/presentation/view/privacy_and_security_view.dart';
 import '../../features/settings/presentation/view/settings_view.dart';
 import '../../features/settings/presentation/view/sounds_notification_view.dart';
@@ -158,6 +159,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case AboutView.routeName:
       return MaterialPageRoute(
         builder: (context) => const AboutView(),
+      );
+    case HelpAndSupportView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const HelpAndSupportView(),
       );
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
