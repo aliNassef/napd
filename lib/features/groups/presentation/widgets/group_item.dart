@@ -15,8 +15,7 @@ class GroupItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(
-          context,
+        Navigator.of(context, rootNavigator: true).pushNamed(
           GroupChatView.routeName,
         );
       },

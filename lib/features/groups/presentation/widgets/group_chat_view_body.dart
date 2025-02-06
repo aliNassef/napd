@@ -39,7 +39,9 @@ class GroupChatViewBody extends StatelessWidget {
           ),
         ),
         VerticalSpace(16),
-        InputMessageField(),
+        InputMessageField(
+          isgroup: true,
+        ),
         VerticalSpace(16),
       ],
     ).withHorizontalPadding(16);
