@@ -5,6 +5,7 @@ import 'package:napd/core/utils/app_images.dart';
 import 'package:napd/core/utils/app_shadows.dart';
 import 'package:napd/core/utils/app_styles.dart';
 
+import '../../../../core/helpers/image_picker_helper.dart';
 import '../../../../core/utils/app_colors.dart';
 
 class InputMessageField extends StatelessWidget {
@@ -16,7 +17,9 @@ class InputMessageField extends StatelessWidget {
         ? Row(
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  ImagePickerHelper.openCamera(onGet: (imageFile) {});
+                },
                 icon: Icon(
                   Icons.camera_alt,
                   color: AppColors.darkBlueColor,
@@ -24,7 +27,9 @@ class InputMessageField extends StatelessWidget {
                 ),
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  ImagePickerHelper.openGallery(onGet: (imageFile) {});
+                },
                 icon: SvgPicture.asset(AppSvgs.selectImageIcon),
               ),
               Expanded(

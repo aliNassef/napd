@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import '../../../../core/helpers/image_picker_helper.dart';
 import '../../../../core/utils/app_images.dart';
 
 class BabyProfileImage extends StatelessWidget {
@@ -21,18 +22,26 @@ class BabyProfileImage extends StatelessWidget {
         Positioned(
           right: 0,
           bottom: 0,
-          child: Container(
-            padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: Color(0xffAE6CAC),
-                width: 1,
+          child: GestureDetector(
+            onTap: () {
+              ImagePickerHelper.openImagePicker(
+                onGet: (imageFile) {},
+                context: context,
+              );
+            },
+            child: Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: Color(0xffAE6CAC),
+                  width: 1,
+                ),
               ),
-            ),
-            child: SvgPicture.asset(
-              AppSvgs.edit2Icon,
+              child: SvgPicture.asset(
+                AppSvgs.edit2Icon,
+              ),
             ),
           ),
         ),
