@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:napd/features/groups/presentation/view/podcasts_details_view.dart';
+import 'package:napd/features/shop/presentation/view/cart_view.dart';
+import 'package:napd/features/shop/presentation/view/checkout_view.dart';
+import 'package:napd/features/shop/presentation/view/product_details_view.dart';
 import '../../features/baby/presentation/view/baby_account_view.dart';
 import '../../features/baby/presentation/view/baby_result_view.dart';
 import '../../features/baby/presentation/view/cry_translator_view.dart';
@@ -119,6 +123,22 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case ArticleDetailsView.routeName:
       return MaterialPageRoute(
         builder: (context) => const ArticleDetailsView(),
+      );
+    case PodcastsDetailsView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const PodcastsDetailsView(),
+      );
+    case ProductDetailsView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const ProductDetailsView(),
+      );
+    case CartView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => CartView(),
+      );
+    case CheckoutView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => CheckoutView(),
       );
     case ShopView.routeName:
       return MaterialPageRoute(
