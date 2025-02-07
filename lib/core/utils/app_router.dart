@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:napd/features/baby_account/presentation/view/baby_account_view.dart';
 import 'package:napd/features/baby_result/presentation/view/baby_result_screen.dart';
 import 'package:napd/features/cry_translator/presentation/view/cry_translator_screen.dart';
+import 'package:napd/features/groups/presentation/view/podcasts_details_view.dart';
 import 'package:napd/features/home/presentation/view/home_view.dart';
 import 'package:napd/features/recording/presentation/view/record_screen.dart';
 import 'package:napd/features/shop/presentation/view/cart_view.dart';
 import 'package:napd/features/shop/presentation/view/checkout_view.dart';
 import 'package:napd/features/shop/presentation/view/product_details_view.dart';
+import 'package:napd/features/signup/presentation/view/signup_view.dart';
 import '../../features/add_baby/presentation/view/add_baby_page.dart';
 import '../../features/groups/presentation/view/all_articles_view.dart';
 import '../../features/groups/presentation/view/all_videos_view.dart';
@@ -24,7 +26,7 @@ import '../../features/login/presentation/view/login_view.dart';
 import '../../features/login/presentation/view/select_baby_account_view.dart';
 import '../../features/nursery/presentation/view/nursery_view.dart';
 import '../../features/reminder/presentation/view/reminder_view.dart';
-import '../../features/shop/presentation/widgets/signup/presentation/view/signup_view.dart';
+
 import '../../features/parenting_resources/presentation/views/tips_and_tricks_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -117,6 +119,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case ArticleDetailsView.routeName:
       return MaterialPageRoute(
         builder: (context) => const ArticleDetailsView(),
+      );
+    case PodcastsDetailsView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const PodcastsDetailsView(),
       );
     case ProductDetailsView.routeName:
       return MaterialPageRoute(

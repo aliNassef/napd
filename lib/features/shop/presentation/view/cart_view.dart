@@ -13,7 +13,7 @@ import 'package:napd/features/shop/presentation/widgets/cart_total_selection.dar
 class CartView extends StatelessWidget {
   static const String routeName = '/cart';
 
-  CartView({super.key});
+  const CartView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
