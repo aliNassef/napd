@@ -41,11 +41,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-		<key>CFBundleLocalizations</key>
-<array>
-    <string>en</string>
-    <string>ar</string>
-</array>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
@@ -55,5 +50,10 @@
     <string>en</string>
     <string>ar</string>
     </array>
+	<key>UIBackgroundModes</key>
+<array>
+  <string>fetch</string>
+  <string>remote-notification</string>
+</array>
 </dict>
 </plist>

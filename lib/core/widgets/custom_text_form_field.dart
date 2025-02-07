@@ -13,6 +13,8 @@ class CustomTextFormField extends StatefulWidget {
     this.maxLines = 1,
     this.keyboardType = TextInputType.text,
     this.hintColor,
+    this.isFilled = false,
+    this.fillColor,
   });
   final String hintText;
   final TextEditingController controller;
@@ -20,6 +22,8 @@ class CustomTextFormField extends StatefulWidget {
   final int maxLines;
   final TextInputType keyboardType;
   final Color? hintColor;
+  final bool isFilled;
+  final Color? fillColor;
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
 }
@@ -42,6 +46,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       // maxLength: widget.maxLength,
       controller: widget.controller,
       decoration: InputDecoration(
+        fillColor: widget.isFilled ? widget.fillColor : null,
+        filled: widget.isFilled,
         contentPadding: EdgeInsets.symmetric(
           horizontal: 16.w,
           vertical: 16.h,

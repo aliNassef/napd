@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/custom_network_image.dart';
+import '../view/group_chat_view.dart';
 
 class GroupItem extends StatelessWidget {
   const GroupItem({
@@ -13,7 +14,11 @@ class GroupItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context, rootNavigator: true).pushNamed(
+          GroupChatView.routeName,
+        );
+      },
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

@@ -1,22 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:napd/features/baby_account/presentation/view/baby_account_view.dart';
-import 'package:napd/features/baby_result/presentation/view/baby_result_screen.dart';
-import 'package:napd/features/cry_translator/presentation/view/cry_translator_screen.dart';
 import 'package:napd/features/groups/presentation/view/podcasts_details_view.dart';
-import 'package:napd/features/home/presentation/view/home_view.dart';
-import 'package:napd/features/recording/presentation/view/record_screen.dart';
 import 'package:napd/features/shop/presentation/view/cart_view.dart';
 import 'package:napd/features/shop/presentation/view/checkout_view.dart';
 import 'package:napd/features/shop/presentation/view/product_details_view.dart';
-import 'package:napd/features/signup/presentation/view/signup_view.dart';
-import '../../features/add_baby/presentation/view/add_baby_page.dart';
+import '../../features/baby/presentation/view/baby_account_view.dart';
+import '../../features/baby/presentation/view/baby_result_view.dart';
+import '../../features/baby/presentation/view/cry_translator_view.dart';
+import '../../features/groups/presentation/view/all_groups_view.dart';
+import '../../features/groups/presentation/view/group_chat_view.dart';
+import '../../features/recording/presentation/view/record_screen.dart';
+import '../../features/baby/presentation/view/add_baby_view.dart';
+import '../../features/baby/presentation/view/baby_profile_details_view.dart';
+import '../../features/baby/presentation/view/baby_profile_view.dart';
 import '../../features/groups/presentation/view/all_articles_view.dart';
 import '../../features/groups/presentation/view/all_videos_view.dart';
 import '../../features/groups/presentation/view/article_details_view.dart';
-import '../../features/groups/presentation/view/pocasts_view.dart';
+import '../../features/groups/presentation/view/podcasts_view.dart';
 import '../../features/parenting_resources/presentation/views/activites_view.dart';
+import '../../features/parenting_resources/presentation/views/recipes_view.dart';
 import '../../features/reminder/presentation/view/set_reminder_view.dart';
+import '../../features/settings/presentation/view/about_view.dart';
+import '../../features/settings/presentation/view/app_language_view.dart';
+import '../../features/settings/presentation/view/help_and_support_view.dart';
+import '../../features/settings/presentation/view/privacy_and_security_view.dart';
 import '../../features/settings/presentation/view/settings_view.dart';
+import '../../features/settings/presentation/view/sounds_notification_view.dart';
+import '../../features/shop/presentation/view/shop_view.dart';
 import '../../features/splash/presentation/view/splash_view.dart';
 
 import '../../features/boarding/presentation/view/boarding_view.dart';
@@ -25,8 +34,7 @@ import '../../features/layout/presentation/view/layout_view.dart';
 import '../../features/login/presentation/view/login_view.dart';
 import '../../features/login/presentation/view/select_baby_account_view.dart';
 import '../../features/nursery/presentation/view/nursery_view.dart';
-import '../../features/reminder/presentation/view/reminder_view.dart';
-
+import '../../features/signup/presentation/view/signup_view.dart';
 import '../../features/parenting_resources/presentation/views/tips_and_tricks_view.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -35,26 +43,25 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const SplashView(),
       );
-
-    case AddBabyPage.routeName:
+    case AddBabyView.routeName:
       return MaterialPageRoute(
-        builder: (context) => const AddBabyPage(),
+        builder: (context) => const AddBabyView(),
       );
     case BabyAccountView.routeName:
       return MaterialPageRoute(
         builder: (context) => const BabyAccountView(),
       );
-    case CryTranslatorScreen.routeName:
+    case CryTranslatorView.routeName:
       return MaterialPageRoute(
-        builder: (context) => const CryTranslatorScreen(),
+        builder: (context) => const CryTranslatorView(),
       );
     case RecordScreen.routeName:
       return MaterialPageRoute(
         builder: (context) => const RecordScreen(),
       );
-    case BabyResultScreen.routeName:
+    case BabyResultView.routeName:
       return MaterialPageRoute(
-        builder: (context) => const BabyResultScreen(),
+        builder: (context) => const BabyResultView(),
       );
     case BoardingView.routeName:
       return MaterialPageRoute(
@@ -88,10 +95,7 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const SettingsView(),
       );
-    case ReminderView.routeName:
-      return MaterialPageRoute(
-        builder: (context) => const ReminderView(),
-      );
+
     case TipsAndTricksView.routeName:
       return MaterialPageRoute(
         builder: (context) => const TipsAndTricksView(),
@@ -135,6 +139,50 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case CheckoutView.routeName:
       return MaterialPageRoute(
         builder: (context) => CheckoutView(),
+      );
+    case ShopView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const ShopView(),
+      );
+    case RecipesView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const RecipesView(),
+      );
+    case BabyProfileView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const BabyProfileView(),
+      );
+    case BabyProfileDetailsView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const BabyProfileDetailsView(),
+      );
+    case AllGroupsView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const AllGroupsView(),
+      );
+    case GroupChatView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const GroupChatView(),
+      );
+    case AppLanguageView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const AppLanguageView(),
+      );
+    case SoundsNotificationView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const SoundsNotificationView(),
+      );
+    case PrivacyAndSecurityView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const PrivacyAndSecurityView(),
+      );
+    case AboutView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const AboutView(),
+      );
+    case HelpAndSupportView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const HelpAndSupportView(),
       );
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());

@@ -1,15 +1,16 @@
- import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../view/all_articles_view.dart';
 import '../view/all_videos_view.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/widgets/spacers.dart';
-import '../view/pocasts_view.dart';
+import '../view/podcasts_view.dart';
 import 'article_item.dart';
 import 'header_with_see_all.dart';
 import 'podcast_item.dart';
 import 'video_item.dart';
- 
+
 class ForyouViewBody extends StatelessWidget {
   const ForyouViewBody({super.key});
 
@@ -24,7 +25,7 @@ class ForyouViewBody extends StatelessWidget {
               children: [
                 VerticalSpace(30),
                 HeaderWithSeeAll(
-                  title: 'Articles',
+                  title: 'articles'.tr(),
                   onTap: () {
                     Navigator.of(context, rootNavigator: true)
                         .pushNamed(AllArticlesView.routeName);
@@ -51,7 +52,7 @@ class ForyouViewBody extends StatelessWidget {
               children: [
                 VerticalSpace(30),
                 HeaderWithSeeAll(
-                  title: 'Videos',
+                  title: 'videos'.tr(),
                   onTap: () {
                     Navigator.of(context, rootNavigator: true)
                         .pushNamed(AllVideosView.routeName);
@@ -78,7 +79,7 @@ class ForyouViewBody extends StatelessWidget {
               children: [
                 VerticalSpace(30),
                 HeaderWithSeeAll(
-                  title: 'Podcasts',
+                  title: 'podcasts'.tr(),
                   onTap: () {
                     Navigator.of(context, rootNavigator: true)
                         .pushNamed(PodcastsView.routeName);

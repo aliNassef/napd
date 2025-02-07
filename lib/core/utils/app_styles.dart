@@ -32,10 +32,25 @@ abstract class AppStyles {
     fontSize: 11,
     fontWeight: FontWeight.w400,
   );
+  static final roboto11Bold = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 11,
+    fontWeight: FontWeight.w700,
+  );
   static final roboto12Regular = _createStyle(
     fontFamily: 'Roboto',
     fontSize: 12,
     fontWeight: FontWeight.w400,
+  );
+  static final roboto12Medium = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+  );
+  static final roboto13Bold = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 13,
+    fontWeight: FontWeight.w700,
   );
   static final roboto14Regular = _createStyle(
     fontFamily: 'Roboto',
@@ -50,6 +65,11 @@ abstract class AppStyles {
   static final roboto14SemiBold = _createStyle(
     fontFamily: 'Roboto',
     fontSize: 14,
+    fontWeight: FontWeight.w600,
+  );
+  static final roboto15SemiBold = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 15,
     fontWeight: FontWeight.w600,
   );
   static final roboto16Regular = _createStyle(
@@ -92,10 +112,20 @@ abstract class AppStyles {
     fontSize: 20,
     fontWeight: FontWeight.w700,
   );
+  static final roboto20Medium = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 20,
+    fontWeight: FontWeight.w500,
+  );
   static final roboto24Regular = _createStyle(
     fontFamily: 'Roboto',
     fontSize: 24,
     fontWeight: FontWeight.w400,
+  );
+  static final roboto24Medium = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 24,
+    fontWeight: FontWeight.w500,
   );
   static final roboto24SemiBold = _createStyle(
     fontFamily: 'Roboto',
@@ -122,10 +152,26 @@ abstract class AppStyles {
     fontSize: 30,
     fontWeight: FontWeight.w500,
   );
+  static final roboto32SeminBold = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 32,
+    fontWeight: FontWeight.w600,
+  );
+
+  static final roboto32Medium = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 32,
+    fontWeight: FontWeight.w500,
+  );
   static final roboto36SemiBold = _createStyle(
     fontFamily: 'Roboto',
     fontSize: 36,
     fontWeight: FontWeight.w600,
+  );
+  static final roboto36Bold = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 36,
+    fontWeight: FontWeight.w700,
   );
   static final roboto40Bold = _createStyle(
     fontFamily: 'Roboto',

@@ -2,8 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 
 import 'package:flutter/material.dart';
 import 'package:napd/core/utils/app_colors.dart';
+import 'package:napd/core/widgets/appbars/custom_app_bar.dart';
 
-import 'package:napd/core/widgets/custom_app_bar.dart';
 import 'package:napd/core/widgets/default_app_button.dart';
 import 'package:napd/core/widgets/spacers.dart';
 import 'package:napd/features/shop/presentation/view/checkout_view.dart';

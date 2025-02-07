@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/utils/app_colors.dart';
-import '../../../../core/utils/app_styles.dart';
+import '../view/all_groups_view.dart';
+import 'header_with_see_all.dart';
 import '../../../../core/widgets/spacers.dart';
 import 'group_item.dart';
 
@@ -23,11 +23,13 @@ class GroupViewBody extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   VerticalSpace(30),
-                  Text(
-                    'mygroups'.tr(),
-                    style: AppStyles.roboto24Bold.copyWith(
-                      color: AppColors.darkBlueColor,
-                    ),
+                  HeaderWithSeeAll(
+                    onTap: () {
+                      Navigator.of(context, rootNavigator: true).pushNamed(
+                        AllGroupsView.routeName,
+                      );
+                    },
+                    title: 'mygroups'.tr(),
                   ),
                   VerticalSpace(30),
                 ],
@@ -43,11 +45,8 @@ class GroupViewBody extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   VerticalSpace(30),
-                  Text(
-                    'featuredgroups'.tr(),
-                    style: AppStyles.roboto24Bold.copyWith(
-                      color: AppColors.darkBlueColor,
-                    ),
+                  HeaderWithSeeAll(
+                    title: 'featuredgroups'.tr(),
                   ),
                   VerticalSpace(30),
                 ],

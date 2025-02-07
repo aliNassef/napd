@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/app_colors.dart';
@@ -40,8 +41,8 @@ class _SelectTimeButtonState extends State<SelectTimeButton> {
           children: [
             Text(
               _selectedTime == null
-                  ? 'Select Time'
-                  : 'Selected Time: ${_selectedTime!.format(context)}',
+                  ? 'selecttime'.tr()
+                  : 'selectedtime'.tr() + _selectedTime!.format(context),
               style: AppStyles.roboto16Regular.copyWith(
                 color: _selectedTime == null
                     ? Colors.grey

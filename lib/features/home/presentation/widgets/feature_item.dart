@@ -11,33 +11,38 @@ class FeatureItem extends StatelessWidget {
     required this.img,
     required this.text,
     required this.color,
+    this.onTap,
   });
   final String img;
   final String text;
   final Color color;
+  final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 8.h),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(23.5),
-            color: Colors.white.withValues(alpha: 0.8),
-            boxShadow: [
-              AppShadows.shadow2,
-            ],
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 16.h),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(23.5),
+              color: Color(0xfffefbfe),
+              boxShadow: [
+                AppShadows.shadow2,
+              ],
+            ),
+            child: SvgPicture.asset(img),
           ),
-          child: SvgPicture.asset(img),
-        ),
-        VerticalSpace(7),
-        Text(
-          text,
-          style: AppStyles.roboto10SemiBold.copyWith(
-            color: color,
-          ),
-        )
-      ],
+          VerticalSpace(7),
+          Text(
+            text,
+            style: AppStyles.roboto15SemiBold.copyWith(
+              color: color,
+            ),
+          )
+        ],
+      ),
     );
   }
 }

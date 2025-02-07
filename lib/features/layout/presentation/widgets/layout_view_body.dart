@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../home/presentation/view/home_view.dart';
 import '../../../nursery/presentation/view/nursery_view.dart';
+import '../../../profile/presentation/view/profile_view.dart';
 import '../../../reminder/presentation/view/reminder_view.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
@@ -18,22 +19,24 @@ class LayoutViewBody extends StatefulWidget {
 }
 
 class _LayoutViewBodyState extends State<LayoutViewBody> {
-  late PersistentTabController _controller;
+  late PersistentTabController controller;
 
   @override
   void initState() {
     super.initState();
-    _controller = PersistentTabController(initialIndex: 0);
+    controller = PersistentTabController(initialIndex: 0);
   }
 
   List<Widget> _buildScreens() {
     return [
       HomeView(),
       NurseryView(),
-      ReminderView(),
+      ReminderView(
+        controller: controller,
+      ),
       GroupView(),
-      Container(
-        color: Colors.blueGrey,
+      ProfileView(
+        controller: controller,
       ),
     ];
   }
@@ -112,7 +115,7 @@ class _LayoutViewBodyState extends State<LayoutViewBody> {
   Widget build(BuildContext context) {
     return PersistentTabView(
       context,
-      controller: _controller,
+      controller: controller,
       screens: _buildScreens(),
       items: _navBarsItems(),
       handleAndroidBackButtonPress: true,

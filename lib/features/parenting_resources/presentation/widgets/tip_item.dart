@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/app_shadows.dart';
 
 import 'tip_item_content.dart';
- class TipItem extends StatelessWidget {
+class TipItem extends StatelessWidget {
   const TipItem({
     super.key,
   });
@@ -15,7 +15,7 @@ import 'tip_item_content.dart';
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
         boxShadow: [
-         AppShadows.shadow4,
+        AppShadows.shadow4,
         ],
       ),
       padding: EdgeInsets.symmetric(horizontal: 16.w , vertical:  16.h),

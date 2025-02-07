@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/utils/app_colors.dart';
-import 'package:napd/core/utils/app_styles.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_styles.dart';
 
 class RecordTimer extends StatelessWidget {
   const RecordTimer({super.key});
