@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/core/utils/app_colors.dart';
+import 'package:napd/core/utils/app_shadows.dart';
 import 'package:napd/core/utils/app_styles.dart';
+import 'package:napd/core/widgets/custom_network_image.dart';
+import 'package:napd/core/widgets/spacers.dart';
+
+import 'increase_and_decrease_amount.dart';
 
 class CartItem extends StatelessWidget {
   const CartItem({
@@ -10,86 +16,55 @@ class CartItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(8),
-      width: 370,
-      height: 110,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
         boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withAlpha(50),
-            spreadRadius: 3,
-            blurRadius: 2,
-            offset: Offset(0, 3),
-          ),
+          AppShadows.shadow5,
         ],
       ),
+      padding: EdgeInsets.symmetric(
+        vertical: 9.h,
+        horizontal: 16.w,
+      ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(
-            alignment: Alignment.center,
-            child: Image.asset(
-              'assets/images/toy.png',
-              height: 80,
-              width: 150,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: CustomNetworkImage(
+              img: 'https://i.chzbgr.com/full/9836262144/h2E0CB29F',
+              height: 75.h,
+              width: 82.w,
+              fit: BoxFit.fill,
             ),
           ),
-          Container(
-            alignment: Alignment.centerLeft,
-            width: 150,
-            padding: EdgeInsetsDirectional.all(8),
-            child: Column(
-              children: [
-                Text(
-                  "Baby car",
-                  style: AppStyles.roboto20SemiBold.copyWith(
-                    color: AppColors.darkBlueColor,
-                  ),
-                ),
-                Text(
-                  "Brand: Goli",
-                  style: AppStyles.roboto14Regular.copyWith(
-                    color: AppColors.darkBlueColor,
-                  ),
-                ),
-                Text(
-                  "\$16.99",
-                  style: AppStyles.roboto18Regular.copyWith(
-                    color: AppColors.darkBlueColor,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(6),
-              color: Color.fromARGB(255, 242, 241, 241),
-              border: Border.all(color: AppColors.primaryColor, width: 1.0),
-            ),
-            padding: EdgeInsets.all(5),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(
-                  Icons.add,
+          HorizantalSpace(16),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Baby car",
+                style: AppStyles.roboto20SemiBold.copyWith(
                   color: AppColors.darkBlueColor,
                 ),
-                Text(
-                  "1",
-                  style: AppStyles.roboto20SemiBold.copyWith(
-                    color: Colors.black,
-                  ),
-                ),
-                Icon(
-                  Icons.remove,
+              ),
+              Text(
+                "Brand: Goli",
+                style: AppStyles.roboto14Regular.copyWith(
                   color: AppColors.darkBlueColor,
-                )
-              ],
-            ),
+                ),
+              ),
+              Text(
+                "\$16.99",
+                style: AppStyles.roboto18Regular.copyWith(
+                  color: AppColors.darkBlueColor,
+                ),
+              ),
+            ],
           ),
+          Spacer(),
+          IncreaseAndDecreaseAmount(),
         ],
       ),
     );

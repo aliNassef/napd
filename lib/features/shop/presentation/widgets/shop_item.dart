@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/features/shop/presentation/view/product_details_view.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_shadows.dart';
@@ -16,59 +17,64 @@ class ShopItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        color: Colors.white,
-        boxShadow: [
-          AppShadows.shadow7,
-          AppShadows.shadow8,
-        ],
-      ),
-      child: Stack(
-        fit: StackFit.loose,
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: CustomNetworkImage(
-              fit: BoxFit.cover,
-              img:
-                  'https://r2.starryai.com/results/1042152870/6eb099de-74c0-460b-900e-551a3e7c540f.webp',
-              height: 200.h,
-              width: 150.w,
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, ProductDetailsView.routeName);
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          color: Colors.white,
+          boxShadow: [
+            AppShadows.shadow7,
+            AppShadows.shadow8,
+          ],
+        ),
+        child: Stack(
+          fit: StackFit.loose,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: CustomNetworkImage(
+                fit: BoxFit.cover,
+                img:
+                    'https://r2.starryai.com/results/1042152870/6eb099de-74c0-460b-900e-551a3e7c540f.webp',
+                height: 200.h,
+                width: 150.w,
+              ),
             ),
-          ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              color: Colors.white,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'data',
-                    style: AppStyles.roboto14Medium.copyWith(
-                      color: Color(0xff808080),
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: Container(
+                color: Colors.white,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'data',
+                      style: AppStyles.roboto14Medium.copyWith(
+                        color: Color(0xff808080),
+                      ),
                     ),
-                  ),
-                  VerticalSpace(4),
-                  Text(
-                    '\$ 75.000',
-                    style: AppStyles.roboto14SemiBold.copyWith(
-                      color: AppColors.darkBlueColor,
+                    VerticalSpace(4),
+                    Text(
+                      '\$ 75.000',
+                      style: AppStyles.roboto14SemiBold.copyWith(
+                        color: AppColors.darkBlueColor,
+                      ),
                     ),
-                  ),
-                  VerticalSpace(4),
-                  Visibility(child: DiscountPriceRow()),
-                  VerticalSpace(4),
-                  LocationRow(),
-                ],
-              ).withHorizontalPadding(8).withVerticalPadding(5),
+                    VerticalSpace(4),
+                    Visibility(child: DiscountPriceRow()),
+                    VerticalSpace(4),
+                    LocationRow(),
+                  ],
+                ).withHorizontalPadding(8).withVerticalPadding(5),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

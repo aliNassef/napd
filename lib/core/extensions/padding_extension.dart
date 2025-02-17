@@ -11,4 +11,9 @@ extension PaddingExtension on Widget {
         padding: EdgeInsets.symmetric(vertical: padding.h),
         child: this,
       );
+
+  Padding withAllPadding(double padding) => Padding(
+        padding: EdgeInsets.all(padding.r),
+        child: this,
+      );
 }

@@ -86,23 +86,15 @@
   "hungry status": "أنا جائع!",
   "hungry": "جائع",
   "sleepy": "نعسان",
-<<<<<<< HEAD
-  "cry translator title": "ترجمه البكاء",
   "start button": "ابدأ",
-  "translate your baby's cry": "ترجم بكاء طفلك",
-  "record": "تسجيل",
   "toys": "ألعاب",
   "seller": "البائع",
-  "description": "الوصف",
   "price": "السعر",
   "checkout": "الدفع",
   "addtocart": "أضف إلى السلة",
   "continueshopping": "متابعة التسوق",
   "gotocart": "الذهاب إلى السلة",
-  "itemaddedsuccessfully": "تمت إضافة العنصر بنجاح"
-
-=======
-  "cry translator title": "مترجم البكاء",
+  "itemaddedsuccessfully": "تمت إضافة العنصر بنجاح",
   "startbutton": "ابدأ",
   "translate your baby's cry": "ترجمة بكاء طفلك",
   "record": "تسجيل",
@@ -117,7 +109,7 @@
   "groupnotifications" : "الاشعارات المجموعة",
   "soundnotifications" : "الاشعارات الصوتية",
   "reactionnotifications" : "الاشعارات الاستجابة",
-  "showpreview" : "عرض المعاينة"
-  
->>>>>>> master
+  "showpreview" : "عرض المعاينة",
+  "cart" : "السلة"
+
 }

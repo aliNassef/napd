@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:napd/core/utils/app_colors.dart';
 import 'package:napd/core/utils/app_styles.dart';
 
@@ -16,11 +17,18 @@ class PriceAndRating extends StatelessWidget {
             color: AppColors.darkBlueColor,
           ),
         ),
-        Row(
-          children: List.generate(
-            5,
-            (index) => const Icon(Icons.star, color: Colors.amber, size: 24),
-          ),
+        RatingBarIndicator(
+          rating: 3.5,
+          unratedColor: AppColors.greyColor,
+          itemBuilder: (_, index) {
+            return Icon(
+              Icons.star,
+              size: 24,
+              color: Color(0xffF6D060),
+            );
+          },
+          itemSize: 24,
+          itemCount: 5,
         ),
       ],
     );

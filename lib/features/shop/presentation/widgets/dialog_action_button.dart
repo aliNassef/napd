@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:napd/core/extensions/mediaquery_size.dart';
 import 'package:napd/core/utils/app_colors.dart';
 import 'package:napd/core/utils/app_styles.dart';
 import 'package:napd/core/widgets/spacers.dart';
@@ -16,7 +17,7 @@ class DialogActionButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
+    double screenWidth = context.width;
 
     return Column(
       mainAxisSize: MainAxisSize.min,

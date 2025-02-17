@@ -10,25 +10,22 @@ class CartTotalSection extends StatelessWidget {
       {super.key, required this.label, required this.amount});
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(14.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            label,
-            style: AppStyles.roboto24SemiBold.copyWith(
-              color: AppColors.darkBlueColor,
-            ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          label,
+          style: AppStyles.roboto24SemiBold.copyWith(
+            color: AppColors.darkBlueColor,
           ),
-          Text(
-            amount,
-            style: AppStyles.roboto24SemiBold.copyWith(
-              color: AppColors.darkBlueColor,
-            ),
+        ),
+        Text(
+          amount,
+          style: AppStyles.roboto24SemiBold.copyWith(
+            color: AppColors.darkBlueColor,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

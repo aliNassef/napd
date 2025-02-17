@@ -89,18 +89,14 @@
     "startbutton": "Start",
     "translate your baby's cry": "Translate your baby's cry",
     "record": "Record",
-
-
     "toys":"Toys",
     "seller": "Seller",
- 
-  "price": "Price",
-  "checkout": "Checkout",
-  "addtocart": "Add to cart",
-   "continueshopping": "Continue Shopping",
-  "gotocart": "Go To Cart",
-  "itemaddedsuccessfully": "Item added Successfully",
- 
+    "price": "Price",
+    "checkout": "Checkout",
+    "addtocart": "Add to cart",
+    "continueshopping": "Continue Shopping",
+    "gotocart": "Go To Cart",
+    "itemaddedsuccessfully": "Item added Successfully",
     "fullname" : "Full name",
     "phonenumber" : "Phone number",
     "updateprofile" : "Update profile",
@@ -113,5 +109,6 @@
     "groupnotifications" : "Group notifications",
     "soundnotifications" : "Sound notifications",
     "reactionnotifications" : "Reaction notifications",
-    "showpreview" : "Show preview"
+    "showpreview" : "Show preview",
+    "cart" : "Cart"
 }
