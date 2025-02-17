@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/extensions/padding_extension.dart';
-import 'package:napd/core/widgets/spacers.dart';
+import '../../../../core/extensions/padding_extension.dart';
+import '../../../../core/widgets/spacers.dart';
 import '../widgets/input_message_field.dart';
 import '../widgets/suggestion_column.dart';
 

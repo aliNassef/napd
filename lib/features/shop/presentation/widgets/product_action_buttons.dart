@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:napd/core/widgets/spacers.dart';
-import 'package:napd/features/shop/presentation/view/checkout_view.dart';
-import 'package:napd/features/shop/presentation/widgets/style_actionButton.dart';
+import '../../../../core/widgets/spacers.dart';
+import '../view/checkout_view.dart';
+import 'style_actionButton.dart';
 
 import 'success_dialog.dart';
 

@@ -1,9 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:napd/core/extensions/mediaquery_size.dart';
-import 'package:napd/core/utils/app_colors.dart';
-import 'package:napd/core/utils/app_styles.dart';
-import 'package:napd/core/widgets/spacers.dart';
+import '../../../../core/extensions/mediaquery_size.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_styles.dart';
+import '../../../../core/widgets/spacers.dart';
 
 class DialogActionButtons extends StatelessWidget {
   final VoidCallback onContinueShopping;

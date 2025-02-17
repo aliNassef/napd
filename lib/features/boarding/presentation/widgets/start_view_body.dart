@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:napd/features/signup/presentation/view/signup_view.dart';
+import '../../../signup/presentation/view/signup_view.dart';
 import '../../../login/presentation/view/login_view.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/utils/app_colors.dart';

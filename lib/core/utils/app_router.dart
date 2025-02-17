@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:napd/features/groups/presentation/view/podcasts_details_view.dart';
-import 'package:napd/features/shop/presentation/view/cart_view.dart';
-import 'package:napd/features/shop/presentation/view/checkout_view.dart';
-import 'package:napd/features/shop/presentation/view/product_details_view.dart';
+import '../../features/groups/presentation/view/podcasts_details_view.dart';
+import '../../features/shop/presentation/view/cart_view.dart';
+import '../../features/shop/presentation/view/checkout_view.dart';
+import '../../features/shop/presentation/view/product_details_view.dart';
 import '../../features/baby/presentation/view/baby_account_view.dart';
 import '../../features/baby/presentation/view/baby_result_view.dart';
 import '../../features/baby/presentation/view/cry_translator_view.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:napd/features/settings/domain/entity/privacy_and_security_entity.dart';
+import '../../domain/entity/privacy_and_security_entity.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:napd/core/utils/app_colors.dart';
-import 'package:napd/core/utils/app_styles.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_styles.dart';
 
 class PriceAndRating extends StatelessWidget {
   const PriceAndRating({super.key});

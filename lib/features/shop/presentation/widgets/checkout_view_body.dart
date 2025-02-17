@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/utils/app_colors.dart';
-import 'package:napd/core/utils/app_styles.dart';
-import 'package:napd/core/widgets/spacers.dart';
-import 'package:napd/features/shop/presentation/widgets/cart_total_selection.dart';
-import 'package:napd/features/shop/presentation/widgets/checkout_transaction_details.dart';
-import 'package:napd/features/shop/presentation/widgets/style_actionButton.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_styles.dart';
+import '../../../../core/widgets/spacers.dart';
+import 'cart_total_selection.dart';
+import 'checkout_transaction_details.dart';
+import 'style_actionButton.dart';
 
 class CheckoutViewBody extends StatelessWidget {
   const CheckoutViewBody({

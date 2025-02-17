@@ -1,6 +1,6 @@
 import 'package:bubble/bubble.dart';
 import 'package:flutter/material.dart';
-import 'package:napd/core/extensions/mediaquery_size.dart';
+import '../../../../core/extensions/mediaquery_size.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';

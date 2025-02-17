@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:napd/features/shop/presentation/widgets/checkout_view_body.dart';
+import '../widgets/checkout_view_body.dart';
 
 class CheckoutView extends StatelessWidget {
   static const String routeName = 'checkout';

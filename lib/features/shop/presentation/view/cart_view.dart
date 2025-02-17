@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:napd/core/extensions/padding_extension.dart';
-import 'package:napd/core/widgets/appbars/custom_app_bar.dart';
+import '../../../../core/extensions/padding_extension.dart';
+import '../../../../core/widgets/appbars/custom_app_bar.dart';
 
 import '../widgets/cart_view_body.dart';
 

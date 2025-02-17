@@ -4,10 +4,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'core/helpers/notification_service.dart';
-import 'core/utils/app_localizations.dart';
+
 import 'core/cache/cache_helper.dart';
 import 'core/di/service_locator.dart';
+import 'core/helpers/notification_service.dart';
+import 'core/utils/app_localizations.dart';
 import 'core/widgets/custom_bloc_observer.dart';
 import 'napd_app.dart';
 

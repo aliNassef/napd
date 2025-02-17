@@ -1,11 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:napd/features/settings/presentation/view/about_view.dart';
-import 'package:napd/features/settings/presentation/view/app_language_view.dart';
-import 'package:napd/features/settings/presentation/view/help_and_support_view.dart';
-import 'package:napd/features/settings/presentation/view/privacy_and_security_view.dart';
-import 'package:napd/features/settings/presentation/view/sounds_notification_view.dart';
+import '../view/about_view.dart';
+import '../view/app_language_view.dart';
+import '../view/help_and_support_view.dart';
+import '../view/privacy_and_security_view.dart';
+import '../view/sounds_notification_view.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/widgets/spacers.dart';

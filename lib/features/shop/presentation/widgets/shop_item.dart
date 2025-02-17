@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:napd/features/shop/presentation/view/product_details_view.dart';
+import '../view/product_details_view.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_shadows.dart';

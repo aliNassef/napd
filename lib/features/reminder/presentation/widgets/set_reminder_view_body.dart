@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:napd/core/helpers/notification_service.dart';
+import '../../../../core/helpers/notification_service.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_colors.dart';
