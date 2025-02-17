@@ -18,6 +18,9 @@ class CartViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
+        SliverToBoxAdapter(
+          child: VerticalSpace(20),
+        ),
         SliverList.separated(
           itemBuilder: (_, index) {
             return CartItem();

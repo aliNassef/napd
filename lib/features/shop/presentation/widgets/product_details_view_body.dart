@@ -20,6 +20,7 @@ class ProductDetailsViewBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        VerticalSpace(16),
         // Product Image
         ProductImage(),
         VerticalSpace(16),
