@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:napd/features/login/presentation/widgets/login_form_bloc_listner.dart';
+import 'login_form_bloc_listner.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/another_way_sign.dart';
 import '../../../../core/widgets/social_media_list_items.dart';

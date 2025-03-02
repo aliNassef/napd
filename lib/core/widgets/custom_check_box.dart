@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utils/app_colors.dart';
 
 class CustomCheckBox extends StatefulWidget {
-  const CustomCheckBox({super.key});
-
+  const CustomCheckBox({super.key, required this.onChanged});
+  final ValueChanged<bool> onChanged;
   @override
   State<CustomCheckBox> createState() => _CustomCheckBoxState();
 }
@@ -15,8 +15,10 @@ class _CustomCheckBoxState extends State<CustomCheckBox> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        isChecked = !isChecked;
-        setState(() {});
+        setState(() {
+          isChecked = !isChecked;
+        });
+        widget.onChanged(isChecked);
       },
       child: Container(
         width: 30.w,

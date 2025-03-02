@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:napd/features/login/presentation/view/login_view.dart';
+import '../../../login/presentation/view/login_view.dart';
 import '../../../../core/widgets/background_widget.dart';
 import '../widgets/splash_animation_widget.dart';
 

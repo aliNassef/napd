@@ -1,8 +1,8 @@
-class LoginEntity {
+class LoginInputEntity {
   final String email;
   final String pass;
 
-  const LoginEntity({
+  const LoginInputEntity({
     required this.email,
     required this.pass,
   });

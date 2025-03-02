@@ -72,7 +72,9 @@ class _BabyGenderSelectorState extends State<BabyGenderSelector> {
               ),
             ),
             VerticalSpace(5),
-            CustomCheckBox(),
+            CustomCheckBox(
+              onChanged: (value) {},
+            ),
           ],
         ),
       ],

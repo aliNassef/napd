@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../extensions/padding_extension.dart';
 
+import '../extensions/padding_extension.dart';
 import '../utils/app_colors.dart';
 import '../utils/app_styles.dart';
 

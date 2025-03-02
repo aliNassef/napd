@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/utils/app_colors.dart';
-import '../../../../core/widgets/custom_text_form_field.dart';
-import '../../../../core/widgets/default_app_button.dart';
 import '../../../../core/widgets/spacers.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/another_way_sign.dart';
-import '../../../../core/widgets/custom_check_box.dart';
 import '../../../../core/widgets/social_media_list_items.dart';
 import 'already_have_account.dart';
+import 'signup_form_bloc_listner.dart';
 
 class SignupViewBody extends StatelessWidget {
   const SignupViewBody({super.key});
@@ -32,55 +29,7 @@ class SignupViewBody extends StatelessWidget {
             ),
           ),
           VerticalSpace(50),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: CustomTextFormField(
-                  hintText: 'first name',
-                  controller: TextEditingController(),
-                ),
-              ),
-              HorizantalSpace(50),
-              Expanded(
-                child: CustomTextFormField(
-                  hintText: 'last name',
-                  controller: TextEditingController(),
-                ),
-              ),
-            ],
-          ),
-          VerticalSpace(28),
-          CustomTextFormField(
-            hintText: 'Email',
-            controller: TextEditingController(),
-          ),
-          VerticalSpace(28),
-          CustomTextFormField(
-            isPassword: true,
-            hintText: 'Password',
-            controller: TextEditingController(),
-          ),
-          VerticalSpace(25),
-          Row(
-            children: [
-              CustomCheckBox(),
-              Text(
-                'Remember me',
-                style: AppStyles.roboto20Regular.copyWith(
-                  color: AppColors.secondaryColor,
-                ),
-              ),
-            ],
-          ),
-          VerticalSpace(22),
-          DefaultAppButton(
-            onPressed: () {},
-            padding: context.width * 0.2,
-            text: 'Sign up',
-            backgroundColor: Colors.white,
-            textColor: AppColors.darkBlueColor,
-          ),
+          SignUpFormBlocListner(),
           VerticalSpace(25),
           AnotherWaySign(
             title: 'Or Register with',

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:napd/core/functions/toast_dialog.dart';
-import 'package:napd/features/login/domain/entity/login_entity.dart';
-import 'package:napd/features/login/presentation/cubit/login_cubit.dart';
-import 'package:napd/features/login/presentation/cubit/login_state.dart';
+import '../../../../core/functions/toast_dialog.dart';
+import '../../domain/entity/login_input_entity.dart';
+import '../cubit/login_cubit.dart';
+import '../cubit/login_state.dart';
 
 import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -73,7 +73,7 @@ class _LoginFormBlocListnerState extends State<LoginFormBlocListner> {
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
-                  var loginEntity = LoginEntity(
+                  var loginEntity = LoginInputEntity(
                     email: _emailController.text.trim(),
                     pass: _passController.text.trim(),
                   );

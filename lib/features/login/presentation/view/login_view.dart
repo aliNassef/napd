@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:napd/core/di/service_locator.dart';
-import 'package:napd/features/login/presentation/cubit/login_cubit.dart';
+import '../../../../core/di/service_locator.dart';
+import '../cubit/login_cubit.dart';
 
 import '../../../../core/widgets/background_widget.dart';
 import '../widgets/login_view_body.dart';
