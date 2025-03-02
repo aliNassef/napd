@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../../../core/extensions/mediaquery_size.dart';
+import 'package:napd/features/login/presentation/widgets/login_form_bloc_listner.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/another_way_sign.dart';
-import '../../../../core/widgets/custom_text_form_field.dart';
-import '../../../../core/widgets/default_app_button.dart';
 import '../../../../core/widgets/social_media_list_items.dart';
 import '../../../../core/widgets/spacers.dart';
-
 import '../../../../core/utils/app_styles.dart';
-import '../view/select_baby_account_view.dart';
 import 'donot_have_account.dart';
 
 class LoginViewBody extends StatelessWidget {
@@ -34,29 +30,7 @@ class LoginViewBody extends StatelessWidget {
             ),
           ),
           VerticalSpace(42),
-          CustomTextFormField(
-            hintText: 'Email',
-            controller: TextEditingController(),
-          ),
-          VerticalSpace(30),
-          CustomTextFormField(
-            isPassword: true,
-            hintText: 'Password',
-            controller: TextEditingController(),
-          ),
-          VerticalSpace(60),
-          DefaultAppButton(
-            onPressed: () {
-              Navigator.pushReplacementNamed(
-                context,
-                SelectBabyAccountView.routeName,
-              );
-            },
-            backgroundColor: Colors.white,
-            text: 'Log in',
-            padding: context.width * 0.2,
-            textColor: AppColors.primaryColor,
-          ),
+          LoginFormBlocListner(),
           VerticalSpace(60),
           AnotherWaySign(
             title: 'Or Login with',
