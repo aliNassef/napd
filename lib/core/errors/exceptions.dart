@@ -2,16 +2,17 @@ import 'package:dio/dio.dart';
 
 import 'error_model.dart';
 
-//!ServerException
-class ServerException implements Exception {
+abstract class AppException implements Exception {
   final ErrorModel errorModel;
-  ServerException(this.errorModel);
+  AppException(this.errorModel);
 }
 
-//!CacheExeption
-class CacheExeption implements Exception {
-  final String errorMessage;
-  CacheExeption({required this.errorMessage});
+class ServerException extends AppException {
+  ServerException(super.errorModel);
+}
+
+class CacheException extends AppException {
+  CacheException(super.errorModel);
 }
 
 class CustomException implements Exception {
@@ -101,13 +102,10 @@ handleDioException(DioException e) {
           throw NotFoundException(ErrorModel.fromJson(e.response!.data));
 
         case 409: //cofficient
-
           throw CofficientException(ErrorModel.fromJson(e.response!.data));
 
         case 504: // Bad request
-
-          throw BadResponseException(
-              ErrorModel(errorMessage: e.response!.data));
+          throw BadResponseException(ErrorModel.fromJson(e.response!.data));
       }
 
     case DioExceptionType.cancel:

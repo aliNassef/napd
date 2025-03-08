@@ -6,5 +6,7 @@ class LoginRemoteSource {
 
   LoginRemoteSource({required ApiConsumer api}) : _api = api;
 
-  void login({required LoginInputModel loginInputModel}) {}
+  Future<void> login({required LoginInputModel loginInputModel}) async {
+    _api.get('');
+  }
 }

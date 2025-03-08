@@ -15,8 +15,7 @@ class LoginRepoImpl extends LoginRepo {
   Future<Either<Failure, void>> login(LoginInputEntity loginEntity) async {
     try {
       var loginInputModel = LoginInputModel.fromEntity(loginEntity);
-      _loginRemoteSource.login(loginInputModel: loginInputModel);
-
+      await _loginRemoteSource.login(loginInputModel: loginInputModel);
       return right(null);
     } on ServerException catch (e) {
       return left(Failure(errMessage: e.errorModel.errorMessage));
