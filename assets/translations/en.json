@@ -110,5 +110,6 @@
     "soundnotifications" : "Sound notifications",
     "reactionnotifications" : "Reaction notifications",
     "showpreview" : "Show preview",
-    "cart" : "Cart"
+    "cart" : "Cart",
+    "nointernetconnection" : "No internet connection"
 }

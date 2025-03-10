@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:napd/core/repo/network_info.dart';
+import 'package:napd/core/repo/network_info_impl.dart';
 import '../api/api_consumer.dart';
 import '../api/dio_consumer.dart';
 import '../../features/login/data/repo/login_repo_impl.dart';
@@ -18,6 +20,7 @@ Future<void> setupServiceLocator() async {
   injector.registerLazySingleton<AppLocalizations>(
     () => AppLocalizationsImpl(),
   );
+  injector.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl());
   // api
   injector.registerLazySingleton<Dio>(() => Dio());
   injector.registerLazySingleton<ApiConsumer>(
@@ -29,7 +32,9 @@ Future<void> setupServiceLocator() async {
     () => LoginRemoteSource(api: injector<ApiConsumer>()),
   );
   injector.registerLazySingleton<LoginRepo>(
-    () => LoginRepoImpl(loginRemoteSource: injector<LoginRemoteSource>()),
+    () => LoginRepoImpl(
+        loginRemoteSource: injector<LoginRemoteSource>(),
+        networkInfo: injector<NetworkInfo>()),
   );
 
   injector.registerFactory<LoginCubit>(

@@ -110,6 +110,6 @@
   "soundnotifications" : "الاشعارات الصوتية",
   "reactionnotifications" : "الاشعارات الاستجابة",
   "showpreview" : "عرض المعاينة",
-  "cart" : "السلة"
-
+  "cart" : "السلة",
+  "nointernetconnection" : "لا يوجد اتصال بالإنترنت"
 }

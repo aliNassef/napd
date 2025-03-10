@@ -15,6 +15,7 @@ class CacheException extends AppException {
   CacheException(super.errorModel);
 }
 
+
 class CustomException implements Exception {
   final String errorMessage;
 
