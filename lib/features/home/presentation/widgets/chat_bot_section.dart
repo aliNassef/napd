@@ -31,6 +31,7 @@ class ChatBotSection extends StatelessWidget {
           DefaultAppButton(
             text: 'Get Started',
             onPressed: () {},
+            radius: 20,
             backgroundColor: AppColors.primaryColor,
             textColor: Colors.white,
           ),

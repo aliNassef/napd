@@ -12,6 +12,7 @@ class DefaultAppButton extends StatelessWidget {
     required this.textColor,
     this.icon = const SizedBox(),
     this.padding = 0,
+    this.radius = 16,
   });
   final String text;
   final void Function()? onPressed;
@@ -19,6 +20,7 @@ class DefaultAppButton extends StatelessWidget {
   final Color textColor;
   final Widget icon;
   final double padding;
+  final double radius;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -27,7 +29,7 @@ class DefaultAppButton extends StatelessWidget {
             const WidgetStatePropertyAll(EdgeInsets.symmetric(vertical: 16)),
         shape: WidgetStatePropertyAll(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(radius),
           ),
         ),
         alignment: Alignment.center,
