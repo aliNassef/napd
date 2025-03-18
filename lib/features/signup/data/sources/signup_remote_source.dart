@@ -1,4 +1,4 @@
-import 'package:napd/features/signup/data/model/signup_input_model.dart';
+import '../model/signup_input_model.dart';
 
 import '../../../../core/api/api_consumer.dart';
 

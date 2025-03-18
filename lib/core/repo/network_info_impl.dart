@@ -1,5 +1,5 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:napd/core/repo/network_info.dart';
+import 'network_info.dart';
 
 class NetworkInfoImpl extends NetworkInfo {
   @override

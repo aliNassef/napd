@@ -1,4 +1,4 @@
-import 'package:napd/features/login/domain/entity/login_input_entity.dart';
+import '../../domain/entity/login_input_entity.dart';
 
 class LoginInputModel {
   final String email;
