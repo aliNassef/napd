@@ -1,6 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/extensions/padding_extension.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widgets/appbars/custom_app_bar.dart';
 
 import '../widgets/cart_view_body.dart';
@@ -13,7 +13,7 @@ class CartView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: 'cart'.tr(),
+        title: AppStrings.shop,
       ),
       body: SafeArea(
         bottom: false,

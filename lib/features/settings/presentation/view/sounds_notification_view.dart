@@ -1,5 +1,5 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widgets/appbars/custom_app_bar.dart';
 import '../widgets/sound_notification_view_body.dart';
 
@@ -9,7 +9,7 @@ class SoundsNotificationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'notifications'.tr()),
+      appBar: CustomAppBar(title: AppStrings.notifications),
       body: SafeArea(
         child: SoundNotificationsViewBody(),
       ),

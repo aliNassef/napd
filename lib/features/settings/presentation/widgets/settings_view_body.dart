@@ -1,6 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/core/utils/app_strings.dart';
 import '../view/about_view.dart';
 import '../view/app_language_view.dart';
 import '../view/help_and_support_view.dart';
@@ -23,35 +23,35 @@ class SettingsViewBody extends StatelessWidget {
           VerticalSpace(60),
           SettingsItem(
             image: AppSvgs.languageIcon,
-            title: 'applanguage'.tr(),
+            title: AppStrings.appLanguage,
             onTap: () {
               Navigator.of(context).pushNamed(AppLanguageView.routeName);
             },
           ),
           SettingsItem(
             image: AppSvgs.notificationIcon,
-            title: 'soundandnotification'.tr(),
+            title: AppStrings.soundNotifications,
             onTap: () {
               Navigator.of(context).pushNamed(SoundsNotificationView.routeName);
             },
           ),
           SettingsItem(
             image: AppSvgs.helpIcon,
-            title: 'helpandsupport'.tr(),
+            title: AppStrings.helpAndSupport,
             onTap: () {
               Navigator.of(context).pushNamed(HelpAndSupportView.routeName);
             },
           ),
           SettingsItem(
             image: AppSvgs.privacyIcon,
-            title: 'privacyandsecurity'.tr(),
+            title: AppStrings.privacyAndSecurity,
             onTap: () {
               Navigator.of(context).pushNamed(PrivacyAndSecurityView.routeName);
             },
           ),
           SettingsItem(
             image: AppSvgs.aboutIcon,
-            title: 'about'.tr(),
+            title: AppStrings.about,
             onTap: () {
               Navigator.of(context).pushNamed(AboutView.routeName);
             },

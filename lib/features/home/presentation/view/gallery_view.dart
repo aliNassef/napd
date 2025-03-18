@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:napd/core/utils/app_strings.dart';
 import '../../../../core/widgets/appbars/custom_app_bar.dart';
 import '../widgets/gallery_grid_items.dart';
 
@@ -8,7 +9,7 @@ class GalleryView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'Gallery'),
+      appBar: CustomAppBar(title: AppStrings.gallery),
       body: SafeArea(
         child: GalleryGridItems(),
       ),

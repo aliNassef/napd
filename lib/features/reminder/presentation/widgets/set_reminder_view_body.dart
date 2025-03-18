@@ -1,5 +1,5 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:napd/core/utils/app_strings.dart';
 import '../../../../core/helpers/notification_service.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/extensions/padding_extension.dart';
@@ -23,7 +23,7 @@ class SetReminderViewBody extends StatelessWidget {
         children: [
           VerticalSpace(54),
           Text(
-            'filloutthefieldsandhitthesavebuttontoaddit'.tr(),
+            AppStrings.fillOutTheFields,
             style: AppStyles.roboto14Regular.copyWith(
               color: AppColors.primaryColor,
             ),
@@ -31,7 +31,7 @@ class SetReminderViewBody extends StatelessWidget {
           ).withHorizontalPadding(32),
           VerticalSpace(40),
           CustomTextFormField(
-            hintText: 'title'.tr(),
+            hintText: AppStrings.title,
             keyboardType: TextInputType.text,
             hintColor: Colors.black.withValues(alpha: 0.3),
             controller: TextEditingController(),
@@ -39,21 +39,21 @@ class SetReminderViewBody extends StatelessWidget {
           VerticalSpace(40),
           CustomTextFormField(
             hintColor: Colors.black.withValues(alpha: 0.3),
-            hintText: 'description'.tr(),
+            hintText: AppStrings.description,
             keyboardType: TextInputType.text,
             controller: TextEditingController(),
             maxLines: 4,
           ),
           VerticalSpace(40),
           Text(
-            'reminders'.tr(),
+            AppStrings.reminders,
             style: AppStyles.roboto20SemiBold.copyWith(
               color: AppColors.primaryColor,
             ),
           ),
           VerticalSpace(20),
           Text(
-            'date'.tr(),
+            AppStrings.date,
             style: AppStyles.roboto18Regular.copyWith(
               color: AppColors.primaryColor,
             ),
@@ -72,17 +72,17 @@ class SetReminderViewBody extends StatelessWidget {
               _testNotification();
             },
             padding: context.width * 1 / 6,
-            text: 'save'.tr(),
+            text: AppStrings.save,
             backgroundColor: AppColors.secondaryColor,
             textColor: AppColors.primaryColor,
           ),
           VerticalSpace(10),
           DefaultAppButton(
-            onPressed: (){
+            onPressed: () {
               Navigator.pop(context);
             },
             padding: context.width * 1 / 6,
-            text: 'cancel'.tr(),
+            text: AppStrings.cancel,
             backgroundColor: Color(0xffF9E9FC),
             textColor: AppColors.primaryColor,
           ),

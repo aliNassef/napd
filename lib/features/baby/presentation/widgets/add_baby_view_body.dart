@@ -1,5 +1,5 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
@@ -20,7 +20,7 @@ class AddBabyViewBody extends StatelessWidget {
         children: [
           const VerticalSpace(40),
           Text(
-            "add your baby".tr(),
+            AppStrings.addYourBaby,
             style: AppStyles.roboto48Bold.copyWith(
               color: AppColors.greyColor,
             ),
@@ -35,7 +35,7 @@ class AddBabyViewBody extends StatelessWidget {
           ),
           const VerticalSpace(100),
           DefaultAppButton(
-            text: "add".tr(),
+            text: AppStrings.add,
             onPressed: () {
               Navigator.of(context).pushNamed(BabyAccountView.routeName);
             },

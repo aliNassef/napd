@@ -1,9 +1,9 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/spacers.dart';
 
@@ -26,13 +26,13 @@ class _BabyGenderSelectorState extends State<BabyGenderSelector> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        _buildGenderOption(context, "girl".tr(), isGirlSelected, (value) {
+        _buildGenderOption(context, AppStrings.girl, isGirlSelected, (value) {
           setState(() {
             isGirlSelected = value!;
             isBoySelected = false;
           });
         }),
-        _buildGenderOption(context, "boy".tr(), isBoySelected, (value) {
+        _buildGenderOption(context, AppStrings.boy, isBoySelected, (value) {
           setState(() {
             isBoySelected = value!;
             isGirlSelected = false;
@@ -54,7 +54,7 @@ class _BabyGenderSelectorState extends State<BabyGenderSelector> {
             borderRadius: BorderRadius.circular(20.r),
             image: DecorationImage(
               image: AssetImage(
-                gender == "girl".tr()
+                gender == AppStrings.girl
                     ? AppImages.girlAccount
                     : AppImages.boyAccount,
               ),

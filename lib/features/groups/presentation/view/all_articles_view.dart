@@ -1,5 +1,5 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:napd/core/utils/app_strings.dart';
 import '../../../../core/widgets/appbars/custom_app_bar.dart';
 import '../widgets/all_article_view_body.dart';
 
@@ -10,7 +10,7 @@ class AllArticlesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: 'articles'.tr(),
+        title: AppStrings.articles,
       ),
       body: SafeArea(
         child: const AllArticlesViewBody(),

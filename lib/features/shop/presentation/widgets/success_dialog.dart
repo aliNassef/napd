@@ -1,6 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../view/cart_view.dart';
 import 'dialog_action_button.dart';
@@ -32,7 +32,7 @@ class SuccessDialog extends StatelessWidget {
             ),
             SizedBox(height: screenWidth * 0.04),
             Text(
-              "itemaddedsuccessfully".tr(),
+              AppStrings.itemAddedSuccessfully,
               style: AppStyles.roboto18SemiBold.copyWith(
                 color: AppColors.secondaryColor,
               ),

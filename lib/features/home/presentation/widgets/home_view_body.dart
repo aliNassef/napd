@@ -1,7 +1,7 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/core/extensions/padding_extension.dart';
+import 'package:napd/core/utils/app_strings.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
@@ -51,7 +51,7 @@ class HomeViewBody extends StatelessWidget {
             child: Row(
               children: [
                 Text(
-                  'captureyourmoments'.tr(),
+                  AppStrings.captureYourMoments,
                   style: AppStyles.roboto24SemiBold.copyWith(
                     color: AppColors.darkBlueColor,
                   ),

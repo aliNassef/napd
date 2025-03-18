@@ -1,9 +1,9 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/extensions/padding_extension.dart';
 
 import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/app_styles.dart';
 import 'notification_item_with_checkbox.dart';
 
@@ -19,22 +19,22 @@ class SoundNotificationsViewBody extends StatelessWidget {
       spacing: 16.h,
       children: [
         Text(
-          'groupnotifications'.tr(),
+          AppStrings.groupNotifications,
           style: AppStyles.roboto20Regular.copyWith(
             color: AppColors.darkBlueColor,
           ),
         ),
         NotificationItemWithCheckBox(
-          title: 'soundnotifications'.tr(),
+          title: AppStrings.soundNotifications,
         ),
         NotificationItemWithCheckBox(
-          title: 'reactionnotifications'.tr(),
+          title: AppStrings.reactionNotifications,
         ),
         NotificationItemWithCheckBox(
-          title: 'reminders'.tr(),
+          title: AppStrings.reminders,
         ),
         NotificationItemWithCheckBox(
-          title: 'showpreview'.tr(),
+          title: AppStrings.showPreview,
         ),
       ],
     ).withVerticalPadding(30).withHorizontalPadding(16);

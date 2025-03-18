@@ -1,6 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../view/all_groups_view.dart';
 import 'header_with_see_all.dart';
 import '../../../../core/widgets/spacers.dart';
@@ -29,7 +29,7 @@ class GroupViewBody extends StatelessWidget {
                         AllGroupsView.routeName,
                       );
                     },
-                    title: 'mygroups'.tr(),
+                    title: AppStrings.myGroups,
                   ),
                   VerticalSpace(30),
                 ],
@@ -46,7 +46,7 @@ class GroupViewBody extends StatelessWidget {
                 children: [
                   VerticalSpace(30),
                   HeaderWithSeeAll(
-                    title: 'featuredgroups'.tr(),
+                    title: AppStrings.featuredGroups,
                   ),
                   VerticalSpace(30),
                 ],

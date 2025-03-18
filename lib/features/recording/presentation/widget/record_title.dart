@@ -1,5 +1,5 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:napd/core/utils/app_strings.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 
@@ -9,7 +9,7 @@ class RecordTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      'record'.tr(),
+     AppStrings.record,
       style: AppStyles.roboto40Bold.copyWith(
         color: AppColors.secondaryColor,
       ),

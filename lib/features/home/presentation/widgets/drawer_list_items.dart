@@ -1,6 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../../../baby/presentation/view/baby_profile_view.dart';
 import '../../../baby/presentation/view/cry_translator_view.dart';
 import '../../../parenting_resources/presentation/views/activites_view.dart';
@@ -37,7 +37,7 @@ class _DrawerListItemsState extends State<DrawerListItems> {
 
   List<DrawerItemEntity> drawerItems = [
     DrawerItemEntity(
-      text: 'tipsandtricks'.tr(),
+      text: AppStrings.tipsAndTricks,
       image: AppSvgs.tipsTricsIcon,
       onTap: (context) {
         Navigator.of(context, rootNavigator: true).pushNamed(
@@ -46,7 +46,7 @@ class _DrawerListItemsState extends State<DrawerListItems> {
       },
     ),
     DrawerItemEntity(
-      text: 'crytranslation'.tr(),
+      text: AppStrings.cryTranslation,
       image: AppSvgs.cryIcon,
       onTap: (context) {
         Navigator.of(context, rootNavigator: true).pushNamed(
@@ -55,7 +55,7 @@ class _DrawerListItemsState extends State<DrawerListItems> {
       },
     ),
     DrawerItemEntity(
-      text: 'activities'.tr(),
+      text: AppStrings.activities,
       image: AppSvgs.activitesIcon,
       onTap: (context) {
         Navigator.of(context, rootNavigator: true).pushNamed(
@@ -64,7 +64,7 @@ class _DrawerListItemsState extends State<DrawerListItems> {
       },
     ),
     DrawerItemEntity(
-      text: 'shop'.tr(),
+      text: AppStrings.shop,
       image: AppSvgs.shopIcon,
       onTap: (context) {
         Navigator.of(context, rootNavigator: true).pushNamed(
@@ -73,7 +73,7 @@ class _DrawerListItemsState extends State<DrawerListItems> {
       },
     ),
     DrawerItemEntity(
-      text: 'recipes'.tr(),
+      text: AppStrings.recipes,
       image: AppSvgs.recipesIcon,
       onTap: (context) {
         Navigator.of(context, rootNavigator: true).pushNamed(
@@ -82,7 +82,7 @@ class _DrawerListItemsState extends State<DrawerListItems> {
       },
     ),
     DrawerItemEntity(
-      text: 'babyprofile'.tr(),
+      text: AppStrings.babyProfile,
       image: AppSvgs.babyIcon,
       onTap: (context) {
         Navigator.of(context, rootNavigator: true).pushNamed(
@@ -91,7 +91,7 @@ class _DrawerListItemsState extends State<DrawerListItems> {
       },
     ),
     DrawerItemEntity(
-      text: 'gallery'.tr(),
+      text: AppStrings.gallery,
       image: AppSvgs.galleryIcon,
       onTap: (context) {
         Navigator.of(context, rootNavigator: true).pushNamed(
@@ -100,7 +100,7 @@ class _DrawerListItemsState extends State<DrawerListItems> {
       },
     ),
     DrawerItemEntity(
-      text: 'chatbot'.tr(),
+      text: AppStrings.chatBot,
       image: AppSvgs.chatBotIcon,
       onTap: (context) {
         Navigator.of(context, rootNavigator: true).pushNamed(
@@ -109,7 +109,7 @@ class _DrawerListItemsState extends State<DrawerListItems> {
       },
     ),
     DrawerItemEntity(
-      text: 'settings'.tr(),
+      text: AppStrings.settings,
       image: AppSvgs.settingIcon,
       onTap: (context) {
         Navigator.of(context, rootNavigator: true).pushNamed(

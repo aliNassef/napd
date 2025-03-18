@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../features/groups/presentation/view/podcasts_details_view.dart';
+import '../../features/home/presentation/view/chat_bot_view.dart';
 import '../../features/home/presentation/view/gallery_view.dart';
 import '../../features/shop/presentation/view/cart_view.dart';
 import '../../features/shop/presentation/view/checkout_view.dart';
@@ -188,6 +189,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case GalleryView.routeName:
       return MaterialPageRoute(
         builder: (context) => const GalleryView(),
+      );
+    case ChatBotView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const ChatBotView(),
       );
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());

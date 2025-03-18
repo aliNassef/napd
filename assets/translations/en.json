@@ -79,15 +79,14 @@
     "reminders": "Reminders",
     "selecttime": "Select time",
     "selectedtime": "Selected time: ",
-    "add your baby": "Add your baby",
     "createbabyaccount": "Create Baby Account",
     "result": "Result",
-    "hungry status": "I'm hungry!",
+    "hungrystatus": "I'm hungry!",
     "hungry": "Hungry",
     "sleepy": "Sleepy",
-    "cry translator title": "Cry Translator",
+    "crytranslatortitle": "Cry Translator",
     "startbutton": "Start",
-    "translate your baby's cry": "Translate your baby's cry",
+    "translateyourbaby'scry": "Translate your baby's cry",
     "record": "Record",
     "toys":"Toys",
     "seller": "Seller",
@@ -111,5 +110,8 @@
     "reactionnotifications" : "Reaction notifications",
     "showpreview" : "Show preview",
     "cart" : "Cart",
-    "nointernetconnection" : "No internet connection"
+    "nointernetconnection" : "No internet connection",
+    "gallery" : "Gallery",
+    "ifYouHaveAnyQuestions" : "If you need emotional support ,ask Luma your AI supporter",
+    "getStarted" : "Get Started"
 }

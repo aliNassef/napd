@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/widgets/spacers.dart';
-import '../widgets/input_message_field.dart';
-import '../widgets/suggestion_column.dart';
+import '../../../groups/presentation/widgets/input_message_field.dart';
+import '../../../groups/presentation/widgets/suggestion_column.dart';
 
-class ChatBotViewBody extends StatelessWidget {
-  const ChatBotViewBody({super.key});
+class ChatBotView extends StatelessWidget {
+  const ChatBotView({super.key});
   static const routeName = 'chat-bot';
   @override
   Widget build(BuildContext context) {

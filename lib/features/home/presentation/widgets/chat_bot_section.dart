@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:napd/core/extensions/padding_extension.dart';
+import 'package:napd/core/utils/app_strings.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/default_app_button.dart';
 import '../../../../core/widgets/spacers.dart';
+import '../view/chat_bot_view.dart';
 
 class ChatBotSection extends StatelessWidget {
   const ChatBotSection({
@@ -21,7 +23,7 @@ class ChatBotSection extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            'If you need emotional support ,ask Luma your AI supporter',
+            AppStrings.ifYouHaveAnyQuestions,
             style: AppStyles.roboto18SemiBold.copyWith(
               color: AppColors.darkBlueColor,
             ),
@@ -29,8 +31,12 @@ class ChatBotSection extends StatelessWidget {
           ),
           VerticalSpace(16),
           DefaultAppButton(
-            text: 'Get Started',
-            onPressed: () {},
+            text: AppStrings.getStarted,
+            onPressed: () {
+              Navigator.of(context, rootNavigator: true).pushNamed(
+                ChatBotView.routeName,
+              );
+            },
             radius: 20,
             backgroundColor: AppColors.primaryColor,
             textColor: Colors.white,

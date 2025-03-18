@@ -1,6 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/core/utils/app_strings.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
@@ -30,19 +30,13 @@ class GroupAppBar extends StatelessWidget implements PreferredSizeWidget {
         tabs: [
           Tab(
             child: Text(
-              'groups'.tr(),
+              AppStrings.groups,
               style: AppStyles.roboto18SemiBold,
             ),
           ),
           Tab(
             child: Text(
-              'foryou'.tr(),
-              style: AppStyles.roboto18SemiBold,
-            ),
-          ),
-          Tab(
-            child: Text(
-              'chatbot'.tr(),
+              AppStrings.forYou,
               style: AppStyles.roboto18SemiBold,
             ),
           ),

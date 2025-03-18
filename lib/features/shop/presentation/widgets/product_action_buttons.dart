@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:easy_localization/easy_localization.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widgets/spacers.dart';
 import '../view/checkout_view.dart';
 import 'style_actionButton.dart';
@@ -22,7 +22,7 @@ class ProductActionButtons extends StatelessWidget {
       children: [
         Expanded(
           child: StyledActionButton(
-            label: "checkout".tr(),
+            label:AppStrings.checkout,
             isElevated: true,
             onPressed: () {
               Navigator.pushNamed(
@@ -35,7 +35,7 @@ class ProductActionButtons extends StatelessWidget {
         HorizantalSpace(30),
         Expanded(
           child: StyledActionButton(
-            label: "addtocart".tr(),
+            label: AppStrings.addToCart,
             isElevated: false,
             onPressed: () => _showSuccessDialog(context),
           ),

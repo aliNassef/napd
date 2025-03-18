@@ -1,6 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/core/utils/app_strings.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
@@ -45,7 +45,7 @@ class ReminderAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
             Expanded(
               child: Text(
-                'reminder'.tr(),
+                AppStrings.reminder,
                 style: AppStyles.roboto26Bold.copyWith(
                   color: AppColors.secondaryColor,
                 ),

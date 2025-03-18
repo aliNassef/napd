@@ -1,8 +1,7 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../utils/app_colors.dart';
+import '../utils/app_strings.dart';
 import '../utils/app_styles.dart';
 
 class CustomSearchBar extends StatelessWidget {
@@ -26,7 +25,7 @@ class CustomSearchBar extends StatelessWidget {
         filled: true,
         enabledBorder: buildBorderStyle(),
         focusedBorder: buildBorderStyle(),
-        hintText: 'searchhere'.tr(),
+        hintText: AppStrings.searchHere,
         hintStyle: AppStyles.roboto14Regular.copyWith(
           color: AppColors.darkBlueColor,
         ),

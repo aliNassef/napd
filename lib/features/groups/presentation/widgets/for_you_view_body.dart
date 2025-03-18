@@ -1,6 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/core/utils/app_strings.dart';
 import '../view/all_articles_view.dart';
 import '../view/all_videos_view.dart';
 import '../../../../core/extensions/padding_extension.dart';
@@ -25,7 +25,7 @@ class ForyouViewBody extends StatelessWidget {
               children: [
                 VerticalSpace(30),
                 HeaderWithSeeAll(
-                  title: 'articles'.tr(),
+                  title: AppStrings.articles,
                   onTap: () {
                     Navigator.of(context, rootNavigator: true)
                         .pushNamed(AllArticlesView.routeName);
@@ -52,7 +52,7 @@ class ForyouViewBody extends StatelessWidget {
               children: [
                 VerticalSpace(30),
                 HeaderWithSeeAll(
-                  title: 'videos'.tr(),
+                  title: AppStrings.videos,
                   onTap: () {
                     Navigator.of(context, rootNavigator: true)
                         .pushNamed(AllVideosView.routeName);
@@ -79,7 +79,7 @@ class ForyouViewBody extends StatelessWidget {
               children: [
                 VerticalSpace(30),
                 HeaderWithSeeAll(
-                  title: 'podcasts'.tr(),
+                  title: AppStrings.podcasts,
                   onTap: () {
                     Navigator.of(context, rootNavigator: true)
                         .pushNamed(PodcastsView.routeName);

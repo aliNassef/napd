@@ -1,6 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../core/widgets/default_app_button.dart';
@@ -18,19 +18,19 @@ class BabyAccountViewBody extends StatelessWidget {
       children: [
         VerticalSpace(30),
         Text(
-          "createbabyaccount".tr(),
+          AppStrings.createBabyAccount,
           style: AppStyles.roboto40Bold.copyWith(
             color: AppColors.greyColor,
           ),
         ),
         VerticalSpace(40),
         CustomTextFormField(
-          hintText: "name".tr(),
+          hintText: AppStrings.name,
           controller: TextEditingController(),
         ),
         VerticalSpace(28),
         CustomTextFormField(
-          hintText: "age".tr(),
+          hintText: AppStrings.age,
           controller: TextEditingController(),
           keyboardType: TextInputType.number,
         ),
@@ -39,7 +39,7 @@ class BabyAccountViewBody extends StatelessWidget {
           children: [
             Expanded(
               child: CustomTextFormField(
-                hintText: "weight".tr(),
+                hintText: AppStrings.weight,
                 controller: TextEditingController(),
                 keyboardType: TextInputType.number,
               ),
@@ -47,7 +47,7 @@ class BabyAccountViewBody extends StatelessWidget {
             HorizantalSpace(50),
             Expanded(
               child: CustomTextFormField(
-                hintText: "height".tr(),
+                hintText: AppStrings.height,
                 controller: TextEditingController(),
                 keyboardType: TextInputType.number,
               ),
@@ -58,7 +58,7 @@ class BabyAccountViewBody extends StatelessWidget {
         BabyGenderSelector(),
         VerticalSpace(50),
         DefaultAppButton(
-          text: "finish".tr(),
+          text: AppStrings.finish,
           onPressed: () {},
           backgroundColor: AppColors.secondaryColor,
           textColor: AppColors.primaryColor,
@@ -66,7 +66,7 @@ class BabyAccountViewBody extends StatelessWidget {
         ),
         VerticalSpace(10),
         DefaultAppButton(
-          text: "addbaby".tr(),
+          text: AppStrings.addBaby,
           onPressed: () {},
           backgroundColor: AppColors.greyColor,
           textColor: AppColors.primaryColor,

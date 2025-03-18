@@ -3,6 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/di/service_locator.dart';
 import '../../../../core/extensions/padding_extension.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widgets/spacers.dart';
 import '../../../../core/utils/app_localizations.dart';
 import '../../../../core/widgets/appbars/custom_app_bar.dart';
@@ -24,14 +25,14 @@ class _AppLanguageViewState extends State<AppLanguageView> {
             : 0;
     return Scaffold(
       appBar: CustomAppBar(
-        title: 'applanguage'.tr(),
+        title: AppStrings.appLanguage,
       ),
       body: Column(
         spacing: 30.h,
         children: [
           VerticalSpace(30),
           LanguageItem(
-            lang: 'english'.tr(),
+            lang: AppStrings.english,
             isActive: appLang == 0,
             onTap: () {
               setState(() {
@@ -41,7 +42,7 @@ class _AppLanguageViewState extends State<AppLanguageView> {
             },
           ),
           LanguageItem(
-            lang: 'arabic'.tr(),
+            lang: AppStrings.arabic,
             isActive: appLang == 1,
             onTap: () {
               setState(() {

@@ -1,6 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widgets/spacers.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
@@ -63,7 +63,7 @@ class FeaturedGroupItem extends StatelessWidget {
           ),
           onPressed: () {},
           label: Text(
-            'join'.tr(),
+            AppStrings.join,
             style: AppStyles.roboto20Regular.copyWith(color: Colors.white),
           ),
           icon: Icon(

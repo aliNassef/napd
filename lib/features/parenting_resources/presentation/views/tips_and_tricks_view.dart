@@ -1,5 +1,5 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widgets/appbars/custom_app_bar.dart';
 import '../widgets/tips_and_trick_view_body.dart';
 
@@ -10,7 +10,7 @@ class TipsAndTricksView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: 'tipsandtricks'.tr(),
+        title: AppStrings.tipsAndTricks,
       ),
       body: SafeArea(
         child: TipsAndTricksViewBody(),

@@ -1,6 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/core/utils/app_strings.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
@@ -29,7 +29,7 @@ class RecipeTipsAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       title: Text(
-        'recipes'.tr(),
+        AppStrings.recipes,
         style: AppStyles.roboto26Bold.copyWith(
           color: AppColors.secondaryColor,
         ),
@@ -40,4 +40,3 @@ class RecipeTipsAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
 }
-

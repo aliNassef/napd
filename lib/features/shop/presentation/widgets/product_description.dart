@@ -1,5 +1,5 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:napd/core/utils/app_strings.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/spacers.dart';
@@ -20,7 +20,7 @@ class _ProductDescriptionState extends State<ProductDescription> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "description".tr(),
+          AppStrings.description,
           style: AppStyles.roboto18SemiBold.copyWith(
             color: AppColors.primaryColor,
           ),

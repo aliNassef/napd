@@ -1,6 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widgets/appbars/custom_app_bar.dart';
 import '../widgets/privacy_and_security_view_body.dart';
 
@@ -11,7 +11,7 @@ class PrivacyAndSecurityView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: 'privacyandsecurity'.tr(),
+        title: AppStrings.privacyAndSecurity,
       ),
       body: SafeArea(
         child: PrivacyAndSecurityViewBody(),

@@ -1,7 +1,7 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/spacers.dart';
 
@@ -34,7 +34,7 @@ class DialogActionButtons extends StatelessWidget {
               ),
             ),
             child: Text(
-              "continueshopping".tr(),
+              AppStrings.continueShopping,
               style: TextStyle(
                 fontSize: 16,
                 color: AppColors.darkBlueColor,
@@ -55,7 +55,7 @@ class DialogActionButtons extends StatelessWidget {
               ),
             ),
             child: Text(
-              "gotocart".tr(),
+             AppStrings.goToCart,
               style: AppStyles.roboto16Regular.copyWith(
                 color: AppColors.greyColor,
               ),

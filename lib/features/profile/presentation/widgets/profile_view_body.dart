@@ -1,6 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/core/utils/app_strings.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/default_app_button.dart';
@@ -27,24 +27,24 @@ class ProfileViewBody extends StatelessWidget {
           ),
           VerticalSpace(24),
           ProfileFormStyle(
-            title: 'fullname'.tr(),
+            title: AppStrings.fullName,
             hintText: 'Ali Nassef',
           ),
           ProfileFormStyle(
-            title: 'phonenumber'.tr(),
+            title: AppStrings.phoneNumber,
             hintText: '01000000000',
           ),
           ProfileFormStyle(
-            title: 'email'.tr(),
+            title: AppStrings.email,
             hintText: 'xGj0E@example.com',
           ),
           ProfileFormStyle(
-            title: 'dateofbirth'.tr(),
+            title: AppStrings.dateOfBirth,
             hintText: '13 / 11 / 2002',
           ),
           DefaultAppButton(
             padding: 40.w,
-            text: 'updateprofile'.tr(),
+            text: AppStrings.updateProfile,
             backgroundColor: AppColors.darkBlueColor,
             textColor: Colors.white,
           ),

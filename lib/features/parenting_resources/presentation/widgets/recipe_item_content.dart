@@ -1,7 +1,7 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../../../core/widgets/spacers.dart';
@@ -36,7 +36,7 @@ class RecipeItemContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
-              'ingredients:'.tr(),
+              AppStrings.ingredients,
               style: AppStyles.roboto18Regular.copyWith(
                 color: AppColors.secondaryColor,
               ),
@@ -51,7 +51,7 @@ class RecipeItemContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
-              'nutritionalvalue:'.tr(),
+              AppStrings.nutritionalValue,
               style: AppStyles.roboto18Regular.copyWith(
                 color: AppColors.secondaryColor,
               ),

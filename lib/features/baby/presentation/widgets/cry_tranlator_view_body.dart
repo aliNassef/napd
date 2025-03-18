@@ -1,8 +1,8 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_images.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../view/baby_result_view.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
@@ -20,11 +20,11 @@ class CryTranslatorViewBody extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           CustomRoundedAppBar(
-            title: "cry translator title".tr(),
+            title: AppStrings.cryTranslation,
           ),
           VerticalSpace(50),
           Text(
-            "translate your baby's cry".tr(),
+          AppStrings.translateYourBabysCry,
             style: AppStyles.roboto32Bold.copyWith(
               color: AppColors.secondaryColor,
             ),
@@ -37,7 +37,7 @@ class CryTranslatorViewBody extends StatelessWidget {
           ),
           VerticalSpace(16),
           DefaultAppButton(
-            text: "startbutton".tr(),
+            text: AppStrings.startButton,
             onPressed: () {
               Navigator.of(context).pushNamed(BabyResultView.routeName);
             },

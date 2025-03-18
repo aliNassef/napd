@@ -1,5 +1,5 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widgets/appbars/custom_app_bar.dart';
 
 import '../widgets/activites_view_body.dart';
@@ -10,7 +10,7 @@ class ActivitesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'activites'.tr()),
+      appBar: CustomAppBar(title: AppStrings.activites),
       body: SafeArea(
         child: ActivitesViewBody(),
       ),

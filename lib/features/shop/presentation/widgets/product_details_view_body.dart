@@ -1,5 +1,5 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:napd/core/utils/app_strings.dart';
 import '../../../../core/extensions/padding_extension.dart';
 
 import '../../../../core/utils/app_colors.dart';
@@ -26,7 +26,7 @@ class ProductDetailsViewBody extends StatelessWidget {
         VerticalSpace(16),
         // Seller Info
         Text(
-          "${"seller".tr()} : Amazon",
+          "${AppStrings.seller} : Amazon",
           style: AppStyles.roboto16Regular.copyWith(
             color: Colors.grey,
           ),

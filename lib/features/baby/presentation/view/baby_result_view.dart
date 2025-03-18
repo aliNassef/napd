@@ -1,5 +1,5 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../widgets/baby_result_view_body.dart';
 import '../../../../core/widgets/appbars/custom_app_bar.dart';
 
@@ -10,12 +10,12 @@ class BabyResultView extends StatelessWidget {
   Widget build(BuildContext context) {
     // Sample data for predictions
     final predictions = [
-      {'status': 'hungry'.tr(), 'percentage': 82},
-      {'status': 'sleepy'.tr(), 'percentage': 18},
+      {'status': AppStrings.hungry, 'percentage': 82},
+      {'status': AppStrings.sleepy, 'percentage': 18},
     ];
 
     return Scaffold(
-      appBar: CustomAppBar(title: "result".tr()),
+      appBar: CustomAppBar(title: AppStrings.result),
       body: SafeArea(
         child: BabyResultViewBody(predictions: predictions),
       ),

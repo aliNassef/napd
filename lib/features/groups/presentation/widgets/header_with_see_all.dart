@@ -1,5 +1,5 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:napd/core/utils/app_strings.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
@@ -26,7 +26,7 @@ class HeaderWithSeeAll extends StatelessWidget {
         TextButton(
           onPressed: onTap,
           child: Text(
-            'seeall'.tr(),
+            AppStrings.seeAll,
             style: AppStyles.roboto14Regular.copyWith(
               color: AppColors.greenLightColor,
             ),

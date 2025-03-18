@@ -1,5 +1,5 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:napd/core/utils/app_strings.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import '../../../../core/widgets/appbars/custom_app_bar.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -17,7 +17,7 @@ class ReminderView extends StatelessWidget {
         onLeadingTap: () {
           controller.index = 1;
         },
-        title: 'reminder'.tr(),
+        title: AppStrings.reminder,
       ),
       body: ReminderViewBody(),
       floatingActionButton: _reminderFloatingButton(context),

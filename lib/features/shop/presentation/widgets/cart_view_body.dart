@@ -1,8 +1,7 @@
-import 'package:easy_localization/easy_localization.dart';
-
 import 'package:flutter/material.dart';
 import '../../../../core/utils/app_colors.dart';
 
+import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widgets/default_app_button.dart';
 import '../../../../core/widgets/spacers.dart';
 import '../view/checkout_view.dart';
@@ -44,7 +43,7 @@ class CartViewBody extends StatelessWidget {
               ),
               VerticalSpace(22),
               DefaultAppButton(
-                text: "checkout".tr(),
+                text: AppStrings.checkout,
                 onPressed: () {
                   Navigator.pushNamed(
                     context,
