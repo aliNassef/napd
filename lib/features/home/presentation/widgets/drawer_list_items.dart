@@ -11,6 +11,7 @@ import '../../../settings/presentation/view/settings_view.dart';
 import '../../../shop/presentation/view/shop_view.dart';
 import '../../../parenting_resources/presentation/views/tips_and_tricks_view.dart';
 import '../../../../core/utils/app_images.dart';
+import '../view/gallery_view.dart';
 import 'drawer_item.dart';
 
 class DrawerListItems extends StatefulWidget {
@@ -26,7 +27,7 @@ class _DrawerListItemsState extends State<DrawerListItems> {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      padding: EdgeInsetsDirectional.only(start: 16.w),
+      padding: EdgeInsetsDirectional.only(start: 16.w, bottom: 16.h),
       itemBuilder: (_, index) =>
           DrawerItem(drawerItemEntity: drawerItems[index]),
       separatorBuilder: (_, __) => VerticalSpace(50.h),
@@ -83,6 +84,24 @@ class _DrawerListItemsState extends State<DrawerListItems> {
     DrawerItemEntity(
       text: 'babyprofile'.tr(),
       image: AppSvgs.babyIcon,
+      onTap: (context) {
+        Navigator.of(context, rootNavigator: true).pushNamed(
+          BabyProfileView.routeName,
+        );
+      },
+    ),
+    DrawerItemEntity(
+      text: 'gallery'.tr(),
+      image: AppSvgs.galleryIcon,
+      onTap: (context) {
+        Navigator.of(context, rootNavigator: true).pushNamed(
+          GalleryView.routeName,
+        );
+      },
+    ),
+    DrawerItemEntity(
+      text: 'chatbot'.tr(),
+      image: AppSvgs.chatBotIcon,
       onTap: (context) {
         Navigator.of(context, rootNavigator: true).pushNamed(
           BabyProfileView.routeName,

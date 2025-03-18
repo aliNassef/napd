@@ -10,6 +10,7 @@ ThemeData getLightTheme() {
     scaffoldBackgroundColor: Colors.white,
     colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
     useMaterial3: true,
+    primaryColor: AppColors.primaryColor,
     appBarTheme: AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../features/groups/presentation/view/podcasts_details_view.dart';
+import '../../features/home/presentation/view/gallery_view.dart';
 import '../../features/shop/presentation/view/cart_view.dart';
 import '../../features/shop/presentation/view/checkout_view.dart';
 import '../../features/shop/presentation/view/product_details_view.dart';
@@ -183,6 +184,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case HelpAndSupportView.routeName:
       return MaterialPageRoute(
         builder: (context) => const HelpAndSupportView(),
+      );
+    case GalleryView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const GalleryView(),
       );
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
