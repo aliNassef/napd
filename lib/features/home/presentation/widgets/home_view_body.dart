@@ -1,14 +1,15 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/core/extensions/padding_extension.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../../../core/widgets/spacers.dart';
 import '../../../../core/utils/app_styles.dart';
-import 'for_you_header.dart';
-import 'for_you_item.dart';
+import 'chat_bot_section.dart';
+
 import 'home_features.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -43,20 +44,7 @@ class HomeViewBody extends StatelessWidget {
           VerticalSpace(40),
           HomeFeatures(),
           VerticalSpace(30),
-          ForyouHeader(),
-          VerticalSpace(7),
-          Padding(
-            padding: EdgeInsets.only(left: 16.w),
-            child: SizedBox(
-              height: 160.h,
-              child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (_, index) => ForyouItem(),
-                separatorBuilder: (_, index) => HorizantalSpace(8),
-                itemCount: 4,
-              ),
-            ),
-          ),
+          ChatBotSection().withHorizontalPadding(16),
           VerticalSpace(30),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
