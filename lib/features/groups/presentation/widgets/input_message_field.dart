@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:napd/core/utils/app_strings.dart';
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/app_shadows.dart';
 import '../../../../core/utils/app_styles.dart';
@@ -60,7 +61,7 @@ class InputMessageField extends StatelessWidget {
                       border: _buildBorderStyle(),
                       enabledBorder: _buildBorderStyle(),
                       focusedBorder: _buildBorderStyle(),
-                      hintText: 'Type your message here',
+                      hintText: AppStrings.typeYourMessage,
                       suffixIcon: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [

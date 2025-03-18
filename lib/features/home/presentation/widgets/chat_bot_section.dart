@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:napd/core/extensions/padding_extension.dart';
 import 'package:napd/core/utils/app_strings.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
@@ -33,8 +34,9 @@ class ChatBotSection extends StatelessWidget {
           DefaultAppButton(
             text: AppStrings.getStarted,
             onPressed: () {
-              Navigator.of(context, rootNavigator: true).pushNamed(
-                ChatBotView.routeName,
+              PersistentNavBarNavigator.pushNewScreen(
+                context,
+                screen: ChatBotView(),
               );
             },
             radius: 20,

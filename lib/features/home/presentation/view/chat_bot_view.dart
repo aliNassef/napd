@@ -9,26 +9,28 @@ class ChatBotView extends StatelessWidget {
   static const routeName = 'chat-bot';
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
-        children: [
-          Expanded(
-            child: SuggestionColumn(),
-            //  ListView.builder(
-            //   reverse: true,
-            //   itemCount: 5,
-            //   itemBuilder: (_, index) {
-            //     return MessageBubble(
-            //       text: 'Ali Nassef',
-            //     );
-            //   },
-            // ),
-          ),
-          VerticalSpace(16),
-          InputMessageField(),
-          VerticalSpace(16),
-        ],
-      ).withHorizontalPadding(16),
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              child: SuggestionColumn(),
+              //  ListView.builder(
+              //   reverse: true,
+              //   itemCount: 5,
+              //   itemBuilder: (_, index) {
+              //     return MessageBubble(
+              //       text: 'Ali Nassef',
+              //     );
+              //   },
+              // ),
+            ),
+            VerticalSpace(16),
+            InputMessageField(),
+            VerticalSpace(16),
+          ],
+        ).withHorizontalPadding(16),
+      ),
     );
   }
 }

@@ -113,5 +113,6 @@
     "nointernetconnection" : "No internet connection",
     "gallery" : "Gallery",
     "ifYouHaveAnyQuestions" : "If you need emotional support ,ask Luma your AI supporter",
-    "getStarted" : "Get Started"
+    "getStarted" : "Get Started",
+    "typeyourmessage" : "Type your message here"
 }

@@ -120,4 +120,5 @@ abstract class AppStrings {
   static String get gallery => 'gallery'.tr();
   static String get ifYouHaveAnyQuestions => 'ifYouHaveAnyQuestions'.tr();
   static String get getStarted => 'getStarted'.tr();
+  static String get typeYourMessage => 'typeyourmessage'.tr();
 }

@@ -113,5 +113,6 @@
   "nointernetconnection": "لا يوجد اتصال بالإنترنت",
   "gallery": "المعرض",
   "ifYouHaveAnyQuestions": "إذا كنت بحاجة إلى دعم عاطفي، اسأل Luma، مساعدك الذكي",
-  "getStarted": "ابدأ الآن"
+  "getStarted": "ابدأ الآن",
+  "typeyourmessage" : "اكتب رسالتك هنا"
 }
