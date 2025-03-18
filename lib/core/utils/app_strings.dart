@@ -121,4 +121,5 @@ abstract class AppStrings {
   static String get ifYouHaveAnyQuestions => 'ifYouHaveAnyQuestions'.tr();
   static String get getStarted => 'getStarted'.tr();
   static String get typeYourMessage => 'typeyourmessage'.tr();
+  static String get addNewBaby => 'addnewbaby'.tr();
 }
