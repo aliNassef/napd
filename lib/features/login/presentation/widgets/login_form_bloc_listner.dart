@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:napd/core/utils/app_strings.dart';
 import '../../../../core/functions/toast_dialog.dart';
 import '../../domain/entity/login_input_entity.dart';
 import '../cubit/login_cubit.dart';
@@ -45,13 +46,13 @@ class _LoginFormBlocListnerState extends State<LoginFormBlocListner> {
       child: Column(
         children: [
           CustomTextFormField(
-            hintText: 'Email',
+            hintText: AppStrings.email,
             controller: _emailController,
           ),
           VerticalSpace(30),
           CustomTextFormField(
             isPassword: true,
-            hintText: 'Password',
+            hintText: AppStrings.password,
             controller: _passController,
           ),
           VerticalSpace(60),
@@ -85,7 +86,7 @@ class _LoginFormBlocListnerState extends State<LoginFormBlocListner> {
                 }
               },
               backgroundColor: Colors.white,
-              text: 'Log in',
+              text: AppStrings.logIn,
               padding: context.width * 0.2,
               textColor: AppColors.primaryColor,
             ),

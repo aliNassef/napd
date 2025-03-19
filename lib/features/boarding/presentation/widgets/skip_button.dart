@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:napd/core/utils/app_strings.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../view/start_view.dart';
@@ -17,7 +18,7 @@ class SkipButton extends StatelessWidget {
           Navigator.pushNamed(context, StartView.routeName);
         },
         child: Text(
-          'Skip',
+          AppStrings.skip,
           style: AppStyles.roboto24Regular.copyWith(
             color: AppColors.secondaryColor,
           ),

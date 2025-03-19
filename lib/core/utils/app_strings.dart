@@ -122,4 +122,10 @@ abstract class AppStrings {
   static String get getStarted => 'getStarted'.tr();
   static String get typeYourMessage => 'typeyourmessage'.tr();
   static String get addNewBaby => 'addnewbaby'.tr();
+  static String get uploadProfilePhoto => 'uploadprofileimage'.tr();
+  static String get logIn => 'logIn'.tr();
+  static String get welcomeMessage => 'welcomemessage'.tr();
+  static String get orLoginWith => 'orloginwith'.tr();
+  static String get dontHaveAccount => 'idonthaveanaccount'.tr();
+  static String get orRegisterWith => 'orregisterwith'.tr();
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:napd/core/utils/app_strings.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/spacers.dart';
 import '../../../../core/utils/app_styles.dart';
@@ -16,14 +17,14 @@ class SignupViewBody extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            'Create account ',
+          AppStrings.createAccount,
             style: AppStyles.roboto48Bold.copyWith(
               color: AppColors.greyColor,
             ),
           ),
           VerticalSpace(35),
           Text(
-            'Sign up to get started',
+           AppStrings.signUpToGetStarted,
             style: AppStyles.roboto20Regular.copyWith(
               color: AppColors.greyColor.withValues(alpha: 0.6),
             ),
@@ -32,7 +33,7 @@ class SignupViewBody extends StatelessWidget {
           SignUpFormBlocListner(),
           VerticalSpace(25),
           AnotherWaySign(
-            title: 'Or Register with',
+            title: AppStrings.orRegisterWith,
           ),
           VerticalSpace(22),
           SocialMediaListItems(),

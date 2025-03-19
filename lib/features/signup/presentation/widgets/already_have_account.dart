@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:napd/core/utils/app_strings.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
@@ -16,7 +17,7 @@ class AlreadyHaveAccount extends StatelessWidget {
       TextSpan(
         children: [
           TextSpan(
-            text: 'Already have account!',
+            text: AppStrings.alreadyHaveAccount,
             style: AppStyles.roboto24Regular.copyWith(
               color: AppColors.greyColor,
             ),
@@ -27,7 +28,7 @@ class AlreadyHaveAccount extends StatelessWidget {
               ..onTap = () {
                 Navigator.pushNamed(context, LoginView.routeName);
               },
-            text: 'Login',
+            text: AppStrings.login,
             style: AppStyles.roboto24Regular.copyWith(
               color: AppColors.secondaryColor,
             ),

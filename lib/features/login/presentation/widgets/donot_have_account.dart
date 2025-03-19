@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:napd/core/utils/app_strings.dart';
 import '../../../signup/presentation/view/signup_view.dart';
 
 import '../../../../core/utils/app_colors.dart';
@@ -16,7 +17,7 @@ class DonotHaveAccount extends StatelessWidget {
       TextSpan(
         children: [
           TextSpan(
-            text: 'I don’t have account!',
+            text: AppStrings.doNotHaveAccount,
             style: AppStyles.roboto24Regular.copyWith(
               color: AppColors.greyColor,
             ),
@@ -27,7 +28,7 @@ class DonotHaveAccount extends StatelessWidget {
               ..onTap = () {
                 Navigator.pushNamed(context, SignupView.routeName);
               },
-            text: 'Sign up',
+            text: AppStrings.signUp,
             style: AppStyles.roboto24Regular.copyWith(
               color: AppColors.secondaryColor,
             ),

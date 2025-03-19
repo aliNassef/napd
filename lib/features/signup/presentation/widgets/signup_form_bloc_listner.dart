@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:napd/core/utils/app_images.dart';
 import '../../../../core/functions/build_error_message.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../../domain/entity/signup_input_entity.dart';
 import '../cubit/sign_up_cubit.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
@@ -47,18 +50,34 @@ class _SignUpFormBlocListnerState extends State<SignUpFormBlocListner> {
       child: Column(
         children: [
           Row(
+            children: [
+              CircleAvatar(
+                radius: 50,
+                backgroundColor: Color(0xffEAE8E8),
+                child: SvgPicture.asset(AppSvgs.uploadImageIcon),
+              ),
+              HorizantalSpace(20),
+              Text(
+                AppStrings.uploadProfilePhoto,
+                style: AppStyles.roboto20SemiBold.copyWith(
+                  color: AppColors.greyColor,
+                ),
+              ),
+            ],
+          ),
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
                 child: CustomTextFormField(
-                  hintText: 'first name',
+                  hintText: AppStrings.firstName,
                   controller: _firstNameController,
                 ),
               ),
               HorizantalSpace(50),
               Expanded(
                 child: CustomTextFormField(
-                  hintText: 'last name',
+                  hintText: AppStrings.lastName,
                   controller: _lastNameController,
                 ),
               ),
@@ -66,18 +85,18 @@ class _SignUpFormBlocListnerState extends State<SignUpFormBlocListner> {
           ),
           VerticalSpace(28),
           CustomTextFormField(
-            hintText: 'Email',
+            hintText: AppStrings.email,
             controller: _emailController,
           ),
           VerticalSpace(28),
           CustomTextFormField(
-            hintText: 'Phone Number',
+            hintText: AppStrings.phoneNumber,
             controller: _phoneNumberController,
           ),
           VerticalSpace(28),
           CustomTextFormField(
             isPassword: true,
-            hintText: 'Password',
+            hintText: AppStrings.password,
             controller: _passwordController,
           ),
           VerticalSpace(25),
@@ -91,7 +110,7 @@ class _SignUpFormBlocListnerState extends State<SignUpFormBlocListner> {
                 },
               ),
               Text(
-                'Remember me',
+                AppStrings.rememberMe,
                 style: AppStyles.roboto20Regular.copyWith(
                   color: AppColors.secondaryColor,
                 ),
@@ -113,7 +132,7 @@ class _SignUpFormBlocListnerState extends State<SignUpFormBlocListner> {
             child: DefaultAppButton(
               onPressed: () => _checkSignUpButtonValidity(context),
               padding: context.width * 0.2,
-              text: 'Sign up',
+              text: AppStrings.signUp,
               backgroundColor: Colors.white,
               textColor: AppColors.darkBlueColor,
             ),

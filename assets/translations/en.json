@@ -115,5 +115,11 @@
     "ifYouHaveAnyQuestions" : "If you need emotional support ,ask Luma your AI supporter",
     "getStarted" : "Get Started",
     "typeyourmessage" : "Type your message here",
-    "addnewbaby" : "Add new baby"
+    "addnewbaby" : "Add new baby",
+    "uploadprofileimage" : "Upload Profile Picture",
+    "logIn" : "Log In",
+    "welcomemessage" : "Welcome again to MamaCare",
+    "orloginwith" : "Or Login with",
+    "orregisterwith" : "Or Register with",
+    "idonthaveanaccount" : "I don’t have account!"
 }

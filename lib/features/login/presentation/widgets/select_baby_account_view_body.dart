@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:napd/core/utils/app_strings.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/spacers.dart';
 import 'baby_account_item.dart';
@@ -17,7 +18,7 @@ class SelectBabyAccountViewBody extends StatelessWidget {
             children: [
               VerticalSpace(40),
               Text(
-                'Select baby account',
+                AppStrings.selectBabyAccount,
                 style: AppStyles.roboto40Bold.copyWith(
                   color: AppColors.greyColor,
                 ),

@@ -1,3 +1,5 @@
+import 'package:napd/core/utils/app_strings.dart';
+
 import '../../../../core/utils/app_images.dart';
 
 class BoardingEntity {
@@ -15,20 +17,18 @@ class BoardingEntity {
 List<BoardingEntity> getBoardingList() {
   return [
     BoardingEntity(
-      title: 'Parenting is hard, don’t do it alone',
+      title: AppStrings.parentingIsHard,
       subtitle: '',
       img: AppImages.boarding1,
     ),
     BoardingEntity(
-      title: 'Join our communities ',
-      subtitle:
-          'Share with other parents your experience and explore our groups',
+      title: AppStrings.joinOurCommunities,
+      subtitle: AppStrings.shareWithOtherParents,
       img: AppImages.boarding2,
     ),
     BoardingEntity(
-      title: 'Read  and share ',
-      subtitle:
-          'Read others posts and share with them your experience will be helpful ',
+      title: AppStrings.readAndShare,
+      subtitle: AppStrings.readOthersPosts,
       img: AppImages.boarding3,
     ),
   ];

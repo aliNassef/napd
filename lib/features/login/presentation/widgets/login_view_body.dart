@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:napd/core/utils/app_strings.dart';
 import 'login_form_bloc_listner.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/another_way_sign.dart';
@@ -16,7 +17,7 @@ class LoginViewBody extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            'Welcome again to MamaCare',
+            AppStrings.welcomeMessage,
             style: AppStyles.roboto48Bold.copyWith(
               color: Colors.white,
             ),
@@ -24,7 +25,7 @@ class LoginViewBody extends StatelessWidget {
           ),
           VerticalSpace(32),
           Text(
-            'Log in',
+            AppStrings.logIn,
             style: AppStyles.roboto32Bold.copyWith(
               color: Colors.white,
             ),
@@ -33,7 +34,7 @@ class LoginViewBody extends StatelessWidget {
           LoginFormBlocListner(),
           VerticalSpace(60),
           AnotherWaySign(
-            title: 'Or Login with',
+            title: AppStrings.orLoginWith,
           ),
           VerticalSpace(22),
           SocialMediaListItems(),
@@ -47,7 +48,7 @@ class LoginViewBody extends StatelessWidget {
           TextButton(
             onPressed: () {},
             child: Text(
-              'Forgot Password?',
+              AppStrings.forgotPassword,
               style: AppStyles.roboto24Regular.copyWith(
                 color: AppColors.secondaryColor,
               ),

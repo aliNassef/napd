@@ -115,5 +115,11 @@
   "ifYouHaveAnyQuestions": "إذا كنت بحاجة إلى دعم عاطفي، اسأل Luma، مساعدك الذكي",
   "getStarted": "ابدأ الآن",
   "typeyourmessage" : "اكتب رسالتك هنا",
-   "addnewbaby" : "إضافة طفل جديد"
+  "addnewbaby" : "إضافة طفل جديد",
+  "uploadprofileimage" : "تحميل صورة الملف الشخصي",
+  "logIn" : "تسجيل الدخول",
+  "welcomemessage" : "مرحبًا مرة أخرى في MamaCare",
+  "orloginwith" : "أو تسجيل الدخول بواسطة",
+  "idonthaveanaccount" : "ليس لدي حساب!",
+  "orregisterwith" : "أو التسجيل بواسطة"
 }
