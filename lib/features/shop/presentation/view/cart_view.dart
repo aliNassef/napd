@@ -13,7 +13,7 @@ class CartView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: AppStrings.shop,
+        title: AppStrings.cart,
       ),
       body: SafeArea(
         bottom: false,

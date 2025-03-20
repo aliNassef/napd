@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'core/utils/app_router.dart';
 import 'core/utils/app_themes.dart';
+import 'features/shop/presentation/view/cart_view.dart';
 import 'features/splash/presentation/view/splash_view.dart';
 
 class Napd extends StatelessWidget {
@@ -29,7 +30,7 @@ class Napd extends StatelessWidget {
             builder: DevicePreview.appBuilder,
             theme: getLightTheme(),
             onGenerateRoute: onGenerateRoute,
-            initialRoute: SplashView.routeName,
+            initialRoute: CartView.routeName,
           );
         },
       ),

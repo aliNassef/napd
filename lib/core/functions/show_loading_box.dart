@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
-Future<dynamic> buildLoadingBox(BuildContext context) {
+Future<dynamic> showLoadingBox(BuildContext context) {
   return showDialog(
     context: context,
+    barrierDismissible: false,
     builder: (context) {
       return Center(
         child: Container(
