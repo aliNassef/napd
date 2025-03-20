@@ -5,7 +5,6 @@ import '../../../../core/utils/app_images.dart';
 import '../../../../core/widgets/spacers.dart';
 import 'baby_profile_image.dart';
 import '../../../../core/utils/app_styles.dart';
-import '../view/add_baby_view.dart';
 import '../view/baby_profile_details_view.dart';
 import '../widgets/baby_profile_button.dart';
 
@@ -52,7 +51,7 @@ class BabyProfileViewBody extends StatelessWidget {
           VerticalSpace(28),
           BabyProfileButton(
             onPressed: () {
-              Navigator.of(context).pushNamed(AddBabyView.routeName);
+              // Navigator.of(context).pushNamed(AddBabyView.routeName);
             },
             backgroundColor: Color(0xffDBF9FF),
             icon: AppSvgs.addBabyIcon,

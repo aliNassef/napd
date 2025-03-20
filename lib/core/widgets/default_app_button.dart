@@ -12,7 +12,7 @@ class DefaultAppButton extends StatelessWidget {
     required this.textColor,
     this.icon = const SizedBox(),
     this.padding = 0,
-    this.radius = 16,
+    this.radius = 20,
   });
   final String text;
   final void Function()? onPressed;

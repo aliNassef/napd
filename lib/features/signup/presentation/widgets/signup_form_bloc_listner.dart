@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:napd/core/utils/app_images.dart';
 import '../../../../core/functions/build_error_message.dart';
 import '../../../../core/utils/app_strings.dart';
+import '../view/create_baby_account_view.dart';
 import '../../domain/entity/signup_input_entity.dart';
 import '../cubit/sign_up_cubit.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
@@ -39,6 +40,7 @@ class _SignUpFormBlocListnerState extends State<SignUpFormBlocListner> {
     _emailController = TextEditingController();
     _phoneNumberController = TextEditingController();
     _passwordController = TextEditingController();
+    remember = false;
     _autovalidateMode = AutovalidateMode.disabled;
   }
 
@@ -51,10 +53,13 @@ class _SignUpFormBlocListnerState extends State<SignUpFormBlocListner> {
         children: [
           Row(
             children: [
-              CircleAvatar(
-                radius: 50,
-                backgroundColor: Color(0xffEAE8E8),
-                child: SvgPicture.asset(AppSvgs.uploadImageIcon),
+              GestureDetector(
+                onTap: () {},
+                child: CircleAvatar(
+                  radius: 50,
+                  backgroundColor: Color(0xffEAE8E8),
+                  child: SvgPicture.asset(AppSvgs.uploadImageIcon),
+                ),
               ),
               HorizantalSpace(20),
               Text(
@@ -65,6 +70,7 @@ class _SignUpFormBlocListnerState extends State<SignUpFormBlocListner> {
               ),
             ],
           ),
+          VerticalSpace(28),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -132,7 +138,7 @@ class _SignUpFormBlocListnerState extends State<SignUpFormBlocListner> {
             child: DefaultAppButton(
               onPressed: () => _checkSignUpButtonValidity(context),
               padding: context.width * 0.2,
-              text: AppStrings.signUp,
+              text: AppStrings.addYourBaby,
               backgroundColor: Colors.white,
               textColor: AppColors.darkBlueColor,
             ),
@@ -156,6 +162,7 @@ class _SignUpFormBlocListnerState extends State<SignUpFormBlocListner> {
 
       // call cubit
       context.read<SignupCubit>().signup(signUpInputEntity);
+      Navigator.pushNamed(context, CreateBabyAccountView.routeName);
     } else {
       _autovalidateMode = AutovalidateMode.always;
       setState(() {});

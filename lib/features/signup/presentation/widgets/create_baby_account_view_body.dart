@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:napd/features/login/presentation/view/login_view.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/app_styles.dart';
+import '../../../../core/widgets/another_way_sign.dart';
 import '../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../core/widgets/default_app_button.dart';
+import '../../../../core/widgets/social_media_list_items.dart';
 import '../../../../core/widgets/spacers.dart';
 
-import 'baby_gender_selector.dart';
+import 'already_have_account.dart';
+import '../../../baby/presentation/widgets/baby_gender_selector.dart';
 
-class BabyAccountViewBody extends StatelessWidget {
-  const BabyAccountViewBody({super.key});
+class CreatebabyAccountViewBody extends StatelessWidget {
+  const CreatebabyAccountViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -58,20 +62,37 @@ class BabyAccountViewBody extends StatelessWidget {
         BabyGenderSelector(),
         VerticalSpace(50),
         DefaultAppButton(
-          text: AppStrings.finish,
-          onPressed: () {},
-          backgroundColor: AppColors.secondaryColor,
-          textColor: AppColors.primaryColor,
-          padding: 40,
-        ),
-        VerticalSpace(10),
-        DefaultAppButton(
           text: AppStrings.addBaby,
           onPressed: () {},
           backgroundColor: AppColors.greyColor,
           textColor: AppColors.primaryColor,
           padding: 40,
         ),
+        VerticalSpace(10),
+        DefaultAppButton(
+          text: AppStrings.signUp,
+          onPressed: () {
+            Navigator.pushNamed(context, LoginView.routeName);
+          },
+          backgroundColor: AppColors.secondaryColor,
+          textColor: AppColors.primaryColor,
+          padding: 40,
+        ),
+        VerticalSpace(30),
+        AnotherWaySign(
+          title: AppStrings.orRegisterWith,
+        ),
+        VerticalSpace(22),
+        SocialMediaListItems(),
+        VerticalSpace(22),
+        Divider(
+          color: AppColors.greyColor.withValues(alpha: 0.8),
+          height: 1,
+          thickness: 1,
+        ),
+        VerticalSpace(22),
+        Center(child: AlreadyHaveAccount()),
+        VerticalSpace(22),
       ],
     );
   }

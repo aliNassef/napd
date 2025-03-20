@@ -43,7 +43,7 @@ Future<void> setupServiceLocator() async {
 
   // signup
   injector.registerLazySingleton<SignupRemoteSource>(
-    () => SignupRemoteSource(api: injector<ApiConsumer>()),
+    () => SignupRemoteSourceImpl(),
   );
   injector.registerLazySingleton<SignupRepo>(
     () => SignupRepoImpl(signupRemoteSource: injector<SignupRemoteSource>()),

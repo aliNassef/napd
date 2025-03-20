@@ -79,6 +79,7 @@ class _LoginFormBlocListnerState extends State<LoginFormBlocListner> {
                     pass: _passController.text.trim(),
                   );
                   // call cubit
+
                   context.read<LoginCubit>().login(loginEntity);
                 } else {
                   _autovalidateMode = AutovalidateMode.always;

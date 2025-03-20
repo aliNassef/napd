@@ -1,13 +1,13 @@
 import '../model/signup_input_model.dart';
 
-import '../../../../core/api/api_consumer.dart';
+abstract class SignupRemoteSource {
+  Future<void> createAccount(SignupInputModel signupInputModel);
+}
 
-class SignupRemoteSource {
-  final ApiConsumer api;
-
-  SignupRemoteSource({required this.api});
-
-  Future<void> createAccount(SignupInputModel signupInputModel) async {
-    // api.post();
+class SignupRemoteSourceImpl implements SignupRemoteSource {
+  @override
+  Future<void> createAccount(SignupInputModel signupInputModel) {
+    // TODO: implement createAccount
+    throw UnimplementedError();
   }
 }

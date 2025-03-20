@@ -1,8 +1,7 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../login/presentation/view/login_view.dart';
+import 'package:napd/features/boarding/presentation/view/boarding_view.dart';
 import '../../../../core/widgets/background_widget.dart';
 import '../widgets/splash_animation_widget.dart';
 
@@ -26,7 +25,7 @@ class _SplashViewState extends State<SplashView> {
   }
 
   void _execuateNav() {
-    Navigator.pushReplacementNamed(context, LoginView.routeName);
+    Navigator.pushReplacementNamed(context, BoardingView.routeName);
   }
 
   @override
