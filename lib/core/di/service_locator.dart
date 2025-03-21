@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
+import 'package:napd/core/cubit/cubit/app_localization_cubit.dart';
 import '../repo/network_info.dart';
-import '../repo/network_info_impl.dart';
 import '../api/api_consumer.dart';
 import '../api/dio_consumer.dart';
 import '../../features/login/data/repo/login_repo_impl.dart';
@@ -16,39 +17,64 @@ import '../../features/login/presentation/cubit/login_cubit.dart';
 
 final injector = GetIt.instance;
 
+// features -> cubit -- repo -- data
+// core
+// external
 Future<void> setupServiceLocator() async {
-  injector.registerLazySingleton<AppLocalizations>(
-    () => AppLocalizationsImpl(),
-  );
-  injector.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl());
-  // api
+  _setupLoginFeature();
+  _setupSignupFeature();
+  _setupCoreFeature();
+  _setupExernalFeature();
+}
+
+void _setupExernalFeature() {
   injector.registerLazySingleton<Dio>(() => Dio());
   injector.registerLazySingleton<ApiConsumer>(
     () => DioConsumer(dio: injector<Dio>()),
   );
+  injector
+      .registerLazySingleton<InternetConnection>(() => InternetConnection());
+}
 
-  // login
-  injector.registerLazySingleton<LoginRemoteSource>(
-    () => LoginRemoteSource(api: injector<ApiConsumer>()),
-  );
-  injector.registerLazySingleton<LoginRepo>(
-    () => LoginRepoImpl(
-      loginRemoteSource: injector<LoginRemoteSource>(),
+void _setupCoreFeature() {
+  injector.registerFactory(
+    () => AppLocalizationCubit(
+      injector<AppLocalizations>(),
     ),
   );
 
-  injector.registerFactory<LoginCubit>(
-    () => LoginCubit(injector<LoginRepo>()),
+  injector.registerLazySingleton<AppLocalizations>(
+    () => AppLocalizationsImpl(),
   );
+  injector.registerLazySingleton<NetworkInfo>(
+    () => NetworkInfoImpl(
+      connectionChecker: injector<InternetConnection>(),
+    ),
+  );
+}
 
-  // signup
+void _setupSignupFeature() {
+  injector.registerFactory<SignupCubit>(
+    () => SignupCubit(injector<SignupRepo>()),
+  );
   injector.registerLazySingleton<SignupRemoteSource>(
     () => SignupRemoteSourceImpl(),
   );
   injector.registerLazySingleton<SignupRepo>(
     () => SignupRepoImpl(signupRemoteSource: injector<SignupRemoteSource>()),
   );
-  injector.registerFactory<SignupCubit>(
-    () => SignupCubit(injector<SignupRepo>()),
+}
+
+void _setupLoginFeature() {
+  injector.registerFactory<LoginCubit>(
+    () => LoginCubit(injector<LoginRepo>()),
+  );
+  injector.registerLazySingleton<LoginRepo>(
+    () => LoginRepoImpl(
+      loginRemoteSource: injector<LoginRemoteSource>(),
+    ),
+  );
+  injector.registerLazySingleton<LoginRemoteSource>(
+    () => LoginRemoteSourceImpl(api: injector<ApiConsumer>()),
   );
 }

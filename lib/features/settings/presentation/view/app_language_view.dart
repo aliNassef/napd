@@ -1,28 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/di/service_locator.dart';
+import '../../../../core/cubit/cubit/app_localization_cubit.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widgets/spacers.dart';
-import '../../../../core/utils/app_localizations.dart';
 import '../../../../core/widgets/appbars/custom_app_bar.dart';
 import '../widgets/language_item.dart';
 
-class AppLanguageView extends StatefulWidget {
+class AppLanguageView extends StatelessWidget {
   const AppLanguageView({super.key});
   static const String routeName = 'app-language';
   @override
-  State<AppLanguageView> createState() => _AppLanguageViewState();
-}
-
-class _AppLanguageViewState extends State<AppLanguageView> {
-  @override
   Widget build(BuildContext context) {
-    int appLang =
-        injector<AppLocalizations>().getLocaleName(context.locale) == 'ar'
-            ? 1
-            : 0;
+    final cubit = context.read<AppLocalizationCubit>();
     return Scaffold(
       appBar: CustomAppBar(
         title: AppStrings.appLanguage,
@@ -33,22 +24,16 @@ class _AppLanguageViewState extends State<AppLanguageView> {
           VerticalSpace(30),
           LanguageItem(
             lang: AppStrings.english,
-            isActive: appLang == 0,
+            isActive: cubit.getAppLanguage(context) == 'en',
             onTap: () {
-              setState(() {
-                appLang = 0;
-                changeAppLanguage(context);
-              });
+              _changeAppLanguage(context, Locale('en'));
             },
           ),
           LanguageItem(
             lang: AppStrings.arabic,
-            isActive: appLang == 1,
+            isActive: cubit.getAppLanguage(context) == 'ar',
             onTap: () {
-              setState(() {
-                appLang = 0;
-                changeAppLanguage(context);
-              });
+              _changeAppLanguage(context, Locale('ar'));
             },
           ),
         ],
@@ -56,12 +41,10 @@ class _AppLanguageViewState extends State<AppLanguageView> {
     );
   }
 
-  void changeAppLanguage(BuildContext context) {
-    var localeName =
-        injector.get<AppLocalizations>().getLocaleName(context.locale);
-    injector.get<AppLocalizations>().changeLocale(
+  void _changeAppLanguage(BuildContext context, Locale locale) async {
+    await context.read<AppLocalizationCubit>().changeAppLanguage(
           context,
-          Locale(localeName == 'ar' ? 'en' : 'ar'),
+          locale,
         );
   }
 }

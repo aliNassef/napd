@@ -1,12 +1,17 @@
 import '../../../../core/api/api_consumer.dart';
 import '../model/login_input_model.dart';
 
-class LoginRemoteSource {
-  final ApiConsumer _api;
+abstract class LoginRemoteSource {
+  Future<void> login({required LoginInputModel loginInputModel});
+}
 
-  LoginRemoteSource({required ApiConsumer api}) : _api = api;
+class LoginRemoteSourceImpl extends LoginRemoteSource {
+  final ApiConsumer api;
 
-  Future<void> login({required LoginInputModel loginInputModel}) async {
-    _api.get('');
+  LoginRemoteSourceImpl({required this.api});
+  @override
+  Future<void> login({required LoginInputModel loginInputModel}) {
+    // TODO: implement login
+    throw UnimplementedError();
   }
 }

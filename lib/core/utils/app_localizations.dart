@@ -35,7 +35,7 @@ class AppLocalizationsImpl extends AppLocalizations {
 
   @override
   Future<void> changeLocale(BuildContext context, Locale newLocale) async {
-    await context.setLocale(newLocale);
+    await EasyLocalization.of(context)!.setLocale(newLocale);
   }
 
   @override

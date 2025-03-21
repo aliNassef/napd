@@ -2,11 +2,13 @@ import 'package:device_preview/device_preview.dart';
 // ignore: implementation_imports
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/core/cubit/cubit/app_localization_cubit.dart';
+import 'package:napd/features/layout/presentation/view/layout_view.dart';
 import 'core/utils/app_router.dart';
 import 'core/utils/app_themes.dart';
-import 'features/shop/presentation/view/cart_view.dart';
- 
+
 class Napd extends StatelessWidget {
   const Napd({super.key});
 
@@ -18,8 +20,10 @@ class Napd extends StatelessWidget {
       enableScaleWH: () => false,
       enableScaleText: () => false,
       splitScreenMode: true,
-      builder: (context, child) => Builder(
-        builder: (context) {
+      builder: (context, child) =>
+          BlocBuilder<AppLocalizationCubit, AppLocalizationState>(
+        buildWhen: (previous, current) => current is AppLocalizationReset,
+        builder: (context, state) {
           return MaterialApp(
             localizationsDelegates: context.localizationDelegates,
             supportedLocales: context.supportedLocales,
@@ -29,7 +33,7 @@ class Napd extends StatelessWidget {
             builder: DevicePreview.appBuilder,
             theme: getLightTheme(),
             onGenerateRoute: onGenerateRoute,
-            initialRoute: CartView.routeName,
+            initialRoute: LayoutView.routeName,
           );
         },
       ),
