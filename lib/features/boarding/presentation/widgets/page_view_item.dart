@@ -29,7 +29,7 @@ class PageViewItem extends StatelessWidget {
         VerticalSpace(16),
         DotsIndicator(
           dotsCount: 3,
-          position: currentPage,
+          position: currentPage.toDouble(),
           decorator: DotsDecorator(
             activeColor: AppColors.secondaryColor,
             size: const Size.fromRadius(11),

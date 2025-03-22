@@ -8,8 +8,9 @@ part 'app_localization_state.dart';
 class AppLocalizationCubit extends Cubit<AppLocalizationState> {
   AppLocalizationCubit(this.appLocalizations) : super(AppLocalizationInitial());
   final AppLocalizations appLocalizations;
-  Future<void> changeAppLanguage(BuildContext contet, Locale locale) async {
-    await appLocalizations.changeLocale(contet, locale);
+  Future<void> changeAppLanguage(BuildContext context, Locale locale) async {
+    emit(AppLocalizationLoading());
+   await appLocalizations.changeLocale(context, locale);
     emit(AppLocalizationReset());
   }
 

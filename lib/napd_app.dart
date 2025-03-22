@@ -14,28 +14,41 @@ class Napd extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      minTextAdapt: true,
-      enableScaleWH: () => false,
-      enableScaleText: () => false,
-      splitScreenMode: true,
-      builder: (context, child) =>
-          BlocBuilder<AppLocalizationCubit, AppLocalizationState>(
-        buildWhen: (previous, current) => current is AppLocalizationReset,
-        builder: (context, state) {
-          return MaterialApp(
-            localizationsDelegates: context.localizationDelegates,
-            supportedLocales: context.supportedLocales,
-            locale: context.locale,
-            debugShowCheckedModeBanner: false,
-            title: 'Mahd',
-            builder: DevicePreview.appBuilder,
-            theme: getLightTheme(),
-            onGenerateRoute: onGenerateRoute,
-            initialRoute: LayoutView.routeName,
-          );
-        },
+    return Material(
+      child: ScreenUtilInit(
+        designSize: const Size(375, 812),
+        minTextAdapt: true,
+        enableScaleWH: () => false,
+        enableScaleText: () => false,
+        splitScreenMode: true,
+        builder: (context, child) =>
+            BlocBuilder<AppLocalizationCubit, AppLocalizationState>(
+          buildWhen: (previous, current) =>
+              current is AppLocalizationLoading ||
+              current is AppLocalizationReset,
+          builder: (context, state) {
+            var currentLocale = context.locale;
+            if (state is AppLocalizationLoading) {
+              return Center(
+                child: CircularProgressIndicator(
+                  color: getLightTheme().primaryColor,
+                ),
+              );
+            }
+            return MaterialApp(
+              key: ValueKey(currentLocale.toString()),
+              localizationsDelegates: context.localizationDelegates,
+              supportedLocales: context.supportedLocales,
+              locale: currentLocale,
+              debugShowCheckedModeBanner: false,
+              title: 'Mahd',
+              builder: DevicePreview.appBuilder,
+              theme: getLightTheme(),
+              onGenerateRoute: onGenerateRoute,
+              initialRoute: LayoutView.routeName,
+            );
+          },
+        ),
       ),
     );
   }

@@ -8,3 +8,5 @@ sealed class AppLocalizationState {
 final class AppLocalizationInitial extends AppLocalizationState {}
 
 final class AppLocalizationReset extends AppLocalizationState {}
+   
+final class AppLocalizationLoading extends AppLocalizationState {}

@@ -62,7 +62,7 @@ class _ShopOffersItemsState extends State<ShopOffersItems> {
           valueListenable: _currentOffer,
           builder: (context, value, child) => DotsIndicator(
             dotsCount: 4,
-            position: value,
+            position: value.toDouble(),
             decorator: const DotsDecorator(
               color: Color(0xffEAE8E8),
               size: Size.fromRadius(6),
