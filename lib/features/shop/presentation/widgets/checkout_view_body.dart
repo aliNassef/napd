@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:napd/core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/spacers.dart';
@@ -13,63 +14,60 @@ class CheckoutViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 100),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(
-            Icons.check_circle,
-            color: AppColors.secondaryColor,
-            size: 80,
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(
+          Icons.check_circle,
+          color: AppColors.secondaryColor,
+          size: 80,
+        ),
+        VerticalSpace(14),
+        Text(
+          "Thank you!",
+          style: AppStyles.roboto24SemiBold.copyWith(
+            color: AppColors.darkBlueColor,
           ),
-          VerticalSpace(14),
-          Text(
-            "Thank you!",
-            style: AppStyles.roboto24SemiBold.copyWith(
-              color: AppColors.darkBlueColor,
-            ),
+        ),
+        VerticalSpace(18),
+        Text(
+          "Your transaction was successful",
+          style: AppStyles.roboto20Regular.copyWith(
+            color: AppColors.darkBlueColor,
           ),
-          VerticalSpace(18),
-          Text(
-            "Your transaction was successful",
-            style: AppStyles.roboto20Regular.copyWith(
-              color: AppColors.darkBlueColor,
-            ),
-          ),
-          VerticalSpace(20),
-          transactionDetail("Date", "01/24/2023"),
-          transactionDetail("Time", "10:15 AM"),
-          transactionDetail("To", "Sam Louis"),
-          VerticalSpace(14),
-          Divider(height: 30, thickness: 1),
-          CartTotalSection(
-            label: "Total",
-            amount: "\$50.97",
-          ),
-          VerticalSpace(70),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Expanded(
-                child: StyledActionButton(
-                  label: "Print",
-                  isElevated: true,
-                  onPressed: () {},
-                ),
+        ),
+        VerticalSpace(20),
+        transactionDetail("Date", "01/24/2023"),
+        transactionDetail("Time", "10:15 AM"),
+        transactionDetail("To", "Sam Louis"),
+        VerticalSpace(14),
+        Divider(height: 30, thickness: 1),
+        CartTotalSection(
+          label: "Total",
+          amount: "\$50.97",
+        ),
+        VerticalSpace(70),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Expanded(
+              child: StyledActionButton(
+                label: "Print",
+                isElevated: true,
+                onPressed: () {},
               ),
-              HorizantalSpace(30),
-              Expanded(
-                child: StyledActionButton(
-                  label: "Okay",
-                  isElevated: false,
-                  onPressed: () {},
-                ),
+            ),
+            HorizantalSpace(30),
+            Expanded(
+              child: StyledActionButton(
+                label: "Okay",
+                isElevated: false,
+                onPressed: () {},
               ),
-            ],
-          ),
-        ],
-      ),
-    );
+            ),
+          ],
+        ),
+      ],
+    ).withHorizontalPadding(12).withVerticalPadding(100);
   }
 }

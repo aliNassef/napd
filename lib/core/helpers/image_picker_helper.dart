@@ -15,7 +15,6 @@ abstract class ImagePickerHelper {
       context: context,
       builder: (_) {
         return CupertinoAlertDialog(
-        
           title: Center(
             child: Text(
               'Select Image Source',

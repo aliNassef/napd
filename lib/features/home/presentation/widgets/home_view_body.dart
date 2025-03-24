@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/core/extensions/padding_extension.dart';
 import 'package:napd/core/utils/app_strings.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
@@ -22,57 +21,45 @@ class HomeViewBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           VerticalSpace(10),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: Text(
-              'Laila',
-              style: AppStyles.roboto24SemiBold.copyWith(
-                color: AppColors.darkBlueColor,
-              ),
+          Text(
+            'Laila',
+            style: AppStyles.roboto24SemiBold.copyWith(
+              color: AppColors.darkBlueColor,
             ),
-          ),
+          ).withHorizontalPadding(16),
           VerticalSpace(6),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: Text(
-              'is 1 year and 3 months',
-              style: AppStyles.roboto16Regular.copyWith(
-                color: AppColors.greenLightColor,
-              ),
+          Text(
+            'is 1 year and 3 months',
+            style: AppStyles.roboto16Regular.copyWith(
+              color: AppColors.greenLightColor,
             ),
-          ),
+          ).withHorizontalPadding(16),
           VerticalSpace(40),
           HomeFeatures(),
           VerticalSpace(30),
           ChatBotSection().withHorizontalPadding(16),
           VerticalSpace(30),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: Row(
-              children: [
-                Text(
-                  AppStrings.captureYourMoments,
-                  style: AppStyles.roboto24SemiBold.copyWith(
-                    color: AppColors.darkBlueColor,
-                  ),
+          Row(
+            children: [
+              Text(
+                AppStrings.captureYourMoments,
+                style: AppStyles.roboto24SemiBold.copyWith(
+                  color: AppColors.darkBlueColor,
                 ),
-                HorizantalSpace(23),
-                Image.asset(
-                  AppImages.camera,
-                ),
-              ],
-            ),
-          ),
+              ),
+              HorizantalSpace(23),
+              Image.asset(
+                AppImages.camera,
+              ),
+            ],
+          ).withHorizontalPadding(16),
           VerticalSpace(22),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: CustomNetworkImage(
-              img:
-                  'https://images.nightcafe.studio/jobs/3Ri6GfFBAhUUHUVG251W/3Ri6GfFBAhUUHUVG251W--1--h7lk0.jpg?tr=w-1600,c-at_max',
-              width: context.width,
-              height: context.height * 2 / 5,
-            ),
-          ),
+          CustomNetworkImage(
+            img:
+                'https://images.nightcafe.studio/jobs/3Ri6GfFBAhUUHUVG251W/3Ri6GfFBAhUUHUVG251W--1--h7lk0.jpg?tr=w-1600,c-at_max',
+            width: context.width,
+            height: context.height * 2 / 5,
+          ).withHorizontalPadding(16),
           VerticalSpace(40),
         ],
       ),

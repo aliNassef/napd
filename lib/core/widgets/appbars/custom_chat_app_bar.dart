@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/core/extensions/padding_extension.dart';
 
 import '../../utils/app_colors.dart';
 import '../../utils/app_styles.dart';
@@ -27,14 +28,11 @@ class CustomChatAppBar extends StatelessWidget implements PreferredSizeWidget {
             onTap: () {
               Navigator.pop(context);
             },
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30.w),
-              child: Icon(
-                Icons.arrow_back_ios,
-                color: AppColors.primaryColor,
-                size: 30.r,
-              ),
-            ),
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: AppColors.primaryColor,
+              size: 30.r,
+            ).withHorizontalPadding(30),
           ),
           title: Row(
             spacing: 10.w,

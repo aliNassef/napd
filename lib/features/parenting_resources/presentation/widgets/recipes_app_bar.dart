@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/core/extensions/padding_extension.dart';
 import 'package:napd/core/utils/app_strings.dart';
 
 import '../../../../core/utils/app_colors.dart';
@@ -19,14 +20,11 @@ class RecipeTipsAppBar extends StatelessWidget implements PreferredSizeWidget {
         onTap: () {
           Navigator.pop(context);
         },
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: Icon(
-            Icons.arrow_back_ios,
-            color: AppColors.primaryColor,
-            size: 24.r,
-          ),
-        ),
+        child: Icon(
+          Icons.arrow_back_ios,
+          color: AppColors.primaryColor,
+          size: 24.r,
+        ).withHorizontalPadding(20),
       ),
       title: Text(
         AppStrings.recipes,

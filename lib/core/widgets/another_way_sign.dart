@@ -23,16 +23,13 @@ class AnotherWaySign extends StatelessWidget {
             thickness: 1,
           ),
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12.w),
-          child: Text(
-            'Or Register with',
-            style: AppStyles.roboto14Regular.copyWith(
-              fontFamily: GoogleFonts.urbanist().fontFamily,
-              color: AppColors.greyColor,
-            ),
+        Text(
+          'Or Register with',
+          style: AppStyles.roboto14Regular.copyWith(
+            fontFamily: GoogleFonts.urbanist().fontFamily,
+            color: AppColors.greyColor,
           ),
-        ),
+        ).withHorizontalPadding(12),
         Expanded(
           child: Divider(
             color: AppColors.greyColor.withValues(alpha: 0.8),

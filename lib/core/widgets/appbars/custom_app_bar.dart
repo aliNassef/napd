@@ -1,5 +1,6 @@
   import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/core/extensions/padding_extension.dart';
 import '../../utils/app_colors.dart';
 import '../../utils/app_styles.dart';
 
@@ -20,14 +21,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             () {
               Navigator.pop(context);
             },
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.w),
-          child: Icon(
-            Icons.arrow_back_ios,
-            color: AppColors.primaryColor,
-            size: 30.r,
-          ),
-        ),
+        child: Icon(
+          Icons.arrow_back_ios,
+          color: AppColors.primaryColor,
+          size: 30.r,
+        ).withHorizontalPadding(30),
       ),
       title: Text(
         title,

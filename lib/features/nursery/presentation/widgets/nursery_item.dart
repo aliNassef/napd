@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:napd/core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_shadows.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
@@ -24,79 +25,71 @@ class NurseryItem extends StatelessWidget {
           AppShadows.shadow3,
         ],
       ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          vertical: 12.h,
-        ),
-        child: Row(
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: CustomNetworkImage(
-                  height: 100.h,
-                  width: 100.w,
-                  img:
-                      'https://images.nightcafe.studio/jobs/3Ri6GfFBAhUUHUVG251W/3Ri6GfFBAhUUHUVG251W--1--h7lk0.jpg?tr=w-1600,c-at_max',
-                ),
-              ),
+      child: Row(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: CustomNetworkImage(
+              height: 100.h,
+              width: 100.w,
+              img:
+                  'https://images.nightcafe.studio/jobs/3Ri6GfFBAhUUHUVG251W/3Ri6GfFBAhUUHUVG251W--1--h7lk0.jpg?tr=w-1600,c-at_max',
             ),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        'El zahraa Hospital',
-                        style: AppStyles.rubik18Medium.copyWith(
-                          color: AppColors.darkBlueColor,
-                        ),
+          ).withHorizontalPadding(16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      'El zahraa Hospital',
+                      style: AppStyles.rubik18Medium.copyWith(
+                        color: AppColors.darkBlueColor,
                       ),
-                      const Spacer(),
-                      IconButton(
-                        alignment: Alignment.center,
-                        onPressed: () {},
-                        icon: SvgPicture.asset(AppSvgs.favIcon),
-                      ),
-                    ],
-                  ),
-                  Text(
-                    'Intensive care unit',
-                    style: AppStyles.rubik14Light.copyWith(
-                      color: Color(0xff808080),
                     ),
+                    const Spacer(),
+                    IconButton(
+                      alignment: Alignment.center,
+                      onPressed: () {},
+                      icon: SvgPicture.asset(AppSvgs.favIcon),
+                    ),
+                  ],
+                ),
+                Text(
+                  'Intensive care unit',
+                  style: AppStyles.rubik14Light.copyWith(
+                    color: Color(0xff808080),
                   ),
-                  Row(
-                    children: [
-                      RatingBarIndicator(
-                        rating: 2.75,
-                        itemBuilder: (context, index) => Icon(
-                          Icons.star,
-                          color: Color(0xffF6D060),
-                        ),
-                        itemCount: 5,
-                        itemSize: 14.0,
-                        direction: Axis.horizontal,
+                ),
+                Row(
+                  children: [
+                    RatingBarIndicator(
+                      rating: 2.75,
+                      itemBuilder: (context, index) => Icon(
+                        Icons.star,
+                        color: Color(0xffF6D060),
                       ),
-                      const Spacer(
-                        flex: 2,
-                      ),
-                      Text(
-                        'open',
-                        style: AppStyles.rubik16Medium
-                            .copyWith(color: AppColors.greenLightColor),
-                      ),
-                      const Spacer(),
-                    ],
-                  ),
-                ],
-              ),
+                      itemCount: 5,
+                      itemSize: 14.0,
+                      direction: Axis.horizontal,
+                    ),
+                    const Spacer(
+                      flex: 2,
+                    ),
+                    Text(
+                      'open',
+                      style: AppStyles.rubik16Medium
+                          .copyWith(color: AppColors.greenLightColor),
+                    ),
+                    const Spacer(),
+                  ],
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
+          ),
+        ],
+      ).withVerticalPadding(12),
     );
   }
 }

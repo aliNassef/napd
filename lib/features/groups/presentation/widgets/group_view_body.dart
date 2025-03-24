@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../view/all_groups_view.dart';
 import 'header_with_see_all.dart';
@@ -14,55 +14,52 @@ class GroupViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  VerticalSpace(30),
-                  HeaderWithSeeAll(
-                    onTap: () {
-                      Navigator.of(context, rootNavigator: true).pushNamed(
-                        AllGroupsView.routeName,
-                      );
-                    },
-                    title: AppStrings.myGroups,
-                  ),
-                  VerticalSpace(30),
-                ],
-              ),
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                VerticalSpace(30),
+                HeaderWithSeeAll(
+                  onTap: () {
+                    Navigator.of(context, rootNavigator: true).pushNamed(
+                      AllGroupsView.routeName,
+                    );
+                  },
+                  title: AppStrings.myGroups,
+                ),
+                VerticalSpace(30),
+              ],
             ),
-            SliverList.separated(
-              itemBuilder: (_, index) => GroupItem(),
-              separatorBuilder: (context, index) => VerticalSpace(30),
-              itemCount: 3,
+          ),
+          SliverList.separated(
+            itemBuilder: (_, index) => GroupItem(),
+            separatorBuilder: (context, index) => VerticalSpace(30),
+            itemCount: 3,
+          ),
+          SliverToBoxAdapter(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                VerticalSpace(30),
+                HeaderWithSeeAll(
+                  title: AppStrings.featuredGroups,
+                ),
+                VerticalSpace(30),
+              ],
             ),
-            SliverToBoxAdapter(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  VerticalSpace(30),
-                  HeaderWithSeeAll(
-                    title: AppStrings.featuredGroups,
-                  ),
-                  VerticalSpace(30),
-                ],
-              ),
-            ),
-            SliverList.separated(
-              itemBuilder: (_, index) => FeaturedGroupItem(),
-              separatorBuilder: (context, index) => VerticalSpace(23),
-              itemCount: 3,
-            ),
-            SliverToBoxAdapter(
-              child: VerticalSpace(16),
-            ),
-          ],
-        ),
-      ),
+          ),
+          SliverList.separated(
+            itemBuilder: (_, index) => FeaturedGroupItem(),
+            separatorBuilder: (context, index) => VerticalSpace(23),
+            itemCount: 3,
+          ),
+          SliverToBoxAdapter(
+            child: VerticalSpace(16),
+          ),
+        ],
+      ).withHorizontalPadding(16),
     );
   }
 }

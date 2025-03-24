@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/core/extensions/padding_extension.dart';
 
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/widgets/custom_search_bar.dart';
@@ -31,17 +32,12 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       titleSpacing: 0,
       title: CustomSearchBar(),
       actions: [
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 16.w,
+        CircleAvatar(
+          radius: 22.5.r,
+          backgroundImage: AssetImage(
+            AppImages.dummyGirl,
           ),
-          child: CircleAvatar(
-            radius: 22.5.r,
-            backgroundImage: AssetImage(
-              AppImages.dummyGirl,
-            ),
-          ),
-        ),
+        ).withHorizontalPadding(16),
       ],
     );
   }
