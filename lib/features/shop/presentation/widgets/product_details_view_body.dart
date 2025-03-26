@@ -21,10 +21,8 @@ class ProductDetailsViewBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         VerticalSpace(16),
-        // Product Image
         ProductImage(),
         VerticalSpace(16),
-        // Seller Info
         Text(
           "${AppStrings.seller} : Amazon",
           style: AppStyles.roboto16Regular.copyWith(
@@ -32,7 +30,6 @@ class ProductDetailsViewBody extends StatelessWidget {
           ),
         ),
         VerticalSpace(8),
-        // Product Title
         Text(
           "Children's cube toy",
           style: AppStyles.roboto30Medium.copyWith(
@@ -40,13 +37,10 @@ class ProductDetailsViewBody extends StatelessWidget {
           ),
         ),
         VerticalSpace(8),
-        // Price and Rating
         PriceAndRating(),
         VerticalSpace(16),
-        // Description
         ProductDescription(),
         VerticalSpace(30),
-        // Action Buttons
         ProductActionButtons(),
         VerticalSpace(16),
       ],

@@ -4,7 +4,7 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widgets/default_app_button.dart';
 import '../../../../core/widgets/spacers.dart';
-import '../view/checkout_view.dart';
+import '../view/thanks_view.dart';
 import 'cart_item.dart';
 import 'cart_total_selection.dart';
 
@@ -47,7 +47,7 @@ class CartViewBody extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(
                     context,
-                    CheckoutView.routeName,
+                    ThanksView.routeName,
                   );
                 },
                 backgroundColor: AppColors.darkBlueColor,

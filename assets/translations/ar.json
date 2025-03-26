@@ -121,5 +121,14 @@
   "welcomemessage" : "مرحبًا مرة أخرى في MamaCare",
   "orloginwith" : "أو تسجيل الدخول بواسطة",
   "idonthaveanaccount" : "ليس لدي حساب!",
-  "orregisterwith" : "أو التسجيل بواسطة"
+  "orregisterwith" : "أو التسجيل بواسطة",
+  "thankyou" : "شكرا لك!",
+  "yourtransactionwassuccessful" : "تم إنجاز عملية الدفع بنجاح",
+  "to" : "إلى" ,
+  "time" : "الوقت" ,
+  "phone" : "الهاتف",
+  "address" : "العنوان",
+  "print" : "طباعة", 
+  "okay" : "موافق"  ,
+  "total": "المجموع" 
 }

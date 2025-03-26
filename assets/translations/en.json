@@ -73,7 +73,7 @@
     "addnewreminder": "Add new reminder",
     "title": "Title",
     "description": "Description",
-    "date": "Date",
+    "total" : "Total",
     "cancel": "Cancel",
     "filloutthefieldsandhitthesavebuttontoaddit": "Fill out the fields and hit the Save button to add it!",
     "reminders": "Reminders",
@@ -121,5 +121,14 @@
     "welcomemessage" : "Welcome again to MamaCare",
     "orloginwith" : "Or Login with",
     "orregisterwith" : "Or Register with",
-    "idonthaveanaccount" : "I don’t have account!"
+    "idonthaveanaccount" : "I don’t have account!",
+    "thankyou" : "Thank you!",
+    "yourtransactionwassuccessful" : "Your transaction was successful",
+    "to" : "To" ,
+    "time" : "Time" ,
+    "phone" : "Phone",
+    "address" : "Address",
+    "print" : "Print", 
+    "okay" : "Okay" ,
+    "date" : "Date"
 }

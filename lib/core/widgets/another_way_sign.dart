@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:napd/core/utils/app_strings.dart';
 
 import '../extensions/padding_extension.dart';
 import '../utils/app_colors.dart';
@@ -24,7 +25,7 @@ class AnotherWaySign extends StatelessWidget {
           ),
         ),
         Text(
-          'Or Register with',
+          AppStrings.orRegisterWith,
           style: AppStyles.roboto14Regular.copyWith(
             fontFamily: GoogleFonts.urbanist().fontFamily,
             color: AppColors.greyColor,

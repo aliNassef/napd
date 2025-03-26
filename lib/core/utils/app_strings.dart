@@ -128,4 +128,13 @@ abstract class AppStrings {
   static String get orLoginWith => 'orloginwith'.tr();
   static String get dontHaveAccount => 'idonthaveanaccount'.tr();
   static String get orRegisterWith => 'orregisterwith'.tr();
+  static String get thankYou => 'thankyou'.tr();
+  static String get paymentDone => 'yourtransactionwassuccessful'.tr();
+  static String get to => 'to'.tr();
+  static String get time => 'time'.tr();
+  static String get phone => 'phone'.tr();
+  static String get address => 'address'.tr();
+  static String get okay => 'okay'.tr();
+  static String get print => 'print'.tr();
+  static String get total => 'total'.tr();
 }

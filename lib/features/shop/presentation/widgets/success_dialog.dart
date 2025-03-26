@@ -15,6 +15,7 @@ class SuccessDialog extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 340),
       child: AlertDialog(
+        backgroundColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
@@ -40,8 +41,9 @@ class SuccessDialog extends StatelessWidget {
             ),
             SizedBox(height: screenWidth * 0.06),
             DialogActionButtons(
-              //Continue Shopping action
-              onContinueShopping: () {},
+              onContinueShopping: () {
+                Navigator.pop(context);
+              },
               onGoToCart: () {
                 Navigator.pushNamed(
                   context,

@@ -3,7 +3,7 @@ import '../../features/groups/presentation/view/podcasts_details_view.dart';
 import '../../features/home/presentation/view/chat_bot_view.dart';
 import '../../features/home/presentation/view/gallery_view.dart';
 import '../../features/shop/presentation/view/cart_view.dart';
-import '../../features/shop/presentation/view/checkout_view.dart';
+import '../../features/shop/presentation/view/thanks_view.dart';
 import '../../features/shop/presentation/view/product_details_view.dart';
 import '../../features/signup/presentation/view/create_baby_account_view.dart';
 import '../../features/baby/presentation/view/baby_result_view.dart';
@@ -134,9 +134,9 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => CartView(),
       );
-    case CheckoutView.routeName:
+    case ThanksView.routeName:
       return MaterialPageRoute(
-        builder: (context) => CheckoutView(),
+        builder: (context) => ThanksView(),
       );
     case ShopView.routeName:
       return MaterialPageRoute(
