@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1071853428448",
+    "project_id": "mahd-b6c1b",
+    "storage_bucket": "mahd-b6c1b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1071853428448:android:1f39d1981c36b6fffc7a85",
+        "android_client_info": {
+          "package_name": "com.example.napd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1071853428448-vfdt8sq9neo55662cfghde5i8j32aqkr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOfNQfiArVz4dfqnxA1V4d6_teb4qEtSA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1071853428448-vfdt8sq9neo55662cfghde5i8j32aqkr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
