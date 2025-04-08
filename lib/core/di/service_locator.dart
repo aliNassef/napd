@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import 'package:napd/core/cubit/cubit/app_localization_cubit.dart';
+import 'package:napd/core/helpers/firebase_auth_service.dart';
 import '../repo/network_info.dart';
 import '../api/api_consumer.dart';
 import '../api/dio_consumer.dart';
@@ -28,12 +29,18 @@ Future<void> setupServiceLocator() async {
 }
 
 void _setupExernalFeature() {
-  injector.registerLazySingleton<Dio>(() => Dio());
+  injector.registerLazySingleton<Dio>(
+    () => Dio(),
+  );
   injector.registerLazySingleton<ApiConsumer>(
     () => DioConsumer(dio: injector<Dio>()),
   );
-  injector
-      .registerLazySingleton<InternetConnection>(() => InternetConnection());
+  injector.registerLazySingleton<InternetConnection>(
+    () => InternetConnection(),
+  );
+  injector.registerLazySingleton(
+    () => FirebaseAuthService(),
+  );
 }
 
 void _setupCoreFeature() {
@@ -75,6 +82,9 @@ void _setupLoginFeature() {
     ),
   );
   injector.registerLazySingleton<LoginRemoteSource>(
-    () => LoginRemoteSourceImpl(api: injector<ApiConsumer>()),
+    () => LoginRemoteSourceImpl(
+      api: injector<ApiConsumer>(),
+      firebaseAuthService: injector<FirebaseAuthService>(),
+    ),
   );
 }

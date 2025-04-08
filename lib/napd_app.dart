@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/core/cubit/cubit/app_localization_cubit.dart';
 import 'package:napd/features/layout/presentation/view/layout_view.dart';
+import 'package:napd/features/login/presentation/view/login_view.dart';
 import 'core/utils/app_router.dart';
 import 'core/utils/app_themes.dart';
 
@@ -45,7 +46,7 @@ class Napd extends StatelessWidget {
               builder: DevicePreview.appBuilder,
               theme: getLightTheme(),
               onGenerateRoute: onGenerateRoute,
-              initialRoute: LayoutView.routeName,
+              initialRoute: LoginView.routeName,
             );
           },
         ),
