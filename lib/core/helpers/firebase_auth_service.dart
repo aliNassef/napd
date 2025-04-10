@@ -27,4 +27,5 @@ class FirebaseAuthService {
     // Once signed in, return the UserCredential
     return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
   }
+ 
 }
