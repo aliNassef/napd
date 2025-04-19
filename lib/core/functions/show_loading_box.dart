@@ -17,7 +17,7 @@ Future<dynamic> showLoadingBox(BuildContext context) {
           ),
           alignment: Alignment.center,
           child: Lottie.asset(
-            'assets/animation/loading.json',
+            'assets/animations/loading.json',
             height: 70.h,
             width: 70.w,
           ),

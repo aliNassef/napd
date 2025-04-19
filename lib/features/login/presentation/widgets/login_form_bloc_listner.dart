@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:napd/core/utils/app_strings.dart';
+import 'package:napd/features/login/data/model/login_input_model.dart';
+import '../../../../core/functions/show_loading_box.dart';
 import '../../../../core/functions/toast_dialog.dart';
-import '../../domain/entity/login_input_entity.dart';
 import '../cubit/login_cubit.dart';
 import '../cubit/login_state.dart';
 
@@ -57,8 +58,14 @@ class _LoginFormBlocListnerState extends State<LoginFormBlocListner> {
           ),
           VerticalSpace(60),
           BlocListener<LoginCubit, LoginState>(
+            listenWhen: (previous, current) =>
+                current is LoginLoading ||
+                current is LoginFailure ||
+                current is LoginSuccess,
             listener: (context, state) {
-              if (state is LoginLoading) {}
+              if (state is LoginLoading) {
+                showLoadingBox(context);
+              }
 
               if (state is LoginFailure) {
                 showToast(text: state.errMessage);
@@ -67,6 +74,7 @@ class _LoginFormBlocListnerState extends State<LoginFormBlocListner> {
                 Navigator.pushReplacementNamed(
                   context,
                   SelectBabyAccountView.routeName,
+                  arguments: state.babies,
                 );
               }
             },
@@ -74,12 +82,10 @@ class _LoginFormBlocListnerState extends State<LoginFormBlocListner> {
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
-                  var loginEntity = LoginInputEntity(
+                  var loginEntity = LoginInputModel(
                     email: _emailController.text.trim(),
-                    pass: _passController.text.trim(),
+                    password: _passController.text.trim(),
                   );
-                  // call cubit
-
                   context.read<LoginCubit>().login(loginEntity);
                 } else {
                   _autovalidateMode = AutovalidateMode.always;

@@ -3,12 +3,14 @@ import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import 'package:napd/core/cubit/cubit/app_localization_cubit.dart';
 import 'package:napd/core/helpers/firebase_auth_service.dart';
+import 'package:napd/features/login/data/source/login_local_data_source.dart';
+import '../cache/cache_helper.dart';
 import '../repo/network_info.dart';
 import '../api/api_consumer.dart';
 import '../api/dio_consumer.dart';
 import '../../features/login/data/repo/login_repo_impl.dart';
 import '../../features/login/data/source/login_remote_source.dart';
-import '../../features/login/domain/repo/login_repo.dart';
+import '../../features/login/data/repo/login_repo.dart';
 import '../../features/signup/domain/repo/signup_repo.dart';
 import '../../features/signup/data/repo/signup_repo_impl.dart';
 import '../../features/signup/data/sources/signup_remote_source.dart';
@@ -79,12 +81,18 @@ void _setupLoginFeature() {
   injector.registerLazySingleton<LoginRepo>(
     () => LoginRepoImpl(
       loginRemoteSource: injector<LoginRemoteSource>(),
+      loginLocalSource: injector<LoginLocalDataSource>(),
     ),
   );
   injector.registerLazySingleton<LoginRemoteSource>(
     () => LoginRemoteSourceImpl(
       api: injector<ApiConsumer>(),
       firebaseAuthService: injector<FirebaseAuthService>(),
+    ),
+  );
+  injector.registerLazySingleton<LoginLocalDataSource>(
+    () => LoginLocalDataSourceImpl(
+      cacheHelper: CacheHelper(),
     ),
   );
 }

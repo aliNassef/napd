@@ -93,12 +93,12 @@ class SetReminderViewBody extends StatelessWidget {
   }
 
   void _testNotification() {
-    NotificationService.scheduleNotification(
-      scheduledTime: DateTime.now().add(
-        Duration(seconds: 30),
-      ),
-      title: 'title',
-      body: 'body',
-    );
+    // NotificationService.scheduleNotification(
+    //   scheduledTime: DateTime.now().add(
+    //     Duration(seconds: 30),
+    //   ),
+    //   title: 'title',
+    //   body: 'body',
+    // );
   }
 }

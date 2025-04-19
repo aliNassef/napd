@@ -22,7 +22,7 @@ class BabyAccountItem extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
             image: DecorationImage(
-              image: AssetImage(
+              image: NetworkImage(
                 img,
               ),
               fit: BoxFit.cover,

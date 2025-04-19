@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/core/cubit/cubit/app_localization_cubit.dart';
+import 'package:napd/core/di/service_locator.dart';
+import 'package:napd/features/login/presentation/cubit/login_cubit.dart';
 import 'package:napd/features/login/presentation/view/login_view.dart';
 import 'core/utils/app_router.dart';
 import 'core/utils/app_themes.dart';
@@ -14,40 +16,43 @@ class Napd extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: ScreenUtilInit(
-        designSize: const Size(375, 812),
-        minTextAdapt: true,
-        enableScaleWH: () => false,
-        enableScaleText: () => false,
-        splitScreenMode: true,
-        builder: (context, child) =>
-            BlocBuilder<AppLocalizationCubit, AppLocalizationState>(
-          buildWhen: (previous, current) =>
-              current is AppLocalizationLoading ||
-              current is AppLocalizationReset,
-          builder: (context, state) {
-            var currentLocale = context.locale;
-            if (state is AppLocalizationLoading) {
-              return Center(
-                child: CircularProgressIndicator(
-                  color: getLightTheme().primaryColor,
-                ),
+    return BlocProvider(
+      create: (context) => injector<LoginCubit>(),
+      child: Material(
+        child: ScreenUtilInit(
+          designSize: const Size(375, 812),
+          minTextAdapt: true,
+          enableScaleWH: () => false,
+          enableScaleText: () => false,
+          splitScreenMode: true,
+          builder: (context, child) =>
+              BlocBuilder<AppLocalizationCubit, AppLocalizationState>(
+            buildWhen: (previous, current) =>
+                current is AppLocalizationLoading ||
+                current is AppLocalizationReset,
+            builder: (context, state) {
+              var currentLocale = context.locale;
+              if (state is AppLocalizationLoading) {
+                return Center(
+                  child: CircularProgressIndicator(
+                    color: getLightTheme().primaryColor,
+                  ),
+                );
+              }
+              return MaterialApp(
+                key: ValueKey(currentLocale.toString()),
+                localizationsDelegates: context.localizationDelegates,
+                supportedLocales: context.supportedLocales,
+                locale: currentLocale,
+                debugShowCheckedModeBanner: false,
+                title: 'Mahd',
+                builder: DevicePreview.appBuilder,
+                theme: getLightTheme(),
+                onGenerateRoute: onGenerateRoute,
+                initialRoute: LoginView.routeName,
               );
-            }
-            return MaterialApp(
-              key: ValueKey(currentLocale.toString()),
-              localizationsDelegates: context.localizationDelegates,
-              supportedLocales: context.supportedLocales,
-              locale: currentLocale,
-              debugShowCheckedModeBanner: false,
-              title: 'Mahd',
-              builder: DevicePreview.appBuilder,
-              theme: getLightTheme(),
-              onGenerateRoute: onGenerateRoute,
-              initialRoute: LoginView.routeName,
-            );
-          },
+            },
+          ),
         ),
       ),
     );

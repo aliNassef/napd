@@ -1,4 +1,4 @@
-import '../../domain/entity/login_input_entity.dart';
+import '../../../../core/api/end_ponits.dart';
 
 class LoginInputModel {
   final String email;
@@ -8,22 +8,15 @@ class LoginInputModel {
 
   Map<String, dynamic> toJson() {
     return {
-      'email': email,
-      'password': password,
+      ApiKey.email: email,
+      ApiKey.password: password,
     };
-  }
-
-  factory LoginInputModel.fromEntity(LoginInputEntity entity) {
-    return LoginInputModel(
-      email: entity.email,
-      password: entity.pass,
-    );
   }
 
   factory LoginInputModel.fromJson(Map<String, dynamic> json) {
     return LoginInputModel(
-      email: json['email'],
-      password: json['password'],
+      email: json[ApiKey.email],
+      password: json[ApiKey.password],
     );
   }
 }

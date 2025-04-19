@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:napd/core/models/baby_model.dart';
 import '../../features/groups/presentation/view/podcasts_details_view.dart';
 import '../../features/home/presentation/view/chat_bot_view.dart';
 import '../../features/home/presentation/view/gallery_view.dart';
@@ -78,8 +79,11 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
         builder: (context) => const SignupView(),
       );
     case SelectBabyAccountView.routeName:
+      final babies = settings.arguments as List<BabyModel>;
       return MaterialPageRoute(
-        builder: (context) => const SelectBabyAccountView(),
+        builder: (context) => SelectBabyAccountView(
+          babies: babies,
+        ),
       );
     case LayoutView.routeName:
       return MaterialPageRoute(

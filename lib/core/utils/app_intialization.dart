@@ -10,7 +10,8 @@ import '../di/service_locator.dart';
 import '../helpers/notification_service.dart';
 import '../widgets/custom_bloc_observer.dart';
 import 'package:firebase_core/firebase_core.dart';
- class AppIntialization {
+
+class AppIntialization {
   AppIntialization._();
   static Future<void> initializer() async {
     WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +22,7 @@ import 'package:firebase_core/firebase_core.dart';
     await setupServiceLocator();
     await CacheHelper.init();
     await ScreenUtil.ensureScreenSize();
-    await NotificationService.initialize();
+    // await NotificationService.initialize();
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);
