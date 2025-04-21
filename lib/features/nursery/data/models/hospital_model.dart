@@ -2,13 +2,13 @@ class HospitalModel {
   final int? id;
   final String? title;
   final String? description;
-  final int? rate;
+  final num? rate;
   final bool? isFavourite;
   final String? imageUrl;
   final String? governorateName;
   final bool? isopended;
 
-  HospitalModel({
+  const HospitalModel({
     this.id,
     this.title,
     this.description,

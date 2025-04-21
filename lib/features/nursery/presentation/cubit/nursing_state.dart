@@ -1,17 +1,22 @@
 import '../../data/models/governorate_model.dart';
+import '../../data/models/hospital_model.dart';
 
 final class NursingState {}
 
 final class NursingIntial extends NursingState {}
 
-final class NursingLoading extends NursingState {}
+final class HospitalsLoading extends NursingState {}
 
-final class NursingLoaded extends NursingState {}
+final class HospitalsLoaded extends NursingState {
+  final List<HospitalModel> hospitals;
 
-final class NursingFailure extends NursingState {
+  HospitalsLoaded({required this.hospitals});
+}
+
+final class HospitalsFailure extends NursingState {
   final String errMessage;
 
-  NursingFailure(this.errMessage);
+  HospitalsFailure(this.errMessage);
 }
 
 final class GovernateLoaded extends NursingState {

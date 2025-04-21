@@ -4,9 +4,10 @@ import 'package:napd/core/errors/exceptions.dart';
 
 import '../../../../core/api/end_ponits.dart';
 import '../models/governorate_model.dart';
+import '../models/hospital_model.dart';
 
 abstract class NursingRemoteDatasource {
-  Future<void> getAllHospitals();
+  Future<List<HospitalModel>> getAllHospitals();
   Future<void> getSpecificHospital();
   Future<List<GovernorateModel>> getAllGovernates();
   Future<void> getFilterdHospital();
@@ -24,7 +25,6 @@ class NursingRemoteDatasourceImpl implements NursingRemoteDatasource {
   Future<List<GovernorateModel>> getAllGovernates() async {
     final response = await _apiConsumer.get(
       EndPoints.getAllGovernorates,
-      
     );
 
     if (response.statusCode == 200) {
@@ -37,8 +37,17 @@ class NursingRemoteDatasourceImpl implements NursingRemoteDatasource {
   }
 
   @override
-  Future<void> getAllHospitals() async {
-    throw UnimplementedError();
+  Future<List<HospitalModel>> getAllHospitals() async {
+    final response = await _apiConsumer.get(
+      EndPoints.getAllHospital,
+    );
+    if (response.statusCode == 200) {
+      return (response.data as List)
+          .map((e) => HospitalModel.fromJson(e))
+          .toList();
+    } else {
+      throw ServerException(ErrorModel.fromJson(response.data));
+    }
   }
 
   @override

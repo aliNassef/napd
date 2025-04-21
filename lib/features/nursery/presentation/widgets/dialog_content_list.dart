@@ -51,32 +51,7 @@ class DialogContentList extends StatelessWidget {
             );
           }
           if (state is GovernateLoading) {
-            return Skeletonizer(
-              enabled: true,
-              child: ListView.separated(
-                itemBuilder: (_, index) {
-                  return Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 20.w,
-                      vertical: 11.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Color(0xffEAE8E8),
-                    ),
-                    child: Text(
-                      'Egypt',
-                      style: AppStyles.roboto20Regular.copyWith(
-                        color: AppColors.darkBlueColor,
-                      ),
-                    ),
-                  );
-                },
-                separatorBuilder: (_, __) {
-                  return VerticalSpace(9);
-                },
-                itemCount: 20,
-              ),
-            );
+            return _buildLoadingGovernateList();
           }
           if (state is GovernateFailure) {
             return CustomFailureWidget(errMessage: state.errMessage);
@@ -85,5 +60,34 @@ class DialogContentList extends StatelessWidget {
         },
       ),
     );
+  }
+
+  Skeletonizer _buildLoadingGovernateList() {
+    return Skeletonizer(
+            enabled: true,
+            child: ListView.separated(
+              itemBuilder: (_, index) {
+                return Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 20.w,
+                    vertical: 11.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color(0xffEAE8E8),
+                  ),
+                  child: Text(
+                    'Egypt',
+                    style: AppStyles.roboto20Regular.copyWith(
+                      color: AppColors.darkBlueColor,
+                    ),
+                  ),
+                );
+              },
+              separatorBuilder: (_, __) {
+                return VerticalSpace(9);
+              },
+              itemCount: 20,
+            ),
+          );
   }
 }

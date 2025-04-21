@@ -9,10 +9,11 @@ import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/custom_network_image.dart';
+import '../../data/models/hospital_model.dart';
 
 class NurseryItem extends StatelessWidget {
-  const NurseryItem({super.key});
-
+  const NurseryItem({super.key, required this.hospital});
+  final HospitalModel hospital;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,8 +33,7 @@ class NurseryItem extends StatelessWidget {
             child: CustomNetworkImage(
               height: 100.h,
               width: 100.w,
-              img:
-                  'https://images.nightcafe.studio/jobs/3Ri6GfFBAhUUHUVG251W/3Ri6GfFBAhUUHUVG251W--1--h7lk0.jpg?tr=w-1600,c-at_max',
+              img: hospital.imageUrl ?? '',
             ),
           ).withHorizontalPadding(16),
           Expanded(
@@ -43,7 +43,7 @@ class NurseryItem extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      'El zahraa Hospital',
+                      hospital.title!,
                       style: AppStyles.rubik18Medium.copyWith(
                         color: AppColors.darkBlueColor,
                       ),
@@ -52,12 +52,14 @@ class NurseryItem extends StatelessWidget {
                     IconButton(
                       alignment: Alignment.center,
                       onPressed: () {},
-                      icon: SvgPicture.asset(AppSvgs.favIcon),
+                      icon: hospital.isFavourite!
+                          ? SvgPicture.asset(AppSvgs.favIcon)
+                          : SvgPicture.asset(AppSvgs.unFavIcon),
                     ),
                   ],
                 ),
                 Text(
-                  'Intensive care unit',
+                  hospital.description!,
                   style: AppStyles.rubik14Light.copyWith(
                     color: Color(0xff808080),
                   ),
@@ -65,7 +67,7 @@ class NurseryItem extends StatelessWidget {
                 Row(
                   children: [
                     RatingBarIndicator(
-                      rating: 2.75,
+                      rating: hospital.rate!.toDouble(),
                       itemBuilder: (context, index) => Icon(
                         Icons.star,
                         color: Color(0xffF6D060),
@@ -78,9 +80,12 @@ class NurseryItem extends StatelessWidget {
                       flex: 2,
                     ),
                     Text(
-                      'open',
-                      style: AppStyles.rubik16Medium
-                          .copyWith(color: AppColors.greenLightColor),
+                      hospital.isopended! ? 'Open' : 'Closed',
+                      style: AppStyles.rubik16Medium.copyWith(
+                        color: hospital.isopended!
+                            ? AppColors.greenLightColor
+                            : Color(0xffD80027).withValues(alpha: 0.8),
+                      ),
                     ),
                     const Spacer(),
                   ],

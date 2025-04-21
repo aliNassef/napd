@@ -16,7 +16,7 @@ class NurseryView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => injector<NursingCubit>(),
+      create: (context) => injector<NursingCubit>()..getAllHospitals(),
       child: Scaffold(
         appBar: CustomSearchAppBar(
           leading: Builder(builder: (context) {
