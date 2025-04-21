@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:napd/core/functions/show_error_message.dart';
 import 'package:napd/core/utils/app_strings.dart';
 import 'package:napd/features/login/data/model/login_input_model.dart';
 import '../../../../core/functions/show_loading_box.dart';
@@ -68,9 +69,11 @@ class _LoginFormBlocListnerState extends State<LoginFormBlocListner> {
               }
 
               if (state is LoginFailure) {
-                showToast(text: state.errMessage);
+                Navigator.pop(context);
+                showErrorMessage(context, errMessage: state.errMessage);
               }
               if (state is LoginSuccess) {
+                Navigator.pop(context);
                 Navigator.pushReplacementNamed(
                   context,
                   SelectBabyAccountView.routeName,

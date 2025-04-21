@@ -21,11 +21,11 @@ class LoginRemoteSourceImpl extends LoginRemoteSource {
   Future<UserModel> login({required LoginInputModel loginInputModel}) async {
     final response =
         await api.post(EndPoints.login, data: loginInputModel.toJson());
-    try {
-      return UserModel.fromJson(response);
-    } catch (e) {
+    if (response.statusCode == 200) {
+      return UserModel.fromJson(response.data);
+    } else {
       throw ServerException(
-        ErrorModel.fromJson(response),
+        ErrorModel.fromJson(response.data),
       );
     }
   }
