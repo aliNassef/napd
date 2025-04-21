@@ -1,0 +1,63 @@
+import 'package:napd/core/api/api_consumer.dart';
+import 'package:napd/core/errors/error_model.dart';
+import 'package:napd/core/errors/exceptions.dart';
+
+import '../../../../core/api/end_ponits.dart';
+import '../models/governorate_model.dart';
+
+abstract class NursingRemoteDatasource {
+  Future<void> getAllHospitals();
+  Future<void> getSpecificHospital();
+  Future<List<GovernorateModel>> getAllGovernates();
+  Future<void> getFilterdHospital();
+  Future<void> addHospitalToFavorites();
+  Future<void> getFavoritesHospitals();
+}
+
+class NursingRemoteDatasourceImpl implements NursingRemoteDatasource {
+  final ApiConsumer _apiConsumer;
+
+  NursingRemoteDatasourceImpl({required ApiConsumer apiConsumer})
+      : _apiConsumer = apiConsumer;
+
+  @override
+  Future<List<GovernorateModel>> getAllGovernates() async {
+    final response = await _apiConsumer.get(
+      EndPoints.getAllGovernorates,
+      
+    );
+
+    if (response.statusCode == 200) {
+      return (response.data as List)
+          .map((e) => GovernorateModel.fromJson(e))
+          .toList();
+    } else {
+      throw ServerException(ErrorModel.fromJson(response.data));
+    }
+  }
+
+  @override
+  Future<void> getAllHospitals() async {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> getFilterdHospital() async {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> getSpecificHospital() async {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> addHospitalToFavorites() async {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> getFavoritesHospitals() async {
+    throw UnimplementedError();
+  }
+}

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:napd/core/di/service_locator.dart';
+import 'package:napd/features/nursery/presentation/cubit/nursing_cubit.dart';
 import '../../../../core/widgets/appbars/custom_search_app_bar.dart';
 import '../../../../core/widgets/custom_search_bar.dart';
 import '../../../../core/utils/app_images.dart';
@@ -12,22 +15,29 @@ class NurseryView extends StatelessWidget {
   static const routeName = 'nursery';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CustomSearchAppBar(
-        leading: GestureDetector(
-          onTap: () {
-            _buildDialog(context);
-          },
-          child: SvgPicture.asset(AppSvgs.filterIcon),
+    return BlocProvider(
+      create: (context) => injector<NursingCubit>(),
+      child: Scaffold(
+        appBar: CustomSearchAppBar(
+          leading: Builder(builder: (context) {
+            return GestureDetector(
+              onTap: () {
+                final nursingCubit = context.read<NursingCubit>();
+                _buildDialog(context, nursingCubit);
+              },
+              child: SvgPicture.asset(AppSvgs.filterIcon),
+            );
+          }),
         ),
-      ),
-      body: SafeArea(
-        child: NurseryViewBody(),
+        body: SafeArea(
+          child: NurseryViewBody(),
+        ),
       ),
     );
   }
 
-  Future<dynamic> _buildDialog(BuildContext context) {
+  Future<dynamic> _buildDialog(
+      BuildContext context, NursingCubit nursingCubit) {
     return showDialog(
       context: context,
       builder: (context) {
@@ -44,7 +54,10 @@ class NurseryView extends StatelessWidget {
           ),
           backgroundColor: Colors.white,
           title: CustomSearchBar(),
-          content: DialogContentList(),
+          content: BlocProvider.value(
+            value: nursingCubit..getAllGovernorates(),
+            child: DialogContentList(),
+          ),
         );
       },
     );

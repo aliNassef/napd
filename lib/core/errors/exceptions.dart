@@ -15,7 +15,6 @@ class CacheException extends AppException {
   CacheException(super.errorModel);
 }
 
-
 class CustomException implements Exception {
   final String errorMessage;
 
@@ -100,7 +99,14 @@ handleDioException(DioException e) {
           throw ForbiddenException(ErrorModel.fromJson(e.response!.data));
 
         case 404: //not found
-          throw NotFoundException(ErrorModel.fromJson(e.response!.data));
+          // Handle case where response data might not be in expected format
+          try {
+            throw NotFoundException(ErrorModel.fromJson(e.response!.data));
+          } catch (error) {
+            throw NotFoundException(ErrorModel(
+              errorMessage: 'Resource not found: ${e.requestOptions.path}',
+            ));
+          }
 
         case 409: //cofficient
           throw CofficientException(ErrorModel.fromJson(e.response!.data));

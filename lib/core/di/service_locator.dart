@@ -4,6 +4,10 @@ import 'package:internet_connection_checker_plus/internet_connection_checker_plu
 import 'package:napd/core/cubit/cubit/app_localization_cubit.dart';
 import 'package:napd/core/helpers/firebase_auth_service.dart';
 import 'package:napd/features/login/data/source/login_local_data_source.dart';
+import 'package:napd/features/nursery/presentation/cubit/nursing_cubit.dart';
+import '../../features/nursery/data/repo/nursing_repo.dart';
+import '../../features/nursery/data/repo/nursing_repo_impl.dart';
+import '../../features/nursery/data/source/nursing_remote_datasource.dart';
 import '../cache/cache_helper.dart';
 import '../repo/network_info.dart';
 import '../api/api_consumer.dart';
@@ -26,6 +30,7 @@ final injector = GetIt.instance;
 Future<void> setupServiceLocator() async {
   _setupLoginFeature();
   _setupSignupFeature();
+  _setupNursingFeature();
   _setupCoreFeature();
   _setupExernalFeature();
 }
@@ -93,6 +98,22 @@ void _setupLoginFeature() {
   injector.registerLazySingleton<LoginLocalDataSource>(
     () => LoginLocalDataSourceImpl(
       cacheHelper: CacheHelper(),
+    ),
+  );
+}
+
+void _setupNursingFeature() {
+  injector.registerFactory<NursingCubit>(
+    () => NursingCubit(injector<NursingRepo>()),
+  );
+  injector.registerLazySingleton<NursingRepo>(
+    () => NursingRepoImpl(
+      nursingRemoteDataSource: injector<NursingRemoteDatasource>(),
+    ),
+  );
+  injector.registerLazySingleton<NursingRemoteDatasource>(
+    () => NursingRemoteDatasourceImpl(
+      apiConsumer: injector<ApiConsumer>(),
     ),
   );
 }
