@@ -34,7 +34,7 @@ class NurseryView extends StatelessWidget {
         ),
       ),
     );
-  }
+  }                                                         
 
   Future<dynamic> _buildDialog(
       BuildContext context, NursingCubit nursingCubit) {

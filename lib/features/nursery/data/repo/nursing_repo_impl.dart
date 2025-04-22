@@ -34,4 +34,18 @@ class NursingRepoImpl extends NursingRepo {
       );
     }
   }
+
+  @override
+  Future<Either<Failure, List<HospitalModel>>> getFilterdHospitals(
+    int id,
+  ) async {
+    try {
+      final hospitals = await nursingRemoteDataSource.getFilterdHospitals(id);
+      return Right(hospitals);
+    } on ServerException catch (e) {
+      return Left(
+        Failure(errMessage: e.errorModel.errorMessage),
+      );
+    }
+  }
 }

@@ -16,13 +16,23 @@ class NursingCubit extends Cubit<NursingState> {
     );
   }
 
-
   void getAllHospitals() async {
     emit(HospitalsLoading());
     final hospitalsOrfailure = await _nursingRepo.getAllHospitals();
     hospitalsOrfailure.fold(
       (failure) => emit(HospitalsFailure(failure.errMessage)),
       (hospitals) => emit(HospitalsLoaded(hospitals: hospitals)),
+    );
+  }
+
+  void getFilteredHospitals(int id) async {
+    emit(HospitalsLoading());
+    final hospitalsOrfailure = await _nursingRepo.getFilterdHospitals(id);
+    hospitalsOrfailure.fold(
+      (failure) => emit(HospitalsFailure(failure.errMessage)),
+      (hospitals) => emit(
+        HospitalsLoaded(hospitals: hospitals),
+      ),
     );
   }
 }

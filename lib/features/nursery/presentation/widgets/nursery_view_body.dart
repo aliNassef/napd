@@ -25,6 +25,11 @@ class NurseryViewBody extends StatelessWidget {
         }
         if (state is HospitalsLoaded) {
           final hospitals = state.hospitals;
+          if (hospitals.isEmpty) {
+            return const Center(
+              child: Text('No hospitals found'),
+            );
+          }
           return ListView.separated(
             padding: EdgeInsets.symmetric(vertical: 20.h),
             itemBuilder: (_, int index) {
@@ -61,7 +66,7 @@ class NurseryViewBody extends StatelessWidget {
       id: 1,
       title: 'Hospital 1',
       description: 'Hospital 1 description',
-      rate: 4.5,
+      rate: 5,
       isFavourite: false,
       imageUrl: 'assets/images/hospital1.png',
       governorateName: 'Governorate 1',
@@ -71,7 +76,7 @@ class NurseryViewBody extends StatelessWidget {
       id: 1,
       title: 'Hospital 1',
       description: 'Hospital 1 description',
-      rate: 4.5,
+      rate: 5,
       isFavourite: false,
       imageUrl: 'assets/images/hospital1.png',
       governorateName: 'Governorate 1',
@@ -81,7 +86,7 @@ class NurseryViewBody extends StatelessWidget {
       id: 1,
       title: 'Hospital 1',
       description: 'Hospital 1 description',
-      rate: 4.5,
+      rate: 5,
       isFavourite: false,
       imageUrl: 'assets/images/hospital1.png',
       governorateName: 'Governorate 1',
@@ -91,7 +96,7 @@ class NurseryViewBody extends StatelessWidget {
       id: 1,
       title: 'Hospital 1',
       description: 'Hospital 1 description',
-      rate: 4.5,
+      rate: 5,
       isFavourite: false,
       imageUrl: 'assets/images/hospital1.png',
       governorateName: 'Governorate 1',

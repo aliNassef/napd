@@ -19,7 +19,18 @@ class DialogContentList extends StatelessWidget {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.9,
       height: MediaQuery.of(context).size.height * 0.7,
-      child: BlocBuilder<NursingCubit, NursingState>(
+      child: BlocConsumer<NursingCubit, NursingState>(
+        listenWhen: (previous, current) =>
+            current is! GovernateLoaded ||
+            current is! GovernateLoading ||
+            current is! GovernateFailure,
+        listener: (context, state) {
+          if (state is! GovernateLoaded &&
+              state is! GovernateLoading &&
+              state is! GovernateFailure) {
+            Navigator.pop(context);
+          }
+        },
         buildWhen: (previous, current) =>
             current is GovernateLoaded ||
             current is GovernateLoading ||
@@ -28,18 +39,25 @@ class DialogContentList extends StatelessWidget {
           if (state is GovernateLoaded) {
             return ListView.separated(
               itemBuilder: (_, index) {
-                return Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 20.w,
-                    vertical: 11.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Color(0xffEAE8E8),
-                  ),
-                  child: Text(
-                    state.governorates[index].governorateName,
-                    style: AppStyles.roboto20Regular.copyWith(
-                      color: AppColors.darkBlueColor,
+                return InkWell(
+                  onTap: () {
+                    context.read<NursingCubit>().getFilteredHospitals(
+                          state.governorates[index].governorateId.toInt(),
+                        );
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20.w,
+                      vertical: 11.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Color(0xffEAE8E8),
+                    ),
+                    child: Text(
+                      state.governorates[index].governorateName,
+                      style: AppStyles.roboto20Regular.copyWith(
+                        color: AppColors.darkBlueColor,
+                      ),
                     ),
                   ),
                 );
@@ -64,30 +82,30 @@ class DialogContentList extends StatelessWidget {
 
   Skeletonizer _buildLoadingGovernateList() {
     return Skeletonizer(
-            enabled: true,
-            child: ListView.separated(
-              itemBuilder: (_, index) {
-                return Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 20.w,
-                    vertical: 11.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Color(0xffEAE8E8),
-                  ),
-                  child: Text(
-                    'Egypt',
-                    style: AppStyles.roboto20Regular.copyWith(
-                      color: AppColors.darkBlueColor,
-                    ),
-                  ),
-                );
-              },
-              separatorBuilder: (_, __) {
-                return VerticalSpace(9);
-              },
-              itemCount: 20,
+      enabled: true,
+      child: ListView.separated(
+        itemBuilder: (_, index) {
+          return Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: 20.w,
+              vertical: 11.h,
+            ),
+            decoration: BoxDecoration(
+              color: Color(0xffEAE8E8),
+            ),
+            child: Text(
+              'Egypt',
+              style: AppStyles.roboto20Regular.copyWith(
+                color: AppColors.darkBlueColor,
+              ),
             ),
           );
+        },
+        separatorBuilder: (_, __) {
+          return VerticalSpace(9);
+        },
+        itemCount: 20,
+      ),
+    );
   }
 }

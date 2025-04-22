@@ -10,7 +10,7 @@ abstract class NursingRemoteDatasource {
   Future<List<HospitalModel>> getAllHospitals();
   Future<void> getSpecificHospital();
   Future<List<GovernorateModel>> getAllGovernates();
-  Future<void> getFilterdHospital();
+  Future<List<HospitalModel>> getFilterdHospitals(int id);
   Future<void> addHospitalToFavorites();
   Future<void> getFavoritesHospitals();
 }
@@ -51,8 +51,17 @@ class NursingRemoteDatasourceImpl implements NursingRemoteDatasource {
   }
 
   @override
-  Future<void> getFilterdHospital() async {
-    throw UnimplementedError();
+  Future<List<HospitalModel>> getFilterdHospitals(int id) async {
+    final response = await _apiConsumer.get(
+      '${EndPoints.filterHospitalById}$id',
+    );
+    if (response.statusCode == 200) {
+      return (response.data as List)
+          .map((e) => HospitalModel.fromJson(e))
+          .toList();
+    } else {
+      throw ServerException(ErrorModel.fromJson(response.data));
+    }
   }
 
   @override
