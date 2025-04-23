@@ -51,20 +51,23 @@ class NursingRepoImpl extends NursingRepo {
 
   @override
   Future<Either<Failure, void>> addHospitalToFav(int id) async {
-    try {
-      await nursingRemoteDataSource.addHospitalToFavorites(id);
-      return const Right(null);
-    } catch (e) {
-      return Left(
-        Failure(errMessage: e.toString()),
-      );
-    }
+    return _toggleFavoriteHospital(
+      nursingRemoteDataSource.addHospitalToFavorites(id),
+    );
   }
 
   @override
   Future<Either<Failure, void>> delHospitalFromFav(int id) async {
+    return _toggleFavoriteHospital(
+      nursingRemoteDataSource.delHospitalFromFavorites(id),
+    );
+  }
+
+  Future<Either<Failure, void>> _toggleFavoriteHospital(
+    Future<void> addOrDelete,
+  ) async {
     try {
-      await nursingRemoteDataSource.delHospitalFromFavorites(id);
+      await addOrDelete;
       return const Right(null);
     } catch (e) {
       return Left(
