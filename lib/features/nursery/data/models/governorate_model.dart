@@ -9,15 +9,15 @@ class GovernorateModel {
 
   factory GovernorateModel.fromJson(Map<String, dynamic> json) {
     return GovernorateModel(
-      governorateId: json['governorateId'],
-      governorateName: json['governorateName'],
+      governorateId: json['GovernorateId'],
+      governorateName: json['GovernorateName'],
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
-      'governorateId': governorateId,
-      'governorateName': governorateName,
+      'GovernorateId': governorateId,
+      'GovernorateName': governorateName,
     };
   }
 }

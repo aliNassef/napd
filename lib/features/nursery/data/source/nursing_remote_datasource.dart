@@ -8,11 +8,10 @@ import '../models/hospital_model.dart';
 
 abstract class NursingRemoteDatasource {
   Future<List<HospitalModel>> getAllHospitals();
-  Future<void> getSpecificHospital();
   Future<List<GovernorateModel>> getAllGovernates();
   Future<List<HospitalModel>> getFilterdHospitals(int id);
-  Future<void> addHospitalToFavorites();
-  Future<void> getFavoritesHospitals();
+  Future<void> addHospitalToFavorites(int id);
+  Future<void> delHospitalFromFavorites(int id);
 }
 
 class NursingRemoteDatasourceImpl implements NursingRemoteDatasource {
@@ -65,17 +64,30 @@ class NursingRemoteDatasourceImpl implements NursingRemoteDatasource {
   }
 
   @override
-  Future<void> getSpecificHospital() async {
-    throw UnimplementedError();
+  Future<void> addHospitalToFavorites(id) async {
+    final response = await _apiConsumer.post(
+      '${EndPoints.addHospitlaToFav}$id',
+    );
+    if (response.statusCode == 200) {
+      return;
+    } else {
+      throw ServerException(
+        ErrorModel.fromJson(response.data),
+      );
+    }
   }
 
   @override
-  Future<void> addHospitalToFavorites() async {
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<void> getFavoritesHospitals() async {
-    throw UnimplementedError();
+  Future<void> delHospitalFromFavorites(int id) async {
+    final response = await _apiConsumer.delete(
+      '${EndPoints.delFavoriteHospital}$id',
+    );
+    if (response.statusCode == 200) {
+      return;
+    } else {
+      throw ServerException(
+        ErrorModel.fromJson(response.data),
+      );
+    }
   }
 }

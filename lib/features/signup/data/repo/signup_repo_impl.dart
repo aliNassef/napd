@@ -1,8 +1,7 @@
 import 'package:dartz/dartz.dart';
+import 'package:napd/features/signup/data/repo/signup_repo.dart';
 import '../../../../core/errors/exceptions.dart';
 import '../../../../core/errors/failure.dart';
-import '../../domain/entity/signup_input_entity.dart';
-import '../../domain/repo/signup_repo.dart';
 
 import '../model/signup_input_model.dart';
 import '../sources/signup_remote_source.dart';
@@ -12,15 +11,17 @@ class SignupRepoImpl extends SignupRepo {
 
   SignupRepoImpl({required SignupRemoteSource signupRemoteSource})
       : _signupRemoteSource = signupRemoteSource;
+
   @override
-  Future<Either<Failure, void>> createAccount(
-      SignupInputEntity signupInputEntity) async {
+  Future<Either<Failure, void>> signup(
+      SignupInputModel signupInputModel) async {
     try {
-      var signupInputModel = SignupInputModel.fromEntity(signupInputEntity);
       await _signupRemoteSource.createAccount(signupInputModel);
-      return right(null);
+      return const Right(null);
     } on ServerException catch (e) {
-      return left(Failure(errMessage: e.errorModel.errorMessage));
+      return Left(
+        Failure(errMessage: e.errorModel.errorMessage),
+      );
     }
   }
 }

@@ -8,6 +8,7 @@ import 'package:napd/features/nursery/presentation/cubit/nursing_cubit.dart';
 import '../../features/nursery/data/repo/nursing_repo.dart';
 import '../../features/nursery/data/repo/nursing_repo_impl.dart';
 import '../../features/nursery/data/source/nursing_remote_datasource.dart';
+import '../../features/signup/data/repo/signup_repo.dart';
 import '../cache/cache_helper.dart';
 import '../repo/network_info.dart';
 import '../api/api_consumer.dart';
@@ -15,7 +16,6 @@ import '../api/dio_consumer.dart';
 import '../../features/login/data/repo/login_repo_impl.dart';
 import '../../features/login/data/source/login_remote_source.dart';
 import '../../features/login/data/repo/login_repo.dart';
-import '../../features/signup/domain/repo/signup_repo.dart';
 import '../../features/signup/data/repo/signup_repo_impl.dart';
 import '../../features/signup/data/sources/signup_remote_source.dart';
 import '../../features/signup/presentation/cubit/sign_up_cubit.dart';
@@ -72,7 +72,9 @@ void _setupSignupFeature() {
     () => SignupCubit(injector<SignupRepo>()),
   );
   injector.registerLazySingleton<SignupRemoteSource>(
-    () => SignupRemoteSourceImpl(),
+    () => SignupRemoteSourceImpl(
+      injector<ApiConsumer>(),
+    ),
   );
   injector.registerLazySingleton<SignupRepo>(
     () => SignupRepoImpl(signupRemoteSource: injector<SignupRemoteSource>()),

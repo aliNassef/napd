@@ -32,3 +32,21 @@ final class GovernateFailure extends NursingState {
 
   GovernateFailure(this.errMessage);
 }
+
+final class ToggleFavoriteLoading extends NursingState {
+  final int id;
+
+  ToggleFavoriteLoading({required this.id});
+}
+
+final class ToggleFavoriteLoaded extends NursingState {
+  final int id;
+
+  ToggleFavoriteLoaded({required this.id});
+}
+
+final class ToggleFavoriteFailure extends NursingState {
+  final String errMessage;
+
+  ToggleFavoriteFailure(this.errMessage);
+}

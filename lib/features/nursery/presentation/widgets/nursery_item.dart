@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:napd/core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_shadows.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
-import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../data/models/hospital_model.dart';
+import 'favorite_button_bloc_consumer.dart';
 
 class NurseryItem extends StatelessWidget {
   const NurseryItem({super.key, required this.hospital});
@@ -49,13 +48,7 @@ class NurseryItem extends StatelessWidget {
                       ),
                     ),
                     const Spacer(),
-                    IconButton(
-                      alignment: Alignment.center,
-                      onPressed: () {},
-                      icon: hospital.isFavourite!
-                          ? SvgPicture.asset(AppSvgs.favIcon)
-                          : SvgPicture.asset(AppSvgs.unFavIcon),
-                    ),
+                    FavoriteButtonBlocConsumer(hospital: hospital),
                   ],
                 ),
                 Text(

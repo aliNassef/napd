@@ -3,12 +3,12 @@ class HospitalModel {
   final String? title;
   final String? description;
   final num? rate;
-  final bool? isFavourite;
+  bool? isFavourite;
   final String? imageUrl;
   final String? governorateName;
   final bool? isopended;
 
-  const HospitalModel({
+  HospitalModel({
     this.id,
     this.title,
     this.description,
@@ -21,12 +21,12 @@ class HospitalModel {
 
   factory HospitalModel.fromJson(Map<String, dynamic> json) {
     return HospitalModel(
-      id: json['id'],
-      title: json['title'],
-      description: json['description'],
+      id: json['Id'],
+      title: json['Title'],
+      description: json['Description'],
       rate: json['rate'],
-      isFavourite: json['isFavourite'],
-      imageUrl: json['imageUrl'],
+      isFavourite: json['IsFavourite'],
+      imageUrl: json['ImageUrl'],
       governorateName: json['governorateName'],
       isopended: json['isopended'],
     );
@@ -34,12 +34,12 @@ class HospitalModel {
 
   Map<String, dynamic> toJson() {
     return {
-      'id': id,
-      'title': title,
-      'description': description,
+      'Id': id,
+      'Title': title,
+      'Description': description,
       'rate': rate,
-      'isFavourite': isFavourite,
-      'imageUrl': imageUrl,
+      'IsFavourite': isFavourite,
+      'ImageUrl': imageUrl,
       'governorateName': governorateName,
       'isopended': isopended,
     };

@@ -1,5 +1,3 @@
-import '../../domain/entity/signup_input_entity.dart';
-
 class SignupInputModel {
   final String firstName, lastName, phoneNumber, password, email;
   const SignupInputModel({
@@ -9,16 +7,6 @@ class SignupInputModel {
     required this.password,
     required this.email,
   });
-
-  factory SignupInputModel.fromEntity(SignupInputEntity entity) {
-    return SignupInputModel(
-      firstName: entity.firstName,
-      lastName: entity.lastName,
-      phoneNumber: entity.phoneNumber,
-      password: entity.password,
-      email: entity.email,
-    );
-  }
 
   Map<String, dynamic> toJson() => {
         'firstName': firstName,

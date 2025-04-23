@@ -61,7 +61,7 @@ class NurseryViewBody extends StatelessWidget {
     );
   }
 
-  static List<HospitalModel> dummyHospitals = const [
+  static List<HospitalModel> dummyHospitals = [
     HospitalModel(
       id: 1,
       title: 'Hospital 1',

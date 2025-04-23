@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:napd/core/utils/app_images.dart';
+import 'package:napd/features/signup/data/model/signup_input_model.dart';
 import '../../../../core/functions/show_error_message.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../view/create_baby_account_view.dart';
-import '../../domain/entity/signup_input_entity.dart';
 import '../cubit/sign_up_cubit.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -151,17 +151,14 @@ class _SignUpFormBlocListnerState extends State<SignUpFormBlocListner> {
   void _checkSignUpButtonValidity(BuildContext context) {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-      var signUpInputEntity = SignupInputEntity(
+      var signUpInputModel = SignupInputModel(
         firstName: _firstNameController.text.trim(),
         lastName: _lastNameController.text.trim(),
         phoneNumber: _phoneNumberController.text.trim(),
         password: _passwordController.text.trim(),
         email: _emailController.text.trim(),
-        isRemembered: remember,
       );
-
-      // call cubit
-      context.read<SignupCubit>().signup(signUpInputEntity);
+      context.read<SignupCubit>().signup(signUpInputModel);
       Navigator.pushNamed(context, CreateBabyAccountView.routeName);
     } else {
       _autovalidateMode = AutovalidateMode.always;
