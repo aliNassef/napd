@@ -10,8 +10,9 @@ import '../../../../core/widgets/spacers.dart';
 import '../../../../core/widgets/custom_check_box.dart';
 
 class BabyGenderSelector extends StatefulWidget {
-  const BabyGenderSelector({super.key});
-
+  const BabyGenderSelector({super.key, this.onChanged});
+  // Change to int to represent gender (0 for girl, 1 for boy)
+  final ValueChanged<int>? onChanged;
   @override
   // ignore: library_private_types_in_public_api
   _BabyGenderSelectorState createState() => _BabyGenderSelectorState();
@@ -31,12 +32,20 @@ class _BabyGenderSelectorState extends State<BabyGenderSelector> {
             isGirlSelected = value!;
             isBoySelected = false;
           });
+          // Call onChanged with 0 for girl
+          if (value! && widget.onChanged != null) {
+            widget.onChanged!(0);
+          }
         }),
         _buildGenderOption(context, AppStrings.boy, isBoySelected, (value) {
           setState(() {
             isBoySelected = value!;
             isGirlSelected = false;
           });
+          // Call onChanged with 1 for boy
+          if (value! && widget.onChanged != null) {
+            widget.onChanged!(1);
+          }
         }),
       ],
     );
@@ -73,7 +82,7 @@ class _BabyGenderSelectorState extends State<BabyGenderSelector> {
             ),
             VerticalSpace(5),
             CustomCheckBox(
-              onChanged: (value) {},
+              onChanged: onChanged,
             ),
           ],
         ),

@@ -1,12 +1,13 @@
+import 'dart:io';
+
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:napd/core/helpers/image_picker_helper.dart';
 import 'package:napd/core/utils/app_images.dart';
 import 'package:napd/features/signup/data/model/signup_input_model.dart';
-import '../../../../core/functions/show_error_message.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../view/create_baby_account_view.dart';
-import '../cubit/sign_up_cubit.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/custom_text_form_field.dart';
@@ -15,22 +16,22 @@ import '../../../../core/widgets/spacers.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/custom_check_box.dart';
 
-class SignUpFormBlocListner extends StatefulWidget {
-  const SignUpFormBlocListner({super.key});
+class MotherAccountForm extends StatefulWidget {
+  const MotherAccountForm({super.key});
 
   @override
-  State<SignUpFormBlocListner> createState() => _SignUpFormBlocListnerState();
+  State<MotherAccountForm> createState() => _MotherAccountFormState();
 }
 
-class _SignUpFormBlocListnerState extends State<SignUpFormBlocListner> {
+class _MotherAccountFormState extends State<MotherAccountForm> {
   late GlobalKey<FormState> _formKey;
   late TextEditingController _firstNameController;
   late TextEditingController _lastNameController;
   late TextEditingController _emailController;
-  late TextEditingController _phoneNumberController;
   late TextEditingController _passwordController;
   late AutovalidateMode _autovalidateMode;
   late bool remember;
+  File? imageFile;
   @override
   void initState() {
     super.initState();
@@ -38,10 +39,18 @@ class _SignUpFormBlocListnerState extends State<SignUpFormBlocListner> {
     _firstNameController = TextEditingController();
     _lastNameController = TextEditingController();
     _emailController = TextEditingController();
-    _phoneNumberController = TextEditingController();
     _passwordController = TextEditingController();
     remember = false;
     _autovalidateMode = AutovalidateMode.disabled;
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    _firstNameController.dispose();
+    _lastNameController.dispose();
+    super.dispose();
   }
 
   @override
@@ -54,11 +63,23 @@ class _SignUpFormBlocListnerState extends State<SignUpFormBlocListner> {
           Row(
             children: [
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  ImagePickerHelper.openGallery(
+                    onGet: (img) {
+                      setState(() {
+                        imageFile = img;
+                      });
+                    },
+                  );
+                },
                 child: CircleAvatar(
                   radius: 50,
                   backgroundColor: Color(0xffEAE8E8),
-                  child: SvgPicture.asset(AppSvgs.uploadImageIcon),
+                  backgroundImage:
+                      imageFile == null ? null : FileImage(imageFile!),
+                  child: imageFile == null
+                      ? SvgPicture.asset(AppSvgs.uploadImageIcon)
+                      : null,
                 ),
               ),
               HorizantalSpace(20),
@@ -96,11 +117,6 @@ class _SignUpFormBlocListnerState extends State<SignUpFormBlocListner> {
           ),
           VerticalSpace(28),
           CustomTextFormField(
-            hintText: AppStrings.phoneNumber,
-            controller: _phoneNumberController,
-          ),
-          VerticalSpace(28),
-          CustomTextFormField(
             isPassword: true,
             hintText: AppStrings.password,
             controller: _passwordController,
@@ -124,24 +140,12 @@ class _SignUpFormBlocListnerState extends State<SignUpFormBlocListner> {
             ],
           ),
           VerticalSpace(22),
-          BlocListener<SignupCubit, SignUpState>(
-            listener: (context, state) {
-              if (state is SignUpSuccess) {
-                Navigator.pop(context);
-              }
-
-              if (state is SignUpFailure) {
-                showErrorMessage(context, errMessage: state.errMessage);
-              }
-              if (state is SignUpLoading) {}
-            },
-            child: DefaultAppButton(
-              onPressed: () => _checkSignUpButtonValidity(context),
-              padding: context.width * 0.2,
-              text: AppStrings.addYourBaby,
-              backgroundColor: Colors.white,
-              textColor: AppColors.darkBlueColor,
-            ),
+          DefaultAppButton(
+            onPressed: () => _checkSignUpButtonValidity(context),
+            padding: context.width * 0.2,
+            text: AppStrings.addYourBaby,
+            backgroundColor: Colors.white,
+            textColor: AppColors.darkBlueColor,
           ),
         ],
       ),
@@ -151,15 +155,21 @@ class _SignUpFormBlocListnerState extends State<SignUpFormBlocListner> {
   void _checkSignUpButtonValidity(BuildContext context) {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-      var signUpInputModel = SignupInputModel(
+      var motherInfo = SignupInputModel(
         firstName: _firstNameController.text.trim(),
         lastName: _lastNameController.text.trim(),
-        phoneNumber: _phoneNumberController.text.trim(),
-        password: _passwordController.text.trim(),
         email: _emailController.text.trim(),
+        password: _passwordController.text.trim(),
+        file: imageFile != null
+            ? MultipartFile.fromFileSync(imageFile!.path,
+                filename: imageFile!.path.split('/').last)
+            : null,
       );
-      context.read<SignupCubit>().signup(signUpInputModel);
-      Navigator.pushNamed(context, CreateBabyAccountView.routeName);
+      Navigator.pushNamed(
+        context,
+        CreateBabyAccountView.routeName,
+        arguments: motherInfo,
+      );
     } else {
       _autovalidateMode = AutovalidateMode.always;
       setState(() {});

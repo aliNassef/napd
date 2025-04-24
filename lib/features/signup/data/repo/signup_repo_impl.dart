@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:napd/features/signup/data/model/signup_model.dart';
 import 'package:napd/features/signup/data/repo/signup_repo.dart';
 import '../../../../core/errors/exceptions.dart';
 import '../../../../core/errors/failure.dart';
@@ -13,11 +14,11 @@ class SignupRepoImpl extends SignupRepo {
       : _signupRemoteSource = signupRemoteSource;
 
   @override
-  Future<Either<Failure, void>> signup(
+  Future<Either<Failure, SignupModel>> signup(
       SignupInputModel signupInputModel) async {
     try {
-      await _signupRemoteSource.createAccount(signupInputModel);
-      return const Right(null);
+      final user = await _signupRemoteSource.createAccount(signupInputModel);
+      return Right(user);
     } on ServerException catch (e) {
       return Left(
         Failure(errMessage: e.errorModel.errorMessage),

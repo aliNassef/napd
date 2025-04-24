@@ -3,7 +3,7 @@ import 'package:napd/core/utils/app_strings.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/spacers.dart';
 import '../../../../core/utils/app_styles.dart';
-import 'signup_form_bloc_listner.dart';
+import 'mother_account_form.dart';
 
 class SignupViewBody extends StatelessWidget {
   const SignupViewBody({super.key});
@@ -27,7 +27,7 @@ class SignupViewBody extends StatelessWidget {
             ),
           ),
           VerticalSpace(50),
-          SignUpFormBlocListner(),
+          MotherAccountForm(),
           VerticalSpace(25),
         ],
       ),

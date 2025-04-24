@@ -3,9 +3,10 @@ import '../../../../core/api/end_ponits.dart';
 import '../../../../core/errors/error_model.dart';
 import '../../../../core/errors/exceptions.dart';
 import '../model/signup_input_model.dart';
+import '../model/signup_model.dart';
 
 abstract class SignupRemoteSource {
-  Future<void> createAccount(SignupInputModel signupInputModel);
+  Future<SignupModel> createAccount(SignupInputModel signupInputModel);
 }
 
 class SignupRemoteSourceImpl implements SignupRemoteSource {
@@ -13,13 +14,14 @@ class SignupRemoteSourceImpl implements SignupRemoteSource {
 
   const SignupRemoteSourceImpl(this._apiConsumer);
   @override
-  Future<void> createAccount(SignupInputModel signupInputModel) async {
+  Future<SignupModel> createAccount(SignupInputModel signupInputModel) async {
     final response = await _apiConsumer.post(
       EndPoints.register,
       data: signupInputModel.toJson(),
+      isFromData: true,
     );
     if (response.statusCode == 200) {
-      return;
+      return SignupModel.fromJson(response.data);
     } else {
       throw ServerException(
         ErrorModel.fromJson(response.data),

@@ -40,6 +40,13 @@ class _LoginFormBlocListnerState extends State<LoginFormBlocListner> {
   }
 
   @override
+  dispose() {
+    _emailController.dispose();
+    _passController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Form(
       key: _formKey,
