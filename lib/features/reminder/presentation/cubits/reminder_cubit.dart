@@ -50,14 +50,12 @@ class ReminderCubit extends Cubit<ReminderState> {
   }
 
   Future<void> removeReminder(ReminderModel reminder) async {
-    emit(const ReminderLoading());
-
     final result = _reminderRepo.removeReminder(reminder);
 
     result.fold(
       (failure) => emit(ReminderError(message: failure.errMessage)),
       (_) {
-        emit(const ReminderRemoved());  
+        getReminders();
       },
     );
   }

@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:napd/core/functions/show_error_message.dart';
 import 'package:napd/core/utils/app_strings.dart';
 import 'package:napd/features/reminder/presentation/cubits/reminder_cubit.dart';
-import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
@@ -131,7 +130,6 @@ class _SetReminderViewBodyState extends State<SetReminderViewBody> {
               onPressed: () {
                 _addNotification();
               },
-              padding: context.width * 1 / 6,
               text: AppStrings.save,
               backgroundColor: AppColors.secondaryColor,
               textColor: AppColors.primaryColor,
@@ -142,7 +140,6 @@ class _SetReminderViewBodyState extends State<SetReminderViewBody> {
             onPressed: () {
               Navigator.pop(context);
             },
-            padding: context.width * 1 / 6,
             text: AppStrings.cancel,
             backgroundColor: Color(0xffF9E9FC),
             textColor: AppColors.primaryColor,
@@ -155,16 +152,19 @@ class _SetReminderViewBodyState extends State<SetReminderViewBody> {
 
   void _addNotification() {
     if (_selectedDate.isBefore(DateTime.now())) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-            content: Text("Selected date and time must be in the future.")),
+      showErrorMessage(
+        context,
+        errMessage: "Selected date and time must be in the future.",
       );
+
       return;
     }
     if (_titleController.text.trim().isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Title cannot be empty.")),
+      showErrorMessage(
+        context,
+        errMessage: "title can't be empty",
       );
+
       return;
     }
     context.read<ReminderCubit>().addReminder(

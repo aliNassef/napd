@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:napd/core/extensions/mediaquery_size.dart';
+import 'package:napd/core/utils/app_colors.dart';
+import 'package:napd/core/utils/app_images.dart';
+import 'package:napd/core/utils/app_strings.dart';
+import 'package:napd/core/utils/app_styles.dart';
 import 'package:napd/core/widgets/custom_failure_widget.dart';
 import 'package:napd/features/reminder/data/model/reminder_model.dart';
 import 'package:napd/features/reminder/presentation/cubits/reminder_cubit.dart';
@@ -43,10 +49,44 @@ class ReminderViewBody extends StatelessWidget {
           return CustomFailureWidget(errMessage: state.message);
         }
         if (state is RemindersLoaded) {
+          if (state.reminders.isEmpty) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                VerticalSpace(context.height * 0.1),
+                Image.asset(AppImages.noReminders),
+                Text(
+                  AppStrings.noReminderYet,
+                  style: AppStyles.roboto24Bold.copyWith(
+                    color: AppColors.darkBlueColor,
+                  ),
+                ),
+              ],
+            );
+          }
           return ListView.separated(
             padding: EdgeInsets.symmetric(vertical: 20.h),
-            itemBuilder: (_, index) => ReminderItem(
-              reminderModel: state.reminders[index],
+            itemBuilder: (_, index) => Slidable(
+              direction: Axis.horizontal,
+              endActionPane: ActionPane(
+                motion: const ScrollMotion(),
+                children: [
+                  SlidableAction(
+                    borderRadius: BorderRadius.circular(8),
+                    onPressed: (context) {
+                      context.read<ReminderCubit>().removeReminder(
+                            state.reminders[index],
+                          );
+                    },
+                    backgroundColor: Colors.red,
+                    icon: Icons.delete,
+                    label: 'Delete',
+                  ),
+                ],
+              ),
+              child: ReminderItem(
+                reminderModel: state.reminders[index],
+              ),
             ),
             itemCount: state.reminders.length,
             separatorBuilder: (_, __) => VerticalSpace(16),

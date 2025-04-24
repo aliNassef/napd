@@ -130,5 +130,6 @@
     "address" : "Address",
     "print" : "Print", 
     "okay" : "Okay" ,
-    "date" : "Date"
+    "date" : "Date",
+    "noreminderyet" : "No reminder yet"
 }

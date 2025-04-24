@@ -17,18 +17,20 @@ class ReminderView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => injector<ReminderCubit>()..getReminders(),
-      child: Builder(builder: (context) {
-        return Scaffold(
-          appBar: CustomAppBar(
-            onLeadingTap: () {
-              controller.index = 1;
-            },
-            title: AppStrings.reminder,
-          ),
-          body: ReminderViewBody(),
-          floatingActionButton: _reminderFloatingButton(context),
-        );
-      }),
+      child: Builder(
+        builder: (context) {
+          return Scaffold(
+            appBar: CustomAppBar(
+              onLeadingTap: () {
+                controller.index = 1;
+              },
+              title: AppStrings.reminder,
+            ),
+            body: ReminderViewBody(),
+            floatingActionButton: _reminderFloatingButton(context),
+          );
+        },
+      ),
     );
   }
 
