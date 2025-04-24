@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:napd/features/signup/data/model/signup_model.dart';
-import 'package:napd/features/signup/data/repo/signup_repo.dart';
+import '../model/signup_model.dart';
+import 'signup_repo.dart';
 import '../../../../core/errors/exceptions.dart';
 import '../../../../core/errors/failure.dart';
 

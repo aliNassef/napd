@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:napd/core/utils/app_strings.dart';
-import 'package:napd/features/reminder/presentation/cubits/reminder_cubit.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../cubits/reminder_cubit.dart';
 import '../widgets/set_reminder_view_body.dart';
 import '../../../../core/widgets/appbars/custom_app_bar.dart';
 

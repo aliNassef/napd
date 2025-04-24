@@ -1,4 +1,4 @@
-import 'package:napd/core/utils/app_strings.dart';
+import '../../../../core/utils/app_strings.dart';
 
 import '../../../../core/utils/app_images.dart';
 

@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:napd/core/errors/exceptions.dart';
-import 'package:napd/core/errors/failure.dart';
-import 'package:napd/features/nursery/data/models/governorate_model.dart';
-import 'package:napd/features/nursery/data/models/hospital_model.dart';
-import 'package:napd/features/nursery/data/repo/nursing_repo.dart';
+import '../../../../core/errors/exceptions.dart';
+import '../../../../core/errors/failure.dart';
+import '../models/governorate_model.dart';
+import '../models/hospital_model.dart';
+import 'nursing_repo.dart';
 
 import '../source/nursing_remote_datasource.dart';
 

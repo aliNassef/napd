@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:napd/core/errors/exceptions.dart';
-import 'package:napd/core/errors/failure.dart';
-import 'package:napd/features/reminder/data/model/reminder_model.dart';
-import 'package:napd/features/reminder/data/source/reminder_local_datasource.dart';
+import '../../../../core/errors/exceptions.dart';
+import '../../../../core/errors/failure.dart';
+import '../model/reminder_model.dart';
+import '../source/reminder_local_datasource.dart';
 
 import 'reminder_repo.dart';
 

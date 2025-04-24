@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:napd/core/utils/app_localizations.dart';
+import '../../utils/app_localizations.dart';
 
 part 'app_localization_state.dart';
 

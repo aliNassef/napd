@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/extensions/padding_extension.dart';
+import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../view/all_groups_view.dart';
 import 'header_with_see_all.dart';

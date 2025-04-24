@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:napd/features/reminder/data/model/reminder_model.dart';
-import 'package:napd/features/reminder/data/repo/reminder_repo.dart';
-import 'package:napd/features/reminder/presentation/cubits/reminder_state.dart';
+import '../../data/model/reminder_model.dart';
+import '../../data/repo/reminder_repo.dart';
+import 'reminder_state.dart';
 
 class ReminderCubit extends Cubit<ReminderState> {
   final ReminderRepo _reminderRepo;

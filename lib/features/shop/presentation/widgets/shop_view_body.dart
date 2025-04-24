@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:napd/core/utils/app_strings.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/widgets/custom_search_bar.dart';
 import '../../../../core/widgets/spacers.dart';

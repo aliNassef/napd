@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:napd/features/login/data/model/login_input_model.dart';
-import 'package:napd/features/login/data/source/login_local_data_source.dart';
+import '../model/login_input_model.dart';
+import '../source/login_local_data_source.dart';
 import '../../../../core/errors/exceptions.dart';
 import '../../../../core/errors/failure.dart';
 import '../../../../core/models/baby_model.dart';

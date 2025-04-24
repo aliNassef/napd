@@ -1,4 +1,4 @@
-import 'package:napd/features/reminder/data/model/reminder_model.dart';
+import '../../data/model/reminder_model.dart';
 
 abstract class ReminderState {
   const ReminderState();

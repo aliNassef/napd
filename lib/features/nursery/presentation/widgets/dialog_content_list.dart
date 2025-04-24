@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:napd/core/widgets/custom_failure_widget.dart';
-import 'package:napd/features/nursery/presentation/cubit/nursing_cubit.dart';
-import 'package:napd/features/nursery/presentation/cubit/nursing_state.dart';
+import '../../../../core/widgets/custom_failure_widget.dart';
+import '../cubit/nursing_cubit.dart';
+import '../cubit/nursing_state.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/spacers.dart';

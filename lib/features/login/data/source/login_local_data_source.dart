@@ -1,6 +1,6 @@
-import 'package:napd/core/api/end_ponits.dart';
-import 'package:napd/core/cache/cache_helper.dart';
-import 'package:napd/features/login/data/model/login_model.dart';
+import '../../../../core/api/end_ponits.dart';
+import '../../../../core/cache/cache_helper.dart';
+import '../model/login_model.dart';
 
 abstract class LoginLocalDataSource {
   Future<void> cacheUserData(UserModel user);

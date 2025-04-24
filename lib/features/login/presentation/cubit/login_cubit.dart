@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:napd/features/login/data/model/login_input_model.dart';
+import '../../data/model/login_input_model.dart';
 
 import '../../data/repo/login_repo.dart';
 import 'login_state.dart';

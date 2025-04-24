@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
-import 'package:napd/core/cubit/cubit/app_localization_cubit.dart';
-import 'package:napd/core/helpers/firebase_auth_service.dart';
-import 'package:napd/core/helpers/notification_service.dart';
-import 'package:napd/features/login/data/source/login_local_data_source.dart';
-import 'package:napd/features/nursery/presentation/cubit/nursing_cubit.dart';
+import '../cubit/cubit/app_localization_cubit.dart';
+import '../helpers/firebase_auth_service.dart';
+import '../helpers/notification_service.dart';
+import '../../features/login/data/source/login_local_data_source.dart';
+import '../../features/nursery/presentation/cubit/nursing_cubit.dart';
 import '../../features/nursery/data/repo/nursing_repo.dart';
 import '../../features/nursery/data/repo/nursing_repo_impl.dart';
 import '../../features/nursery/data/source/nursing_remote_datasource.dart';

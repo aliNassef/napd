@@ -1,6 +1,6 @@
-import 'package:napd/core/api/api_consumer.dart';
-import 'package:napd/core/errors/error_model.dart';
-import 'package:napd/core/errors/exceptions.dart';
+import '../../../../core/api/api_consumer.dart';
+import '../../../../core/errors/error_model.dart';
+import '../../../../core/errors/exceptions.dart';
 
 import '../../../../core/api/end_ponits.dart';
 import '../models/governorate_model.dart';

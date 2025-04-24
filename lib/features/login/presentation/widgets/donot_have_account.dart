@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:napd/core/utils/app_strings.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../../../signup/presentation/view/signup_view.dart';
 
 import '../../../../core/utils/app_colors.dart';

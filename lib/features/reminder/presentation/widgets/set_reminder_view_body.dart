@@ -2,9 +2,9 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:napd/core/functions/show_error_message.dart';
-import 'package:napd/core/utils/app_strings.dart';
-import 'package:napd/features/reminder/presentation/cubits/reminder_cubit.dart';
+import '../../../../core/functions/show_error_message.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../cubits/reminder_cubit.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';

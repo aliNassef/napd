@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/utils/app_colors.dart';
-import 'package:napd/core/widgets/default_app_button.dart';
-import 'package:napd/features/shop/presentation/widgets/custom_outline_button.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/widgets/default_app_button.dart';
+import 'custom_outline_button.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widgets/spacers.dart';
 import '../view/thanks_view.dart';

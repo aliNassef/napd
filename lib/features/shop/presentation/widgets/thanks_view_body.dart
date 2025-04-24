@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/extensions/padding_extension.dart';
-import 'package:napd/core/widgets/default_app_button.dart';
+import '../../../../core/extensions/padding_extension.dart';
+import '../../../../core/widgets/default_app_button.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/app_styles.dart';

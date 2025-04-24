@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:napd/core/helpers/firebase_auth_service.dart';
+import '../helpers/firebase_auth_service.dart';
 import '../extensions/padding_extension.dart';
 import '../functions/toast_dialog.dart';
 import '../utils/app_images.dart';

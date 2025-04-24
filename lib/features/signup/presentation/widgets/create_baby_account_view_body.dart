@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:napd/features/layout/presentation/view/layout_view.dart';
-import 'package:napd/features/signup/data/model/signup_input_model.dart';
-import 'package:napd/features/signup/presentation/cubit/sign_up_cubit.dart';
+import '../../../layout/presentation/view/layout_view.dart';
+import '../../data/model/signup_input_model.dart';
+import '../cubit/sign_up_cubit.dart';
 import '../../../../core/functions/show_error_message.dart';
 import '../../../../core/functions/show_loading_box.dart';
 import '../../../../core/utils/app_colors.dart';

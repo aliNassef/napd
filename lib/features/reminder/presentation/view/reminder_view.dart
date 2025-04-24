@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:napd/core/di/service_locator.dart';
-import 'package:napd/core/utils/app_strings.dart';
-import 'package:napd/features/reminder/presentation/cubits/reminder_cubit.dart';
+import '../../../../core/di/service_locator.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../cubits/reminder_cubit.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import '../../../../core/widgets/appbars/custom_app_bar.dart';
 import '../../../../core/utils/app_colors.dart';

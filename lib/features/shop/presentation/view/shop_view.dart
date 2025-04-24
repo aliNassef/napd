@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/utils/app_strings.dart';
+import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widgets/appbars/custom_app_bar.dart';
 import '../widgets/shop_view_body.dart';
 

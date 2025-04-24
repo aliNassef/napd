@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:napd/features/signup/data/model/signup_input_model.dart';
+import '../../data/model/signup_input_model.dart';
 
 import '../../data/repo/signup_repo.dart';
  

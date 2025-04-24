@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:napd/core/functions/show_error_message.dart';
-import 'package:napd/core/utils/app_strings.dart';
-import 'package:napd/features/login/data/model/login_input_model.dart';
+import '../../../../core/functions/show_error_message.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../../data/model/login_input_model.dart';
 import '../../../../core/functions/show_loading_box.dart';
 import '../cubit/login_cubit.dart';
 import '../cubit/login_state.dart';

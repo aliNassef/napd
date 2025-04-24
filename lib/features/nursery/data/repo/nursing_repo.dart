@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:napd/core/errors/failure.dart';
-import 'package:napd/features/nursery/data/models/governorate_model.dart';
+import '../../../../core/errors/failure.dart';
+import '../models/governorate_model.dart';
 import '../models/hospital_model.dart';
 
 abstract class NursingRepo {

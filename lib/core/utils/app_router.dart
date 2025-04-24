@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/models/baby_model.dart';
-import 'package:napd/features/signup/data/model/signup_input_model.dart';
+import '../models/baby_model.dart';
+import '../../features/signup/data/model/signup_input_model.dart';
 import '../../features/groups/presentation/view/podcasts_details_view.dart';
 import '../../features/home/presentation/view/chat_bot_view.dart';
 import '../../features/home/presentation/view/gallery_view.dart';
