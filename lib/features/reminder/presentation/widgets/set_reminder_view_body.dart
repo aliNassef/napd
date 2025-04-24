@@ -1,7 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:napd/core/utils/app_strings.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/extensions/padding_extension.dart';
+import '../../../../core/helpers/notification_service.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/custom_text_form_field.dart';
@@ -9,10 +12,34 @@ import '../../../../core/widgets/default_app_button.dart';
 import '../../../../core/widgets/spacers.dart';
 import 'select_time_button.dart';
 
-class SetReminderViewBody extends StatelessWidget {
+class SetReminderViewBody extends StatefulWidget {
   const SetReminderViewBody({
     super.key,
   });
+
+  @override
+  State<SetReminderViewBody> createState() => _SetReminderViewBodyState();
+}
+
+class _SetReminderViewBodyState extends State<SetReminderViewBody> {
+  late TextEditingController _titleController;
+  late TextEditingController _descriptionController;
+  late DateTime _selectedDate;
+
+  @override
+  initState() {
+    super.initState();
+    _titleController = TextEditingController();
+    _descriptionController = TextEditingController();
+    _selectedDate = DateTime.now();
+  }
+
+  @override
+  dispose() {
+    _titleController.dispose();
+    _descriptionController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +60,14 @@ class SetReminderViewBody extends StatelessWidget {
             hintText: AppStrings.title,
             keyboardType: TextInputType.text,
             hintColor: Colors.black.withValues(alpha: 0.3),
-            controller: TextEditingController(),
+            controller: _titleController,
           ),
           VerticalSpace(40),
           CustomTextFormField(
             hintColor: Colors.black.withValues(alpha: 0.3),
             hintText: AppStrings.description,
             keyboardType: TextInputType.text,
-            controller: TextEditingController(),
+            controller: _descriptionController,
             maxLines: 4,
           ),
           VerticalSpace(40),
@@ -60,15 +87,33 @@ class SetReminderViewBody extends StatelessWidget {
           VerticalSpace(8),
           CalendarDatePicker(
             firstDate: DateTime.now(),
-            initialDate: DateTime.now(),
+            initialDate: _selectedDate,
             lastDate: DateTime.now().add(Duration(days: 365)),
-            onDateChanged: (DateTime date) {},
+            onDateChanged: (DateTime date) {
+              _selectedDate = date;
+              setState(() {});
+            },
           ),
-          SelectTimeButton(),
+          SelectTimeButton(
+            initalTime: TimeOfDay.fromDateTime(_selectedDate),
+            onTimeSelected: (timeOfDay) {
+              setState(() {
+                _selectedDate = DateTime(
+                  _selectedDate.year,
+                  _selectedDate.month,
+                  _selectedDate.day,
+                  timeOfDay.hour,
+                  timeOfDay.minute,
+                );
+              });
+              log(_selectedDate.toString());
+            },
+            // Add this parameter
+          ),
           VerticalSpace(20),
           DefaultAppButton(
             onPressed: () {
-              _testNotification();
+              _addNotification();
             },
             padding: context.width * 1 / 6,
             text: AppStrings.save,
@@ -91,13 +136,24 @@ class SetReminderViewBody extends StatelessWidget {
     );
   }
 
-  void _testNotification() {
-    // NotificationService.scheduleNotification(
-    //   scheduledTime: DateTime.now().add(
-    //     Duration(seconds: 30),
-    //   ),
-    //   title: 'title',
-    //   body: 'body',
-    // );
+  void _addNotification() {
+    if (_selectedDate.isBefore(DateTime.now())) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+            content: Text("Selected date and time must be in the future.")),
+      );
+      return;
+    }
+    if (_titleController.text.trim().isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Title cannot be empty.")),
+      );
+      return;
+    }
+    NotificationService.scheduleNotification(
+      scheduledTime: _selectedDate,
+      title: _titleController.text.trim(),
+      body: _descriptionController.text.trim(),
+    );
   }
 }

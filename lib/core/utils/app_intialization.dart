@@ -22,7 +22,7 @@ class AppIntialization {
     await setupServiceLocator();
     await CacheHelper.init();
     await ScreenUtil.ensureScreenSize();
-    // await NotificationService.initialize();
+    await NotificationService.initialize();
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);

@@ -46,3 +46,6 @@ app.*.map.json
 #Add generated files to .gitignore
 lib/generated/*
 lib/l10n/*
+
+# FVM Version Cache
+.fvm/
