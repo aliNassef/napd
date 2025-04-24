@@ -9,8 +9,9 @@ import 'package:flutter_svg_provider/flutter_svg_provider.dart' as svg_provider;
 class ReminderDate extends StatelessWidget {
   const ReminderDate({
     super.key,
+    required this.day,
   });
-
+  final int day;
   @override
   Widget build(BuildContext context) {
     return RepaintBoundary(
@@ -41,7 +42,7 @@ class ReminderDate extends StatelessWidget {
             children: [
               Spacer(),
               Text(
-                '12',
+                day.toString(),
                 style: TextStyle(
                   letterSpacing: 0,
                   wordSpacing: 0.2,

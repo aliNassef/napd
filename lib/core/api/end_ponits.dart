@@ -29,4 +29,5 @@ abstract class ApiKey {
   static const token = 'token';
   static const userData = 'userData';
   static const babyId = 'babyId';
+  static const notification = 'reminderNotification';
 }

@@ -3,11 +3,16 @@ import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import 'package:napd/core/cubit/cubit/app_localization_cubit.dart';
 import 'package:napd/core/helpers/firebase_auth_service.dart';
+import 'package:napd/core/helpers/notification_service.dart';
 import 'package:napd/features/login/data/source/login_local_data_source.dart';
 import 'package:napd/features/nursery/presentation/cubit/nursing_cubit.dart';
 import '../../features/nursery/data/repo/nursing_repo.dart';
 import '../../features/nursery/data/repo/nursing_repo_impl.dart';
 import '../../features/nursery/data/source/nursing_remote_datasource.dart';
+import '../../features/reminder/data/repo/reminder_repo.dart';
+import '../../features/reminder/data/repo/reminder_repo_impl.dart';
+import '../../features/reminder/data/source/reminder_local_datasource.dart';
+import '../../features/reminder/presentation/cubits/reminder_cubit.dart';
 import '../../features/signup/data/repo/signup_repo.dart';
 import '../cache/cache_helper.dart';
 import '../repo/network_info.dart';
@@ -33,6 +38,7 @@ Future<void> setupServiceLocator() async {
   _setupNursingFeature();
   _setupCoreFeature();
   _setupExernalFeature();
+  _setupReminderFeature();
 }
 
 void _setupExernalFeature() {
@@ -116,6 +122,24 @@ void _setupNursingFeature() {
   injector.registerLazySingleton<NursingRemoteDatasource>(
     () => NursingRemoteDatasourceImpl(
       apiConsumer: injector<ApiConsumer>(),
+    ),
+  );
+}
+
+void _setupReminderFeature() {
+  injector.registerFactory<ReminderCubit>(
+    () => ReminderCubit(reminderRepo: injector<ReminderRepo>()),
+  );
+  injector.registerLazySingleton<ReminderRepo>(
+    () => ReminderRepoImpl(
+      localDatasource: injector<ReminderLocalDatasource>(),
+    ),
+  );
+
+  injector.registerLazySingleton<ReminderLocalDatasource>(
+    () => ReminderLocalDatasourceImpl(
+      cacheHelper: CacheHelper(),
+      notificationService: NotificationService(),
     ),
   );
 }

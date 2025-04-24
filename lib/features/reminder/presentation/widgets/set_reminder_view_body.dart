@@ -1,15 +1,19 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:napd/core/functions/show_error_message.dart';
 import 'package:napd/core/utils/app_strings.dart';
+import 'package:napd/features/reminder/presentation/cubits/reminder_cubit.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/extensions/padding_extension.dart';
-import '../../../../core/helpers/notification_service.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../core/widgets/default_app_button.dart';
 import '../../../../core/widgets/spacers.dart';
+import '../../data/model/reminder_model.dart';
+import '../cubits/reminder_state.dart';
 import 'select_time_button.dart';
 
 class SetReminderViewBody extends StatefulWidget {
@@ -111,14 +115,27 @@ class _SetReminderViewBodyState extends State<SetReminderViewBody> {
             // Add this parameter
           ),
           VerticalSpace(20),
-          DefaultAppButton(
-            onPressed: () {
-              _addNotification();
+          BlocListener<ReminderCubit, ReminderState>(
+            listenWhen: (_, state) {
+              return state is ReminderAdded || state is ReminderError;
             },
-            padding: context.width * 1 / 6,
-            text: AppStrings.save,
-            backgroundColor: AppColors.secondaryColor,
-            textColor: AppColors.primaryColor,
+            listener: (context, state) {
+              if (state is ReminderAdded) {
+                Navigator.pop(context);
+              }
+              if (state is ReminderError) {
+                showErrorMessage(context, errMessage: state.message);
+              }
+            },
+            child: DefaultAppButton(
+              onPressed: () {
+                _addNotification();
+              },
+              padding: context.width * 1 / 6,
+              text: AppStrings.save,
+              backgroundColor: AppColors.secondaryColor,
+              textColor: AppColors.primaryColor,
+            ),
           ),
           VerticalSpace(10),
           DefaultAppButton(
@@ -150,10 +167,14 @@ class _SetReminderViewBodyState extends State<SetReminderViewBody> {
       );
       return;
     }
-    NotificationService.scheduleNotification(
-      scheduledTime: _selectedDate,
-      title: _titleController.text.trim(),
-      body: _descriptionController.text.trim(),
-    );
+    context.read<ReminderCubit>().addReminder(
+          ReminderModel(
+            isCompleted: false,
+            id: DateTime.now().millisecondsSinceEpoch,
+            title: _titleController.text,
+            description: _descriptionController.text,
+            dateTime: _selectedDate,
+          ),
+        );
   }
 }

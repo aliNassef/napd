@@ -4,6 +4,7 @@ import 'package:napd/features/signup/data/model/signup_input_model.dart';
 import '../../features/groups/presentation/view/podcasts_details_view.dart';
 import '../../features/home/presentation/view/chat_bot_view.dart';
 import '../../features/home/presentation/view/gallery_view.dart';
+import '../../features/reminder/presentation/cubits/reminder_cubit.dart';
 import '../../features/shop/presentation/view/cart_view.dart';
 import '../../features/shop/presentation/view/thanks_view.dart';
 import '../../features/shop/presentation/view/product_details_view.dart';
@@ -50,8 +51,8 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case CreateBabyAccountView.routeName:
       var motherInfo = settings.arguments as SignupInputModel;
       return MaterialPageRoute(
-        builder: (context) =>   CreateBabyAccountView(
-          motherInfo : motherInfo,
+        builder: (context) => CreateBabyAccountView(
+          motherInfo: motherInfo,
         ),
       );
     case CryTranslatorView.routeName:
@@ -107,8 +108,11 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
         builder: (context) => const TipsAndTricksView(),
       );
     case SetReminderView.routeName:
+      final cubit = settings.arguments;
       return MaterialPageRoute(
-        builder: (context) => const SetReminderView(),
+        builder: (context) => SetReminderView(
+          cubit: cubit as ReminderCubit,
+        ),
       );
     case PodcastsView.routeName:
       return MaterialPageRoute(

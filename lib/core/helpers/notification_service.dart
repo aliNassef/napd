@@ -2,6 +2,7 @@
 import 'dart:developer';
 
 import 'package:awesome_notifications/awesome_notifications.dart';
+import 'package:napd/core/utils/app_colors.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:flutter_timezone/flutter_timezone.dart';
@@ -36,6 +37,8 @@ class NotificationService {
           channelDescription: 'Scheduled reminders',
           importance: NotificationImportance.High,
           playSound: true,
+          defaultColor: AppColors.primaryColor,
+          ledColor: AppColors.secondaryColor,
         ),
       ],
     );
@@ -65,7 +68,7 @@ class NotificationService {
     return DateTime.now().microsecondsSinceEpoch % (1 << 31);
   }
 
-  static Future<void> scheduleNotification({
+  Future<void> scheduleNotification({
     required DateTime scheduledTime,
     required String title,
     required String body,
@@ -107,5 +110,13 @@ class NotificationService {
         body: body,
       ),
     );
+  }
+
+    Future<void> cancelNotification(int id) async {
+    await AwesomeNotifications().cancel(id);
+  }
+
+  static Future<void> cancelAllNotifications() async {
+    await AwesomeNotifications().cancelAll();
   }
 }
