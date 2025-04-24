@@ -118,7 +118,7 @@
     "addnewbaby" : "Add new baby",
     "uploadprofileimage" : "Upload Profile Picture",
     "logIn" : "Log In",
-    "welcomemessage" : "Welcome again to MamaCare",
+    "welcomemessage" : "Welcome again to ",
     "orloginwith" : "Or Login with",
     "orregisterwith" : "Or Register with",
     "idonthaveanaccount" : "I don’t have account!",
@@ -131,5 +131,6 @@
     "print" : "Print", 
     "okay" : "Okay" ,
     "date" : "Date",
-    "noreminderyet" : "No reminder yet"
+    "noreminderyet" : "No reminder yet",
+    "mahd" : "Mahd"
 }

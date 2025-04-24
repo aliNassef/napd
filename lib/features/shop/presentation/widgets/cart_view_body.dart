@@ -52,7 +52,6 @@ class CartViewBody extends StatelessWidget {
                 },
                 backgroundColor: AppColors.darkBlueColor,
                 textColor: AppColors.greyColor,
-                padding: 50,
               ),
               VerticalSpace(20),
             ],

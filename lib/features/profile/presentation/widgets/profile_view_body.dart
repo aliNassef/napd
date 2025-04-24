@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/core/utils/app_strings.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -43,7 +42,6 @@ class ProfileViewBody extends StatelessWidget {
             hintText: '13 / 11 / 2002',
           ),
           DefaultAppButton(
-            padding: 40.w,
             text: AppStrings.updateProfile,
             backgroundColor: AppColors.darkBlueColor,
             textColor: Colors.white,

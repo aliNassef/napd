@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:napd/core/utils/app_strings.dart';
 import '../../../signup/presentation/view/signup_view.dart';
 import '../../../login/presentation/view/login_view.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
@@ -18,7 +19,7 @@ class StartViewBody extends StatelessWidget {
       children: [
         VerticalSpace(34),
         Text(
-          'Let’s get started!',
+          AppStrings.letsGetStarted,
           style: AppStyles.roboto48Bold.copyWith(
             color: AppColors.greyColor,
           ),
@@ -35,8 +36,7 @@ class StartViewBody extends StatelessWidget {
           onPressed: () {
             Navigator.pushReplacementNamed(context, SignupView.routeName);
           },
-          padding: context.width * 0.2,
-          text: 'Sign up',
+          text: AppStrings.createAccount,
           backgroundColor: AppColors.secondaryColor,
           textColor: AppColors.darkBlueColor,
         ),
@@ -48,8 +48,7 @@ class StartViewBody extends StatelessWidget {
               LoginView.routeName,
             );
           },
-          padding: context.width * 0.2,
-          text: 'Login',
+          text: AppStrings.login,
           backgroundColor: AppColors.greyColor,
           textColor: AppColors.darkBlueColor,
         ),

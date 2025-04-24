@@ -8,7 +8,6 @@ import 'package:napd/core/utils/app_images.dart';
 import 'package:napd/features/signup/data/model/signup_input_model.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../view/create_baby_account_view.dart';
-import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/custom_text_form_field.dart';
 import '../../../../core/widgets/default_app_button.dart';
@@ -142,7 +141,6 @@ class _MotherAccountFormState extends State<MotherAccountForm> {
           VerticalSpace(22),
           DefaultAppButton(
             onPressed: () => _checkSignUpButtonValidity(context),
-            padding: context.width * 0.2,
             text: AppStrings.addYourBaby,
             backgroundColor: Colors.white,
             textColor: AppColors.darkBlueColor,

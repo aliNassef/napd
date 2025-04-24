@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart'; 
+import 'package:flutter/material.dart';
 
 import '../../../../core/widgets/background_widget.dart';
 import '../widgets/login_view_body.dart';

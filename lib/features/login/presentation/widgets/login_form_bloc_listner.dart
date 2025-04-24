@@ -8,7 +8,6 @@ import '../../../../core/functions/show_loading_box.dart';
 import '../cubit/login_cubit.dart';
 import '../cubit/login_state.dart';
 
-import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/utils/app_colors.dart';
 
 import '../../../../core/widgets/custom_text_form_field.dart';
@@ -103,7 +102,6 @@ class _LoginFormBlocListnerState extends State<LoginFormBlocListner> {
               },
               backgroundColor: Colors.white,
               text: AppStrings.logIn,
-              padding: context.width * 0.2,
               textColor: AppColors.primaryColor,
             ),
           ),

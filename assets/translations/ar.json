@@ -118,7 +118,7 @@
   "addnewbaby" : "إضافة طفل جديد",
   "uploadprofileimage" : "تحميل صورة الملف الشخصي",
   "logIn" : "تسجيل الدخول",
-  "welcomemessage" : "مرحبًا مرة أخرى في MamaCare",
+  "welcomemessage" : "مرحبًا مرة أخرى في ",
   "orloginwith" : "أو تسجيل الدخول بواسطة",
   "idonthaveanaccount" : "ليس لدي حساب!",
   "orregisterwith" : "أو التسجيل بواسطة",
@@ -131,5 +131,6 @@
   "print" : "طباعة", 
   "okay" : "موافق"  ,
   "total": "المجموع" ,
-  "noreminderyet" : "لا يوجد تذكير حتى الآن"
+  "noreminderyet" : "لا يوجد تذكير حتى الآن",
+  "mahd" : "Mahd"
 }

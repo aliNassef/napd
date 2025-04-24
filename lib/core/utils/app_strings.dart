@@ -138,4 +138,5 @@ abstract class AppStrings {
   static String get print => 'print'.tr();
   static String get total => 'total'.tr();
   static String get noReminderYet => 'noreminderyet'.tr();
+  static String get mahd => 'mahd'.tr();
 }

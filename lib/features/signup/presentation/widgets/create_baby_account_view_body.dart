@@ -83,15 +83,6 @@ class _CreatebabyAccountViewBodyState extends State<CreatebabyAccountViewBody> {
             },
           ),
           VerticalSpace(50),
-          // // remove button or not
-          // DefaultAppButton(
-          //   text: AppStrings.addBaby,
-          //   onPressed: () {},
-          //   backgroundColor: AppColors.greyColor,
-          //   textColor: AppColors.primaryColor,
-          //   padding: 40,
-          // ),
-          // VerticalSpace(10),
           BlocListener<SignupCubit, SignUpState>(
             listener: (context, state) {
               if (state is SignUpSuccess) {
@@ -131,7 +122,6 @@ class _CreatebabyAccountViewBodyState extends State<CreatebabyAccountViewBody> {
               },
               backgroundColor: AppColors.secondaryColor,
               textColor: AppColors.primaryColor,
-              padding: 40,
             ),
           ),
           VerticalSpace(30),

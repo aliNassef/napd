@@ -16,13 +16,24 @@ class LoginViewBody extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Text(
-            AppStrings.welcomeMessage,
-            style: AppStyles.roboto48Bold.copyWith(
-              color: Colors.white,
-            ),
-            textAlign: TextAlign.center,
-          ),
+          Text.rich(
+              textAlign: TextAlign.center,
+              TextSpan(
+                children: [
+                  TextSpan(
+                    text: AppStrings.welcomeMessage,
+                    style: AppStyles.roboto48Bold.copyWith(
+                      color: Colors.white,
+                    ),
+                  ),
+                  TextSpan(
+                    text: AppStrings.mahd,
+                    style: AppStyles.roboto48Bold.copyWith(
+                      color: AppColors.secondaryColor,
+                    ),
+                  ),
+                ],
+              )),
           VerticalSpace(32),
           Text(
             AppStrings.logIn,
@@ -61,4 +72,4 @@ class LoginViewBody extends StatelessWidget {
       ),
     );
   }
-} 
+}
