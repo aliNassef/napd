@@ -1,9 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
+import 'package:napd/features/parenting_resources/presentation/cubits/activity_cubit/activity_cubit.dart';
 import '../../features/parenting_resources/data/repo/parent_recource_repo.dart';
 import '../../features/parenting_resources/data/repo/parent_recource_repo_impl.dart';
-import '../../features/parenting_resources/data/source/recipe_remote_datasource.dart';
+import '../../features/parenting_resources/data/source/parent_resource_remote_datasource.dart';
 import '../../features/parenting_resources/presentation/cubits/recipe_cubit/recipe_cubit.dart';
 import '../cubit/cubit/app_localization_cubit.dart';
 import '../helpers/firebase_auth_service.dart';
@@ -153,13 +154,16 @@ void _parentResourceFeature() {
   injector.registerFactory<RecipeCubit>(
     () => RecipeCubit(injector<ParentRecourceRepo>()),
   );
+  injector.registerFactory<ActivityCubit>(
+    () => ActivityCubit(injector<ParentRecourceRepo>()),
+  );
   injector.registerLazySingleton<ParentRecourceRepo>(
     () => ParentRecourceRepoImpl(
-      recipeDataSource: injector<RecipeRemoteDataSource>(),
+      parentResourceDataSource: injector<ParentResourceRemoteDataSource>(),
     ),
   );
-  injector.registerLazySingleton<RecipeRemoteDataSource>(
-    () => RecipeRemoteDataSourceImpl(
+  injector.registerLazySingleton<ParentResourceRemoteDataSource>(
+    () => ParentResourceRemoteDataSourceImpl(
       api: injector<ApiConsumer>(),
     ),
   );

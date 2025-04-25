@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/features/parenting_resources/data/models/activity_model.dart';
 import '../../../../core/utils/app_colors.dart';
 
 import '../../../../core/utils/app_shadows.dart';
@@ -13,7 +14,9 @@ import '../../../../core/widgets/spacers.dart';
 class ActivityItem extends StatelessWidget {
   const ActivityItem({
     super.key,
+    required this.activityModel,
   });
+  final ActivityModel activityModel;
 
   @override
   Widget build(BuildContext context) {
@@ -31,13 +34,13 @@ class ActivityItem extends StatelessWidget {
         spacing: 10.h,
         children: [
           Text(
-            'Blocks, Jigsaws, and Shape Sorters',
+            activityModel.title,
             style: AppStyles.roboto24SemiBold.copyWith(
               color: AppColors.secondaryColor,
             ),
           ),
           Text(
-            'Playing with blocks, jigsaws, and shape sorters all lay the foundations of spatial thinking, logical reasoning, ordering, and recognising various shapes, sizes, and colours.',
+            activityModel.content,
             style: AppStyles.roboto14SemiBold.copyWith(
               color: AppColors.primaryColor,
             ),
@@ -48,8 +51,7 @@ class ActivityItem extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: CustomNetworkImage(
-                img:
-                    'https://r2.starryai.com/results/1042152870/6eb099de-74c0-460b-900e-551a3e7c540f.webp',
+                img: activityModel.imageUrl,
                 height: 188.h,
                 width: 270.w,
               ),
