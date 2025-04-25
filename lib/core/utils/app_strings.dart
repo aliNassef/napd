@@ -139,4 +139,10 @@ abstract class AppStrings {
   static String get total => 'total'.tr();
   static String get noReminderYet => 'noreminderyet'.tr();
   static String get mahd => 'mahd'.tr();
+  static String get resetYourPassword => 'resetyourpassword'.tr();
+  static String get weHaveSendRestCode => 'wehavesendrestcodetoyouremail'.tr();
+  static String get sendCode => 'sendcode'.tr();
+  static String get newPassword => 'newpassword'.tr();
+  static String get goodNews => 'goodnews'.tr();
+  static String get confirm => 'confirm'.tr();
 }

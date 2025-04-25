@@ -20,6 +20,7 @@ abstract class EndPoints {
   static const String addHospitlaToFav = 'Hospital/AddToFav/';
   static const String getFavoriteHospital = 'Hospital/GetFavouriteHospitals';
   static const String delFavoriteHospital = 'Hospital/DeleteFav/';
+  static const String recipes = 'Recipes';
 }
 
 abstract class ApiKey {

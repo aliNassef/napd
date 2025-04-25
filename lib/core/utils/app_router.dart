@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../features/login/presentation/view/forget_password_view.dart';
+import '../../features/login/presentation/view/reset_password_view.dart';
 import '../models/baby_model.dart';
 import '../../features/signup/data/model/signup_input_model.dart';
 import '../../features/groups/presentation/view/podcasts_details_view.dart';
@@ -201,6 +203,14 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case ChatBotView.routeName:
       return MaterialPageRoute(
         builder: (context) => const ChatBotView(),
+      );
+    case ForgetPasswordView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const ForgetPasswordView(),
+      );
+    case ResetPasswordView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const ResetPasswordView(),
       );
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());

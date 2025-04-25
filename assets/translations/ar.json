@@ -132,5 +132,11 @@
   "okay" : "موافق"  ,
   "total": "المجموع" ,
   "noreminderyet" : "لا يوجد تذكير حتى الآن",
-  "mahd" : "Mahd"
+  "mahd" : "Mahd",
+  "resetyourpassword" : "إعادة تعيين كلمة المرور",
+  "sendcode" : "إرسال الرمز",
+  "wehavesendrestcodetoyouremail" :"لقد أرسلنا رمز إعادة تعيين كلمة المرور إلى بريدك الإلكتروني!",
+  "newpassword" : "كلمة المرور الجديدة",
+  "goodnews" : "أخبار جيدة! اكتب كلمة المرور الجديدة الآن!",
+  "confirm" : "تأكيد"
 }

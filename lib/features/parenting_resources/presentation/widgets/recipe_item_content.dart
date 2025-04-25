@@ -12,10 +12,13 @@ class RecipeItemContent extends StatelessWidget {
     super.key,
     required this.nutritionalPoints,
     required this.ingredientsPoints,
+    required this.image,
+    required this.title,
   });
   final List<String> nutritionalPoints;
   final List<String> ingredientsPoints;
-
+  final String image;
+  final String title;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -24,7 +27,7 @@ class RecipeItemContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
-              'Apple and Blueberry Puree',
+              title,
               style: AppStyles.roboto24SemiBold.copyWith(
                 color: AppColors.darkBlueColor,
               ),
@@ -43,7 +46,7 @@ class RecipeItemContent extends StatelessWidget {
             ),
           ],
         ),
-        ...nutritionalPoints.map(
+        ...ingredientsPoints.map(
           (point) => RecipePointItem(point: point),
         ),
         VerticalSpace(11),
@@ -67,8 +70,7 @@ class RecipeItemContent extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(15),
           child: CustomNetworkImage(
-            img:
-                'https://images.nightcafe.studio/jobs/3Ri6GfFBAhUUHUVG251W/3Ri6GfFBAhUUHUVG251W--1--h7lk0.jpg?tr=w-1600,c-at_max',
+            img: image,
             width: 270.w,
             height: 188.h,
           ),

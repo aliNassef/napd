@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../core/utils/app_strings.dart';
+import '../view/forget_password_view.dart';
 import 'login_form_bloc_listner.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/another_way_sign.dart';
@@ -57,7 +58,12 @@ class LoginViewBody extends StatelessWidget {
           ),
           VerticalSpace(22),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(
+                context,
+                ForgetPasswordView.routeName,
+              );
+            },
             child: Text(
               AppStrings.forgotPassword,
               style: AppStyles.roboto24Regular.copyWith(

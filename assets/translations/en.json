@@ -132,5 +132,11 @@
     "okay" : "Okay" ,
     "date" : "Date",
     "noreminderyet" : "No reminder yet",
-    "mahd" : "Mahd"
+    "mahd" : "Mahd",
+    "resetyourpassword" : "Reset your password",
+    "sendcode" : "Send code",
+    "wehavesendrestcodetoyouremail" :"We have send rest code to your email!",
+    "newpassword" : "New password",
+    "goodnews" : "Good news! write new password now!",
+    "confirm" : "Confirm"
 }

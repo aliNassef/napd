@@ -1,6 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
+import '../../features/parenting_resources/data/repo/parent_recource_repo.dart';
+import '../../features/parenting_resources/data/repo/parent_recource_repo_impl.dart';
+import '../../features/parenting_resources/data/source/recipe_remote_datasource.dart';
+import '../../features/parenting_resources/presentation/cubits/recipe_cubit/recipe_cubit.dart';
 import '../cubit/cubit/app_localization_cubit.dart';
 import '../helpers/firebase_auth_service.dart';
 import '../helpers/notification_service.dart';
@@ -39,6 +43,7 @@ Future<void> setupServiceLocator() async {
   _setupCoreFeature();
   _setupExernalFeature();
   _setupReminderFeature();
+  _parentResourceFeature();
 }
 
 void _setupExernalFeature() {
@@ -140,6 +145,22 @@ void _setupReminderFeature() {
     () => ReminderLocalDatasourceImpl(
       cacheHelper: CacheHelper(),
       notificationService: NotificationService(),
+    ),
+  );
+}
+
+void _parentResourceFeature() {
+  injector.registerFactory<RecipeCubit>(
+    () => RecipeCubit(injector<ParentRecourceRepo>()),
+  );
+  injector.registerLazySingleton<ParentRecourceRepo>(
+    () => ParentRecourceRepoImpl(
+      recipeDataSource: injector<RecipeRemoteDataSource>(),
+    ),
+  );
+  injector.registerLazySingleton<RecipeRemoteDataSource>(
+    () => RecipeRemoteDataSourceImpl(
+      api: injector<ApiConsumer>(),
     ),
   );
 }

@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/utils/app_shadows.dart';
+import '../../data/models/recipe_model.dart';
 import 'recipe_item_content.dart';
 
 class RecipeItem extends StatelessWidget {
   const RecipeItem({
     super.key,
+    required this.recipeModel,
   });
-
+  final RecipeModel recipeModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,16 +23,16 @@ class RecipeItem extends StatelessWidget {
       ),
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
       child: RecipeItemContent(
+        title: recipeModel.title,
+        image: recipeModel.imageUrl,
         nutritionalPoints: [
-          '1 apple (peeled and chopped',
-          '1/4 cup blueberries',
-          '1/2 cup water',
+          'Calories:${recipeModel.calories}',
+          'Carbohydrates:${recipeModel.carbohydrates}',
+          'Fiber:${recipeModel.fiber}',
+          'Protein:${recipeModel.protein}',
+          'Natural Sugars:${recipeModel.naturalSugars}',
         ],
-        ingredientsPoints: [
-          '1 apple (peeled and chopped',
-          '1/4 cup blueberries',
-          '1/2 cup water',
-        ],
+        ingredientsPoints: recipeModel.ingredients,
       ),
     );
   }

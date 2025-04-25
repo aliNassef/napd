@@ -6,10 +6,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/core/cubit/cubit/app_localization_cubit.dart';
 import 'package:napd/core/di/service_locator.dart';
-import 'package:napd/features/splash/presentation/view/splash_view.dart';
 import 'features/login/presentation/cubit/login_cubit.dart';
 import 'core/utils/app_router.dart';
 import 'core/utils/app_themes.dart';
+import 'features/login/presentation/view/login_view.dart';
 
 class Napd extends StatelessWidget {
   const Napd({super.key});
@@ -49,7 +49,7 @@ class Napd extends StatelessWidget {
                 builder: DevicePreview.appBuilder,
                 theme: getLightTheme(),
                 onGenerateRoute: onGenerateRoute,
-                initialRoute: SplashView.routeName,
+                initialRoute: LoginView.routeName,
               );
             },
           ),

@@ -43,7 +43,7 @@ class ReminderViewBody extends StatelessWidget {
                 ),
                 itemCount: 10,
                 separatorBuilder: (_, __) => VerticalSpace(16),
-              ));
+              ),);
         }
         if (state is ReminderError) {
           return CustomFailureWidget(errMessage: state.message);

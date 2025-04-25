@@ -163,7 +163,7 @@ abstract class AppStyles {
     fontSize: 32,
     fontWeight: FontWeight.w500,
   );
-   static final roboto32Regular = _createStyle(
+  static final roboto32Regular = _createStyle(
     fontFamily: 'Roboto',
     fontSize: 32,
     fontWeight: FontWeight.w400,
@@ -177,6 +177,11 @@ abstract class AppStyles {
     fontFamily: 'Roboto',
     fontSize: 36,
     fontWeight: FontWeight.w700,
+  );
+  static final roboto40SemiBold = _createStyle(
+    fontFamily: 'Roboto',
+    fontSize: 40,
+    fontWeight: FontWeight.w600,
   );
   static final roboto40Bold = _createStyle(
     fontFamily: 'Roboto',
