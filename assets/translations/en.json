@@ -141,5 +141,11 @@
     "confirm" : "Confirm",
     "editprofile" : "Edit profile",
     "deleteaccount" : "Delete account",
-    "shareprofile" : "Share profile"
+    "shareprofile" : "Share profile",
+    "calories" : "Calories",
+    "carbohydrates" : "Carbohydrates",
+    "protein" : "Protein",
+    "naturalSugars" : "Natural Sugars",
+    "fiber" : "Fiber"
 }
+ 

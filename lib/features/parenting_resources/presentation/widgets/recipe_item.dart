@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/core/utils/app_strings.dart';
 
 import '../../../../core/utils/app_shadows.dart';
 import '../../data/models/recipe_model.dart';
@@ -26,11 +27,11 @@ class RecipeItem extends StatelessWidget {
         title: recipeModel.title,
         image: recipeModel.imageUrl,
         nutritionalPoints: [
-          'Calories:${recipeModel.calories}',
-          'Carbohydrates:${recipeModel.carbohydrates}',
-          'Fiber:${recipeModel.fiber}',
-          'Protein:${recipeModel.protein}',
-          'Natural Sugars:${recipeModel.naturalSugars}',
+          '${AppStrings.calories}:${recipeModel.calories}',
+          '${AppStrings.carbohydrates}:${recipeModel.carbohydrates}',
+          '${AppStrings.fiber}:${recipeModel.fiber}',
+          '${AppStrings.protein}:${recipeModel.protein}',
+          '${AppStrings.naturalSugars}:${recipeModel.naturalSugars}',
         ],
         ingredientsPoints: recipeModel.ingredients,
       ),

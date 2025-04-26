@@ -141,5 +141,10 @@
   "confirm" : "تأكيد",
   "editprofile" : "تعديل الملف الشخصي",
   "deleteaccount" : "حذف الحساب",
-  "shareprofile" : "مشاركة الملف الشخصي"
+  "shareprofile" : "مشاركة الملف الشخصي",
+  "calories" : "السعرات الحرارية",
+  "carbohydrates" : "الكربوهيدرات",
+  "protein" : "البروتين",
+  "naturalSugars" : "السكريات الطبيعية",
+  "fiber" : "الألياف"
 }

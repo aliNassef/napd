@@ -148,4 +148,9 @@ abstract class AppStrings {
   static String get deleteProfile => 'deleteaccount'.tr();
   static String get editProfile => 'editprofile'.tr();
   static String get shareProfile => 'shareprofile'.tr();
+  static String get calories => 'calories'.tr();
+  static String get carbohydrates => 'carbohydrates'.tr();
+  static String get protein => 'protein'.tr();
+  static String get naturalSugars => 'naturalsugars'.tr();
+  static String get fiber => 'fiber'.tr();
 }
