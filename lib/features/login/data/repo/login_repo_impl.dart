@@ -23,6 +23,7 @@ class LoginRepoImpl extends LoginRepo {
     try {
       final user = await _loginRemoteSource.login(loginInputModel: loginInput);
       await _loginLocalSource.cacheUserData(user);
+
       return right(user.babies);
     } on ServerException catch (e) {
       return left(
@@ -33,13 +34,11 @@ class LoginRepoImpl extends LoginRepo {
 
   @override
   Future<Either<Failure, void>> loginWithFacebook() {
-    // TODO: implement loginWithFacebook
     throw UnimplementedError();
   }
 
   @override
   Future<Either<Failure, void>> loginWithGoogle() {
-    // TODO: implement loginWithGoogle
     throw UnimplementedError();
   }
 

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CacheHelper {
@@ -15,6 +17,9 @@ class CacheHelper {
 //! this method to put data in local database using key
 
   Future<bool> saveData({required String key, required dynamic value}) async {
+    if (value is Map<String, dynamic>) {
+      return await _sharedPreferences.setString(key, json.encode(value));
+    }
     if (value is bool) {
       return await _sharedPreferences.setBool(key, value);
     }

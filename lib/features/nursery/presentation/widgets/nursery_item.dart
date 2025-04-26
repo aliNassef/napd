@@ -41,10 +41,12 @@ class NurseryItem extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Text(
-                      hospital.title!,
-                      style: AppStyles.rubik18Medium.copyWith(
-                        color: AppColors.darkBlueColor,
+                    Expanded(
+                      child: Text(
+                        hospital.title!,
+                        style: AppStyles.rubik18Medium.copyWith(
+                          color: AppColors.darkBlueColor,
+                        ),
                       ),
                     ),
                     const Spacer(),
