@@ -21,7 +21,7 @@ class RecipeItem extends StatelessWidget {
         boxShadow: [
           AppShadows.shadow4,
         ],
-      ),
+      ), 
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
       child: RecipeItemContent(
         title: recipeModel.title,

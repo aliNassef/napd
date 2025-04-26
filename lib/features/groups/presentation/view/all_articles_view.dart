@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:napd/core/di/service_locator.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widgets/appbars/custom_app_bar.dart';
+import '../cubits/article_cubit/article_cubit.dart';
 import '../widgets/all_article_view_body.dart';
 
 class AllArticlesView extends StatelessWidget {
@@ -13,7 +16,10 @@ class AllArticlesView extends StatelessWidget {
         title: AppStrings.articles,
       ),
       body: SafeArea(
-        child: const AllArticlesViewBody(),
+        child: BlocProvider(
+          create: (context) => injector<ArticleCubit>()..getArticles(),
+          child: const AllArticlesViewBody(),
+        ),
       ),
     );
   }

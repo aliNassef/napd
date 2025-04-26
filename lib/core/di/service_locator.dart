@@ -6,6 +6,10 @@ import '../../features/baby/data/repo/baby_repo.dart';
 import '../../features/baby/data/repo/baby_repo_impl.dart';
 import '../../features/baby/data/source/baby_local_datasource.dart';
 import '../../features/baby/presentation/cubit/get_cubit/get_baby_cubit.dart';
+import '../../features/groups/data/repo/group_repo.dart';
+import '../../features/groups/data/repo/group_repo_impl.dart';
+import '../../features/groups/data/source/group_remote_source.dart';
+import '../../features/groups/presentation/cubits/article_cubit/article_cubit.dart';
 import '../../features/parenting_resources/data/repo/parent_recource_repo.dart';
 import '../../features/parenting_resources/data/repo/parent_recource_repo_impl.dart';
 import '../../features/parenting_resources/data/source/parent_resource_remote_datasource.dart';
@@ -51,6 +55,7 @@ Future<void> setupServiceLocator() async {
   _setupReminderFeature();
   _parentResourceFeature();
   _babyFeature();
+  _groupFeature();
 }
 
 void _setupExernalFeature() {
@@ -194,5 +199,21 @@ void _babyFeature() {
   );
   injector.registerLazySingleton<BabyLocalDatasource>(
     () => BabyLocalDatasourceImpl(),
+  );
+}
+
+void _groupFeature() {
+  injector.registerFactory<ArticleCubit>(
+    () => ArticleCubit(injector<GroupRepo>()),
+  );
+  injector.registerLazySingleton<GroupRepo>(
+    () => GroupRepoImpl(
+      remoteSource: injector<GroupRemoteSource>(),
+    ),
+  );
+  injector.registerLazySingleton<GroupRemoteSource>(
+    () => GroupRemoteSourceImpl(
+      api: injector<ApiConsumer>(),
+    ),
   );
 }

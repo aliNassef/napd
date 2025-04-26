@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:napd/features/groups/data/model/article_model.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
@@ -11,8 +12,8 @@ import '../../../../core/widgets/spacers.dart';
 import '../view/article_details_view.dart';
 
 class AllArticleItem extends StatelessWidget {
-  const AllArticleItem({super.key});
-
+  const AllArticleItem({super.key, required this.articleModel});
+  final ArticleModel articleModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -34,8 +35,7 @@ class AllArticleItem extends StatelessWidget {
               child: CustomNetworkImage(
                 height: 100.h,
                 width: 100.w,
-                img:
-                    'https://r2.starryai.com/results/1042152870/6eb099de-74c0-460b-900e-551a3e7c540f.webp',
+                img: articleModel.imageUrl,
               ),
             ),
             HorizantalSpace(16),
@@ -44,7 +44,7 @@ class AllArticleItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'The importance of parenting in a digital age',
+                    articleModel.title,
                     style: AppStyles.roboto16Medium.copyWith(
                       color: AppColors.darkBlueColor,
                     ),
@@ -60,7 +60,7 @@ class AllArticleItem extends StatelessWidget {
                         width: 20.w,
                       ),
                       Text(
-                        '2hr ago',
+                        articleModel.createdAt.toString(),
                         style: AppStyles.roboto11Regular.copyWith(
                           color: Color(0xff808080),
                         ),
@@ -71,7 +71,7 @@ class AllArticleItem extends StatelessWidget {
                         size: 17,
                       ),
                       Text(
-                        '360 views',
+                        articleModel.views.toString(),
                         style: AppStyles.roboto11Regular.copyWith(
                           color: Color(0xff808080),
                         ),

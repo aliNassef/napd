@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:napd/core/api/end_ponits.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class CustomNetworkImage extends StatelessWidget {
@@ -20,7 +19,7 @@ class CustomNetworkImage extends StatelessWidget {
     return CachedNetworkImage(
       width: width,
       height: height,
-      imageUrl: EndPoints.baseUrl + img,
+      imageUrl: img,
       fit: fit,
       errorWidget: (_, __, ___) => const Icon(Icons.error),
       placeholder: (_, __) => Skeletonizer(
