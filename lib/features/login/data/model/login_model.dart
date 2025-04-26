@@ -1,4 +1,4 @@
-import '../../../../core/models/baby_model.dart';
+import '../../../baby/data/models/baby_model.dart';
 
 class UserModel {
   final int id;

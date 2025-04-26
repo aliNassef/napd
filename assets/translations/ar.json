@@ -138,5 +138,8 @@
   "wehavesendrestcodetoyouremail" :"لقد أرسلنا رمز إعادة تعيين كلمة المرور إلى بريدك الإلكتروني!",
   "newpassword" : "كلمة المرور الجديدة",
   "goodnews" : "أخبار جيدة! اكتب كلمة المرور الجديدة الآن!",
-  "confirm" : "تأكيد"
+  "confirm" : "تأكيد",
+  "editprofile" : "تعديل الملف الشخصي",
+  "deleteaccount" : "حذف الحساب",
+  "shareprofile" : "مشاركة الملف الشخصي"
 }

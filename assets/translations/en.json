@@ -138,5 +138,8 @@
     "wehavesendrestcodetoyouremail" :"We have send rest code to your email!",
     "newpassword" : "New password",
     "goodnews" : "Good news! write new password now!",
-    "confirm" : "Confirm"
+    "confirm" : "Confirm",
+    "editprofile" : "Edit profile",
+    "deleteaccount" : "Delete account",
+    "shareprofile" : "Share profile"
 }

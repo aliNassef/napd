@@ -1,5 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:napd/core/api/end_ponits.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 class CustomNetworkImage extends StatelessWidget {
   const CustomNetworkImage({
@@ -18,13 +20,15 @@ class CustomNetworkImage extends StatelessWidget {
     return CachedNetworkImage(
       width: width,
       height: height,
-      imageUrl: img,
+      imageUrl: EndPoints.baseUrl + img,
       fit: fit,
       errorWidget: (_, __, ___) => const Icon(Icons.error),
-      placeholder: (_, __) => const Padding(
-        padding: EdgeInsets.all(8.0),
-        child: Center(
-          child: CircularProgressIndicator(),
+      placeholder: (_, __) => Skeletonizer(
+        enabled: true,
+        child: Container(
+          width: width,
+          height: height,
+          color: Colors.grey[300],
         ),
       ),
     );

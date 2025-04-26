@@ -3,7 +3,7 @@ import '../model/login_input_model.dart';
 import '../source/login_local_data_source.dart';
 import '../../../../core/errors/exceptions.dart';
 import '../../../../core/errors/failure.dart';
-import '../../../../core/models/baby_model.dart';
+import '../../../baby/data/models/baby_model.dart';
 import '../source/login_remote_source.dart';
 import 'login_repo.dart';
 

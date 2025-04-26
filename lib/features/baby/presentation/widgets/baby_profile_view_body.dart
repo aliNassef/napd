@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:napd/features/baby/presentation/cubit/get_cubit/get_baby_cubit.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
+import '../../../../core/utils/app_strings.dart';
+import '../../../../core/widgets/custom_failure_widget.dart';
 import '../../../../core/widgets/spacers.dart';
 import 'baby_profile_image.dart';
 import '../../../../core/utils/app_styles.dart';
@@ -15,62 +19,89 @@ class BabyProfileViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          VerticalSpace(40),
-          Align(
-            alignment: Alignment.center,
-            child: BabyProfileImage(),
-          ),
-          VerticalSpace(40),
-          Text(
-            'Karma Ahmed',
-            style: AppStyles.roboto32Bold.copyWith(
-              color: AppColors.darkBlueColor,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          Text(
-            '5 months',
-            style: AppStyles.roboto20Medium.copyWith(
-              color: AppColors.secondaryColor,
-            ),
-            textAlign: TextAlign.center,
-          ),
-          VerticalSpace(70),
-          BabyProfileButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed(BabyProfileDetailsView.routeName);
-            },
-            backgroundColor: AppColors.secondaryColor,
-            icon: AppSvgs.editProfileIcon,
-            text: 'Edit Profile',
-          ),
-          VerticalSpace(28),
-          BabyProfileButton(
-            onPressed: () {
-              // Navigator.of(context).pushNamed(AddBabyView.routeName);
-            },
-            backgroundColor: Color(0xffDBF9FF),
-            icon: AppSvgs.addBabyIcon,
-            text: 'Add Baby',
-          ),
-          VerticalSpace(28),
-          BabyProfileButton(
-            backgroundColor: Color(0xffF9E9FC),
-            icon: AppSvgs.deleteIcon,
-            text: 'Delete Baby',
-          ),
-          VerticalSpace(28),
-          BabyProfileButton(
-            backgroundColor: Color(0xffBDCAFF),
-            icon: AppSvgs.shareIcon,
-            text: 'Share Profile',
-          ),
-        ],
-      ).withHorizontalPadding(16),
+    return BlocBuilder<GetBabyCubit, GetBabyState>(
+      buildWhen: (_, currentState) {
+        return currentState is GetBabyLoaded ||
+            currentState is GetBabyFailure ||
+            currentState is GetBabyLoading;
+      },
+      builder: (context, state) {
+        if (state is GetBabyFailure) {
+          return CustomFailureWidget(
+            errMessage: state.errorMessage,
+          );
+        }
+
+        if (state is GetBabyLoading) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+
+        if (state is GetBabyLoaded) {
+          return SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                VerticalSpace(40),
+                Align(
+                  alignment: Alignment.center,
+                  child: BabyProfileImage(
+                    image: state.baby.profilePicUrl ?? '',
+                  ),
+                ),
+                VerticalSpace(40),
+                Text(
+                  state.baby.babyName!,
+                  style: AppStyles.roboto32Bold.copyWith(
+                    color: AppColors.darkBlueColor,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  state.baby.birthDate!,
+                  style: AppStyles.roboto20Medium.copyWith(
+                    color: AppColors.secondaryColor,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                VerticalSpace(70),
+                BabyProfileButton(
+                  onPressed: () {
+                    Navigator.of(context)
+                        .pushNamed(BabyProfileDetailsView.routeName);
+                  },
+                  backgroundColor: AppColors.secondaryColor,
+                  icon: AppSvgs.editProfileIcon,
+                  text:AppStrings.editProfile,
+                ),
+                VerticalSpace(28),
+                BabyProfileButton(
+                  onPressed: () {
+                    // Navigator.of(context).pushNamed(.routeName);
+                  },
+                  backgroundColor: Color(0xffDBF9FF),
+                  icon: AppSvgs.addBabyIcon,
+                  text: AppStrings.addBaby,
+                ),
+                VerticalSpace(28),
+                BabyProfileButton(
+                  backgroundColor: Color(0xffF9E9FC),
+                  icon: AppSvgs.deleteIcon,
+                  text: AppStrings.deleteProfile,
+                ),
+                VerticalSpace(28),
+                BabyProfileButton(
+                  backgroundColor: Color(0xffBDCAFF),
+                  icon: AppSvgs.shareIcon,
+                  text: AppStrings.shareProfile,
+                ),
+              ],
+            ).withHorizontalPadding(16),
+          );
+        }
+        return SizedBox.shrink();
+      },
     );
   }
 }

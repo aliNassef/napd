@@ -49,7 +49,7 @@ class NurseryItem extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Spacer(),
+                    // const Spacer(),
                     FavoriteButtonBlocConsumer(hospital: hospital),
                   ],
                 ),

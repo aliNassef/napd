@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import '../../../../core/models/baby_model.dart';
+import '../../../baby/data/models/baby_model.dart';
 import '../model/login_input_model.dart';
 import '../../../../core/errors/failure.dart';
 

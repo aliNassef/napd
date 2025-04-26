@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../features/login/presentation/view/forget_password_view.dart';
 import '../../features/login/presentation/view/reset_password_view.dart';
-import '../models/baby_model.dart';
+import '../../features/baby/data/models/baby_model.dart';
 import '../../features/signup/data/model/signup_input_model.dart';
 import '../../features/groups/presentation/view/podcasts_details_view.dart';
 import '../../features/home/presentation/view/chat_bot_view.dart';

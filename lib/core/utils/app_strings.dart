@@ -145,4 +145,7 @@ abstract class AppStrings {
   static String get newPassword => 'newpassword'.tr();
   static String get goodNews => 'goodnews'.tr();
   static String get confirm => 'confirm'.tr();
+  static String get deleteProfile => 'deleteaccount'.tr();
+  static String get editProfile => 'editprofile'.tr();
+  static String get shareProfile => 'shareprofile'.tr();
 }

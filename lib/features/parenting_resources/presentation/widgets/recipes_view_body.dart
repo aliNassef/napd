@@ -34,30 +34,34 @@ class RecipesViewBody extends StatelessWidget {
           return CustomFailureWidget(errMessage: state.errorMessage);
         }
         if (state is RecipeLoading) {
-          var dummyRecipeModel = RecipeModel(
-            title: 'Banana Oatmeal Mash',
-            ingredients: ['1 small banana', '2 tbsp oats', '1/4 cup milk'],
-            calories: '120 kcal',
-            carbohydrates: '22 g',
-            fiber: '3 g',
-            protein: '3 g',
-            naturalSugars: '12 g',
-            imageUrl: 'assets/images/recipes/banana_oatmeal.jpg',
-          );
-          return Skeletonizer(
-            enabled: true,
-            child: ListView.separated(
-              padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
-              itemBuilder: (_, index) => RecipeItem(
-                recipeModel: dummyRecipeModel,
-              ),
-              separatorBuilder: (_, __) => VerticalSpace(18),
-              itemCount: 10,
-            ),
-          );
+          return _buildRecipesLoadingItems();
         }
         return SizedBox.shrink();
       },
+    );
+  }
+
+  Skeletonizer _buildRecipesLoadingItems() {
+       var dummyRecipeModel = RecipeModel(
+      title: 'Banana Oatmeal Mash',
+      ingredients: ['1 small banana', '2 tbsp oats', '1/4 cup milk'],
+      calories: '120 kcal',
+      carbohydrates: '22 g',
+      fiber: '3 g',
+      protein: '3 g',
+      naturalSugars: '12 g',
+      imageUrl: 'assets/images/recipes/banana_oatmeal.jpg',
+    );
+    return Skeletonizer(
+      enabled: true,
+      child: ListView.separated(
+        padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
+        itemBuilder: (_, index) => RecipeItem(
+          recipeModel: dummyRecipeModel,
+        ),
+        separatorBuilder: (_, __) => VerticalSpace(18),
+        itemCount: 10,
+      ),
     );
   }
 }

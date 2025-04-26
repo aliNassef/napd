@@ -1,14 +1,16 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:napd/core/api/end_ponits.dart';
 import '../../../../core/helpers/image_picker_helper.dart';
 import '../../../../core/utils/app_images.dart';
 
 class BabyProfileImage extends StatelessWidget {
   const BabyProfileImage({
     super.key,
+    required this.image,
   });
-
+  final String image;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -16,7 +18,7 @@ class BabyProfileImage extends StatelessWidget {
         CircleAvatar(
           radius: 75,
           backgroundImage: CachedNetworkImageProvider(
-            'https://images.nightcafe.studio/jobs/3Ri6GfFBAhUUHUVG251W/3Ri6GfFBAhUUHUVG251W--1--h7lk0.jpg?tr=w-1600,c-at_max',
+            EndPoints.baseUrl + image,
           ),
         ),
         Positioned(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/models/baby_model.dart';
+import '../../../baby/data/models/baby_model.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../cubit/login_cubit.dart';
 import '../cubit/login_state.dart';
