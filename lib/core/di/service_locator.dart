@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
+import 'package:napd/features/signup/data/sources/signup_local_data_source.dart';
 import '../../features/parenting_resources/data/repo/parent_recource_repo.dart';
 import '../../features/parenting_resources/data/repo/parent_recource_repo_impl.dart';
 import '../../features/parenting_resources/data/source/recipe_remote_datasource.dart';
@@ -88,7 +89,15 @@ void _setupSignupFeature() {
     ),
   );
   injector.registerLazySingleton<SignupRepo>(
-    () => SignupRepoImpl(signupRemoteSource: injector<SignupRemoteSource>()),
+    () => SignupRepoImpl(
+      signupRemoteSource: injector<SignupRemoteSource>(),
+      signupLocalDataSource: injector<SignupLocalDataSource>(),
+    ),
+  );
+  injector.registerLazySingleton<SignupLocalDataSource>(
+    () => SignupLocalDataSourceImpl(
+      cacheHelper: CacheHelper(),
+    ),
   );
 }
 
