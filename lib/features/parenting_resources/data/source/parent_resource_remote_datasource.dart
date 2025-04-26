@@ -1,16 +1,20 @@
+import 'package:napd/features/parenting_resources/data/models/activity_model.dart';
+
 import '../../../../core/api/api_consumer.dart';
 import '../../../../core/api/end_ponits.dart';
 import '../../../../core/errors/error_model.dart';
 import '../../../../core/errors/exceptions.dart';
 import '../models/recipe_model.dart';
 
-abstract class RecipeRemoteDataSource {
+abstract class ParentResourceRemoteDataSource {
   Future<List<RecipeModel>> getRecipes();
+  Future<List<ActivityModel>> getActivites();
 }
 
-class RecipeRemoteDataSourceImpl implements RecipeRemoteDataSource {
+class ParentResourceRemoteDataSourceImpl
+    implements ParentResourceRemoteDataSource {
   final ApiConsumer api;
-  RecipeRemoteDataSourceImpl({required this.api});
+  ParentResourceRemoteDataSourceImpl({required this.api});
 
   @override
   Future<List<RecipeModel>> getRecipes() async {
@@ -25,6 +29,17 @@ class RecipeRemoteDataSourceImpl implements RecipeRemoteDataSource {
           response.data,
         ),
       );
+    }
+  }
+
+  @override
+  Future<List<ActivityModel>> getActivites() async {
+    final response = await api.get(EndPoints.activites);
+    if (response.statusCode == 200) {
+      final List<dynamic> data = response.data;
+      return data.map((activity) => ActivityModel.fromJson(activity)).toList();
+    } else {
+      throw ServerException(ErrorModel.fromJson(response.data));
     }
   }
 }

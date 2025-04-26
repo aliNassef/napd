@@ -6,5 +6,5 @@ import '../../../../core/errors/failure.dart';
 
 abstract class SignupRepo {
   Future<Either<Failure, SignupModel>> signup(
-      SignupInputModel signupInputEntity);
+      SignupInputModel signupInputModel);
 }
