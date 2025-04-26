@@ -1,15 +1,16 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
-import 'package:napd/features/baby/presentation/cubit/get_cubit/get_baby_cubit.dart';
 import 'package:napd/features/parenting_resources/presentation/cubits/activity_cubit/activity_cubit.dart';
 import '../../features/baby/data/repo/baby_repo.dart';
 import '../../features/baby/data/repo/baby_repo_impl.dart';
 import '../../features/baby/data/source/baby_local_datasource.dart';
+import '../../features/baby/presentation/cubit/get_cubit/get_baby_cubit.dart';
 import '../../features/parenting_resources/data/repo/parent_recource_repo.dart';
 import '../../features/parenting_resources/data/repo/parent_recource_repo_impl.dart';
 import '../../features/parenting_resources/data/source/parent_resource_remote_datasource.dart';
 import '../../features/parenting_resources/presentation/cubits/recipe_cubit/recipe_cubit.dart';
+import '../../features/signup/data/sources/signup_local_data_source.dart';
 import '../cubit/cubit/app_localization_cubit.dart';
 import '../helpers/firebase_auth_service.dart';
 import '../helpers/notification_service.dart';
@@ -94,7 +95,15 @@ void _setupSignupFeature() {
     ),
   );
   injector.registerLazySingleton<SignupRepo>(
-    () => SignupRepoImpl(signupRemoteSource: injector<SignupRemoteSource>()),
+    () => SignupRepoImpl(
+      signupRemoteSource: injector<SignupRemoteSource>(),
+      signupLocalDataSource: injector<SignupLocalDataSource>(),
+    ),
+  );
+  injector.registerLazySingleton<SignupLocalDataSource>(
+    () => SignupLocalDataSourceImpl(
+      cacheHelper: CacheHelper(),
+    ),
   );
 }
 
