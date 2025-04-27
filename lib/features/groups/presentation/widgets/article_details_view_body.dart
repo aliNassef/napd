@@ -10,12 +10,13 @@ import '../../../../core/widgets/spacers.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
+import '../../data/model/article_model.dart';
 
 class ArticleDetailsViewBody extends StatelessWidget {
   const ArticleDetailsViewBody({
-    super.key,
+    super.key, required this.articleModel,
   });
-
+  final ArticleModel articleModel;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -27,7 +28,7 @@ class ArticleDetailsViewBody extends StatelessWidget {
             top: 0,
             child: CustomNetworkImage(
               img:
-                  'https://r2.starryai.com/results/1042152870/6eb099de-74c0-460b-900e-551a3e7c540f.webp',
+               articleModel.imageUrl,
               width: context.width,
               height: context.height * 2 / 5,
               fit: BoxFit.cover,
@@ -59,7 +60,7 @@ class ArticleDetailsViewBody extends StatelessWidget {
                     ),
                     VerticalSpace(20),
                     Text(
-                      'Love yourself and value yourself see the change',
+                articleModel.title,
                       style: AppStyles.roboto20Bold.copyWith(
                         color: AppColors.darkBlueColor,
                       ),

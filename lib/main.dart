@@ -11,7 +11,7 @@ import 'napd_app.dart';
 
 void main() async {
   await AppIntialization.initializer();
-  // use it in cubit injector 
+  // use it in cubit injector
   final startLocale = await injector<AppLocalizations>().findSystemLocale();
   runApp(
     DevicePreview(

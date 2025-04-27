@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:napd/core/functions/get_user.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
@@ -22,14 +23,14 @@ class HomeViewBody extends StatelessWidget {
         children: [
           VerticalSpace(10),
           Text(
-            'Laila',
+            getBaby()!.babyName!,
             style: AppStyles.roboto24SemiBold.copyWith(
               color: AppColors.darkBlueColor,
             ),
           ).withHorizontalPadding(16),
           VerticalSpace(6),
           Text(
-            'is 1 year and 3 months',
+            calculateAgeDifference(getBaby()!.birthDate!),
             style: AppStyles.roboto16Regular.copyWith(
               color: AppColors.greenLightColor,
             ),
@@ -64,5 +65,23 @@ class HomeViewBody extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String calculateAgeDifference(String targetDate) {
+    // Parse the target date
+    final target = DateTime.parse(targetDate.split('/').reversed.join('-'));
+    final now = DateTime.now();
+
+    // Calculate the difference in years and months
+    int years = now.year - target.year;
+    int months = now.month - target.month;
+
+    // Adjust if the current month is earlier than the target month
+    if (months < 0) {
+      years -= 1;
+      months += 12;
+    }
+
+    return 'is $years year${years > 1 ? 's' : ''} and $months month${months > 1 ? 's' : ''}';
   }
 }

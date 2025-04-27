@@ -47,6 +47,12 @@ class ProfileViewBody extends StatelessWidget {
             textColor: Colors.white,
           ),
           VerticalSpace(20),
+          DefaultAppButton(
+            backgroundColor: Color(0xffF9E9FC),
+            text: AppStrings.logout,
+            textColor: AppColors.darkBlueColor,
+          ),
+          VerticalSpace(20),
         ],
       ).withHorizontalPadding(16),
     );

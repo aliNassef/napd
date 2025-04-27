@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../features/groups/data/model/article_model.dart';
 import '../../features/login/presentation/view/forget_password_view.dart';
 import '../../features/login/presentation/view/reset_password_view.dart';
 import '../../features/baby/data/models/baby_model.dart';
@@ -133,8 +134,11 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
         builder: (context) => const ActivitesView(),
       );
     case ArticleDetailsView.routeName:
+      final articleModel = settings.arguments as ArticleModel;
       return MaterialPageRoute(
-        builder: (context) => const ArticleDetailsView(),
+        builder: (context) => ArticleDetailsView(
+          articleModel: articleModel,
+        ),
       );
     case PodcastsDetailsView.routeName:
       return MaterialPageRoute(

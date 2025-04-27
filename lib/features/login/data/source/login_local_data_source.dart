@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import '../../../../core/api/end_ponits.dart';
 import '../../../../core/cache/cache_helper.dart';
@@ -19,7 +18,6 @@ class LoginLocalDataSourceImpl implements LoginLocalDataSource {
   }) : _cacheHelper = cacheHelper;
   @override
   Future<void> cacheUserData(UserModel user) async {
-    log(user.toString());
     await _cacheHelper.saveData(
       key: ApiKey.userData,
       value: user.toJson(),
@@ -35,6 +33,6 @@ class LoginLocalDataSourceImpl implements LoginLocalDataSource {
 
   @override
   Future<void> cacheBabyId(int babyId) async {
-    _cacheHelper.saveData(key: ApiKey.babyId, value: babyId);
+    await _cacheHelper.saveData(key: ApiKey.babyId, value: babyId);
   }
 }
