@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/features/groups/data/model/article_model.dart';
 import 'package:napd/features/groups/presentation/cubits/article_cubit/article_cubit.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 import '../../../../core/widgets/custom_failure_widget.dart';
 import '../../../../core/widgets/custom_search_bar.dart';
@@ -21,30 +22,33 @@ class AllArticlesViewBody extends StatelessWidget {
           current is ArticleFailure,
       builder: (context, state) {
         if (state is ArticleLoading) {
-          return CustomScrollView(
-            slivers: [
-              SliverToBoxAdapter(
-                child: Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-                  child: CustomSearchBar(),
-                ),
-              ),
-              SliverToBoxAdapter(child: VerticalSpace(10)),
-              SliverList.separated(
-                itemBuilder: (_, index) => AllArticleItem(
-                  articleModel: ArticleModel(
-                    createdAt: 'Loading...',
-                    description: 'Loading...',
-                    title: 'Loading...',
-                    imageUrl: 'Loading...',
-                    views: 100,
+          return Skeletonizer(
+            enabled: true,
+            child: CustomScrollView(
+              slivers: [
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+                    child: CustomSearchBar(),
                   ),
                 ),
-                separatorBuilder: (_, index) => VerticalSpace(12),
-                itemCount: 10,
-              ),
-            ],
+                SliverToBoxAdapter(child: VerticalSpace(10)),
+                SliverList.separated(
+                  itemBuilder: (_, index) => AllArticleItem(
+                    articleModel: ArticleModel(
+                      createdAt: 'Loading...',
+                      description: 'Loading...',
+                      title: 'Loading...',
+                      imageUrl: 'Loading...',
+                      views: 100,
+                    ),
+                  ),
+                  separatorBuilder: (_, index) => VerticalSpace(12),
+                  itemCount: 10,
+                ),
+              ],
+            ),
           );
         }
         if (state is ArticleFailure) {

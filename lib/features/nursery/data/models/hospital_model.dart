@@ -1,4 +1,7 @@
-class HospitalModel {
+import 'package:equatable/equatable.dart';
+
+// ignore: must_be_immutable
+class HospitalModel extends Equatable {
   final int? id;
   final String? title;
   final String? description;
@@ -44,4 +47,16 @@ class HospitalModel {
       'isopended': isopended,
     };
   }
+
+  @override
+  List<Object?> get props => [
+        id,
+        title,
+        description,
+        rate,
+        isFavourite,
+        imageUrl,
+        governorateName,
+        isopended,
+      ];
 }

@@ -10,7 +10,7 @@ import '../widgets/splash_animation_widget.dart';
 import '../../../../core/utils/app_images.dart';
 
 class SplashView extends StatefulWidget {
-  static const String routeName = '/splash';
+  static const String routeName = 'splash';
   const SplashView({super.key});
 
   @override

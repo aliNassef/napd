@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:napd/core/api/end_ponits.dart';
+import 'package:napd/core/cache/cache_helper.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/default_app_button.dart';
 import '../../../../core/widgets/spacers.dart';
 
+import '../../../splash/presentation/view/splash_view.dart';
 import 'profile_form_style.dart';
 import 'profile_image.dart';
 
@@ -48,6 +51,13 @@ class ProfileViewBody extends StatelessWidget {
           ),
           VerticalSpace(20),
           DefaultAppButton(
+            onPressed: () {
+              CacheHelper.clearData(key: ApiKey.userData);
+
+              Navigator.of(context, rootNavigator: true).pushReplacementNamed(
+                SplashView.routeName,
+              );
+            },
             backgroundColor: Color(0xffF9E9FC),
             text: AppStrings.logout,
             textColor: AppColors.darkBlueColor,
