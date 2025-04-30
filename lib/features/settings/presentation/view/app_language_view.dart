@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/cubit/cubit/app_localization_cubit.dart';
+import '../../../../core/controller/cubit/app_localization_cubit.dart';
 import '../../../../core/extensions/language_code_extension.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_strings.dart';

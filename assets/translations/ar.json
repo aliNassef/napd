@@ -147,5 +147,7 @@
   "protein" : "البروتين",
   "naturalSugars" : "السكريات الطبيعية",
   "fiber" : "الألياف",
-  "code" : "الرمز"
+  "code" : "الرمز",
+  "age_difference": "هو {years} سنة و {months} شهر"
+ 
 }

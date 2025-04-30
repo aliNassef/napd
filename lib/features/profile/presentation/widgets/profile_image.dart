@@ -9,8 +9,9 @@ import '../../../../core/utils/app_images.dart';
 class ProfileImage extends StatelessWidget {
   const ProfileImage({
     super.key,
+    required this.image,
   });
-
+  final String image;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -18,7 +19,7 @@ class ProfileImage extends StatelessWidget {
         CircleAvatar(
           radius: 75,
           backgroundImage: CachedNetworkImageProvider(
-            'https://images.nightcafe.studio/jobs/3Ri6GfFBAhUUHUVG251W/3Ri6GfFBAhUUHUVG251W--1--h7lk0.jpg?tr=w-1600,c-at_max',
+            image,
           ),
         ),
         Positioned(

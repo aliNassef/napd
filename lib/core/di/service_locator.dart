@@ -14,8 +14,12 @@ import '../../features/parenting_resources/data/repo/parent_recource_repo.dart';
 import '../../features/parenting_resources/data/repo/parent_recource_repo_impl.dart';
 import '../../features/parenting_resources/data/source/parent_resource_remote_datasource.dart';
 import '../../features/parenting_resources/presentation/cubits/recipe_cubit/recipe_cubit.dart';
+import '../../features/profile/data/repo/profile_repo.dart';
+import '../../features/profile/data/repo/profile_repo_impl.dart';
+import '../../features/profile/data/source/profile_remote_source.dart';
+import '../controller/cubit/get_mother_cubit/get_mother_profile_cubit.dart';
 import '../../features/signup/data/sources/signup_local_data_source.dart';
-import '../cubit/cubit/app_localization_cubit.dart';
+import '../controller/cubit/app_localization_cubit.dart';
 import '../helpers/firebase_auth_service.dart';
 import '../helpers/notification_service.dart';
 import '../../features/login/data/source/login_local_data_source.dart';
@@ -56,6 +60,7 @@ Future<void> setupServiceLocator() async {
   _parentResourceFeature();
   _babyFeature();
   _groupFeature();
+  _profileFeature();
 }
 
 void _setupExernalFeature() {
@@ -214,6 +219,22 @@ void _groupFeature() {
   injector.registerLazySingleton<GroupRemoteSource>(
     () => GroupRemoteSourceImpl(
       api: injector<ApiConsumer>(),
+    ),
+  );
+}
+
+void _profileFeature() {
+  injector.registerFactory<GetMotherProfileCubit>(
+    () => GetMotherProfileCubit(injector<ProfileRepo>()),
+  );
+  injector.registerLazySingleton<ProfileRepo>(
+    () => ProfileRepoImpl(
+      profileRemoteSource: injector<ProfileRemoteSource>(),
+    ),
+  );
+  injector.registerLazySingleton<ProfileRemoteSource>(
+    () => ProfileRemoteSourceImpl(
+      apiConsumer: injector<ApiConsumer>(),
     ),
   );
 }

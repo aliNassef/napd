@@ -1,5 +1,8 @@
-import '../model/profile_model.dart';
+import 'package:dartz/dartz.dart';
+import 'package:napd/core/errors/failure.dart';
+
+import '../../../../core/model/profile_model.dart';
 
 abstract class ProfileRepo {
-  Future<ProfileModel> getProfile();
+  Future<Either<Failure, MotherProfileModel>> getProfile();
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/core/controller/cubit/get_mother_cubit/get_mother_profile_cubit.dart';
 import '../../../../core/extensions/padding_extension.dart';
 
 import '../../../../core/utils/app_images.dart';
@@ -32,11 +34,31 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       titleSpacing: 0,
       title: CustomSearchBar(),
       actions: [
-        CircleAvatar(
-          radius: 22.5.r,
-          backgroundImage: AssetImage(
-            AppImages.dummyGirl,
-          ),
+        BlocBuilder<GetMotherProfileCubit, GetMotherProfileState>(
+          buildWhen: (previous, current) =>
+              current is GetMotherProfileFailure ||
+              current is GetMotherProfileLoaded ||
+              current is GetMotherProfileLoading,
+          builder: (context, state) {
+            if (state is GetMotherProfileLoading) {
+              return CircleAvatar(
+                radius: 22.5.r,
+                backgroundImage: NetworkImage(
+                  'https://th.bing.com/th/id/OIP.qbbx_RglyCFRH88Bof6_QwHaHa?rs=1&pid=ImgDetMain',
+                ),
+              );
+            } else if (state is GetMotherProfileFailure) {
+              return const SizedBox.shrink();
+            } else if (state is GetMotherProfileLoaded) {
+              return CircleAvatar(
+                radius: 22.5.r,
+                backgroundImage: NetworkImage(
+                  state.profileModel.image,
+                ),
+              );
+            }
+            return const SizedBox.shrink();
+          },
         ).withHorizontalPadding(16),
       ],
     );

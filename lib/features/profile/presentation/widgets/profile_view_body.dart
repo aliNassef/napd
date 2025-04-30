@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:napd/core/api/end_ponits.dart';
-import 'package:napd/core/cache/cache_helper.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:napd/core/utils/app_colors.dart';
+import 'package:napd/core/widgets/custom_failure_widget.dart';
+import 'package:napd/core/widgets/default_app_button.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/utils/app_strings.dart';
-import '../../../../core/extensions/padding_extension.dart';
-import '../../../../core/utils/app_colors.dart';
-import '../../../../core/widgets/default_app_button.dart';
 import '../../../../core/widgets/spacers.dart';
-
-import '../../../splash/presentation/view/splash_view.dart';
+import '../../../../core/controller/cubit/get_mother_cubit/get_mother_profile_cubit.dart';
 import 'profile_form_style.dart';
 import 'profile_image.dart';
 
@@ -18,53 +17,95 @@ class ProfileViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          VerticalSpace(24),
-          Align(
-            alignment: Alignment.center,
-            child: ProfileImage(),
-          ),
-          VerticalSpace(24),
-          ProfileFormStyle(
-            title: AppStrings.fullName,
-            hintText: 'Ali Nassef',
-          ),
-          ProfileFormStyle(
-            title: AppStrings.phoneNumber,
-            hintText: '01000000000',
-          ),
-          ProfileFormStyle(
-            title: AppStrings.email,
-            hintText: 'xGj0E@example.com',
-          ),
-          ProfileFormStyle(
-            title: AppStrings.dateOfBirth,
-            hintText: '13 / 11 / 2002',
-          ),
-          DefaultAppButton(
-            text: AppStrings.updateProfile,
-            backgroundColor: AppColors.darkBlueColor,
-            textColor: Colors.white,
-          ),
-          VerticalSpace(20),
-          DefaultAppButton(
-            onPressed: () {
-              CacheHelper.clearData(key: ApiKey.userData);
-
-              Navigator.of(context, rootNavigator: true).pushReplacementNamed(
-                SplashView.routeName,
-              );
-            },
-            backgroundColor: Color(0xffF9E9FC),
-            text: AppStrings.logout,
-            textColor: AppColors.darkBlueColor,
-          ),
-          VerticalSpace(20),
-        ],
-      ).withHorizontalPadding(16),
+    return BlocBuilder<GetMotherProfileCubit, GetMotherProfileState>(
+      buildWhen: (previous, current) =>
+          current is GetMotherProfileLoaded ||
+          current is GetMotherProfileFailure ||
+          current is GetMotherProfileLoading,
+      builder: (context, state) {
+        if (state is GetMotherProfileFailure) {
+          return CustomFailureWidget(
+            errMessage: state.errorMessage,
+          );
+        }
+        if (state is GetMotherProfileLoading) {
+          return Skeletonizer(
+            enabled: true,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                VerticalSpace(24),
+                Align(
+                  alignment: Alignment.center,
+                  child: ProfileImage(
+                    image:
+                        'https://images.nightcafe.studio/jobs/3Ri6GfFBAhUUHUVG251W/3Ri6GfFBAhUUHUVG251W--1--h7lk0.jpg?tr=w-1600,c-at_max',
+                  ),
+                ),
+                VerticalSpace(24),
+                ProfileFormStyle(
+                  title: AppStrings.fullName,
+                  hintText: 'Loading...',
+                ),
+                ProfileFormStyle(
+                  title: AppStrings.email,
+                  hintText: 'Loading...',
+                ),
+                VerticalSpace(30),
+                DefaultAppButton(
+                  text: 'Update Profile',
+                  backgroundColor: AppColors.darkBlueColor,
+                  textColor: Colors.white,
+                ),
+                VerticalSpace(30),
+                DefaultAppButton(
+                  text: 'Log out',
+                  backgroundColor: AppColors.darkBlueColor,
+                  textColor: Colors.white,
+                )
+              ],
+            ),
+          );
+        }
+        if (state is GetMotherProfileLoaded) {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              VerticalSpace(24),
+              Align(
+                alignment: Alignment.center,
+                child: ProfileImage(
+                  image: state.profileModel.image,
+                ),
+              ),
+              VerticalSpace(24),
+              ProfileFormStyle(
+                title: AppStrings.fullName,
+                hintText: state.profileModel.name,
+              ),
+              ProfileFormStyle(
+                title: AppStrings.email,
+                hintText: state.profileModel.email,
+              ),
+              VerticalSpace(30),
+              DefaultAppButton(
+                text: AppStrings.updateProfile,
+                backgroundColor: AppColors.darkBlueColor,
+                textColor: Colors.white,
+              ),
+              VerticalSpace(15),
+              DefaultAppButton(
+                onPressed: () {},
+                text: AppStrings.logout,
+                backgroundColor: AppColors.secondaryColor,
+                textColor: AppColors.darkBlueColor,
+              ),
+              VerticalSpace(30),
+            ],
+          );
+        }
+        return SizedBox.shrink();
+      },
     );
   }
 }

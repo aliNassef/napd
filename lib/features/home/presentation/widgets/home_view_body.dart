@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:napd/core/functions/get_user.dart';
 import '../../../../core/extensions/padding_extension.dart';
@@ -81,7 +82,12 @@ class HomeViewBody extends StatelessWidget {
       years -= 1;
       months += 12;
     }
-
-    return 'is $years year${years > 1 ? 's' : ''} and $months month${months > 1 ? 's' : ''}';
+    return tr(
+      'age_difference',
+      namedArgs: {
+        'years': years.toString(),
+        'months': months.toString(),
+      },
+    );
   }
 }

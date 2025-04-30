@@ -147,6 +147,8 @@
     "protein" : "Protein",
     "naturalSugars" : "Natural Sugars",
     "fiber" : "Fiber",
-    "code" : "code"
+    "code" : "code",
+    "age_difference": "is {years} year(s) and {months} month(s)"
+      
 }
  

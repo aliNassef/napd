@@ -23,6 +23,7 @@ abstract class EndPoints {
   static const String recipes = 'Recipes';
   static const String activites = 'Activites';
   static const String articles = 'Articles';
+  static const String getMotherProfile = 'Account/GetMotherProfile';
 }
 
 abstract class ApiKey {
