@@ -23,3 +23,23 @@ final class SelectBabyScuccess extends LoginState {
 
   SelectBabyScuccess({required this.message});
 }
+
+final class SendCodeSuccessState extends LoginState {}
+
+final class SendCodeLoadingState extends LoginState {}
+
+final class SendCodeFailureState extends LoginState {
+  final String errMessage;
+
+  SendCodeFailureState({required this.errMessage});
+}
+
+final class ResetPasswordSuccessState extends LoginState {}
+
+final class ResetPasswordLoadingState extends LoginState {}
+
+final class ResetPasswordFailureState extends LoginState {
+  final String errMessage;
+
+  ResetPasswordFailureState({required this.errMessage});
+}

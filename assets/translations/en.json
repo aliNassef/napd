@@ -146,6 +146,7 @@
     "carbohydrates" : "Carbohydrates",
     "protein" : "Protein",
     "naturalSugars" : "Natural Sugars",
-    "fiber" : "Fiber"
+    "fiber" : "Fiber",
+    "code" : "code"
 }
  

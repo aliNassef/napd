@@ -29,13 +29,17 @@ class CustomTextFormField extends StatefulWidget {
 }
 
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
-  bool isSecure = false;
+  bool isSecure = true;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: AppStyles.roboto20Regular.copyWith(
+        color: Colors.white,
+      ),
       keyboardType: widget.keyboardType,
       cursorColor: AppColors.greyColor,
-      obscureText: isSecure,
+      obscureText: widget.isPassword ? isSecure : !isSecure,
+      obscuringCharacter: '●',
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'Field is required';
@@ -43,7 +47,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         return null;
       },
       maxLines: widget.maxLines,
-      // maxLength: widget.maxLength,
       controller: widget.controller,
       decoration: InputDecoration(
         fillColor: widget.isFilled ? widget.fillColor : null,

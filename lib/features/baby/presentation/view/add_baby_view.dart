@@ -31,6 +31,7 @@ class _AddBabyViewState extends State<AddBabyView> {
     _ageController = TextEditingController();
     _formKey = GlobalKey<FormState>();
     _autovalidateMode = AutovalidateMode.disabled;
+    _gender = 0;
   }
 
   @override

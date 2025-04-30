@@ -213,8 +213,11 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
         builder: (context) => const ForgetPasswordView(),
       );
     case ResetPasswordView.routeName:
+      final email = settings.arguments as String;
       return MaterialPageRoute(
-        builder: (context) => const ResetPasswordView(),
+        builder: (context) => ResetPasswordView(
+          email: email,
+        ),
       );
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());

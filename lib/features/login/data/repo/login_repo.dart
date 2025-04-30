@@ -8,5 +8,7 @@ abstract class LoginRepo {
   Future<Either<Failure, void>> loginWithGoogle();
   Future<Either<Failure, void>> loginWithFacebook();
   Future<void> cacheBabyId(int babyId);
+  Future<Either<Failure, void>> sendCodeForResetPassword(String email);
+  Future<Either<Failure, void>> resetPassword(String email, String password, String code);
 
 }

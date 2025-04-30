@@ -153,4 +153,5 @@ abstract class AppStrings {
   static String get protein => 'protein'.tr();
   static String get naturalSugars => 'naturalsugars'.tr();
   static String get fiber => 'fiber'.tr();
+  static String get code => 'code'.tr();
 }

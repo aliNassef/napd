@@ -46,4 +46,25 @@ class LoginRepoImpl extends LoginRepo {
   Future<void> cacheBabyId(int babyId) async {
     await _loginLocalSource.cacheBabyId(babyId);
   }
+
+  @override
+  Future<Either<Failure, void>> sendCodeForResetPassword(String email) async {
+    try {
+      await _loginRemoteSource.sendCode(email);
+      return right(null);
+    } catch (e) {
+      return Left(Failure(errMessage: e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> resetPassword(
+      String email, String password, String code) async {
+    try {
+      await _loginRemoteSource.resetPassword(email, password, code);
+      return right(null);
+    } catch (e) {
+      return Left(Failure(errMessage: e.toString()));
+    }
+  }
 }

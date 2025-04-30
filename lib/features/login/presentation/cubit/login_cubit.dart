@@ -33,4 +33,38 @@ class LoginCubit extends Cubit<LoginState> {
       SelectBabyScuccess(message: 'Success Login'),
     );
   }
+
+  void sendCode({required String email}) async {
+    emit(SendCodeLoadingState());
+    final senCodeOrFaliure = await _loginRepo.sendCodeForResetPassword(email);
+    senCodeOrFaliure.fold(
+      (failure) => emit(
+        SendCodeFailureState(errMessage: failure.errMessage),
+      ),
+      (success) => emit(
+        SendCodeSuccessState(),
+      ),
+    );
+  }
+
+  void resetPassword({
+    required String email,
+    required String password,
+    required String code,
+  }) async {
+    emit(ResetPasswordLoadingState());
+    final resetPasswordOrFailure = await _loginRepo.resetPassword(
+      email,
+      password,
+      code,
+    );
+    resetPasswordOrFailure.fold(
+      (failure) => emit(
+        ResetPasswordFailureState(errMessage: failure.errMessage),
+      ),
+      (success) => emit(
+        ResetPasswordSuccessState(),
+      ),
+    );
+  }
 }

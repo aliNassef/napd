@@ -11,6 +11,8 @@ abstract class LoginRemoteSource {
   Future<UserModel> login({required LoginInputModel loginInputModel});
   Future<void> loginWithGoogle();
   Future<void> loginWithFacebook();
+  Future<void> sendCode(String email);
+  Future<void> resetPassword(String email, String password, String code);
 }
 
 class LoginRemoteSourceImpl extends LoginRemoteSource {
@@ -38,5 +40,33 @@ class LoginRemoteSourceImpl extends LoginRemoteSource {
   @override
   Future<void> loginWithFacebook() async {
     await firebaseAuthService.signInWithFacebook();
+  }
+
+  @override
+  Future<void> sendCode(String email) async {
+    final response = await api.post(
+      EndPoints.forgetPassword,
+      data: {
+        'email': email,
+      },
+    );
+    if (response.statusCode != 200) {
+      throw ServerException(ErrorModel.fromJson(response.data));
+    }
+  }
+
+  @override
+  Future<void> resetPassword(String email, String password, String code) async {
+    final response = await api.post(
+      EndPoints.resetPassword,
+      data: {
+        'email': email,
+        'newPassword': password,
+        'code': code,
+      },
+    );
+    if (response.statusCode != 200) {
+      throw ServerException(ErrorModel.fromJson(response.data));
+    }
   }
 }
