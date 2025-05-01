@@ -17,24 +17,21 @@ class BabyProfileButton extends StatelessWidget {
   final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
-    return TextButton.icon(
+    return TextButton(
       style: TextButton.styleFrom(
         backgroundColor: backgroundColor,
-        alignment: Alignment.centerLeft,
         padding: EdgeInsets.symmetric(horizontal: 27.w, vertical: 16.h),
       ),
-      icon: SvgPicture.asset(
-        icon,
-      ),
       onPressed: onPressed,
-      label: Padding(
-        padding: const EdgeInsets.only(
-          left: 13,
-        ),
-        child: Text(
-          text,
-          style: AppStyles.roboto20Regular,
-        ),
+      child: Row(
+        children: [
+          Text(
+            text,
+            style: AppStyles.roboto20Regular,
+          ),
+          Spacer(),
+          SvgPicture.asset(icon),
+        ],
       ),
     );
   }

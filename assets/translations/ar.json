@@ -148,6 +148,7 @@
   "naturalSugars" : "السكريات الطبيعية",
   "fiber" : "الألياف",
   "code" : "الرمز",
-  "age_difference": "هو {years} سنة و {months} شهر"
+  "age_difference": "هو {years} سنة و {months} شهر",
+  "birthdate": "تاريخ"
  
 }

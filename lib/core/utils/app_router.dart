@@ -169,8 +169,11 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
         builder: (context) => const BabyProfileView(),
       );
     case BabyProfileDetailsView.routeName:
+      final baby = settings.arguments as BabyModel;
       return MaterialPageRoute(
-        builder: (context) => const BabyProfileDetailsView(),
+        builder: (context) => BabyProfileDetailsView(
+          baby: baby,
+        ),
       );
     case AllGroupsView.routeName:
       return MaterialPageRoute(

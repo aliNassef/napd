@@ -148,7 +148,8 @@
     "naturalSugars" : "Natural Sugars",
     "fiber" : "Fiber",
     "code" : "code",
-    "age_difference": "is {years} year(s) and {months} month(s)"
-      
+    "age_difference": "is {years} year(s) and {months} month(s)",
+
+    "birthdate": "Birth date"
 }
  

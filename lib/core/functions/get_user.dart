@@ -27,7 +27,7 @@ int? getBabyId() {
 BabyModel? getBaby() {
   final user = getUser();
   final babies = user?.babies;
-  for (var baby in babies!) {
+  for (var baby in babies ?? []) {
     if (baby.id == getBabyId()) {
       return baby;
     }

@@ -1,9 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:napd/features/profile/data/repo/profile_repo.dart';
-
 import '../../../model/profile_model.dart';
-
 part 'get_mother_profile_state.dart';
 
 class GetMotherProfileCubit extends Cubit<GetMotherProfileState> {
@@ -26,7 +24,7 @@ class GetMotherProfileCubit extends Cubit<GetMotherProfileState> {
     );
   }
 
-  void logout() async{
+  void logout() async {
     await profileRepo.logout();
     emit(GetMotherProfileLogout());
   }

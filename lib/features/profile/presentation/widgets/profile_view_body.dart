@@ -7,6 +7,7 @@ import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widgets/spacers.dart';
 import '../../../../core/controller/cubit/get_mother_cubit/get_mother_profile_cubit.dart';
+import '../../../login/presentation/view/login_view.dart';
 import 'profile_form_style.dart';
 import 'profile_image.dart';
 
@@ -94,12 +95,24 @@ class ProfileViewBody extends StatelessWidget {
                 textColor: Colors.white,
               ),
               VerticalSpace(15),
-              DefaultAppButton(
-                onPressed: () {},
-                text: AppStrings.logout,
-                backgroundColor: AppColors.secondaryColor,
-                textColor: AppColors.darkBlueColor,
-              ),
+              BlocListener<GetMotherProfileCubit, GetMotherProfileState>(
+                  listener: (context, state) {
+                    if (state is GetMotherProfileLogout) {
+                      Navigator.of(context, rootNavigator: true)
+                          .pushNamedAndRemoveUntil(
+                        LoginView.routeName,
+                        (route) => false,
+                      );
+                    }
+                  },
+                  child: DefaultAppButton(
+                    onPressed: () {
+                      context.read<GetMotherProfileCubit>().logout();
+                    },
+                    text: AppStrings.logout,
+                    backgroundColor: AppColors.secondaryColor,
+                    textColor: AppColors.darkBlueColor,
+                  )),
               VerticalSpace(30),
             ],
           );

@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
+import 'package:napd/features/baby/data/source/baby_remote_datasource.dart';
 import 'package:napd/features/parenting_resources/presentation/cubits/activity_cubit/activity_cubit.dart';
 import '../../features/baby/data/repo/baby_repo.dart';
 import '../../features/baby/data/repo/baby_repo_impl.dart';
@@ -200,11 +201,17 @@ void _babyFeature() {
   );
   injector.registerLazySingleton<BabyRepo>(
     () => BabyRepoImpl(
-      localDatasource: injector<BabyLocalDatasource>(),
+      remoteDatasource: injector<BabyRemoteDatasource>(),
     ),
   );
   injector.registerLazySingleton<BabyLocalDatasource>(
     () => BabyLocalDatasourceImpl(),
+  );
+  injector.registerLazySingleton<BabyRemoteDatasource>(
+    () => BabyRemoteDatasourceImpl(
+      apiConsumer: injector<ApiConsumer>(),
+      cacheHelper: CacheHelper(),
+    ),
   );
 }
 

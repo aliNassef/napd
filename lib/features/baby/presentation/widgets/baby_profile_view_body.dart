@@ -69,7 +69,7 @@ class BabyProfileViewBody extends StatelessWidget {
                 BabyProfileButton(
                   onPressed: () {
                     Navigator.of(context)
-                        .pushNamed(BabyProfileDetailsView.routeName);
+                        .pushNamed(BabyProfileDetailsView.routeName ,arguments: state.baby);
                   },
                   backgroundColor: AppColors.secondaryColor,
                   icon: AppSvgs.editProfileIcon,

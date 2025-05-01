@@ -1,6 +1,6 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:napd/core/utils/app_strings.dart';
+import 'package:napd/features/baby/data/models/baby_model.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/extensions/padding_extension.dart';
 
@@ -13,8 +13,9 @@ import 'baby_info_row.dart';
 class BabyInfoContent extends StatelessWidget {
   const BabyInfoContent({
     super.key,
+    required this.babyModel,
   });
-
+  final BabyModel babyModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,22 +33,22 @@ class BabyInfoContent extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Karma Ahmed ',
+              babyModel.babyName!,
               style: AppStyles.roboto36Bold.copyWith(
                 color: AppColors.secondaryColor,
               ),
             ),
             VerticalSpace(2),
             Text(
-              '5 months',
+              calculateAge(babyModel.birthDate!),
               style: AppStyles.roboto20Medium.copyWith(
                 color: AppColors.greenLightColor,
               ),
             ),
             VerticalSpace(45),
             BabyInfoRow(
-              title: 'Gender',
-              value: 'Female',
+              title: AppStrings.gender,
+              value: babyModel.gender == 0 ? 'Girl' : 'Boy',
             ),
             VerticalSpace(7),
             Divider(
@@ -55,26 +56,8 @@ class BabyInfoContent extends StatelessWidget {
             ),
             VerticalSpace(7),
             BabyInfoRow(
-              title: 'Birth date',
-              value: '22/8/2024',
-            ),
-            VerticalSpace(7),
-            Divider(
-              color: Color(0xffEAE8E8),
-            ),
-            VerticalSpace(7),
-            BabyInfoRow(
-              title: 'Weight',
-              value: '6.7 kg',
-            ),
-            VerticalSpace(7),
-            Divider(
-              color: Color(0xffEAE8E8),
-            ),
-            VerticalSpace(7),
-            BabyInfoRow(
-              title: 'Height',
-              value: '64 cm',
+              title: AppStrings.birthDate,
+              value: babyModel.birthDate!,
             ),
             VerticalSpace(7),
             Divider(
@@ -85,5 +68,23 @@ class BabyInfoContent extends StatelessWidget {
       ),
     );
   }
-}
 
+  String calculateAge(String birthDate) {
+    final birth = DateTime.parse(birthDate);
+    final now = DateTime.now();
+
+    int years = now.year - birth.year;
+    int months = now.month - birth.month;
+
+    if (months < 0) {
+      years -= 1;
+      months += 12;
+    }
+
+    if (years > 0) {
+      return '$years years, $months months';
+    } else {
+      return '$months months';
+    }
+  }
+}

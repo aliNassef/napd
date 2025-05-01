@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/features/baby/data/models/baby_model.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../../../core/di/service_locator.dart';
@@ -8,8 +9,8 @@ import '../../../../core/utils/app_localizations.dart';
 import 'baby_info_content.dart';
 
 class BabyProfileDetailsViewBody extends StatelessWidget {
-  const BabyProfileDetailsViewBody({super.key});
-
+  const BabyProfileDetailsViewBody({super.key, required this.baby});
+  final BabyModel baby;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -18,14 +19,16 @@ class BabyProfileDetailsViewBody extends StatelessWidget {
       child: Stack(
         children: [
           CustomNetworkImage(
-            img:
+            img: baby.profilePicUrl ??
                 'https://images.nightcafe.studio/jobs/3Ri6GfFBAhUUHUVG251W/3Ri6GfFBAhUUHUVG251W--1--h7lk0.jpg?tr=w-1600,c-at_max',
             height: context.height * 1 / 3,
             width: context.width,
           ),
           Positioned(
             top: context.height * 1 / 3 - 80,
-            child: BabyInfoContent(),
+            child: BabyInfoContent(
+              babyModel: baby,
+            ),
           ),
           _backIconButton(context),
         ],

@@ -12,7 +12,7 @@ class GetBabyCubit extends Cubit<GetBabyState> {
 
   void getBaby() async {
     emit(GetBabyLoading());
-    final result = babyRepo.getBaby();
+    final result = await babyRepo.getBaby();
     result.fold(
       (failure) => emit(GetBabyFailure(errorMessage: failure.errMessage)),
       (baby) => emit(GetBabyLoaded(baby: baby)),

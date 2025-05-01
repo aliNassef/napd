@@ -150,7 +150,7 @@ class _MotherAccountFormState extends State<MotherAccountForm> {
     );
   }
 
-  void _checkSignUpButtonValidity(BuildContext context) {
+  void _checkSignUpButtonValidity(BuildContext context) async {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
       var motherInfo = SignupInputModel(
@@ -159,8 +159,11 @@ class _MotherAccountFormState extends State<MotherAccountForm> {
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
         file: imageFile != null
-            ? MultipartFile.fromFileSync(imageFile!.path,
-                filename: imageFile!.path.split('/').last)
+            ? await MultipartFile.fromFile(
+                imageFile!.path,
+                filename:
+                    '${_firstNameController.text.trim()} ${_lastNameController.text.trim()}',
+              )
             : null,
       );
       Navigator.pushNamed(

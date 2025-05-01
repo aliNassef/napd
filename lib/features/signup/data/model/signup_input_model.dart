@@ -42,7 +42,7 @@ class SignupInputModel {
     if (babyImage != null) data['babyImage'] = babyImage;
     if (email != null) data['email'] = email;
     if (password != null) data['password'] = password;
-    if (file != null) data['file'] = [file];
+    if (file != null) data['files'] = [file];
     return data;
   }
 
@@ -59,6 +59,7 @@ class SignupInputModel {
       babyImage: json['babyImage'],
       email: json['email'],
       password: json['password'],
+      file: json['files'],
     );
   }
 }

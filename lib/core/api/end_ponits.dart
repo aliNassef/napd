@@ -3,6 +3,7 @@ abstract class EndPoints {
       'http://graduation-project-version1.runasp.net/';
   static const String register = 'Auth/register';
   static const String login = 'Auth/Login';
+  static const String getBabyById = 'Account/ChooseBaby?BabyId=';
   static const String getMotherData = 'Account/GetMotherProfile';
   static const String updateMotherProfile = 'Account/UpdateMotherprofile';
   static const String changePassword = 'Account/Change-Password';
