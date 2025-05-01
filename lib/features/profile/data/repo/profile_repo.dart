@@ -5,4 +5,5 @@ import '../../../../core/model/profile_model.dart';
 
 abstract class ProfileRepo {
   Future<Either<Failure, MotherProfileModel>> getProfile();
+  Future<Either<Failure, void>> logout();
 }

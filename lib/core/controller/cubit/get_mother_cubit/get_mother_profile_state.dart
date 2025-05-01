@@ -28,3 +28,10 @@ final class GetMotherProfileFailure extends GetMotherProfileState {
   @override
   List<Object> get props => [errorMessage];
 }
+
+final class GetMotherProfileLogout extends GetMotherProfileState {
+  const GetMotherProfileLogout();
+
+  @override
+  List<Object> get props => [];
+}

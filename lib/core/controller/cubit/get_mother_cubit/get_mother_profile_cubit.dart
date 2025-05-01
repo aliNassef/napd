@@ -25,4 +25,9 @@ class GetMotherProfileCubit extends Cubit<GetMotherProfileState> {
       },
     );
   }
+
+  void logout() async{
+    await profileRepo.logout();
+    emit(GetMotherProfileLogout());
+  }
 }

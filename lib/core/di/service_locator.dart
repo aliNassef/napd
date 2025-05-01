@@ -16,6 +16,7 @@ import '../../features/parenting_resources/data/source/parent_resource_remote_da
 import '../../features/parenting_resources/presentation/cubits/recipe_cubit/recipe_cubit.dart';
 import '../../features/profile/data/repo/profile_repo.dart';
 import '../../features/profile/data/repo/profile_repo_impl.dart';
+import '../../features/profile/data/source/profile_local_source.dart';
 import '../../features/profile/data/source/profile_remote_source.dart';
 import '../controller/cubit/get_mother_cubit/get_mother_profile_cubit.dart';
 import '../../features/signup/data/sources/signup_local_data_source.dart';
@@ -229,12 +230,18 @@ void _profileFeature() {
   );
   injector.registerLazySingleton<ProfileRepo>(
     () => ProfileRepoImpl(
+      profileLocalSource: injector<ProfileLocalSource>(),
       profileRemoteSource: injector<ProfileRemoteSource>(),
     ),
   );
   injector.registerLazySingleton<ProfileRemoteSource>(
     () => ProfileRemoteSourceImpl(
       apiConsumer: injector<ApiConsumer>(),
+    ),
+  );
+  injector.registerLazySingleton<ProfileLocalSource>(
+    () => ProfileLocalSourceImpl(
+      cacheHelper: CacheHelper(),
     ),
   );
 }
