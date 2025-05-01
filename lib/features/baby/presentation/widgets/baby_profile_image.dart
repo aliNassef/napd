@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:napd/core/api/end_ponits.dart';
 import '../../../../core/helpers/image_picker_helper.dart';
 import '../../../../core/utils/app_images.dart';
 
@@ -18,7 +17,7 @@ class BabyProfileImage extends StatelessWidget {
         CircleAvatar(
           radius: 75,
           backgroundImage: CachedNetworkImageProvider(
-            EndPoints.baseUrl + image,
+            image,
           ),
         ),
         Positioned(
