@@ -14,7 +14,7 @@ class NursingRepoImpl extends NursingRepo {
   @override
   Future<Either<Failure, List<GovernorateModel>>> getAllGovernorates() async {
     try {
-      final goverorates = await nursingRemoteDataSource.getAllGovernates();
+      final goverorates = await nursingRemoteDataSource.getAllGovernorates();
       return Right(goverorates);
     } on ServerException catch (e) {
       return Left(

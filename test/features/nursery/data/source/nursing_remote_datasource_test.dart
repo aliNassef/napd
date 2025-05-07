@@ -102,7 +102,7 @@ void main() {
         );
 
         // Act
-        final result = await dataSource.getAllGovernates();
+        final result = await dataSource.getAllGovernorates();
 
         // Assert
         expect(result, tGovernorates);
@@ -127,7 +127,7 @@ void main() {
 
         // Act & Assert
         expect(
-          () => dataSource.getAllGovernates(),
+          () => dataSource.getAllGovernorates(),
           throwsA(isA<ServerException>()),
         );
         verify(() => mockApiConsumer.get(EndPoints.getAllGovernorates))

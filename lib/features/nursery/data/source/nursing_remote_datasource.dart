@@ -8,7 +8,7 @@ import '../models/hospital_model.dart';
 
 abstract class NursingRemoteDatasource {
   Future<List<HospitalModel>> getAllHospitals();
-  Future<List<GovernorateModel>> getAllGovernates();
+  Future<List<GovernorateModel>> getAllGovernorates();
   Future<List<HospitalModel>> getFilterdHospitals(int id);
   Future<void> addHospitalToFavorites(int id);
   Future<void> delHospitalFromFavorites(int id);
@@ -21,7 +21,7 @@ class NursingRemoteDatasourceImpl implements NursingRemoteDatasource {
       : _apiConsumer = apiConsumer;
 
   @override
-  Future<List<GovernorateModel>> getAllGovernates() async {
+  Future<List<GovernorateModel>> getAllGovernorates() async {
     final response = await _apiConsumer.get(
       EndPoints.getAllGovernorates,
     );
