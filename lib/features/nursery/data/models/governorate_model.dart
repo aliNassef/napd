@@ -1,8 +1,10 @@
-class GovernorateModel {
+import 'package:equatable/equatable.dart';
+
+class GovernorateModel extends Equatable {
   final num governorateId;
   final String governorateName;
 
-  GovernorateModel({
+  const GovernorateModel({
     required this.governorateId,
     required this.governorateName,
   });
@@ -20,4 +22,10 @@ class GovernorateModel {
       'GovernorateName': governorateName,
     };
   }
+
+  @override
+  List<Object?> get props => [
+        governorateId,
+        governorateName,
+      ];
 }
