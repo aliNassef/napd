@@ -15,7 +15,7 @@ class SignupRemoteSourceImpl implements SignupRemoteSource {
   const SignupRemoteSourceImpl(this._apiConsumer);
   @override
   Future<SignupModel> createAccount(SignupInputModel signupInputModel) async {
-    final response = await _apiConsumer.post(
+    final response = await _apiConsumer.postDataWithImage(
       EndPoints.register,
       data: signupInputModel.toJson(),
       isFromData: true,

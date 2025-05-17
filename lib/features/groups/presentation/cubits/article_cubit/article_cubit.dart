@@ -12,7 +12,7 @@ class ArticleCubit extends Cubit<ArticleState> {
 
   void getArticles() async {
     emit(ArticleLoading());
-    final result = await groupRepo.getGroups();
+    final result = await groupRepo.getAllArticles();
     result.fold(
       (failure) => emit(
         ArticleFailure(

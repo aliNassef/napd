@@ -1,6 +1,4 @@
 import 'dart:io';
-
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../../core/helpers/image_picker_helper.dart';
@@ -158,13 +156,7 @@ class _MotherAccountFormState extends State<MotherAccountForm> {
         lastName: _lastNameController.text.trim(),
         email: _emailController.text.trim(),
         password: _passwordController.text.trim(),
-        file: imageFile != null
-            ? await MultipartFile.fromFile(
-                imageFile!.path,
-                filename:
-                    '${_firstNameController.text.trim()} ${_lastNameController.text.trim()}',
-              )
-            : null,
+        file: imageFile,
       );
       Navigator.pushNamed(
         context,

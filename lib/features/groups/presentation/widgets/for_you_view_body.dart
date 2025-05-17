@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/app_strings.dart';
+import '../../data/model/video_model.dart';
 import '../view/all_articles_view.dart';
 import '../view/all_videos_view.dart';
 import '../../../../core/extensions/padding_extension.dart';
@@ -71,7 +72,13 @@ class ForyouViewBody extends StatelessWidget {
               mainAxisSpacing: 30.h,
               mainAxisExtent: 133.h,
             ),
-            itemBuilder: (_, index) => VideoItem(),
+            itemBuilder: (_, index) => VideoItem(
+              video: VideoModel(
+                url: '',
+                title: 'Video Title',
+                description: 'Video Description',
+              ),
+            ),
           ),
           SliverToBoxAdapter(
             child: Column(

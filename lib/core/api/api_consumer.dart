@@ -10,6 +10,13 @@ abstract class ApiConsumer {
     Map<String, dynamic>? queryParameters,
     bool isFromData = false,
   });
+
+  Future<dynamic> postDataWithImage(
+    String path, {
+    Object? data,
+    Map<String, dynamic>? queryParameters,
+    bool isFromData = false,
+  });
   Future<dynamic> patch(
     String path, {
     Object? data,

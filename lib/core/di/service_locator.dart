@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import 'package:napd/features/baby/data/source/baby_remote_datasource.dart';
+import 'package:napd/features/groups/presentation/cubits/get_all_videos_cubit/get_all_videos_cubit.dart';
+import 'package:napd/features/groups/presentation/cubits/get_podcasts_cubit/get_podcasts_cubit.dart';
 import 'package:napd/features/parenting_resources/presentation/cubits/activity_cubit/activity_cubit.dart';
 import '../../features/baby/data/repo/baby_repo.dart';
 import '../../features/baby/data/repo/baby_repo_impl.dart';
@@ -59,10 +61,10 @@ Future<void> setupServiceLocator() async {
   _setupCoreFeature();
   _setupExernalFeature();
   _setupReminderFeature();
-  _parentResourceFeature();
-  _babyFeature();
-  _groupFeature();
-  _profileFeature();
+  _setupParentResourceFeature();
+  _setupBabyFeature();
+  _setupGroupFeature();
+  _setupProfileFeature();
 }
 
 void _setupExernalFeature() {
@@ -176,7 +178,7 @@ void _setupReminderFeature() {
   );
 }
 
-void _parentResourceFeature() {
+void _setupParentResourceFeature() {
   injector.registerFactory<RecipeCubit>(
     () => RecipeCubit(injector<ParentRecourceRepo>()),
   );
@@ -195,7 +197,7 @@ void _parentResourceFeature() {
   );
 }
 
-void _babyFeature() {
+void _setupBabyFeature() {
   injector.registerFactory<GetBabyCubit>(
     () => GetBabyCubit(injector<BabyRepo>()),
   );
@@ -215,9 +217,19 @@ void _babyFeature() {
   );
 }
 
-void _groupFeature() {
+void _setupGroupFeature() {
   injector.registerFactory<ArticleCubit>(
     () => ArticleCubit(injector<GroupRepo>()),
+  );
+  injector.registerFactory<GetAllVideosCubit>(
+    () => GetAllVideosCubit(
+      injector<GroupRepo>(),
+    ),
+  );
+  injector.registerFactory<GetPodcastsCubit>(
+    () => GetPodcastsCubit(
+      injector<GroupRepo>(),
+    ),
   );
   injector.registerLazySingleton<GroupRepo>(
     () => GroupRepoImpl(
@@ -231,7 +243,7 @@ void _groupFeature() {
   );
 }
 
-void _profileFeature() {
+void _setupProfileFeature() {
   injector.registerFactory<GetMotherProfileCubit>(
     () => GetMotherProfileCubit(injector<ProfileRepo>()),
   );

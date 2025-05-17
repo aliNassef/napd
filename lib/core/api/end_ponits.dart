@@ -24,6 +24,10 @@ abstract class EndPoints {
   static const String recipes = 'Recipes';
   static const String activites = 'Activites';
   static const String articles = 'Articles';
+  static const String arabicVideos = 'MotherFeatures/ArabicVideos';
+  static const String englishVideos = 'MotherFeatures/EnglishVideos';
+  static const String englishPodcasts = 'MotherFeatures/EnglishPodcasts';
+  static const String arabicPodcasts = 'MotherFeatures/ArabicPodcasts';
   static const String getMotherProfile = 'Account/GetMotherProfile';
 }
 

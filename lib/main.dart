@@ -6,20 +6,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'core/controller/cubit/app_localization_cubit.dart';
 import 'core/di/service_locator.dart';
 import 'core/utils/app_intialization.dart';
-import 'core/utils/app_localizations.dart';
 import 'napd_app.dart';
 
 void main() async {
   await AppIntialization.initializer();
 
-  final startLocale = await injector<AppLocalizations>().findSystemLocale();
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,
       builder: (context) => BlocProvider(
         create: (context) => injector<AppLocalizationCubit>(),
         child: EasyLocalization(
-          startLocale: startLocale,
           path: 'assets/translations',
           supportedLocales: [
             Locale('en'),

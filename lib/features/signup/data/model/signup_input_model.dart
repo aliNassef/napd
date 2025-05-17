@@ -1,4 +1,5 @@
-import 'package:dio/dio.dart';
+ 
+import 'dart:io';
 
 class SignupInputModel {
   final String? email;
@@ -12,7 +13,7 @@ class SignupInputModel {
   final String? birthDate;
   final int? gender;
   final String? babyImage;
-  final MultipartFile? file;
+  final File? file;
 
   SignupInputModel({
     this.firstName,
@@ -33,7 +34,7 @@ class SignupInputModel {
     final Map<String, dynamic> data = {};
     if (firstName != null) data['firstName'] = firstName;
     if (lastName != null) data['lastName'] = lastName;
-    if (isMarried != null) data['isMarried'] = isMarried;
+    if (isMarried != null) data['isMarried'] = isMarried.toString();
     if (address != null) data['address'] = address;
     if (motherImage != null) data['motherImage'] = motherImage;
     if (babyName != null) data['babyName'] = babyName;

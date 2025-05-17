@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:napd/features/groups/data/model/video_model.dart';
+import 'package:napd/features/groups/presentation/view/video_player_view.dart';
 import '../../features/groups/data/model/article_model.dart';
 import '../../features/login/presentation/view/forget_password_view.dart';
 import '../../features/login/presentation/view/reset_password_view.dart';
@@ -220,6 +222,14 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => ResetPasswordView(
           email: email,
+        ),
+      );
+
+       case VideoPlayerView.routeName:
+      final videoModel = settings.arguments as VideoModel;
+      return MaterialPageRoute(
+        builder: (context) => VideoPlayerView(
+          videoModel: videoModel,
         ),
       );
     default:

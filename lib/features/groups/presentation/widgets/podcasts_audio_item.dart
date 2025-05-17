@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:napd/features/groups/data/model/podcast_model.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/app_shadows.dart';
@@ -11,8 +12,8 @@ import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/spacers.dart';
 
 class PodcastsAudioItem extends StatelessWidget {
-  const PodcastsAudioItem({super.key});
-
+  const PodcastsAudioItem({super.key, required this.audio});
+  final PodcastModel audio;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -42,35 +43,40 @@ class PodcastsAudioItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      VerticalSpace(4),
-                      Text(
-                        'Calm it Down',
-                        style: AppStyles.roboto18Medium.copyWith(
-                          color: AppColors.darkBlueColor,
+                  Expanded(
+                    child: Column(
+                      spacing: 10.h,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        VerticalSpace(4),
+                        Text(
+                          audio.title,
+                          style: AppStyles.roboto18Medium.copyWith(
+                            color: AppColors.darkBlueColor,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
                         ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          SvgPicture.asset(
-                            AppSvgs.clockIcon,
-                            width: 20.w,
-                            height: 20.h,
-                          ),
-                          HorizantalSpace(6),
-                          Text(
-                            '26:45',
-                            style: AppStyles.roboto12Regular.copyWith(
-                              color: Color(0xff808080),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              AppSvgs.clockIcon,
+                              width: 20.w,
+                              height: 20.h,
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
+                            HorizantalSpace(6),
+                            Text(
+                              audio.duration,
+                              style: AppStyles.roboto12Regular.copyWith(
+                                color: Color(0xff808080),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                   SvgPicture.asset(
                     AppSvgs.playIcon,

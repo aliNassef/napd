@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
@@ -104,6 +106,62 @@ class DioConsumer extends ApiConsumer {
         queryParameters: queryParameters,
       );
       return response;
+    } on DioException catch (e) {
+      handleDioException(e);
+    }
+  }
+
+  @override
+  Future postDataWithImage(
+    String path, {
+    dynamic data,
+    Map<String, dynamic>? queryParameters,
+    bool isFromData = false,
+  }) async {
+    dio.options.headers = {
+      "accept": "*/*",
+      "Content-Type": "multipart/form-data",
+    };
+    try {
+      if (data is Map<String, dynamic> && data.containsKey('files')) {
+        final formData = FormData();
+        final files = data['files'] as List;
+
+        // Add files to formData
+        for (var file in files) {
+          if (file is File) {
+            formData.files.add(
+              MapEntry(
+                'files',
+                await MultipartFile.fromFile(
+                  file.path,
+                  filename: file.path.split('/').last,
+                ),
+              ),
+            );
+          }
+        }
+        // Add other fields to formData
+        data.forEach((key, value) {
+          if (key != 'files' && value != null) {
+            formData.fields.add(MapEntry(key, value.toString()));
+          }
+        });
+
+        final response = await dio.post(
+          path,
+          data: formData,
+          queryParameters: queryParameters,
+        );
+        return response;
+      } else {
+        final response = await dio.post(
+          path,
+          data: isFromData ? FormData.fromMap(data) : data,
+          queryParameters: queryParameters,
+        );
+        return response;
+      }
     } on DioException catch (e) {
       handleDioException(e);
     }
