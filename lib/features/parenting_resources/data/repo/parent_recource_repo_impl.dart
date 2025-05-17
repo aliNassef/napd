@@ -5,6 +5,7 @@ import 'package:napd/core/errors/failure.dart';
 import 'package:napd/features/parenting_resources/data/models/activity_model.dart';
 
 import 'package:napd/features/parenting_resources/data/models/recipe_model.dart';
+import 'package:napd/features/parenting_resources/data/models/tips_trics_model.dart';
 
 import '../source/parent_resource_remote_datasource.dart';
 import 'parent_recource_repo.dart';
@@ -33,6 +34,20 @@ class ParentRecourceRepoImpl extends ParentRecourceRepo {
     try {
       final activities = await parentResourceDataSource.getActivites();
       return Right(activities);
+    } on ServerException catch (e) {
+      return Left(
+        Failure(
+          errMessage: e.errorModel.errorMessage,
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<TipsAndTricksModel>>> getTipsAndTricks() async {
+    try {
+      final tipsAndTricks = await parentResourceDataSource.getTipsAndTricks();
+      return Right(tipsAndTricks);
     } on ServerException catch (e) {
       return Left(
         Failure(

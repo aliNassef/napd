@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/core/controller/cubit/app_localization_cubit.dart';
 import 'package:napd/core/di/service_locator.dart';
+import 'package:napd/features/parenting_resources/presentation/views/tips_and_tricks_view.dart';
 import 'features/groups/presentation/view/podcasts_view.dart';
 import 'features/login/presentation/cubit/login_cubit.dart';
 import 'core/utils/app_router.dart';
@@ -49,7 +50,7 @@ class Napd extends StatelessWidget {
                 builder: DevicePreview.appBuilder,
                 theme: getLightTheme(),
                 onGenerateRoute: onGenerateRoute,
-                initialRoute: PodcastsView.routeName,
+                initialRoute: TipsAndTricksView.routeName,
               );
             },
           ),

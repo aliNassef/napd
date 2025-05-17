@@ -5,17 +5,18 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../../../core/widgets/spacers.dart';
+import '../../data/models/tips_trics_model.dart';
 
 class TipItemContent extends StatelessWidget {
   const TipItemContent({
     super.key,
     required this.points,
     required this.title,
-    required this.tipNumber,
+    required this.image,
   });
-  final List<String> points;
   final String title;
-  final String tipNumber;
+  final String image;
+  final List<Tip> points;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -24,57 +25,62 @@ class TipItemContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
-              'Tips for comfy Sleeping',
-              style: AppStyles.roboto24SemiBold.copyWith(
+              title,
+              style: AppStyles.roboto20SemiBold.copyWith(
                 color: AppColors.darkBlueColor,
               ),
             ),
           ],
         ),
         VerticalSpace(10),
-        Row(
-          children: [
-            Text(
-              '1.',
-              style: AppStyles.roboto14Regular.copyWith(
-                color: AppColors.secondaryColor,
-              ),
-            ),
-            Text(
-              'Establish a Bedtime Routine:',
-              style: AppStyles.roboto14Regular.copyWith(
-                color: AppColors.secondaryColor,
-              ),
-            ),
-          ],
-        ),
-        ...points.map(
-          (point) => Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                '  •  ',
-                style: AppStyles.roboto14Regular.copyWith(
-                  color: AppColors.darkBlueColor,
-                ),
-              ),
-              Expanded(
-                child: Text(
-                  point,
-                  style: AppStyles.roboto14Regular.copyWith(
-                    color: AppColors.darkBlueColor,
+        ...points.asMap().entries.map(
+              (point) => Column(
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        '${point.key + 1}.',
+                        style: AppStyles.roboto14Regular.copyWith(
+                          color: AppColors.secondaryColor,
+                        ),
+                      ),
+                      Text(
+                        point.value.title,
+                        style: AppStyles.roboto14Regular.copyWith(
+                          color: AppColors.secondaryColor,
+                        ),
+                      ),
+                    ],
                   ),
-                ),
+                  ...point.value.points.map(
+                    (point) => Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '  •  ',
+                          style: AppStyles.roboto14Regular.copyWith(
+                            color: AppColors.darkBlueColor,
+                          ),
+                        ),
+                        Expanded(
+                          child: Text(
+                            point.description,
+                            style: AppStyles.roboto14Regular.copyWith(
+                              color: AppColors.darkBlueColor,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
-        ),
+            ),
         VerticalSpace(18),
         ClipRRect(
           borderRadius: BorderRadius.circular(15),
           child: CustomNetworkImage(
-            img:
-                'https://images.nightcafe.studio/jobs/3Ri6GfFBAhUUHUVG251W/3Ri6GfFBAhUUHUVG251W--1--h7lk0.jpg?tr=w-1600,c-at_max',
+            img: image,
             width: 270.w,
             height: 188.h,
           ),

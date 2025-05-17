@@ -5,10 +5,12 @@ import '../../../../core/api/end_ponits.dart';
 import '../../../../core/errors/error_model.dart';
 import '../../../../core/errors/exceptions.dart';
 import '../models/recipe_model.dart';
+import '../models/tips_trics_model.dart';
 
 abstract class ParentResourceRemoteDataSource {
   Future<List<RecipeModel>> getRecipes();
   Future<List<ActivityModel>> getActivites();
+  Future<List<TipsAndTricksModel>> getTipsAndTricks();
 }
 
 class ParentResourceRemoteDataSourceImpl
@@ -38,6 +40,17 @@ class ParentResourceRemoteDataSourceImpl
     if (response.statusCode == 200) {
       final List<dynamic> data = response.data;
       return data.map((activity) => ActivityModel.fromJson(activity)).toList();
+    } else {
+      throw ServerException(ErrorModel.fromJson(response.data));
+    }
+  }
+
+  @override
+  Future<List<TipsAndTricksModel>> getTipsAndTricks() async {
+    final response = await api.get(EndPoints.tipsAndtricks);
+    if (response.statusCode == 200) {
+      final List<dynamic> data = response.data;
+      return data.map((activity) => TipsAndTricksModel.fromJson(activity)).toList();
     } else {
       throw ServerException(ErrorModel.fromJson(response.data));
     }

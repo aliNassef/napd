@@ -17,6 +17,7 @@ import '../../features/parenting_resources/data/repo/parent_recource_repo.dart';
 import '../../features/parenting_resources/data/repo/parent_recource_repo_impl.dart';
 import '../../features/parenting_resources/data/source/parent_resource_remote_datasource.dart';
 import '../../features/parenting_resources/presentation/cubits/recipe_cubit/recipe_cubit.dart';
+import '../../features/parenting_resources/presentation/cubits/tips_and_trics_cubit/tips_and_trics_cubit.dart';
 import '../../features/profile/data/repo/profile_repo.dart';
 import '../../features/profile/data/repo/profile_repo_impl.dart';
 import '../../features/profile/data/source/profile_local_source.dart';
@@ -181,6 +182,9 @@ void _setupReminderFeature() {
 void _setupParentResourceFeature() {
   injector.registerFactory<RecipeCubit>(
     () => RecipeCubit(injector<ParentRecourceRepo>()),
+  );
+  injector.registerFactory<TipsAndTricsCubit>(
+    () => TipsAndTricsCubit(parentRecourceRepo: injector<ParentRecourceRepo>()),
   );
   injector.registerFactory<ActivityCubit>(
     () => ActivityCubit(injector<ParentRecourceRepo>()),

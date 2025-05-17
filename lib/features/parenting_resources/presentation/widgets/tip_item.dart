@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/features/parenting_resources/data/models/tips_trics_model.dart';
 import '../../../../core/utils/app_shadows.dart';
 
 import 'tip_item_content.dart';
 class TipItem extends StatelessWidget {
   const TipItem({
-    super.key,
+    super.key, required this.tipsAndTricksModel, required this.index,
   });
+  final TipsAndTricksModel tipsAndTricksModel;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +23,10 @@ class TipItem extends StatelessWidget {
       ),
       padding: EdgeInsets.symmetric(horizontal: 16.w , vertical:  16.h),
       child: TipItemContent(
-        tipNumber: '1',
-        title: 'Tips for comfy Sleeping',
-        points: [
-          'Use a comfortable mattress and pillows',
-          'Read a book or listen to soothing music to help yourself fall asleep',
-        ],
-      ),
+        image: tipsAndTricksModel.imagePath,
+         title:tipsAndTricksModel.title,
+         points : tipsAndTricksModel.tips,
+       ),
     );
   }
 }
