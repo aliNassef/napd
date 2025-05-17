@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:napd/core/extensions/padding_extension.dart';
 import 'package:napd/core/utils/app_colors.dart';
 import 'package:napd/core/utils/app_styles.dart';
@@ -12,20 +13,23 @@ class VideoPlayerView extends StatefulWidget {
   const VideoPlayerView({super.key, required this.videoModel});
   static const routeName = 'video_player_widget';
   final VideoModel videoModel;
+
   @override
   State<VideoPlayerView> createState() => _VideoPlayerViewState();
 }
 
 class _VideoPlayerViewState extends State<VideoPlayerView> {
   late YoutubePlayerController _controller;
+
   @override
   void initState() {
     super.initState();
     final videoId = YoutubePlayer.convertUrlToId(widget.videoModel.url);
     _controller = YoutubePlayerController(
       initialVideoId: videoId!,
-      flags: YoutubePlayerFlags(
+      flags: const YoutubePlayerFlags(
         autoPlay: false,
+        showLiveFullscreenButton: false, // Already disables full-screen button
       ),
     );
   }
@@ -41,31 +45,42 @@ class _VideoPlayerViewState extends State<VideoPlayerView> {
     return Scaffold(
       appBar: CustomAppBar(title: widget.videoModel.description),
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            VerticalSpace(30),
-            AspectRatio(
-              aspectRatio: 16 / 9,
-              child: YoutubePlayer(
-                controller: _controller,
-                showVideoProgressIndicator: true,
-                progressIndicatorColor: AppColors.darkBlueColor,
-                progressColors: const ProgressBarColors(
-                  playedColor: AppColors.darkBlueColor,
-                  bufferedColor: AppColors.darkBlueColor,
-                ),
+        child: SingleChildScrollView(
+          child: YoutubePlayerBuilder(
+            player: YoutubePlayer(
+              controller: _controller,
+              showVideoProgressIndicator: true,
+              progressIndicatorColor: AppColors.darkBlueColor,
+              progressColors: const ProgressBarColors(
+                playedColor: AppColors.darkBlueColor,
+                bufferedColor: AppColors.darkBlueColor,
               ),
             ),
-            VerticalSpace(30),
-            Text(
-              widget.videoModel.title,
-              style: AppStyles.roboto20Bold.copyWith(
-                color: AppColors.darkBlueColor,
-              ),
-            ),
-          ],
-        ).withHorizontalPadding(16),
+            onEnterFullScreen: () {
+              // Prevent full-screen by forcing portrait orientation
+              SystemChrome.setPreferredOrientations([
+                DeviceOrientation.portraitUp,
+                DeviceOrientation.portraitDown,
+              ]);
+            },
+            builder: (context, player) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const VerticalSpace(30),
+                  player, // Place the YouTube player
+                  const VerticalSpace(30),
+                  Text(
+                    widget.videoModel.title,
+                    style: AppStyles.roboto20Bold.copyWith(
+                      color: AppColors.darkBlueColor,
+                    ),
+                  ).withHorizontalPadding(16),
+                ],
+              );
+            },
+          ),
+        ),
       ),
     );
   }

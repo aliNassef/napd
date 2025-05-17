@@ -13,7 +13,7 @@ void main() async {
 
   runApp(
     DevicePreview(
-      enabled: !kReleaseMode,
+      enabled: kReleaseMode,
       builder: (context) => BlocProvider(
         create: (context) => injector<AppLocalizationCubit>(),
         child: EasyLocalization(

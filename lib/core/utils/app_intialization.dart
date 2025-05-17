@@ -23,8 +23,9 @@ class AppIntialization {
     await CacheHelper.init();
     await ScreenUtil.ensureScreenSize();
     await NotificationService.initialize();
-    SystemChrome.setPreferredOrientations([
+   await SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
     ]);
     Bloc.observer = CustomBlocObserver();
   }
