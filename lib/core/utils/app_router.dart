@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:napd/features/groups/data/model/podcast_model.dart';
 import 'package:napd/features/groups/data/model/video_model.dart';
 import 'package:napd/features/groups/presentation/view/video_player_view.dart';
 import '../../features/groups/data/model/article_model.dart';
@@ -143,8 +144,11 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
         ),
       );
     case PodcastsDetailsView.routeName:
+      final audio = settings.arguments as PodcastModel;
       return MaterialPageRoute(
-        builder: (context) => const PodcastsDetailsView(),
+        builder: (context) => PodcastsDetailsView(
+          audio: audio,
+        ),
       );
     case ProductDetailsView.routeName:
       return MaterialPageRoute(

@@ -13,4 +13,4 @@ class PodcastModel {
       url: json['URL'] as String,
     );
   }
-}
+} 

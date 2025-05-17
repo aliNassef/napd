@@ -1,4 +1,5 @@
 import 'package:napd/core/api/end_ponits.dart';
+import 'package:napd/core/cache/cache_helper.dart';
 import 'package:napd/core/errors/exceptions.dart';
 
 import '../../../../core/api/api_consumer.dart';
@@ -15,12 +16,12 @@ abstract class GroupRemoteSource {
 
 class GroupRemoteSourceImpl implements GroupRemoteSource {
   final ApiConsumer api;
-
-  GroupRemoteSourceImpl({required this.api});
-
+  final CacheHelper cacheHelper;
+  GroupRemoteSourceImpl({required this.api, required this.cacheHelper});
+  
   @override
   Future<List<ArticleModel>> getArticles() async {
-    final response = await api.get(EndPoints.articles);
+    final response = await api.get((cacheHelper.getData(key: ApiKey.lang) ?? 'en') == 'ar' ? EndPoints.arabicArticles : EndPoints.englishArticles);
     if (response.statusCode == 200) {
       final List<ArticleModel> articles = (response.data as List)
           .map((article) => ArticleModel.fromJson(article))
@@ -32,7 +33,7 @@ class GroupRemoteSourceImpl implements GroupRemoteSource {
   }
   @override
   Future<List<VideoModel>> getAllVideos() async {
-    final response = await api.get(EndPoints.englishVideos);
+    final response = await api.get((cacheHelper.getData(key: ApiKey.lang) ?? 'en') == 'ar' ? EndPoints.arabicVideos : EndPoints.englishVideos );
     if (response.statusCode == 200) {
       final List<VideoModel> videos = (response.data as List)
           .map((video) => VideoModel.fromJson(video))
@@ -44,7 +45,7 @@ class GroupRemoteSourceImpl implements GroupRemoteSource {
   }
   @override
   Future<List<PodcastModel>> getAllPodcasts() async {
-    final response = await api.get(EndPoints.englishPodcasts);
+    final response = await api.get((cacheHelper.getData(key: ApiKey.lang) ?? 'en' ) != 'ar' ? EndPoints.arabicPodcasts : EndPoints.englishPodcasts);
     if (response.statusCode == 200) {
       final List<PodcastModel> podcasts = (response.data as List)
          .map((podcast) => PodcastModel.fromJson(podcast))

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:napd/features/groups/data/model/podcast_model.dart';
+import 'package:napd/features/groups/presentation/view/podcasts_details_view.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/app_shadows.dart';
@@ -17,7 +18,9 @@ class PodcastsAudioItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, PodcastsDetailsView.routeName, arguments: audio);
+      },
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,

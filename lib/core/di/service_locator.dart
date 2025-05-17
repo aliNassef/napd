@@ -239,6 +239,7 @@ void _setupGroupFeature() {
   injector.registerLazySingleton<GroupRemoteSource>(
     () => GroupRemoteSourceImpl(
       api: injector<ApiConsumer>(),
+      cacheHelper: CacheHelper(),
     ),
   );
 }

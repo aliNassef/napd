@@ -23,7 +23,8 @@ abstract class EndPoints {
   static const String delFavoriteHospital = 'Hospital/DeleteFav/';
   static const String recipes = 'Recipes';
   static const String activites = 'Activites';
-  static const String articles = 'Articles';
+  static const String englishArticles = 'MotherFeatures/EnglishArticles';
+  static const String arabicArticles = 'MotherFeatures/ArabicArticles';
   static const String arabicVideos = 'MotherFeatures/ArabicVideos';
   static const String englishVideos = 'MotherFeatures/EnglishVideos';
   static const String englishPodcasts = 'MotherFeatures/EnglishPodcasts';
@@ -39,4 +40,5 @@ abstract class ApiKey {
   static const userData = 'userData';
   static const babyId = 'babyId';
   static const notification = 'reminderNotification';
+  static const lang = 'lang';
 }
