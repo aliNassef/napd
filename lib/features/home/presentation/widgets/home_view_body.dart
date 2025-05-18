@@ -1,6 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:napd/core/functions/get_user.dart';
+import 'package:napd/core/helpers/image_picker_helper.dart';
+import 'package:napd/features/home/data/model/gallrey_input_model.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
@@ -9,6 +12,7 @@ import '../../../../core/utils/app_images.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../../../core/widgets/spacers.dart';
 import '../../../../core/utils/app_styles.dart';
+import '../cubits/gallrey_cubit/gallrey_cubit.dart';
 import 'chat_bot_section.dart';
 
 import 'home_features.dart';
@@ -24,14 +28,14 @@ class HomeViewBody extends StatelessWidget {
         children: [
           VerticalSpace(10),
           Text(
-            getBaby()!.babyName!,
+            getBaby()?.babyName! ?? '',
             style: AppStyles.roboto24SemiBold.copyWith(
               color: AppColors.darkBlueColor,
             ),
           ).withHorizontalPadding(16),
           VerticalSpace(6),
           Text(
-            calculateAgeDifference(getBaby()!.birthDate!),
+            calculateAgeDifference(getBaby()?.birthDate ?? ''),
             style: AppStyles.roboto16Regular.copyWith(
               color: AppColors.greenLightColor,
             ),
@@ -50,8 +54,20 @@ class HomeViewBody extends StatelessWidget {
                 ),
               ),
               HorizantalSpace(23),
-              Image.asset(
-                AppImages.camera,
+              GestureDetector(
+                onTap: () {
+                  ImagePickerHelper.openImagePicker(
+                    onGet: (img) {
+                      var input =
+                          GallreyInputModel(description: '', imgae: img);
+                      context.read<GallreyCubit>().uploadImageToGallrey(input);
+                    },
+                    context: context,
+                  );
+                },
+                child: Image.asset(
+                  AppImages.camera,
+                ),
               ),
             ],
           ).withHorizontalPadding(16),
@@ -69,6 +85,9 @@ class HomeViewBody extends StatelessWidget {
   }
 
   String calculateAgeDifference(String targetDate) {
+    if (targetDate.isEmpty) {
+      return '';
+    }
     // Parse the target date
     final target = DateTime.parse(targetDate.split('/').reversed.join('-'));
     final now = DateTime.now();

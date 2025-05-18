@@ -31,6 +31,9 @@ abstract class EndPoints {
   static const String arabicPodcasts = 'MotherFeatures/ArabicPodcasts';
   static const String getMotherProfile = 'Account/GetMotherProfile';
   static const String tipsAndtricks = 'MotherFeatures/TipsAndtricks';
+  static const String addGallrey = 'Gallary/Create';
+  static const String getGallrey = 'Gallary';
+  static const String deleteGallrey = 'Gallary/';
 }
 
 abstract class ApiKey {

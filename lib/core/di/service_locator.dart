@@ -13,6 +13,10 @@ import '../../features/groups/data/repo/group_repo.dart';
 import '../../features/groups/data/repo/group_repo_impl.dart';
 import '../../features/groups/data/source/group_remote_source.dart';
 import '../../features/groups/presentation/cubits/article_cubit/article_cubit.dart';
+import '../../features/home/data/repo/gallrey_repo.dart';
+import '../../features/home/data/repo/gallrey_repo_impl.dart';
+import '../../features/home/data/source/gallrey_remote_source.dart';
+import '../../features/home/presentation/cubits/gallrey_cubit/gallrey_cubit.dart';
 import '../../features/parenting_resources/data/repo/parent_recource_repo.dart';
 import '../../features/parenting_resources/data/repo/parent_recource_repo_impl.dart';
 import '../../features/parenting_resources/data/source/parent_resource_remote_datasource.dart';
@@ -66,6 +70,23 @@ Future<void> setupServiceLocator() async {
   _setupBabyFeature();
   _setupGroupFeature();
   _setupProfileFeature();
+  _setupGallreyFeature();
+}
+
+void _setupGallreyFeature() {
+  injector.registerFactory<GallreyCubit>(
+    () => GallreyCubit(injector<GallreyRepo>()),
+  );
+  injector.registerLazySingleton<GallreyRepo>(
+    () => GallreyRepoImpl(
+      remoteSource: injector<GallreyRemoteSource>(),
+    ),
+  );
+  injector.registerLazySingleton<GallreyRemoteSource>(
+    () => GallreyRemoteSourceImpl(
+      apiConsumer: injector<ApiConsumer>(),
+    ),
+  );
 }
 
 void _setupExernalFeature() {
