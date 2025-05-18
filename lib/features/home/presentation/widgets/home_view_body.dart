@@ -9,7 +9,6 @@ import '../../../../core/utils/app_strings.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_images.dart';
-import '../../../../core/widgets/custom_network_image.dart';
 import '../../../../core/widgets/spacers.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../cubits/gallrey_cubit/gallrey_cubit.dart';
@@ -72,11 +71,11 @@ class HomeViewBody extends StatelessWidget {
             ],
           ).withHorizontalPadding(16),
           VerticalSpace(22),
-          CustomNetworkImage(
-            img:
-                'https://images.nightcafe.studio/jobs/3Ri6GfFBAhUUHUVG251W/3Ri6GfFBAhUUHUVG251W--1--h7lk0.jpg?tr=w-1600,c-at_max',
+          Image.asset(
+            AppImages.captureYourMoments,
             width: context.width,
             height: context.height * 2 / 5,
+            fit: BoxFit.cover,
           ).withHorizontalPadding(16),
           VerticalSpace(40),
         ],

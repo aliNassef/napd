@@ -14,6 +14,7 @@ abstract class AppImages {
   static const String babyCry = 'assets/images/baby_cry.png';
   static const String cryResult = 'assets/images/baby_result.png';
   static const String noReminders = 'assets/images/no_reminders.png';
+  static const String captureYourMoments = 'assets/images/capture_your_moment.png';
 }
 
 abstract class AppSvgs {

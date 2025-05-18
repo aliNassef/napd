@@ -28,12 +28,14 @@ abstract class ImagePickerHelper {
                 child: Text(
                   'Gallery',
                 ),
-                onPressed: () => openGallery(onGet: onGet)),
+                onPressed: () => openGallery(
+                  onGet: onGet)),
             CupertinoDialogAction(
                 child: Text('Camera'),
                 onPressed: () => openCamera(onGet: onGet)),
           ],
         );
+        
       },
     );
   }
