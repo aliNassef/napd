@@ -15,6 +15,10 @@ class GalleryGridItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<GallreyCubit, GallreyState>(
+      buildWhen: (previous, current) =>
+          current is GallreyFailure ||
+          current is GallreyLoading ||
+          current is GallreyLoaded,
       builder: (context, state) {
         if (state is GallreyFailure) {
           return CustomFailureWidget(errMessage: state.errMessage);
@@ -34,10 +38,12 @@ class GalleryGridItems extends StatelessWidget {
               itemBuilder: (_, index) {
                 return GalleryItem(
                   gallrey: GallreyModel(
-                      createdAt: '1 / 1 /2025',
-                      imageUrl:
-                          'https://images.nightcafe.studio/jobs/3Ri6GfFBAhUUHUVG251W/3Ri6GfFBAhUUHUVG251W--1--h7lk0.jpg?tr=w-1600,c-at_max',
-                      description: 'description'),
+                    id: 1,
+                    createdAt: '1/1/2025',
+                    imageUrl:
+                        'https://images.nightcafe.studio/jobs/3Ri6GfFBAhUUHUVG251W/3Ri6GfFBAhUUHUVG251W--1--h7lk0.jpg?tr=w-1600,c-at_max',
+                    description: 'description',
+                  ),
                 );
               },
               itemCount: 10,

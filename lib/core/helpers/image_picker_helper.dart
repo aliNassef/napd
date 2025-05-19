@@ -11,6 +11,7 @@ abstract class ImagePickerHelper {
     required ValueChanged<File> onGet,
     required BuildContext context,
   }) {
+    
     showDialog(
       context: context,
       builder: (_) {

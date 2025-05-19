@@ -9,7 +9,7 @@ import '../../../../core/api/api_consumer.dart';
 
 abstract class GallreyRemoteSource {
   Future<void> uploadGallreyImage(GallreyInputModel gallreyInputModel);
-  Future<void> deleteGallreyImage(String id);
+  Future<void> deleteGallreyImage(int id);
   Future<List<GallreyModel>> getGallreyImages();
 }
 
@@ -68,11 +68,11 @@ class GallreyRemoteSourceImpl implements GallreyRemoteSource {
   }
 
   @override
-  Future<void> deleteGallreyImage(String id) async {
+  Future<void> deleteGallreyImage(int id) async {
     final response = await apiConsumer.delete(
-      EndPoints.deleteGallrey,
+      '${EndPoints.deleteGallrey}$id',
     );
-    if (response.statusCode == 200) {
+    if (response.statusCode == 200 || response.statusCode == 204) {
       return;
     } else {
       throw ServerException(ErrorModel.fromJson(response.data));

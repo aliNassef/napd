@@ -29,4 +29,16 @@ class GallreyCubit extends Cubit<GallreyState> {
       (gallreyImages) => emit(GallreyLoaded(gallrey: gallreyImages)),
     );
   }
+
+  void deleteGallreyImage(int id) async {
+    emit(DeleteImageToGallreyStateLoading());
+    final deleteOrfailure = await gallreyRepo.deleteGallreyImage(id);
+    deleteOrfailure.fold(
+      (failure) => emit(DeleteImageToGallreyStateFailure(errMessage: failure.errMessage)),
+      (gallreyImages) {
+        emit(DeleteImageToGallreyStateLoaded());
+        getGallreyImages();
+      },
+    );
+  }
 }

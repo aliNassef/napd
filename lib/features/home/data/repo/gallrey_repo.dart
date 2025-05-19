@@ -5,6 +5,6 @@ import 'package:napd/features/home/data/model/gallrey_model.dart';
 
 abstract class GallreyRepo {
   Future<Either<Failure, void>> uploadGallreyImage(GallreyInputModel gallreyInputModel);
-  Future<Either<Failure, void>> deleteGallreyImage(String id);
+  Future<Either<Failure, void>> deleteGallreyImage(int id);
   Future<Either<Failure, List<GallreyModel>>> getGallreyImages();
 }

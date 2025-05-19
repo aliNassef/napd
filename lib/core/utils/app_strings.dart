@@ -155,4 +155,8 @@ abstract class AppStrings {
   static String get fiber => 'fiber'.tr();
   static String get code => 'code'.tr();
   static String get birthDate => 'birthdate'.tr();
+  static String get deleteImage => 'deleteImage'.tr();
+  static String get deleteImageQuestion => 'deleteImageQuestion'.tr();
+  static String get delete => 'delete'.tr();
+  
 }

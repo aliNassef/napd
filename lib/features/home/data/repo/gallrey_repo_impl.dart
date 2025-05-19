@@ -33,7 +33,7 @@ class GallreyRepoImpl extends GallreyRepo {
   }
   
   @override
-  Future<Either<Failure, void>> deleteGallreyImage(String id) async {
+  Future<Either<Failure, void>> deleteGallreyImage(int id) async {
     try {
       await remoteSource.deleteGallreyImage(id);
       return const Right(null);

@@ -149,7 +149,9 @@
     "fiber" : "Fiber",
     "code" : "code",
     "age_difference": "is {years} year(s) and {months} month(s)",
-
-    "birthdate": "Birth date"
-}
+    "deleteImage" : "Delete Image",
+    "birthdate": "Birth date",
+    "deleteImageQuestion" : "Are you sure you want to delete this image?",
+    "delete": "Delete"
+ }
  
