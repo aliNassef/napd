@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../../../core/widgets/spacers.dart';
-import '../widgets/input_message_field.dart';
 import '../widgets/message_bubble.dart';
 
 class GroupChatViewBody extends StatelessWidget {
