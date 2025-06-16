@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../core/helpers/image_picker_helper.dart';
+import 'package:image_picker/image_picker.dart';
 import '../../../../core/utils/app_images.dart';
 import '../../data/model/signup_input_model.dart';
 import '../../../../core/utils/app_strings.dart';
@@ -28,7 +28,7 @@ class _MotherAccountFormState extends State<MotherAccountForm> {
   late TextEditingController _passwordController;
   late AutovalidateMode _autovalidateMode;
   late bool remember;
-  File? imageFile;
+  XFile? imageFile;
   @override
   void initState() {
     super.initState();
@@ -60,20 +60,23 @@ class _MotherAccountFormState extends State<MotherAccountForm> {
           Row(
             children: [
               GestureDetector(
-                onTap: () {
-                  ImagePickerHelper.openGallery(
-                    onGet: (img) {
-                      setState(() {
-                        imageFile = img;
-                      });
-                    },
-                  );
+                onTap: () async {
+                  final image = await ImagePicker()
+                      .pickImage(source: ImageSource.gallery);
+                  if (image != null) {
+                    setState(
+                      () {
+                        imageFile = image;
+                      },
+                    );
+                  }
                 },
                 child: CircleAvatar(
                   radius: 50,
                   backgroundColor: Color(0xffEAE8E8),
-                  backgroundImage:
-                      imageFile == null ? null : FileImage(imageFile!),
+                  backgroundImage: imageFile == null
+                      ? null
+                      : FileImage(File(imageFile!.path)),
                   child: imageFile == null
                       ? SvgPicture.asset(AppSvgs.uploadImageIcon)
                       : null,

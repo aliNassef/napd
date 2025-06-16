@@ -1,9 +1,14 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../core/di/service_locator.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/widgets/appbars/custom_app_bar.dart';
 import '../../../../core/widgets/spacers.dart';
 import '../../../groups/presentation/widgets/input_message_field.dart';
 import '../../../groups/presentation/widgets/suggestion_column.dart';
+import '../cubits/chat_bot_cubit/chat_bot_cubit.dart';
 
 class ChatBotView extends StatelessWidget {
   const ChatBotView({super.key});
@@ -18,7 +23,32 @@ class ChatBotView extends StatelessWidget {
         },
       ),
       body: SafeArea(
-        child: Column(
+        child: BlocProvider(
+          create: (context) => injector<ChatBotCubit>(),
+          child: ChatBotViewBody(),
+        ).withHorizontalPadding(16),
+      ),
+    );
+  }
+}
+
+class ChatBotViewBody extends StatelessWidget {
+  const ChatBotViewBody({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<ChatBotCubit, ChatBotState>(
+      buildWhen: (previous, current) =>
+          current is ChatBotLoading ||
+          current is ChatBotLoaded ||
+          current is ChatBotFailure,
+      builder: (context, state) {
+        if (state is ChatBotLoaded) {
+          log(state.answer);
+        }
+        return Column(
           children: [
             Expanded(
               child: SuggestionColumn(),
@@ -36,8 +66,8 @@ class ChatBotView extends StatelessWidget {
             InputMessageField(),
             VerticalSpace(16),
           ],
-        ).withHorizontalPadding(16),
-      ),
+        );
+      },
     );
   }
 }

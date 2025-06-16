@@ -8,6 +8,7 @@ abstract class SignupLocalDataSource {
   Future<void> cacheUserData(SignupModel user);
   Future<UserModel> getCachedUser();
   Future<void> cacheBabyId(int babyId);
+  Future<void> cacheToken(String token);
 }
 
 class SignupLocalDataSourceImpl implements SignupLocalDataSource {
@@ -35,4 +36,10 @@ class SignupLocalDataSourceImpl implements SignupLocalDataSource {
   Future<void> cacheBabyId(int babyId) async {
     await _cacheHelper.saveData(key: ApiKey.babyId, value: babyId);
   }
+
+  @override
+  Future<void> cacheToken(String token) async {
+    await _cacheHelper.saveData(key: ApiKey.token, value: token);
+  }
+
 }

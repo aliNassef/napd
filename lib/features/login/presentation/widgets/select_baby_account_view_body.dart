@@ -35,7 +35,11 @@ class SelectBabyAccountViewBody extends StatelessWidget {
           itemBuilder: (_, index) => BlocListener<LoginCubit, LoginState>(
             listenWhen: (__, current) => current is SelectBabyScuccess,
             listener: (context, state) {
-              Navigator.pushReplacementNamed(context, LayoutView.routeName);
+              if (state is SelectBabyScuccess) {
+                Navigator.of(context).pushReplacementNamed(
+                  LayoutView.routeName,
+                );
+              }
             },
             child: GestureDetector(
               onTap: () {
@@ -44,7 +48,7 @@ class SelectBabyAccountViewBody extends StatelessWidget {
               child: BabyAccountItem(
                 img: babies[index].profilePicUrl!.isEmpty
                     ? 'https://th.bing.com/th/id/OIP.3KfR6g7MEHXbm6Q-R1PzXQHaFj?rs=1&pid=ImgDetMain'
-                    : babies[index].profilePicUrl!,
+                    : 'https://th.bing.com/th/id/OIP.3KfR6g7MEHXbm6Q-R1PzXQHaFj?rs=1&pid=ImgDetMain',
                 name: babies[index].babyName!,
               ),
             ),

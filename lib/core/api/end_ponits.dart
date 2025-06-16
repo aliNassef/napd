@@ -35,6 +35,7 @@ abstract class EndPoints {
   static const String getGallrey = 'Gallary';
   static const String deleteGallrey = 'Gallary/';
   static const String geminiApi = 'AIzaSyC3sKCiac5uBzqCNW00dSPW0Vm1dfg8O3o';
+  static const String shop = 'https://mahdproject.duckdns.org/products/';
 }
 
 abstract class ApiKey {

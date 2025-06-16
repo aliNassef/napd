@@ -3,6 +3,7 @@ import 'package:napd/features/groups/data/model/podcast_model.dart';
 import 'package:napd/features/groups/data/model/video_model.dart';
 import 'package:napd/features/groups/presentation/view/video_player_view.dart';
 import 'package:napd/features/reminder/presentation/view/routine_view.dart';
+import 'package:napd/features/shop/data/model/product_model.dart';
 import '../../features/groups/data/model/article_model.dart';
 import '../../features/login/presentation/view/forget_password_view.dart';
 import '../../features/login/presentation/view/reset_password_view.dart';
@@ -152,8 +153,11 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
         ),
       );
     case ProductDetailsView.routeName:
+      final product = settings.arguments as ProductModel;
       return MaterialPageRoute(
-        builder: (context) => const ProductDetailsView(),
+        builder: (context) => ProductDetailsView(
+          product: product,
+        ),
       );
     case CartView.routeName:
       return MaterialPageRoute(

@@ -23,7 +23,7 @@ class LocationRow extends StatelessWidget {
         ),
         HorizantalSpace(4),
         Text(
-          'Bandung',
+          'amazon',
           style: AppStyles.roboto10Regular.copyWith(color: Color(0xff999999)),
         ),
       ],

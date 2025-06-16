@@ -1,7 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:napd/core/functions/get_user.dart';
+import 'package:napd/core/api/end_ponits.dart';
+import 'package:napd/core/cache/cache_helper.dart';
 import 'package:napd/features/layout/presentation/view/layout_view.dart';
 import '../../../boarding/presentation/view/boarding_view.dart';
 import '../../../../core/widgets/background_widget.dart';
@@ -27,7 +28,7 @@ class _SplashViewState extends State<SplashView> {
   }
 
   void _execuateNav() {
-    final user = getUser();
+    final user = CacheHelper().getData(key: ApiKey.token);
     if (user == null) {
       Navigator.pushReplacementNamed(context, BoardingView.routeName);
     } else {

@@ -7,7 +7,8 @@ import '../../../../core/widgets/spacers.dart';
 import '../../../../core/widgets/read_more_text.dart';
 
 class ProductDescription extends StatefulWidget {
-  const ProductDescription({super.key});
+  const ProductDescription({super.key, required this.description});
+  final String description;
 
   @override
   State<ProductDescription> createState() => _ProductDescriptionState();
@@ -27,8 +28,7 @@ class _ProductDescriptionState extends State<ProductDescription> {
         ),
         VerticalSpace(8),
         ReadMoreText(
-          text:
-              'Vegan, Non-GMO, Gluten-free & Gelatin-free: Each bottle of Goli contains 60 delicious, vegan, non-gmo, gluten-free & gelatin-free Apple Cider Vinegar gummies, which makes them suitable for almost any lifestyle.',
+          text: widget.description,
           maxLines: 3,
         ),
       ],

@@ -23,7 +23,8 @@ class SignupRepoImpl extends SignupRepo {
       SignupInputModel signupInputModel) async {
     try {
       final user = await _signupRemoteSource.createAccount(signupInputModel);
-      await _signupLocalDataSource.cacheUserData(user);
+      await _signupLocalDataSource.cacheToken(user.token);
+      await _signupLocalDataSource.cacheBabyId(user.babies.first.id!);
       return Right(user);
     } on ServerException catch (e) {
       return Left(

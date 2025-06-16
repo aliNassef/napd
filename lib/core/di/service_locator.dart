@@ -31,6 +31,10 @@ import '../../features/profile/data/repo/profile_repo.dart';
 import '../../features/profile/data/repo/profile_repo_impl.dart';
 import '../../features/profile/data/source/profile_local_source.dart';
 import '../../features/profile/data/source/profile_remote_source.dart';
+import '../../features/shop/data/repo/shop_repo.dart';
+import '../../features/shop/data/repo/shop_repo_impl.dart';
+import '../../features/shop/data/source/shop_remote_source.dart';
+import '../../features/shop/presentation/get_product_cubit/get_products_cubit.dart';
 import '../controller/cubit/get_mother_cubit/get_mother_profile_cubit.dart';
 import '../../features/signup/data/sources/signup_local_data_source.dart';
 import '../controller/cubit/app_localization_cubit.dart';
@@ -77,7 +81,23 @@ Future<void> setupServiceLocator() async {
   _setupProfileFeature();
   _setupGallreyFeature();
   _setupChatBotFeature();
+  _setupShopFeature();
+}
 
+void _setupShopFeature() {
+  injector.registerFactory<GetProductsCubit>(
+    () => GetProductsCubit(injector<ShopRepo>()),
+  );
+  injector.registerLazySingleton<ShopRepo>(
+    () => ShopRepoImpl(
+      remoteSource: injector<ShopRemoteSource>(),
+    ),
+  );
+  injector.registerLazySingleton<ShopRemoteSource>(
+    () => ShopRemoteSourceImpl(
+      dio: injector<Dio>(),
+    ),
+  );
 }
 
 void _setupChatBotFeature() {
@@ -86,7 +106,7 @@ void _setupChatBotFeature() {
   );
   injector.registerLazySingleton<ChatBotRepo>(
     () => ChatRepoImpl(
-       injector<ChatRemoteSource>(),
+      injector<ChatRemoteSource>(),
     ),
   );
   injector.registerLazySingleton<ChatRemoteSource>(
@@ -94,7 +114,7 @@ void _setupChatBotFeature() {
       dio: injector<Dio>(),
       apiKey: EndPoints.geminiApi,
     ),
-  );  
+  );
 }
 
 void _setupGallreyFeature() {

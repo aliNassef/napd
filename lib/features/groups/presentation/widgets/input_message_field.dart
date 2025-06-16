@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:napd/features/home/presentation/cubits/chat_bot_cubit/chat_bot_cubit.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/app_shadows.dart';
@@ -70,7 +72,11 @@ class InputMessageField extends StatelessWidget {
                             icon: SvgPicture.asset(AppSvgs.microphoneIcon),
                           ),
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              context
+                                  .read<ChatBotCubit>()
+                                  .getChatAnswer('كيفيه الرعايه بالطفل');
+                            },
                             icon: SvgPicture.asset(AppSvgs.sendIcon),
                           ),
                         ],
@@ -117,7 +123,11 @@ class InputMessageField extends StatelessWidget {
                       icon: SvgPicture.asset(AppSvgs.microphoneIcon),
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context
+                            .read<ChatBotCubit>()
+                            .getChatAnswer('كيفيه الرعايه بالطفل');
+                      },
                       icon: SvgPicture.asset(AppSvgs.sendIcon),
                     ),
                   ],

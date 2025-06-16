@@ -14,10 +14,10 @@ class ReadMoreText extends StatefulWidget {
   });
 
   @override
-  _ReadMoreTextState createState() => _ReadMoreTextState();
+  ReadMoreTextState createState() => ReadMoreTextState();
 }
 
-class _ReadMoreTextState extends State<ReadMoreText> {
+class ReadMoreTextState extends State<ReadMoreText> {
   bool isExpanded = false;
 
   @override

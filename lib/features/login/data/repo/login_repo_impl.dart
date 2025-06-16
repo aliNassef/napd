@@ -22,8 +22,7 @@ class LoginRepoImpl extends LoginRepo {
       LoginInputModel loginInput) async {
     try {
       final user = await _loginRemoteSource.login(loginInputModel: loginInput);
-      await _loginLocalSource.cacheUserData(user);
-
+      await _loginLocalSource.cacheToken(user.token);
       return right(user.babies);
     } on ServerException catch (e) {
       return left(

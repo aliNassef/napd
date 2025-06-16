@@ -1,5 +1,4 @@
- 
-import 'dart:io';
+import 'package:image_picker/image_picker.dart';
 
 class SignupInputModel {
   final String? email;
@@ -13,7 +12,7 @@ class SignupInputModel {
   final String? birthDate;
   final int? gender;
   final String? babyImage;
-  final File? file;
+  final XFile? file;
 
   SignupInputModel({
     this.firstName,

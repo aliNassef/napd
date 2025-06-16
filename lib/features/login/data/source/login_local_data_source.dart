@@ -6,6 +6,8 @@ import '../model/login_model.dart';
 
 abstract class LoginLocalDataSource {
   Future<void> cacheUserData(UserModel user);
+  Future<String> getcacheToken();
+  Future<void> cacheToken(String token);
   Future<UserModel> getCachedUser();
   Future<void> cacheBabyId(int babyId);
 }
@@ -34,5 +36,16 @@ class LoginLocalDataSourceImpl implements LoginLocalDataSource {
   @override
   Future<void> cacheBabyId(int babyId) async {
     await _cacheHelper.saveData(key: ApiKey.babyId, value: babyId);
+  }
+
+  @override
+  Future<String> getcacheToken() async {
+    final token = await _cacheHelper.getData(key: ApiKey.token);
+    return token;
+  }
+
+  @override
+  Future<void> cacheToken(String token) async {
+    await _cacheHelper.saveData(key: ApiKey.token, value: token);
   }
 }

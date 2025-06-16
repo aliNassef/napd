@@ -7,7 +7,9 @@ import '../../../../core/widgets/spacers.dart';
 class DiscountPriceRow extends StatelessWidget {
   const DiscountPriceRow({
     super.key,
+    required this.discountPrice,
   });
+  final String discountPrice;
 
   @override
   Widget build(BuildContext context) {
@@ -27,21 +29,13 @@ class DiscountPriceRow extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
           child: Text(
-            '50%',
+            discountPrice,
             style: AppStyles.roboto10Regular.copyWith(
               color: Color(0xffF04438),
             ),
           ),
         ),
         HorizantalSpace(4),
-        Text(
-          'Rp150.000',
-          style: AppStyles.roboto10Regular.copyWith(
-            color: Color(0xff808080),
-            decoration: TextDecoration.lineThrough,
-            decorationStyle: TextDecorationStyle.dashed,
-          ),
-        ),
       ],
     );
   }

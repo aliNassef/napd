@@ -1,9 +1,8 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:napd/core/functions/get_user.dart';
 import 'package:napd/core/helpers/image_picker_helper.dart';
 import 'package:napd/features/home/data/model/gallrey_input_model.dart';
+import 'package:napd/features/home/presentation/widgets/baby_info_bloc_builder.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
@@ -26,19 +25,7 @@ class HomeViewBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           VerticalSpace(10),
-          Text(
-            getBaby()?.babyName! ?? '',
-            style: AppStyles.roboto24SemiBold.copyWith(
-              color: AppColors.darkBlueColor,
-            ),
-          ).withHorizontalPadding(16),
-          VerticalSpace(6),
-          Text(
-            calculateAgeDifference(getBaby()?.birthDate ?? ''),
-            style: AppStyles.roboto16Regular.copyWith(
-              color: AppColors.greenLightColor,
-            ),
-          ).withHorizontalPadding(16),
+          BabyInfoBlocBuilder(),
           VerticalSpace(40),
           HomeFeatures(),
           VerticalSpace(30),
@@ -80,32 +67,6 @@ class HomeViewBody extends StatelessWidget {
           VerticalSpace(40),
         ],
       ),
-    );
-  }
-
-  String calculateAgeDifference(String targetDate) {
-    if (targetDate.isEmpty) {
-      return '';
-    }
-    // Parse the target date
-    final target = DateTime.parse(targetDate.split('/').reversed.join('-'));
-    final now = DateTime.now();
-
-    // Calculate the difference in years and months
-    int years = now.year - target.year;
-    int months = now.month - target.month;
-
-    // Adjust if the current month is earlier than the target month
-    if (months < 0) {
-      years -= 1;
-      months += 12;
-    }
-    return tr(
-      'age_difference',
-      namedArgs: {
-        'years': years.toString(),
-        'months': months.toString(),
-      },
     );
   }
 }

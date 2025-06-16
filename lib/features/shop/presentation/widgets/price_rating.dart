@@ -4,8 +4,9 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 
 class PriceAndRating extends StatelessWidget {
-  const PriceAndRating({super.key});
-
+  const PriceAndRating({super.key, required this.price, required this.rating});
+  final String price;
+  final String rating;
   @override
   Widget build(BuildContext context) {
     return Row(
