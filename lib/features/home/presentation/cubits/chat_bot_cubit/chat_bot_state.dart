@@ -1,10 +1,7 @@
 part of 'chat_bot_cubit.dart';
 
-sealed class ChatBotState extends Equatable {
+sealed class ChatBotState {
   const ChatBotState();
-
-  @override
-  List<Object> get props => [];
 }
 
 final class ChatBotInitial extends ChatBotState {}
@@ -20,3 +17,5 @@ final class ChatBotFailure extends ChatBotState {
   final String errMessage;
   const ChatBotFailure({required this.errMessage});
 }
+
+final class MessageAddedToChat extends ChatBotState {}

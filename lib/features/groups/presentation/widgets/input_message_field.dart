@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:napd/features/home/presentation/cubits/chat_bot_cubit/chat_bot_cubit.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/app_shadows.dart';
@@ -12,8 +10,14 @@ import '../../../../core/helpers/image_picker_helper.dart';
 import '../../../../core/utils/app_colors.dart';
 
 class InputMessageField extends StatelessWidget {
-  const InputMessageField({super.key, this.isgroup = false});
+  const InputMessageField(
+      {super.key,
+      this.isgroup = false,
+      this.onSendTap,
+      required this.messageController});
   final bool isgroup;
+  final void Function()? onSendTap;
+  final TextEditingController messageController;
   @override
   Widget build(BuildContext context) {
     return isgroup
@@ -46,6 +50,7 @@ class InputMessageField extends StatelessWidget {
                     ],
                   ),
                   child: TextField(
+                    controller: messageController,
                     keyboardType: TextInputType.multiline,
                     style: AppStyles.roboto13Bold.copyWith(
                       color: AppColors.primaryColor,
@@ -64,22 +69,9 @@ class InputMessageField extends StatelessWidget {
                       enabledBorder: _buildBorderStyle(),
                       focusedBorder: _buildBorderStyle(),
                       hintText: AppStrings.typeYourMessage,
-                      suffixIcon: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          IconButton(
-                            onPressed: () {},
-                            icon: SvgPicture.asset(AppSvgs.microphoneIcon),
-                          ),
-                          IconButton(
-                            onPressed: () {
-                              context
-                                  .read<ChatBotCubit>()
-                                  .getChatAnswer('كيفيه الرعايه بالطفل');
-                            },
-                            icon: SvgPicture.asset(AppSvgs.sendIcon),
-                          ),
-                        ],
+                      suffixIcon: IconButton(
+                        onPressed: onSendTap,
+                        icon: SvgPicture.asset(AppSvgs.sendIcon),
                       ),
                     ),
                   ),
@@ -97,6 +89,7 @@ class InputMessageField extends StatelessWidget {
               ],
             ),
             child: TextField(
+              controller: messageController,
               keyboardType: TextInputType.multiline,
               style: AppStyles.roboto13Bold.copyWith(
                 color: AppColors.primaryColor,
@@ -114,23 +107,10 @@ class InputMessageField extends StatelessWidget {
                 border: _buildBorderStyle(),
                 enabledBorder: _buildBorderStyle(),
                 focusedBorder: _buildBorderStyle(),
-                hintText: 'Type your message here',
-                suffixIcon: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: SvgPicture.asset(AppSvgs.microphoneIcon),
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        context
-                            .read<ChatBotCubit>()
-                            .getChatAnswer('كيفيه الرعايه بالطفل');
-                      },
-                      icon: SvgPicture.asset(AppSvgs.sendIcon),
-                    ),
-                  ],
+                hintText: AppStrings.typeYourMessage,
+                suffixIcon: IconButton(
+                  onPressed: onSendTap,
+                  icon: SvgPicture.asset(AppSvgs.sendIcon),
                 ),
               ),
             ),

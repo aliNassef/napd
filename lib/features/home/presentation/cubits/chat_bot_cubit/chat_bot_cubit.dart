@@ -21,4 +21,9 @@ class ChatBotCubit extends Cubit<ChatBotState> {
       ),
     );
   }
+
+  void addMessageToChat(String question) {
+    emit(MessageAddedToChat());
+    getChatAnswer(question);
+  }
 }

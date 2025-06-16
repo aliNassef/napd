@@ -10,18 +10,20 @@ class MessageBubble extends StatelessWidget {
     super.key,
     required this.text,
     this.bubbleColor,
+    this.alignment,
     this.nip,
   });
   final String text;
   final Color? bubbleColor;
   final BubbleNip? nip;
+  final Alignment? alignment;
   @override
   Widget build(BuildContext context) {
     return Bubble(
       color: bubbleColor ?? AppColors.darkBlueColor,
       nip: nip ?? BubbleNip.leftBottom,
       radius: Radius.circular(10),
-      alignment: Alignment.centerLeft,
+      alignment: alignment ?? Alignment.centerLeft,
       padding: const BubbleEdges.all(14),
       margin: BubbleEdges.all(10),
       child: Container(
