@@ -1,6 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:napd/core/di/service_locator.dart';
+import 'package:napd/core/utils/app_localizations.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/app_shadows.dart';
@@ -110,7 +114,12 @@ class InputMessageField extends StatelessWidget {
                 hintText: AppStrings.typeYourMessage,
                 suffixIcon: IconButton(
                   onPressed: onSendTap,
-                  icon: SvgPicture.asset(AppSvgs.sendIcon),
+                  icon: injector<AppLocalizations>().isArabic(context)
+                      ? Transform.rotate(
+                          angle: pi,
+                          child: SvgPicture.asset(AppSvgs.sendIcon),
+                        )
+                      : SvgPicture.asset(AppSvgs.sendIcon),
                 ),
               ),
             ),
