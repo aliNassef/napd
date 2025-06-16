@@ -1,15 +1,15 @@
 import 'package:dio/dio.dart';
-import '../functions/get_user.dart';
+import 'package:napd/core/api/end_ponits.dart';
+import 'package:napd/core/cache/cache_helper.dart';
 
 class ApiInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     options.headers['Accept-Language'] = 'en';
-    options.headers['Authorization'] =
-        'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4MiIsImVtYWlsIjoic2hhaGQxNjVAZ21haWwuY29tIiwianRpIjoiYzA5Zjc4MjMtN2IzMS00NTAzLTgxZDEtMzVjODU5YTA3MjYxIiwiZXhwIjoxNzQ5OTM2MzQ4LCJpc3MiOiJNYU1hQ2FyZSIsImF1ZCI6Ik1hTWFDYXJlIn0.WsgjrGHKX7yr24dCDN3xupfK7EYIMrFihGsNQuFBsgc';
-
-    if (getUser() != null) {
-      options.headers['Authorization'] = 'Bearer ${getUser()!.token}';
+    options.headers['Content-Type'] = 'application/json';
+    if (CacheHelper().getData(key: ApiKey.token) != null) {
+      options.headers['Authorization'] =
+          'Bearer ${CacheHelper().getData(key: ApiKey.token)}';
     }
 
     super.onRequest(options, handler);

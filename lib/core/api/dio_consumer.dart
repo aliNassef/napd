@@ -123,19 +123,18 @@ class DioConsumer extends ApiConsumer {
       "Content-Type": "multipart/form-data",
     };
     try {
-      if (data is Map<String, dynamic> && (data.containsKey('files') || data.containsKey('Image'))) {
+      if (data is Map<String, dynamic> &&
+          (data.containsKey('files') || data.containsKey('Image'))) {
         final formData = FormData();
-        
-        // Determine which field to use and get the files
+
         String fileFieldName = data.containsKey('files') ? 'files' : 'Image';
         final files = data[fileFieldName] as List;
 
-        // Add files to formData
         for (var file in files) {
           if (file is File) {
             formData.files.add(
               MapEntry(
-                fileFieldName, // Use the determined field name consistently
+                fileFieldName,
                 await MultipartFile.fromFile(
                   file.path,
                   filename: file.path.split('/').last,
@@ -146,7 +145,6 @@ class DioConsumer extends ApiConsumer {
             formData.files.add(MapEntry(fileFieldName, file));
           }
         }
-        // Add other fields to formData
         data.forEach((key, value) {
           if (key != 'files' && value != null) {
             formData.fields.add(MapEntry(key, value.toString()));

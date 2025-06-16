@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:napd/features/groups/data/model/podcast_model.dart';
 import 'package:napd/features/groups/data/model/video_model.dart';
 import 'package:napd/features/groups/presentation/view/video_player_view.dart';
+import 'package:napd/features/reminder/presentation/view/routine_view.dart';
 import '../../features/groups/data/model/article_model.dart';
 import '../../features/login/presentation/view/forget_password_view.dart';
 import '../../features/login/presentation/view/reset_password_view.dart';
@@ -229,12 +230,16 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
         ),
       );
 
-       case VideoPlayerView.routeName:
+    case VideoPlayerView.routeName:
       final videoModel = settings.arguments as VideoModel;
       return MaterialPageRoute(
         builder: (context) => VideoPlayerView(
           videoModel: videoModel,
         ),
+      );
+    case RoutineView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => RoutineView(),
       );
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());

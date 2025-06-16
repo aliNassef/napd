@@ -63,6 +63,7 @@ abstract class AppSvgs {
   static const String chatBotIcon = 'assets/icons/chat_bot_icon.svg';
   static const String galleryIcon = 'assets/icons/gallery_icon.svg';
   static const String uploadImageIcon = 'assets/icons/upload_image_icon.svg';
+  static const String clockRoutineIcon = 'assets/icons/clock_routine_icon.svg';
   static const String currentChoiceIcon =
       'assets/icons/current_choice_icon.svg';
 }
