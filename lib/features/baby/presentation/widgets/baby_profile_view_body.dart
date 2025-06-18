@@ -104,7 +104,8 @@ class BabyProfileViewBody extends StatelessWidget {
                 Align(
                   alignment: Alignment.center,
                   child: BabyProfileImage(
-                    image: state.baby.profilePicUrl ?? '',
+                    image: state.baby.profilePicUrl ??
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWb6nDWb0rrFUAbs5jed2a9_oO0EczozsKvg&s',
                   ),
                 ),
                 VerticalSpace(40),

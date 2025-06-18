@@ -36,7 +36,7 @@ class ParentResourceRemoteDataSourceImpl
 
   @override
   Future<List<ActivityModel>> getActivites() async {
-    final response = await api.get(EndPoints.activites);
+    final response = await api.get(EndPoints.englishActivites);
     if (response.statusCode == 200) {
       final List<dynamic> data = response.data;
       return data.map((activity) => ActivityModel.fromJson(activity)).toList();

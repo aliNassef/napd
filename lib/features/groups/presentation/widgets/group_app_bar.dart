@@ -28,12 +28,12 @@ class GroupAppBar extends StatelessWidget implements PreferredSizeWidget {
         labelColor: AppColors.secondaryColor,
         indicatorColor: Colors.transparent,
         tabs: [
-          Tab(
-            child: Text(
-              AppStrings.groups,
-              style: AppStyles.roboto18SemiBold,
-            ),
-          ),
+          // Tab(
+          //   child: Text(
+          //     AppStrings.groups,
+          //     style: AppStyles.roboto18SemiBold,
+          //   ),
+          // ),
           Tab(
             child: Text(
               AppStrings.forYou,

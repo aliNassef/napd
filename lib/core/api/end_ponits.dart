@@ -21,8 +21,9 @@ abstract class EndPoints {
   static const String addHospitlaToFav = 'Hospital/AddToFav/';
   static const String getFavoriteHospital = 'Hospital/GetFavouriteHospitals';
   static const String delFavoriteHospital = 'Hospital/DeleteFav/';
-  static const String recipes = 'Recipes';
-  static const String activites = 'Activites';
+  static const String recipes = 'BabyFeatures/Recipes';
+  static const String englishActivites = 'BabyFeatures/EnglishActivites';
+  static const String arabicActivites = 'BabyFeatures/ArabicActivites';
   static const String englishArticles = 'MotherFeatures/EnglishArticles';
   static const String arabicArticles = 'MotherFeatures/ArabicArticles';
   static const String arabicVideos = 'MotherFeatures/ArabicVideos';

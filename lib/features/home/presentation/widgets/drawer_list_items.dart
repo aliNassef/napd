@@ -11,6 +11,7 @@ import '../../../settings/presentation/view/settings_view.dart';
 import '../../../shop/presentation/view/shop_view.dart';
 import '../../../parenting_resources/presentation/views/tips_and_tricks_view.dart';
 import '../../../../core/utils/app_images.dart';
+import '../view/chat_bot_view.dart';
 import '../view/gallery_view.dart';
 import 'drawer_item.dart';
 
@@ -104,7 +105,7 @@ class _DrawerListItemsState extends State<DrawerListItems> {
       image: AppSvgs.chatBotIcon,
       onTap: (context) {
         Navigator.of(context, rootNavigator: true).pushNamed(
-          BabyProfileView.routeName,
+          ChatBotView.routeName,
         );
       },
     ),

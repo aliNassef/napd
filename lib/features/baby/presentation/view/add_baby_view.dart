@@ -83,6 +83,11 @@ class _AddBabyViewState extends State<AddBabyView> {
                 text: AppStrings.addBaby,
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
+                    // var addBabyInput = AddBabyInput(
+                    //   name: _nameController.text,
+                    //   age: _ageController.text,
+                    //   gender: _gender,
+                    // );
                   } else {
                     setState(() {
                       _autovalidateMode = AutovalidateMode.always;

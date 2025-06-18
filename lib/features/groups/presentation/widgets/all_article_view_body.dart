@@ -8,6 +8,7 @@ import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/widgets/custom_failure_widget.dart';
 import '../../../../core/widgets/custom_search_bar.dart';
 import '../../../../core/widgets/spacers.dart';
+import '../view/article_details_view.dart';
 import 'all_article_item.dart';
 
 class AllArticlesViewBody extends StatelessWidget {
@@ -68,8 +69,17 @@ class AllArticlesViewBody extends StatelessWidget {
               ),
               SliverToBoxAdapter(child: VerticalSpace(10)),
               SliverList.separated(
-                itemBuilder: (_, index) => AllArticleItem(
-                  articleModel: state.articles[index],
+                itemBuilder: (_, index) => GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      ArticleDetailsView.routeName,
+                      arguments: state.articles[index],
+                    );
+                  },
+                  child: AllArticleItem(
+                    articleModel: state.articles[index],
+                  ),
                 ),
                 separatorBuilder: (_, index) => VerticalSpace(12),
                 itemCount: state.articles.length,

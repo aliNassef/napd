@@ -10,6 +10,7 @@ import 'features/layout/presentation/view/layout_view.dart';
 import 'features/login/presentation/cubit/login_cubit.dart';
 import 'core/utils/app_router.dart';
 import 'core/utils/app_themes.dart';
+import 'features/splash/presentation/view/splash_view.dart';
 
 class Napd extends StatelessWidget {
   const Napd({super.key});
@@ -49,7 +50,7 @@ class Napd extends StatelessWidget {
                 builder: DevicePreview.appBuilder,
                 theme: getLightTheme(),
                 onGenerateRoute: onGenerateRoute,
-                initialRoute: LayoutView.routeName,
+                initialRoute: SplashView.routeName,
               );
             },
           ),
