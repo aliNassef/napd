@@ -1,8 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/core/widgets/custom_failure_widget.dart';
 import 'package:skeletonizer/skeletonizer.dart';
+import '../../../../core/functions/toast_dialog.dart';
 import '../../data/model/gallrey_model.dart';
 import '../cubits/gallrey_cubit/gallrey_cubit.dart';
 import '../widgets/gallery_item.dart';
@@ -14,11 +17,17 @@ class GalleryGridItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<GallreyCubit, GallreyState>(
+    return BlocConsumer<GallreyCubit, GallreyState>(
       buildWhen: (previous, current) =>
           current is GallreyFailure ||
           current is GallreyLoading ||
           current is GallreyLoaded,
+      listener: (context, state) {
+        if(state is DeleteImageToGallreyStateLoaded){
+          log('Image deleted successfully');
+          showToast(text: 'Image deleted successfully');
+        }
+      },
       builder: (context, state) {
         if (state is GallreyFailure) {
           return CustomFailureWidget(errMessage: state.errMessage);

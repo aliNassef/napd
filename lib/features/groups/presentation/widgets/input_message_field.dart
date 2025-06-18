@@ -10,7 +10,6 @@ import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/app_shadows.dart';
 import '../../../../core/utils/app_styles.dart';
 
-import '../../../../core/helpers/image_picker_helper.dart';
 import '../../../../core/utils/app_colors.dart';
 
 class InputMessageField extends StatelessWidget {
@@ -29,7 +28,7 @@ class InputMessageField extends StatelessWidget {
             children: [
               IconButton(
                 onPressed: () {
-                  ImagePickerHelper.openCamera(onGet: (imageFile) {});
+                  // ImagePickerHelper.openCamera(onGet: (imageFile) {});
                 },
                 icon: Icon(
                   Icons.camera_alt,
@@ -39,7 +38,7 @@ class InputMessageField extends StatelessWidget {
               ),
               IconButton(
                 onPressed: () {
-                  ImagePickerHelper.openGallery(onGet: (imageFile) {});
+                  // ImagePickerHelper.openGallery(onGet: (imageFile) {});
                 },
                 icon: SvgPicture.asset(AppSvgs.selectImageIcon),
               ),

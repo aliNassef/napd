@@ -11,50 +11,49 @@ abstract class ImagePickerHelper {
     required ValueChanged<File> onGet,
     required BuildContext context,
   }) {
-    
     showDialog(
       context: context,
       builder: (_) {
-        return CupertinoAlertDialog(
-          title: Center(
-            child: Text(
-              'Select Image Source',
-              style: AppStyles.roboto18Regular.copyWith(
-                color: AppColors.darkBlueColor,
-              ),
+        return AlertDialog(
+          title: Text(
+            'Select Image Source',
+            style: AppStyles.roboto18Regular.copyWith(
+              color: AppColors.darkBlueColor,
             ),
           ),
           actions: [
-            CupertinoDialogAction(
-                child: Text(
-                  'Gallery',
-                ),
-                onPressed: () => openGallery(
-                  onGet: onGet)),
-            CupertinoDialogAction(
-                child: Text('Camera'),
-                onPressed: () => openCamera(onGet: onGet)),
+            TextButton(
+              child: Text('Gallery'),
+              onPressed: () => openGallery(onGet: onGet, context: context),
+            ),
+            TextButton(
+              child: Text('Camera'),
+              onPressed: () => openCamera(onGet: onGet, context: context),
+            ),
           ],
         );
-        
       },
     );
   }
 
   static Future<void> openGallery({
     required ValueChanged<File> onGet,
+    required BuildContext context,
   }) async {
     final image = await ImagePicker().pickImage(source: ImageSource.gallery);
     if (image != null) {
+      Navigator.of(context, rootNavigator: true).pop();
       onGet(File(image.path));
     }
   }
 
   static Future<void> openCamera({
     required ValueChanged<File> onGet,
+    required BuildContext context,
   }) async {
     final image = await ImagePicker().pickImage(source: ImageSource.camera);
     if (image != null) {
+      Navigator.of(context, rootNavigator: true).pop();
       onGet(File(image.path));
     }
   }

@@ -4,6 +4,8 @@ import 'package:napd/core/helpers/image_picker_helper.dart';
 import 'package:napd/features/home/data/model/gallrey_input_model.dart';
 import 'package:napd/features/home/presentation/widgets/baby_info_bloc_builder.dart';
 import '../../../../core/extensions/padding_extension.dart';
+import '../../../../core/functions/show_error_message.dart';
+import '../../../../core/functions/toast_dialog.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/extensions/mediaquery_size.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -40,19 +42,31 @@ class HomeViewBody extends StatelessWidget {
                 ),
               ),
               HorizantalSpace(23),
-              GestureDetector(
-                onTap: () {
-                  ImagePickerHelper.openImagePicker(
-                    onGet: (img) {
-                      var input =
-                          GallreyInputModel(description: '', imgae: img);
-                      context.read<GallreyCubit>().uploadImageToGallrey(input);
-                    },
-                    context: context,
-                  );
+              BlocListener<GallreyCubit, GallreyState>(
+                listener: (context, state) {
+                  if (state is AddImageToGallreyStateFailure) {
+                    showErrorMessage(context, errMessage: state.errMessage);
+                  }
+                  if (state is AddImageToGallreyStateLoaded) {
+                    showToast(text: 'Image added successfully');
+                  }
                 },
-                child: Image.asset(
-                  AppImages.camera,
+                child: GestureDetector(
+                  onTap: () {
+                    ImagePickerHelper.openImagePicker(
+                      onGet: (img) {
+                        var input =
+                            GallreyInputModel(description: '', imgae: img);
+                        context
+                            .read<GallreyCubit>()
+                            .uploadImageToGallrey(input);
+                      },
+                      context: context,
+                    );
+                  },
+                  child: Image.asset(
+                    AppImages.camera,
+                  ),
                 ),
               ),
             ],
