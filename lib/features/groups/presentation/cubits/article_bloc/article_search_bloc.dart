@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:napd/features/groups/data/repo/group_repo.dart';
+import 'package:rxdart/rxdart.dart';
 
 import '../../../data/model/article_model.dart';
 
@@ -18,7 +19,14 @@ class ArticleSearchBloc extends Bloc<ArticleSearchEvent, ArticleSearchState> {
           (failure) =>
               emit(ArticleSearchFailure(errMessage: failure.errMessage)),
           (articles) => emit(ArticleSearchLoaded(articles: articles)),
-     );
-     });
+        );  
+      },
+      transformer: (events, mapper) {
+        return events
+            .where((event) => event is ArticleOnSearchEvent)
+            .debounceTime(const Duration(milliseconds: 300))
+            .asyncExpand(mapper);
+      },
+    );
   }
 }

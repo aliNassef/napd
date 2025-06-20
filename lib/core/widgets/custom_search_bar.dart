@@ -5,11 +5,17 @@ import '../utils/app_strings.dart';
 import '../utils/app_styles.dart';
 
 class CustomSearchBar extends StatelessWidget {
-  const CustomSearchBar({super.key, this.vertivalPadding = 5});
+  const CustomSearchBar({
+    super.key,
+    this.vertivalPadding = 5,
+    this.onChanged,
+  });
   final double vertivalPadding;
+  final Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onChanged: onChanged,
       onTapOutside: (event) {
         FocusScope.of(context).unfocus();
       },

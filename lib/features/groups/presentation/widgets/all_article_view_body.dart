@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/features/groups/data/model/article_model.dart';
+import 'package:napd/features/groups/presentation/cubits/article_bloc/article_search_bloc.dart';
 import 'package:napd/features/groups/presentation/cubits/article_cubit/article_cubit.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
@@ -31,7 +32,9 @@ class AllArticlesViewBody extends StatelessWidget {
                   child: Padding(
                     padding:
                         EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-                    child: CustomSearchBar(),
+                    child: CustomSearchBar(
+                      onChanged: (value) {},
+                    ),
                   ),
                 ),
                 SliverToBoxAdapter(child: VerticalSpace(10)),
@@ -58,31 +61,80 @@ class AllArticlesViewBody extends StatelessWidget {
           );
         }
         if (state is ArticleLoaded) {
+          final articles = state.articles;
           return CustomScrollView(
             slivers: [
               SliverToBoxAdapter(
                 child: Padding(
                   padding:
                       EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-                  child: CustomSearchBar(),
+                  child: CustomSearchBar(
+                    onChanged: (value) {
+                      context.read<ArticleSearchBloc>().add(
+                            ArticleOnSearchEvent(query: value),
+                          );
+                    },
+                  ),
                 ),
               ),
               SliverToBoxAdapter(child: VerticalSpace(10)),
-              SliverList.separated(
-                itemBuilder: (_, index) => GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(
-                      context,
-                      ArticleDetailsView.routeName,
-                      arguments: state.articles[index],
+              BlocBuilder<ArticleSearchBloc, ArticleSearchState>(
+                buildWhen: (previous, current) =>
+                    current is ArticleSearchLoading ||
+                    current is ArticleSearchLoaded ||
+                    current is ArticleSearchFailure,
+                builder: (context, state) {
+                  if (state is ArticleSearchLoading) {
+                    return SliverToBoxAdapter(
+                      child: Center(
+                        child: CircularProgressIndicator(),
+                      ),
                     );
-                  },
-                  child: AllArticleItem(
-                    articleModel: state.articles[index],
-                  ),
-                ),
-                separatorBuilder: (_, index) => VerticalSpace(12),
-                itemCount: state.articles.length,
+                  }
+                  if (state is ArticleSearchFailure) {
+                    return SliverToBoxAdapter(
+                      child: CustomFailureWidget(
+                        errMessage: 'No articles found',
+                      ),
+                    );
+                  }
+
+                  if (state is ArticleSearchLoaded) {
+                    final articles = state.articles;
+                    return SliverList.separated(
+                      itemBuilder: (_, index) => GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            ArticleDetailsView.routeName,
+                            arguments: articles[index],
+                          );
+                        },
+                        child: AllArticleItem(
+                          articleModel: articles[index],
+                        ),
+                      ),
+                      separatorBuilder: (_, index) => VerticalSpace(12),
+                      itemCount: articles.length,
+                    );
+                  }
+                  return SliverList.separated(
+                    itemBuilder: (_, index) => GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          ArticleDetailsView.routeName,
+                          arguments: articles[index],
+                        );
+                      },
+                      child: AllArticleItem(
+                        articleModel: articles[index],
+                      ),
+                    ),
+                    separatorBuilder: (_, index) => VerticalSpace(12),
+                    itemCount: articles.length,
+                  );
+                },
               ),
             ],
           );
