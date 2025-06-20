@@ -15,6 +15,7 @@ class CustomTextFormField extends StatefulWidget {
     this.hintColor,
     this.isFilled = false,
     this.fillColor,
+    this.inputColor,
   });
   final String hintText;
   final TextEditingController controller;
@@ -24,6 +25,7 @@ class CustomTextFormField extends StatefulWidget {
   final Color? hintColor;
   final bool isFilled;
   final Color? fillColor;
+  final Color? inputColor;
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
 }
@@ -34,7 +36,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   Widget build(BuildContext context) {
     return TextFormField(
       style: AppStyles.roboto20Regular.copyWith(
-        color: Colors.white,
+        color: widget.inputColor ?? Colors.white,
       ),
       keyboardType: widget.keyboardType,
       cursorColor: AppColors.greyColor,

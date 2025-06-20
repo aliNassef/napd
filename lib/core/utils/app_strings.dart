@@ -157,6 +157,8 @@ abstract class AppStrings {
   static String get birthDate => 'birthdate'.tr();
   static String get deleteImage => 'deleteImage'.tr();
   static String get deleteImageQuestion => 'deleteImageQuestion'.tr();
+  static String get routine => 'routine'.tr();
   static String get delete => 'delete'.tr();
+
   
 }

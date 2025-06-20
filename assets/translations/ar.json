@@ -54,7 +54,7 @@
   "lastname": "الاسم الأخير",
   "signuptogetstarted": "سجل للبدء",
   "addyourbaby": "أضف طفلك",
-  "age": "العمر",
+  "age": "العمر YYYY-MM-DD",
   "name": "الاسم",
   "weight": "الوزن",
   "height": "الطول",
@@ -152,5 +152,6 @@
   "birthdate": "تاريخ",
   "deleteImage": "حذف الصورة",
   "deleteImageQuestion": "هل أنت متأكد من حذف هذه الصورة؟",
-  "delete": "حذف"
+  "delete": "حذف",
+  "routine" : "روتين"
 }

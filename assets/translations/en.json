@@ -54,7 +54,7 @@
     "lastname": "Last name",
     "signuptogetstarted": "Sign up to get started",
     "addyourbaby": "Add your baby",
-    "age": "Age",
+    "age": "Age YYYY-MM-DD",
     "name": "Name",
     "weight": "Weight",
     "height": "Height",
@@ -152,6 +152,7 @@
     "deleteImage" : "Delete Image",
     "birthdate": "Birth date",
     "deleteImageQuestion" : "Are you sure you want to delete this image?",
-    "delete": "Delete"
+    "delete": "Delete",
+    "routine" : "Routine"
  }
  

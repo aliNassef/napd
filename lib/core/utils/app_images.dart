@@ -14,7 +14,13 @@ abstract class AppImages {
   static const String babyCry = 'assets/images/baby_cry.png';
   static const String cryResult = 'assets/images/baby_result.png';
   static const String noReminders = 'assets/images/no_reminders.png';
-  static const String captureYourMoments = 'assets/images/capture_your_moment.png';
+  static const String captureYourMoments =
+      'assets/images/capture_your_moment.png';
+  static const String dummyImage1 = 'assets/images/static_image_1.png';
+  static const String dummyImage2 = 'assets/images/static_image_2.png';
+  static const String dummyImage3 = 'assets/images/static_image_3.png';
+  static const String dummyImage4 = 'assets/images/static_image_4.png';
+  static const String dummyImage5 = 'assets/images/static_image_5.png';
 }
 
 abstract class AppSvgs {

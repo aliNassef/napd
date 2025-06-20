@@ -9,7 +9,7 @@ class RoutineViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      padding: EdgeInsets.only(top: 10.h),
+      padding: EdgeInsets.only(top: 16.h, bottom: 20.h),
       itemBuilder: (context, index) => RoutineItem(),
       separatorBuilder: (context, index) => VerticalSpace(16),
       itemCount: 10,

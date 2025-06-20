@@ -60,6 +60,7 @@ class _SetReminderViewBodyState extends State<SetReminderViewBody> {
           ).withHorizontalPadding(32),
           VerticalSpace(40),
           CustomTextFormField(
+            inputColor: AppColors.darkBlueColor,
             hintText: AppStrings.title,
             keyboardType: TextInputType.text,
             hintColor: Colors.black.withValues(alpha: 0.3),
@@ -67,6 +68,7 @@ class _SetReminderViewBodyState extends State<SetReminderViewBody> {
           ),
           VerticalSpace(40),
           CustomTextFormField(
+            inputColor: AppColors.darkBlueColor,
             hintColor: Colors.black.withValues(alpha: 0.3),
             hintText: AppStrings.description,
             keyboardType: TextInputType.text,
