@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/core/utils/app_images.dart';
 import 'package:napd/core/widgets/custom_failure_widget.dart';
 import 'package:napd/features/groups/presentation/cubits/get_top_for_you_cubit/get_top_for_you_cubit.dart';
+import 'package:napd/features/groups/presentation/view/article_details_view.dart';
+import 'package:napd/features/groups/presentation/view/podcasts_details_view.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../data/model/article_model.dart';
@@ -59,8 +61,16 @@ class ForyouViewBody extends StatelessWidget {
                     mainAxisSpacing: 30.h,
                     mainAxisExtent: 133.h,
                   ),
-                  itemBuilder: (_, index) => ArticleItem(
-                    article: state.articles[index],
+                  itemBuilder: (_, index) => GestureDetector(
+                    onTap: () {
+                      Navigator.of(context, rootNavigator: true).pushNamed(
+                        ArticleDetailsView.routeName,
+                        arguments: state.articles[index],
+                      );
+                    },
+                    child: ArticleItem(
+                      article: state.articles[index],
+                    ),
                   ),
                 );
               }
@@ -199,12 +209,6 @@ class ForyouViewBody extends StatelessWidget {
                 current is GetTopForYouPodcastsFailure,
             builder: (context, state) {
               if (state is GetTopForYouPodcastsLoaded) {
-                List<String> images = [
-                  AppImages.dummyImage1,
-                  AppImages.dummyImage2,
-                  AppImages.dummyImage3,
-                  AppImages.dummyImage4,
-                ];
                 return SliverToBoxAdapter(
                   child: SizedBox(
                     height: 200.h,
@@ -213,9 +217,17 @@ class ForyouViewBody extends StatelessWidget {
                       separatorBuilder: (_, index) => HorizantalSpace(16),
                       scrollDirection: Axis.horizontal,
                       itemCount: state.podcasts.length,
-                      itemBuilder: (_, index) => PodcastItem(
-                        image: images[index],
-                        audio: state.podcasts[index],
+                      itemBuilder: (_, index) => GestureDetector(
+                        onTap: () {
+                          Navigator.of(context, rootNavigator: true).pushNamed(
+                            PodcastsDetailsView.routeName,
+                            arguments: state.podcasts[index],
+                          );
+                        },
+                        child: PodcastItem(
+                          image: AppImages.podcastDemo,
+                          audio: state.podcasts[index],
+                        ),
                       ),
                     ),
                   ),

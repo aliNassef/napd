@@ -33,7 +33,7 @@ class PodcastsAudioItem extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: Image.asset(
-                AppImages.podcastImage,
+                AppImages.podcastDemo,
                 height: 100.h,
                 width: 100.w,
                 fit: BoxFit.cover,

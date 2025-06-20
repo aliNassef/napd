@@ -6,7 +6,7 @@ import '../../../../core/extensions/padding_extension.dart';
 
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/app_styles.dart';
- import '../view/video_player_view.dart';
+import '../view/video_player_view.dart';
 
 class VideoItem extends StatelessWidget {
   const VideoItem({super.key, required this.video, this.image});
@@ -16,8 +16,7 @@ class VideoItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(
-          context,
+        Navigator.of(context, rootNavigator: true).pushNamed(
           VideoPlayerView.routeName,
           arguments: video,
         );
@@ -27,7 +26,7 @@ class VideoItem extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(15),
             child: Image.asset(
-             image ?? AppImages.dummyImage1,
+              image ?? AppImages.dummyImage1,
               height: 133.h,
               width: 166.w,
               fit: BoxFit.cover,
