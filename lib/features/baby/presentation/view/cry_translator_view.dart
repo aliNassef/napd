@@ -12,6 +12,7 @@ class CryTranslatorView extends StatelessWidget {
     return Scaffold(
       body: BackgroundWidget(
         child: SafeArea(
+          bottom: false,
           child: CryTranslatorViewBody(),
         ),
       ),

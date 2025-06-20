@@ -21,6 +21,7 @@ abstract class AppImages {
   static const String dummyImage3 = 'assets/images/static_image_3.png';
   static const String dummyImage4 = 'assets/images/static_image_4.png';
   static const String dummyImage5 = 'assets/images/static_image_5.png';
+  static const String podcastImage = 'assets/images/podcast.jpg';
 }
 
 abstract class AppSvgs {

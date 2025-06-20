@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:napd/core/utils/app_styles.dart';
-import 'package:napd/features/baby/presentation/cubit/get_cubit/get_baby_cubit.dart';
+import 'package:napd/features/baby/presentation/cubit/get_baby_cubit/get_baby_cubit.dart';
 import 'package:napd/core/utils/app_colors.dart';
 import 'package:napd/core/widgets/custom_failure_widget.dart';
 import 'package:skeletonizer/skeletonizer.dart';

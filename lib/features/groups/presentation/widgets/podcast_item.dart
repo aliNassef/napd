@@ -3,22 +3,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 
-import '../../../../core/widgets/custom_network_image.dart';
+ import '../../data/model/podcast_model.dart';
 
 class PodcastItem extends StatelessWidget {
-  const PodcastItem({super.key});
-
+  const PodcastItem({super.key, required this.audio, this.image});
+  final PodcastModel audio;
+  final String? image;
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(15.r),
-          child: CustomNetworkImage(
-            img:
-                'https://images.nightcafe.studio/jobs/3Ri6GfFBAhUUHUVG251W/3Ri6GfFBAhUUHUVG251W--1--h7lk0.jpg?tr=w-1600,c-at_max',
+          child: Image.asset(
+            image!,
             width: 120.w,
             height: 200.h,
+            fit: BoxFit.cover,
           ),
         ),
         Positioned(
@@ -35,7 +36,7 @@ class PodcastItem extends StatelessWidget {
               ),
             ),
             child: Text(
-              'Understanding mental health',
+              audio.title,
               style: AppStyles.roboto14Regular.copyWith(
                 color: Color(0xfff5f5f5),
               ),

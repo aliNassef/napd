@@ -6,8 +6,6 @@ import 'package:napd/features/groups/presentation/view/podcasts_details_view.dar
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/utils/app_shadows.dart';
-import '../../../../core/widgets/custom_network_image.dart';
-
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/spacers.dart';
@@ -19,7 +17,8 @@ class PodcastsAudioItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, PodcastsDetailsView.routeName, arguments: audio);
+        Navigator.pushNamed(context, PodcastsDetailsView.routeName,
+            arguments: audio);
       },
       child: Container(
         decoration: BoxDecoration(
@@ -33,11 +32,11 @@ class PodcastsAudioItem extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(15),
-              child: CustomNetworkImage(
+              child: Image.asset(
+                AppImages.podcastImage,
                 height: 100.h,
                 width: 100.w,
-                img:
-                    'https://r2.starryai.com/results/1042152870/6eb099de-74c0-460b-900e-551a3e7c540f.webp',
+                fit: BoxFit.cover,
               ),
             ),
             HorizantalSpace(12),

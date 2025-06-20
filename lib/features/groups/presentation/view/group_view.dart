@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../core/di/service_locator.dart';
+import '../cubits/get_top_for_you_cubit/get_top_for_you_cubit.dart';
 import '../widgets/for_you_view_body.dart';
 import '../widgets/group_app_bar.dart';
 
@@ -21,7 +24,13 @@ class _GroupViewState extends State<GroupView> {
         body: TabBarView(
           children: [
             // GroupViewBody(),
-            ForyouViewBody(),
+            BlocProvider(
+              create: (context) => injector<GetTopForYouCubit>()
+                ..getTopArticles()
+                ..getTopPodcasts()
+                ..getTopVideos(),
+              child: ForyouViewBody(),
+            ),
           ],
         ),
       ),

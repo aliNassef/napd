@@ -37,6 +37,14 @@ abstract class EndPoints {
   static const String deleteGallrey = 'Gallary/';
   static const String geminiApi = 'AIzaSyC3sKCiac5uBzqCNW00dSPW0Vm1dfg8O3o';
   static const String shop = 'https://mahdproject.duckdns.org/products/';
+  static const String searchArticles = 'MotherFeatures/Articles/Search';
+  static const String search = 'Search';
+  static const String top4Englishpodcasts = 'MotherFeatures/EnglishPodcasts/Top4';
+  static const String top4Arabicpodcasts = 'MotherFeatures/ArabicPodcasts/Top4';
+  static const String top4ArabicVideos = 'MotherFeatures/ArabicVideos/Top4';
+  static const String top4EnglishVideos = 'MotherFeatures/EnglishVideos/Top4';
+  static const String top4EnglishArticles = 'MotherFeatures/EnglishArticles/Top4';
+  static const String top4ArabicArticles = 'MotherFeatures/ArabicArticles/Top4';
 }
 
 abstract class ApiKey {

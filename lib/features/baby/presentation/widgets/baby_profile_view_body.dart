@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:napd/features/baby/presentation/cubit/get_cubit/get_baby_cubit.dart';
+import 'package:napd/features/baby/presentation/cubit/get_baby_cubit/get_baby_cubit.dart';
+import 'package:napd/features/baby/presentation/view/add_baby_view.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -105,7 +106,7 @@ class BabyProfileViewBody extends StatelessWidget {
                   alignment: Alignment.center,
                   child: BabyProfileImage(
                     image: state.baby.profilePicUrl ??
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWb6nDWb0rrFUAbs5jed2a9_oO0EczozsKvg&s',
+                        'https://th.bing.com/th/id/OIP.-cvZOvlWaBPECBcccB6rXQHaLH?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3',
                   ),
                 ),
                 VerticalSpace(40),
@@ -137,7 +138,7 @@ class BabyProfileViewBody extends StatelessWidget {
                 VerticalSpace(28),
                 BabyProfileButton(
                   onPressed: () {
-                    // Navigator.of(context).pushNamed(.routeName);
+                    Navigator.of(context).pushNamed(AddBabyView.routeName);
                   },
                   backgroundColor: Color(0xffDBF9FF),
                   icon: AppSvgs.addBabyIcon,

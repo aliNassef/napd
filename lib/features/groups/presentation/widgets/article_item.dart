@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:napd/features/groups/data/model/article_model.dart';
 import '../../../../core/extensions/padding_extension.dart';
 
 import '../../../../core/utils/app_styles.dart';
@@ -8,8 +9,9 @@ import '../../../../core/widgets/custom_network_image.dart';
 class ArticleItem extends StatelessWidget {
   const ArticleItem({
     super.key,
+    required this.article,
   });
-
+  final ArticleModel article;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -17,8 +19,7 @@ class ArticleItem extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(15),
           child: CustomNetworkImage(
-            img:
-                'https://images.nightcafe.studio/jobs/3Ri6GfFBAhUUHUVG251W/3Ri6GfFBAhUUHUVG251W--1--h7lk0.jpg?tr=w-1600,c-at_max',
+            img: article.imageUrl,
             height: 133.h,
             width: 166.w,
           ),
@@ -37,7 +38,7 @@ class ArticleItem extends StatelessWidget {
               color: Color(0xff5C6898).withValues(alpha: 0.6),
             ),
             child: Text(
-              'What matters to a woman while raising children',
+              article.title,
               style: AppStyles.roboto14Regular.copyWith(
                 color: Color(0xfff5f5f5),
               ),

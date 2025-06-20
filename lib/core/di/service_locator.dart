@@ -3,6 +3,8 @@ import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 import 'package:napd/core/api/end_ponits.dart';
 import 'package:napd/features/baby/data/source/baby_remote_datasource.dart';
+import 'package:napd/features/baby/presentation/cubit/add_baby_cubit/add_baby_cubit.dart';
+import 'package:napd/features/groups/presentation/cubits/article_bloc/article_search_bloc.dart';
 import 'package:napd/features/groups/presentation/cubits/get_all_videos_cubit/get_all_videos_cubit.dart';
 import 'package:napd/features/groups/presentation/cubits/get_podcasts_cubit/get_podcasts_cubit.dart';
 import 'package:napd/features/home/data/repo/chat_repo.dart';
@@ -12,11 +14,12 @@ import 'package:napd/features/parenting_resources/presentation/cubits/activity_c
 import '../../features/baby/data/repo/baby_repo.dart';
 import '../../features/baby/data/repo/baby_repo_impl.dart';
 import '../../features/baby/data/source/baby_local_datasource.dart';
-import '../../features/baby/presentation/cubit/get_cubit/get_baby_cubit.dart';
+import '../../features/baby/presentation/cubit/get_baby_cubit/get_baby_cubit.dart';
 import '../../features/groups/data/repo/group_repo.dart';
 import '../../features/groups/data/repo/group_repo_impl.dart';
 import '../../features/groups/data/source/group_remote_source.dart';
 import '../../features/groups/presentation/cubits/article_cubit/article_cubit.dart';
+import '../../features/groups/presentation/cubits/get_top_for_you_cubit/get_top_for_you_cubit.dart';
 import '../../features/home/data/repo/chat_repo_impl.dart';
 import '../../features/home/data/repo/gallrey_repo.dart';
 import '../../features/home/data/repo/gallrey_repo_impl.dart';
@@ -270,6 +273,9 @@ void _setupBabyFeature() {
   injector.registerFactory<GetBabyCubit>(
     () => GetBabyCubit(injector<BabyRepo>()),
   );
+  injector.registerFactory<AddBabyCubit>(
+    () => AddBabyCubit(repo: injector<BabyRepo>()),
+  );
   injector.registerLazySingleton<BabyRepo>(
     () => BabyRepoImpl(
       remoteDatasource: injector<BabyRemoteDatasource>(),
@@ -289,6 +295,12 @@ void _setupBabyFeature() {
 void _setupGroupFeature() {
   injector.registerFactory<ArticleCubit>(
     () => ArticleCubit(injector<GroupRepo>()),
+  );
+  injector.registerFactory<GetTopForYouCubit>(
+    () => GetTopForYouCubit(injector<GroupRepo>()),
+  );
+  injector.registerFactory<ArticleSearchBloc>(
+    () => ArticleSearchBloc(injector<GroupRepo>()),
   );
   injector.registerFactory<GetAllVideosCubit>(
     () => GetAllVideosCubit(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:napd/features/baby/presentation/view/add_baby_view.dart';
 import 'package:napd/features/groups/data/model/podcast_model.dart';
 import 'package:napd/features/groups/data/model/video_model.dart';
 import 'package:napd/features/groups/presentation/view/video_player_view.dart';
@@ -162,6 +163,10 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case CartView.routeName:
       return MaterialPageRoute(
         builder: (context) => CartView(),
+      );
+    case AddBabyView.routeName:
+      return MaterialPageRoute(
+        builder: (context) => AddBabyView(),
       );
     case ThanksView.routeName:
       return MaterialPageRoute(

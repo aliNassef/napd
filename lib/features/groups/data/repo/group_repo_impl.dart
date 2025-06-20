@@ -18,9 +18,11 @@ class GroupRepoImpl extends GroupRepo {
       final articles = await remoteSource.getArticles();
       return right(articles);
     } on ServerException catch (e) {
-      return left(Failure(
-        errMessage: e.errorModel.errorMessage,
-      ));
+      return left(  
+        Failure(
+          errMessage: e.errorModel.errorMessage,
+        ),
+      );
     }
   }
 
@@ -30,9 +32,11 @@ class GroupRepoImpl extends GroupRepo {
       final videos = await remoteSource.getAllVideos();
       return right(videos);
     } on ServerException catch (e) {
-      return left(Failure(
-        errMessage: e.errorModel.errorMessage,
-      ));
+      return left(
+        Failure(
+          errMessage: e.errorModel.errorMessage,
+        ),
+      );
     }
   }
 
@@ -42,9 +46,68 @@ class GroupRepoImpl extends GroupRepo {
       final podcasts = await remoteSource.getAllPodcasts();
       return right(podcasts);
     } on ServerException catch (e) {
-      return left(Failure(
-        errMessage: e.errorModel.errorMessage,
-      ));
+      return left(
+        Failure(
+          errMessage: e.errorModel.errorMessage,
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<ArticleModel>>> searchArticles(
+      String query) async {
+    try {
+      final articles = await remoteSource.searchArticles(query);
+      return right(articles);
+    } on ServerException catch (e) {
+      return left(
+        Failure(
+          errMessage: e.errorModel.errorMessage,
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<ArticleModel>>> getTop4Articles() async {
+    try {
+      final articles = await remoteSource.getTop4Articles();
+      return right(articles);
+    } on ServerException catch (e) {
+      return left(
+        Failure(
+          errMessage: e.errorModel.errorMessage,
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<PodcastModel>>> getTop4Podcasts() async {
+    try {
+      final podcasts = await remoteSource.getTop4Podcasts();
+      return right(podcasts);
+    } on ServerException catch (e) {
+      return left(
+        Failure(
+          errMessage: e.errorModel.errorMessage,
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<VideoModel>>> getTop4Videos() async {
+    try {
+      final videos = await remoteSource.getTop4Videos();
+      return right(videos);
+    } on ServerException catch (e) {
+      return left(
+        Failure(
+          errMessage: e.errorModel.errorMessage,
+        ),
+      );
     }
   }
 }

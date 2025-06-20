@@ -24,7 +24,7 @@ class CryTranslatorViewBody extends StatelessWidget {
           ),
           VerticalSpace(50),
           Text(
-          AppStrings.translateYourBabysCry,
+            AppStrings.translateYourBabysCry,
             style: AppStyles.roboto32Bold.copyWith(
               color: AppColors.secondaryColor,
             ),
@@ -43,7 +43,6 @@ class CryTranslatorViewBody extends StatelessWidget {
             },
             backgroundColor: AppColors.secondaryColor,
             textColor: AppColors.primaryColor,
-            padding: 52,
           ),
         ],
       ).withHorizontalPadding(8),

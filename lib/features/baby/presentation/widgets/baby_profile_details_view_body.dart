@@ -20,7 +20,7 @@ class BabyProfileDetailsViewBody extends StatelessWidget {
         children: [
           CustomNetworkImage(
             img: baby.profilePicUrl ??
-                'https://images.nightcafe.studio/jobs/3Ri6GfFBAhUUHUVG251W/3Ri6GfFBAhUUHUVG251W--1--h7lk0.jpg?tr=w-1600,c-at_max',
+                'https://th.bing.com/th/id/OIP.-cvZOvlWaBPECBcccB6rXQHaLH?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3',
             height: context.height * 1 / 3,
             width: context.width,
           ),

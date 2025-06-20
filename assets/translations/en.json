@@ -54,7 +54,7 @@
     "lastname": "Last name",
     "signuptogetstarted": "Sign up to get started",
     "addyourbaby": "Add your baby",
-    "age": "Age YYYY-MM-DD",
+    "age": "birthdate YYYY-MM-DD",
     "name": "Name",
     "weight": "Weight",
     "height": "Height",

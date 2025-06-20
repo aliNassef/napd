@@ -1,8 +1,6 @@
 <resources>
-
-<string name="facebook_app_id">966332128983068</string>
-<string name="fb_login_protocol_scheme">fb1234</string>
-<string name="app_name">Mahd</string>
-<string name="facebook_client_token">c7d00c32210121adcfab57738714ec6a</string>
-
+    <string name="facebook_app_id">966332128983068</string>
+    <string name="fb_login_protocol_scheme">fb966332128983068</string>
+    <string name="app_name">Mahd</string>
+    <string name="facebook_client_token">c7d00c32210121adcfab57738714ec6a</string>
 </resources>
