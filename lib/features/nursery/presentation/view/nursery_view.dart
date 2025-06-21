@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../../core/di/service_locator.dart';
-import '../manger/hospital_search_bloc/hospital_search_bloc.dart';
 import '../manger/nursing_cubit/nursing_cubit.dart';
 import '../../../../core/widgets/appbars/custom_search_app_bar.dart';
 import '../../../../core/widgets/custom_search_bar.dart';
@@ -20,9 +19,6 @@ class NurseryView extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => injector<NursingCubit>()..getAllHospitals(),
-        ),
-        BlocProvider(
-          create: (context) => injector<HospitalSearchBloc>(),
         ),
       ],
       child: Builder(

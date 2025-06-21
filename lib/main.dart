@@ -15,7 +15,7 @@ void main() async {
     DevicePreview(
       enabled:!kReleaseMode,
       builder: (context) => BlocProvider(
-        create: (context) => injector<AppLocalizationCubit>(),
+        create: (context) => injector<AppLocalizationCubit>(), 
         child: EasyLocalization(
           path: 'assets/translations',
           supportedLocales: [

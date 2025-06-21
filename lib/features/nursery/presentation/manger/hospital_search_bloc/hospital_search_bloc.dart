@@ -14,7 +14,7 @@ class HospitalSearchBloc
   HospitalSearchBloc(this.nursingRepo) : super(HospitalSearchInitial()) {
     on<HospitalOnSearchEvent>(
       (event, emit) async {
-        if(event.query.isEmpty){
+        if (event.query.isEmpty) {
           emit(HospitalSearchEmpty());
           return;
         }
