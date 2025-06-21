@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import '../../data/repo/nursing_repo.dart';
+import '../../../data/repo/nursing_repo.dart';
 
-import '../../../../core/errors/failure.dart';
+import '../../../../../core/errors/failure.dart';
 import 'nursing_state.dart';
 
 class NursingCubit extends Cubit<NursingState> {

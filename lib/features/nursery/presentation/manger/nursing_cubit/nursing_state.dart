@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
-import '../../data/models/governorate_model.dart';
-import '../../data/models/hospital_model.dart';
+import '../../../data/models/governorate_model.dart';
+import '../../../data/models/hospital_model.dart';
 
 final class NursingState extends Equatable {
   @override

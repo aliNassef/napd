@@ -6,8 +6,8 @@ import 'package:flutter_svg/svg.dart';
 import '../../../../core/functions/show_error_message.dart';
 import '../../../../core/utils/app_images.dart';
 import '../../data/models/hospital_model.dart';
-import '../cubit/nursing_cubit.dart';
-import '../cubit/nursing_state.dart';
+import '../manger/nursing_cubit/nursing_cubit.dart';
+import '../manger/nursing_cubit/nursing_state.dart';
 
 class FavoriteButtonBlocConsumer extends StatelessWidget {
   const FavoriteButtonBlocConsumer({

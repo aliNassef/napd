@@ -16,17 +16,17 @@ class SearchModel {
   factory SearchModel.fromJson(Map<String, dynamic> json) {
     return SearchModel(
       hospitals: List<HospitalModel>.from(
-        json['hospitals'].map(
+        json['Hospitals'].map(
           (x) => HospitalModel.fromJson(x),
         ),
       ),
       articles: List<ArticleModel>.from(
-        json['articles'].map(
+        json['Articles'].map(
           (x) => ArticleModel.fromJson(x),
         ),
       ),
       activities: List<ActivityModel>.from(
-        json['activities'].map(
+        json['Activities'].map(
           (x) => ActivityModel.fromJson(x),
         ),
       ),

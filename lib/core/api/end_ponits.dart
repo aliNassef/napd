@@ -45,6 +45,8 @@ abstract class EndPoints {
   static const String top4EnglishVideos = 'MotherFeatures/EnglishVideos/Top4';
   static const String top4EnglishArticles = 'MotherFeatures/EnglishArticles/Top4';
   static const String top4ArabicArticles = 'MotherFeatures/ArabicArticles/Top4';
+  static const String searchOnHospitals = 'Hospital/SearchHospitals';
+  static const String searchOnGovernorates = 'Hospital/SearchGovernorates';
 }
 
 abstract class ApiKey {

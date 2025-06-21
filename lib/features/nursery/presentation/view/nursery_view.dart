@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../../core/di/service_locator.dart';
-import '../cubit/nursing_cubit.dart';
+import '../manger/nursing_cubit/nursing_cubit.dart';
 import '../../../../core/widgets/appbars/custom_search_app_bar.dart';
 import '../../../../core/widgets/custom_search_bar.dart';
 import '../../../../core/utils/app_images.dart';

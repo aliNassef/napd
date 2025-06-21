@@ -12,6 +12,7 @@ abstract class NursingRemoteDatasource {
   Future<List<HospitalModel>> getFilterdHospitals(int id);
   Future<void> addHospitalToFavorites(int id);
   Future<void> delHospitalFromFavorites(int id);
+  Future<List<HospitalModel>> searchOnHospitals(String query);
 }
 
 class NursingRemoteDatasourceImpl implements NursingRemoteDatasource {
@@ -84,6 +85,22 @@ class NursingRemoteDatasourceImpl implements NursingRemoteDatasource {
     );
     if (response.statusCode == 200) {
       return;
+    } else {
+      throw ServerException(
+        ErrorModel.fromJson(response.data),
+      );
+    }
+  }
+  
+  @override
+  Future<List<HospitalModel>> searchOnHospitals(String query) async {
+    final response = await _apiConsumer.get(
+      '${EndPoints.searchOnHospitals}$query',
+    );
+    if (response.statusCode == 200) {
+      return (response.data as List)
+          .map((e) => HospitalModel.fromJson(e))
+          .toList();
     } else {
       throw ServerException(
         ErrorModel.fromJson(response.data),

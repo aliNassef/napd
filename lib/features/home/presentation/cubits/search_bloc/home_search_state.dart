@@ -9,6 +9,7 @@ sealed class HomeSearchState extends Equatable {
 
 final class HomeSearchInitial extends HomeSearchState {}
 final class HomeSearchLoading extends HomeSearchState {}
+final class HomeSearchEmpty extends HomeSearchState {}
 final class HomeSearchLoaded extends HomeSearchState {
   final SearchModel searchModel;
   const HomeSearchLoaded({required this.searchModel});

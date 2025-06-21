@@ -49,7 +49,7 @@ import '../controller/cubit/app_localization_cubit.dart';
 import '../helpers/firebase_auth_service.dart';
 import '../helpers/notification_service.dart';
 import '../../features/login/data/source/login_local_data_source.dart';
-import '../../features/nursery/presentation/cubit/nursing_cubit.dart';
+import '../../features/nursery/presentation/manger/nursing_cubit/nursing_cubit.dart';
 import '../../features/nursery/data/repo/nursing_repo.dart';
 import '../../features/nursery/data/repo/nursing_repo_impl.dart';
 import '../../features/nursery/data/source/nursing_remote_datasource.dart';

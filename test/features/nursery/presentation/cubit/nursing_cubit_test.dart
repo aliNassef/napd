@@ -2,8 +2,8 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:napd/features/nursery/data/repo/nursing_repo_impl.dart';
-import 'package:napd/features/nursery/presentation/cubit/nursing_cubit.dart';
-import 'package:napd/features/nursery/presentation/cubit/nursing_state.dart';
+import 'package:napd/features/nursery/presentation/manger/nursing_cubit/nursing_cubit.dart';
+import 'package:napd/features/nursery/presentation/manger/nursing_cubit/nursing_state.dart';
 
 class MockNursingRepo extends Mock implements NursingRepoImpl {}
 

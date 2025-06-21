@@ -75,4 +75,16 @@ class NursingRepoImpl extends NursingRepo {
       );
     }
   }
+  
+  @override
+  Future<Either<Failure, List<HospitalModel>>> searchOnHospitals(String query) async {
+    try {
+      final hospitals = await nursingRemoteDataSource.searchOnHospitals(query);
+      return Right(hospitals);
+    } on ServerException catch (e) {
+      return Left(
+        Failure(errMessage: e.errorModel.errorMessage),
+      );
+    }
+  }
 }

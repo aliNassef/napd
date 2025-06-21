@@ -13,6 +13,10 @@ class HomeSearchBloc extends Bloc<HomeSearchEvent, HomeSearchState> {
   HomeSearchBloc(this.homeRepo) : super(HomeSearchInitial()) {
     on<HomeOnSearchEvent>(
       (event, emit) async {
+        if (event.query.isEmpty) {
+          emit(HomeSearchEmpty());
+          return;
+        }
         emit(HomeSearchLoading());
         final result = await homeRepo.search(event.query);
         result.fold(

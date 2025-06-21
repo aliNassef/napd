@@ -9,4 +9,5 @@ abstract class NursingRepo {
   Future<Either<Failure, List<HospitalModel>>> getFilterdHospitals(int id);
   Future<Either<Failure, void>> addHospitalToFav(int id);
   Future<Either<Failure, void>> delHospitalFromFav(int id);
+  Future<Either<Failure, List<HospitalModel>>> searchOnHospitals(String query);
 }
