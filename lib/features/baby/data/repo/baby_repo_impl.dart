@@ -3,6 +3,7 @@ import 'package:napd/core/errors/exceptions.dart';
 import 'package:napd/core/errors/failure.dart';
 import 'package:napd/features/baby/data/models/add_baby_input_model.dart';
 import 'package:napd/features/baby/data/models/baby_model.dart';
+import '../models/cry_model.dart';
 import '../source/baby_remote_datasource.dart';
 import 'baby_repo.dart';
 
@@ -45,5 +46,15 @@ class BabyRepoImpl extends BabyRepo {
         Failure(errMessage: e.errorModel.errorMessage),
       );
     }
+  }
+
+  @override
+  Future<Either<Failure, CryModel>> detectAudio(String filePath) async {
+     try {
+    final cry = await remoteDatasource.detectAudio(filePath);
+    return Right(cry);
+  } on ServerException catch (e) {
+    return Left(Failure(errMessage: e.errorModel.errorMessage));
+  }
   }
 }

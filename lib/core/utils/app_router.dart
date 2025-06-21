@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:napd/features/baby/data/models/cry_model.dart';
 import 'package:napd/features/baby/presentation/view/add_baby_view.dart';
 import 'package:napd/features/groups/data/model/podcast_model.dart';
 import 'package:napd/features/groups/data/model/video_model.dart';
@@ -73,8 +74,11 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
         builder: (context) => const RecordScreen(),
       );
     case BabyResultView.routeName:
+      final cryModel = settings.arguments as CryModel;
       return MaterialPageRoute(
-        builder: (context) => const BabyResultView(),
+        builder: (context) => BabyResultView(
+          cryModel: cryModel,
+        ),
       );
     case BoardingView.routeName:
       return MaterialPageRoute(

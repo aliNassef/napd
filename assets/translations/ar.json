@@ -153,5 +153,6 @@
   "deleteImage": "حذف الصورة",
   "deleteImageQuestion": "هل أنت متأكد من حذف هذه الصورة؟",
   "delete": "حذف",
-  "routine" : "روتين"
+  "routine" : "روتين",
+  "stopRecording" : "إيقاف التسجيل"
 }

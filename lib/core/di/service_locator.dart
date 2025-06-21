@@ -14,6 +14,7 @@ import 'package:napd/features/parenting_resources/presentation/cubits/activity_c
 import '../../features/baby/data/repo/baby_repo.dart';
 import '../../features/baby/data/repo/baby_repo_impl.dart';
 import '../../features/baby/data/source/baby_local_datasource.dart';
+import '../../features/baby/presentation/cubit/cry_translator_cubit/cry_translator_cubit.dart';
 import '../../features/baby/presentation/cubit/get_baby_cubit/get_baby_cubit.dart';
 import '../../features/groups/data/repo/group_repo.dart';
 import '../../features/groups/data/repo/group_repo_impl.dart';
@@ -23,8 +24,12 @@ import '../../features/groups/presentation/cubits/get_top_for_you_cubit/get_top_
 import '../../features/home/data/repo/chat_repo_impl.dart';
 import '../../features/home/data/repo/gallrey_repo.dart';
 import '../../features/home/data/repo/gallrey_repo_impl.dart';
+import '../../features/home/data/repo/home_repo.dart';
+import '../../features/home/data/repo/home_repo_impl.dart';
 import '../../features/home/data/source/gallrey_remote_source.dart';
+import '../../features/home/data/source/home_remote_source.dart';
 import '../../features/home/presentation/cubits/gallrey_cubit/gallrey_cubit.dart';
+import '../../features/home/presentation/cubits/search_bloc/home_search_bloc.dart';
 import '../../features/parenting_resources/data/repo/parent_recource_repo.dart';
 import '../../features/parenting_resources/data/repo/parent_recource_repo_impl.dart';
 import '../../features/parenting_resources/data/source/parent_resource_remote_datasource.dart';
@@ -85,6 +90,30 @@ Future<void> setupServiceLocator() async {
   _setupGallreyFeature();
   _setupChatBotFeature();
   _setupShopFeature();
+  _setupHomeFeature();
+  _setupCryFeature();
+}
+
+void _setupCryFeature() {
+  injector.registerFactory<CryTranslatorCubit>(
+    () => CryTranslatorCubit(babyRepo: injector<BabyRepo>()),
+  );
+}
+
+void _setupHomeFeature() {
+  injector.registerFactory<HomeSearchBloc>(
+    () => HomeSearchBloc(injector<HomeRepo>()),
+  );
+  injector.registerLazySingleton<HomeRepo>(
+    () => HomeRepoImpl(
+      injector<HomeRemoteSource>(),
+    ),
+  );
+  injector.registerLazySingleton<HomeRemoteSource>(
+    () => HomeRemoteSourceImpl(
+      injector<ApiConsumer>(),
+    ),
+  );
 }
 
 void _setupShopFeature() {

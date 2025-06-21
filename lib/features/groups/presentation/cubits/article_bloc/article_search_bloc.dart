@@ -13,6 +13,10 @@ class ArticleSearchBloc extends Bloc<ArticleSearchEvent, ArticleSearchState> {
   ArticleSearchBloc(this.groupRepo) : super(ArticleSearchInitial()) {
     on<ArticleOnSearchEvent>(
       (event, emit) async {
+        if (event.query.isEmpty) {
+          emit(ArticleSearchInitial());
+          return;
+        }
         emit(ArticleSearchLoading());
         final result = await groupRepo.searchArticles(event.query);
         result.fold(
@@ -23,6 +27,7 @@ class ArticleSearchBloc extends Bloc<ArticleSearchEvent, ArticleSearchState> {
       },
       transformer: (events, mapper) {
         return events
+            // ignore: unnecessary_type_check
             .where((event) => event is ArticleOnSearchEvent)
             .debounceTime(const Duration(milliseconds: 300))
             .asyncExpand(mapper);

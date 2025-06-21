@@ -8,8 +8,9 @@ import '../../../../core/utils/app_styles.dart';
 class BoxCryResult extends StatelessWidget {
   const BoxCryResult({
     super.key,
+    required this.result,
   });
-
+  final String result;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,7 +22,7 @@ class BoxCryResult extends StatelessWidget {
       ),
       padding: EdgeInsets.symmetric(horizontal: 70.w, vertical: 21.h),
       child: Text(
-        'I\'m Hungry',
+        result,
         style: AppStyles.roboto20Regular.copyWith(
           color: AppColors.primaryColor,
         ),

@@ -153,6 +153,7 @@
     "birthdate": "Birth date",
     "deleteImageQuestion" : "Are you sure you want to delete this image?",
     "delete": "Delete",
-    "routine" : "Routine"
+    "routine" : "Routine",
+    "stopRecording" : "Stop & Analyze"
  }
  

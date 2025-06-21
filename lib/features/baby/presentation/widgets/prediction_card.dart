@@ -6,7 +6,7 @@ import '../../../../core/utils/app_styles.dart';
 
 class PredictionCard extends StatelessWidget {
   final String status;
-  final int percentage;
+  final String percentage;
 
   const PredictionCard(
       {super.key, required this.status, required this.percentage});
@@ -30,7 +30,7 @@ class PredictionCard extends StatelessWidget {
           ),
         ),
         trailing: Text(
-          '$percentage%',
+          percentage,
           style: AppStyles.roboto20Regular.copyWith(
             color: AppColors.primaryColor,
           ),

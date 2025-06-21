@@ -159,6 +159,7 @@ abstract class AppStrings {
   static String get deleteImageQuestion => 'deleteImageQuestion'.tr();
   static String get routine => 'routine'.tr();
   static String get delete => 'delete'.tr();
+  static String get stopRecording => 'stopRecording'.tr();
 
   
 }

@@ -10,8 +10,9 @@ import '../../../../core/widgets/custom_search_bar.dart';
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({
     super.key,
+    required this.onChanged,
   });
-
+  final Function(String) onChanged;
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -32,7 +33,9 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       titleSpacing: 0,
-      title: CustomSearchBar(),
+      title: CustomSearchBar(
+        onChanged: onChanged,
+      ),
       actions: [
         BlocBuilder<GetMotherProfileCubit, GetMotherProfileState>(
           buildWhen: (previous, current) =>

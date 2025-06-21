@@ -4,6 +4,7 @@ import '../../../../core/extensions/padding_extension.dart';
 
 import '../../../../core/utils/app_images.dart';
 import '../../../../core/widgets/spacers.dart';
+import '../../data/models/cry_model.dart';
 import 'box_cry_result.dart';
 import 'prediction_list.dart';
 import 'suggest_box.dart';
@@ -11,10 +12,10 @@ import 'suggest_box.dart';
 class BabyResultViewBody extends StatelessWidget {
   const BabyResultViewBody({
     super.key,
-    required this.predictions,
+    required this.cryModel,
   });
 
-  final List<Map<String, dynamic>> predictions;
+  final CryModel cryModel;
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +29,13 @@ class BabyResultViewBody extends StatelessWidget {
             backgroundImage: AssetImage(AppImages.cryResult),
           ),
           VerticalSpace(8),
-          BoxCryResult(),
+          BoxCryResult(result: cryModel.cry),
           VerticalSpace(8),
-          PredictionList(predictions: predictions),
+          PredictionList(predictions: cryModel),
           VerticalSpace(16),
-          SuggestionBox(),
+          SuggestionBox(
+            suggestion: cryModel.cry,
+          ),
         ],
       ).withHorizontalPadding(8),
     );
