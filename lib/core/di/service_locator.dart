@@ -30,6 +30,7 @@ import '../../features/home/data/source/gallrey_remote_source.dart';
 import '../../features/home/data/source/home_remote_source.dart';
 import '../../features/home/presentation/cubits/gallrey_cubit/gallrey_cubit.dart';
 import '../../features/home/presentation/cubits/search_bloc/home_search_bloc.dart';
+import '../../features/nursery/presentation/manger/hospital_search_bloc/hospital_search_bloc.dart';
 import '../../features/parenting_resources/data/repo/parent_recource_repo.dart';
 import '../../features/parenting_resources/data/repo/parent_recource_repo_impl.dart';
 import '../../features/parenting_resources/data/source/parent_resource_remote_datasource.dart';
@@ -245,6 +246,9 @@ void _setupLoginFeature() {
 void _setupNursingFeature() {
   injector.registerFactory<NursingCubit>(
     () => NursingCubit(injector<NursingRepo>()),
+  );
+  injector.registerFactory<HospitalSearchBloc>(
+    () => HospitalSearchBloc(injector<NursingRepo>()),
   );
   injector.registerLazySingleton<NursingRepo>(
     () => NursingRepoImpl(

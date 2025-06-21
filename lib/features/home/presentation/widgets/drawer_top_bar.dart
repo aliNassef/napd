@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:napd/core/controller/cubit/get_mother_cubit/get_mother_profile_cubit.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 import '../../../../core/extensions/padding_extension.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_strings.dart';
@@ -25,23 +26,26 @@ class DrawerTopBar extends StatelessWidget {
               current is GetMotherProfileLoading,
           builder: (context, state) {
             if (state is GetMotherProfileLoading) {
-              return Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                    radius: 22.5.r,
-                    backgroundImage: NetworkImage(
-                      'https://th.bing.com/th/id/OIP.qbbx_RglyCFRH88Bof6_QwHaHa?rs=1&pid=ImgDetMain',
+              return Skeletonizer(
+                enabled: true,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      radius: 22.5.r,
+                      backgroundImage: NetworkImage(
+                        'https://th.bing.com/th/id/OIP.qbbx_RglyCFRH88Bof6_QwHaHa?rs=1&pid=ImgDetMain',
+                      ),
                     ),
-                  ),
-                  HorizantalSpace(20),
-                  Text(
-                    'Mai Ali',
-                    style: AppStyles.roboto20Bold,
-                  ),
-                  Spacer(),
-                  CircularProgressIndicator(),
-                ],
+                    HorizantalSpace(20),
+                    Text(
+                      'Mai Ali',
+                      style: AppStyles.roboto20Bold,
+                    ),
+                    Spacer(),
+                    CircularProgressIndicator(),
+                  ],
+                ),
               );
             }
             if (state is GetMotherProfileLoaded) {

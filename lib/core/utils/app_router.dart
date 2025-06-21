@@ -23,7 +23,6 @@ import '../../features/baby/presentation/view/baby_result_view.dart';
 import '../../features/baby/presentation/view/cry_translator_view.dart';
 import '../../features/groups/presentation/view/all_groups_view.dart';
 import '../../features/groups/presentation/view/group_chat_view.dart';
-import '../../features/recording/presentation/view/record_screen.dart';
 import '../../features/baby/presentation/view/baby_profile_details_view.dart';
 import '../../features/baby/presentation/view/baby_profile_view.dart';
 import '../../features/groups/presentation/view/all_articles_view.dart';
@@ -68,10 +67,6 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case CryTranslatorView.routeName:
       return MaterialPageRoute(
         builder: (context) => const CryTranslatorView(),
-      );
-    case RecordScreen.routeName:
-      return MaterialPageRoute(
-        builder: (context) => const RecordScreen(),
       );
     case BabyResultView.routeName:
       final cryModel = settings.arguments as CryModel;

@@ -125,7 +125,7 @@ class _CryTranslatorViewBodyState extends State<CryTranslatorViewBody> {
               );
             },
           ),
-          VerticalSpace(16),
+          VerticalSpace(50),
         ],
       ).withHorizontalPadding(8),
     );
