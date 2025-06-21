@@ -47,8 +47,8 @@ class SelectBabyAccountViewBody extends StatelessWidget {
               },
               child: BabyAccountItem(
                 img: babies[index].profilePicUrl!.isEmpty
-                    ? 'https://th.bing.com/th/id/OIP.3KfR6g7MEHXbm6Q-R1PzXQHaFj?rs=1&pid=ImgDetMain'
-                    : 'https://th.bing.com/th/id/OIP.3KfR6g7MEHXbm6Q-R1PzXQHaFj?rs=1&pid=ImgDetMain',
+                    ? 'https://th.bing.com/th/id/OIP.-cvZOvlWaBPECBcccB6rXQHaLH?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3'
+                    : 'https://th.bing.com/th/id/OIP.-cvZOvlWaBPECBcccB6rXQHaLH?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3',
                 name: babies[index].babyName!,
               ),
             ),
