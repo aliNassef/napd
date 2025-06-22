@@ -59,7 +59,7 @@ class BabyRemoteDatasourceImpl implements BabyRemoteDatasource {
       data: addBabyInputModel.toJson(),
       isFromData: true,
     );
-    if (response.statusCode == 201) {
+    if (response.statusCode == 204) {
       return;
     } else {
       throw ServerException(

@@ -35,7 +35,7 @@ class _AddBabyViewState extends State<AddBabyView> {
   late GlobalKey<FormState> _formKey;
   late AutovalidateMode _autovalidateMode;
   late int _gender;
-  late XFile image;
+  XFile? image;
   @override
   void initState() {
     super.initState();
@@ -63,94 +63,107 @@ class _AddBabyViewState extends State<AddBabyView> {
             child: Form(
               key: _formKey,
               autovalidateMode: _autovalidateMode,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      GestureDetector(
-                        onTap: () async {
-                        
-                        },
-                        child: CircleAvatar(
-                          radius: 50,
-                          backgroundColor: Color(0xffEAE8E8),
-                          backgroundImage: FileImage(File(image.path)),
-                          child: SvgPicture.asset(AppSvgs.uploadImageIcon),
-                        ),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    VerticalSpace(30),
+                    Text(
+                      AppStrings.createBabyAccount,
+                      style: AppStyles.roboto40Bold.copyWith(
+                        color: AppColors.greyColor,
                       ),
-                      HorizantalSpace(20),
-                      Text(
-                        AppStrings.uploadProfilePhoto,
-                        style: AppStyles.roboto20SemiBold.copyWith(
-                          color: AppColors.greyColor,
-                        ),
-                      ),
-                    ],
-                  ),
-                  VerticalSpace(30),
-                  Text(
-                    AppStrings.createBabyAccount,
-                    style: AppStyles.roboto40Bold.copyWith(
-                      color: AppColors.greyColor,
                     ),
-                  ),
-                  VerticalSpace(40),
-                  CustomTextFormField(
-                    hintText: AppStrings.name,
-                    controller: _nameController,
-                  ),
-                  VerticalSpace(28),
-                  CustomTextFormField(
-                    hintText: AppStrings.age,
-                    controller: _ageController,
-                    keyboardType: TextInputType.text,
-                  ),
-                  VerticalSpace(40),
-                  BabyGenderSelector(
-                    onChanged: (val) {
-                      setState(() {
-                        _gender = val;
-                      });
-                    },
-                  ),
-                  VerticalSpace(50),
-                  BlocListener<AddBabyCubit, AddBabyState>(
-                    listener: (context, state) {
-                      if (state is AddBabyLoaded) {
-                        showToast(text: 'Baby Added Successfully');
-                      }
-                      if (state is AddBabyFailure) {
-                        showErrorMessage(context, errMessage: state.errMessage);
-                      }
-                      if (state is AddBabyLoading) {
-                        showLoadingBox(context);
-                      }
-                    },
-                    child: DefaultAppButton(
-                      text: AppStrings.addBaby,
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          var addBabyInput = AddBabyInputModel(
-                            name: _nameController.text,
-                            age: _ageController.text,
-                            gender: _gender,
-                            image: image,
-                          );
-                          context.read<AddBabyCubit>().addBaby(addBabyInput);
-                        } else {
-                          setState(() {
-                            _autovalidateMode = AutovalidateMode.always;
-                          });
+                    VerticalSpace(40),
+                    Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () async {
+                            final image = await ImagePicker().pickImage(
+                              source: ImageSource.gallery,
+                            );
+                            if (image != null) {
+                              setState(() {
+                                this.image = image;
+                              });
+                            }
+                          },
+                          child: CircleAvatar(
+                            radius: 50,
+                            backgroundColor: Color(0xffEAE8E8),
+                            backgroundImage: image?.path != null
+                                ? FileImage(File(image!.path))
+                                : null,
+                            child: SvgPicture.asset(AppSvgs.uploadImageIcon),
+                          ),
+                        ),
+                        HorizantalSpace(20),
+                        Text(
+                          AppStrings.uploadProfilePhoto,
+                          style: AppStyles.roboto20SemiBold.copyWith(
+                            color: AppColors.greyColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                    VerticalSpace(40),
+                    CustomTextFormField(
+                      hintText: AppStrings.name,
+                      controller: _nameController,
+                    ),
+                    VerticalSpace(28),
+                    CustomTextFormField(
+                      hintText: AppStrings.age,
+                      controller: _ageController,
+                      keyboardType: TextInputType.text,
+                    ),
+                    VerticalSpace(40),
+                    BabyGenderSelector(
+                      onChanged: (val) {
+                        setState(() {
+                          _gender = val;
+                        });
+                      },
+                    ),
+                    VerticalSpace(50),
+                    BlocListener<AddBabyCubit, AddBabyState>(
+                      listener: (context, state) {
+                        if (state is AddBabyLoaded) {
+                          showToast(text: 'Baby Added Successfully');
+                          Navigator.of(context, rootNavigator: true).pop();
+                        }
+                        if (state is AddBabyFailure) {
+                          showErrorMessage(context, errMessage: state.errMessage);
+                        }
+                        if (state is AddBabyLoading) {
+                          showLoadingBox(context);
                         }
                       },
-                      backgroundColor: AppColors.secondaryColor,
-                      textColor: AppColors.primaryColor,
+                      child: DefaultAppButton(
+                        text: AppStrings.addBaby,
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            var addBabyInput = AddBabyInputModel(
+                              name: _nameController.text,
+                              age: _ageController.text,
+                              gender: _gender,
+                              image: image,
+                            );
+                            context.read<AddBabyCubit>().addBaby(addBabyInput);
+                          } else {
+                            setState(() {
+                              _autovalidateMode = AutovalidateMode.always;
+                            });
+                          }
+                        },
+                        backgroundColor: AppColors.secondaryColor,
+                        textColor: AppColors.primaryColor,
+                      ),
                     ),
-                  ),
-                  VerticalSpace(30),
-                  VerticalSpace(22),
-                ],
+                    VerticalSpace(30),
+                    VerticalSpace(22),
+                  ],
+                ),
               ),
             ),
           ),

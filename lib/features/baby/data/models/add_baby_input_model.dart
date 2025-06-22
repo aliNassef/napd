@@ -1,15 +1,15 @@
 import 'package:image_picker/image_picker.dart';
 
 class AddBabyInputModel {
-  final String name;
-  final String age;
-  final int gender;
-  final XFile image;
+  final String? name;
+  final String? age;
+  final int? gender;
+  final XFile? image;
   AddBabyInputModel({
-    required this.name,
-    required this.age,
-    required this.gender,
-    required this.image,
+    this.name,
+    this.age,
+    this.gender,
+    this.image,
   });
 
   factory AddBabyInputModel.fromJson(json) {
@@ -17,14 +17,14 @@ class AddBabyInputModel {
       name: json['BabyName'],
       age: json['BirthDate'],
       gender: json['Gender'],
-      image: json['BabyImage'],
+      image: json['BabyImage'] as XFile,
     );
   }
 
   toJson() => {
-    'BabyName' : name,
-    'BirthDate' : age,
-    'Gender' : gender,
-    'BabyImage' : gender,
-  };
+        'BabyName': name,
+        'BirthDate': age,
+        'Gender': gender,
+        'BabyImage': image,
+      };
 }

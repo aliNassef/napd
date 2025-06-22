@@ -8,6 +8,7 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/widgets/spacers.dart';
+import '../../../baby/presentation/view/add_baby_view.dart';
 
 class DrawerTopBar extends StatelessWidget {
   const DrawerTopBar({
@@ -94,7 +95,11 @@ class DrawerTopBar extends StatelessWidget {
               AppColors.secondaryColor,
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context, rootNavigator: true).pushNamed(
+              AddBabyView.routeName,
+            );
+          },
           label: Text(
             AppStrings.addNewBaby,
             style: AppStyles.roboto14Regular.copyWith(
