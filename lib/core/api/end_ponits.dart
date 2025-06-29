@@ -1,6 +1,6 @@
 abstract class EndPoints {
   static const String baseUrl =
-      'http://graduation-project-version1.runasp.net/';
+      '';
   static const String register = 'Auth/register';
   static const String login = 'Auth/Login';
   static const String getBabyById = 'Account/ChooseBaby?BabyId=';
